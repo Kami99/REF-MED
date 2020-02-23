@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{%block addStyleSheets%}
+<link rel="stylesheet" href="{{asset('bower_components/css/formRegisterBlog.css')}}">
+{%endblock%}
+{% block body %}
+
+
+<div class="main">
+
+    <section class="signup">
+        <!-- <img src="images/signup-bg.jpg" alt=""> -->
+        <div class="container">
+            <div class="signup-content">
+                <div id="signup-form" class="signup-form">
+                    {{ form_start(registrationForm) }}
+                    <h2 class="form-title">S'inscrire Au Blog</h2>
+                    <div class="form-group">
+                        {{ form_row(registrationForm.email,{ 'attr': {'class': 'form-input'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(registrationForm.pseudo,{ 'attr': {'class': 'form-input'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(registrationForm.avatar,{ 'attr': {'class': 'form-input'}}) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form_row(registrationForm.password,{ 'attr': {'class': 'form-input'}}) }}
+                        <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="S'inscrire"/>
+                    </div>
+                </div>
+                <p class="loginhere">
+                    Avez un compte <a href="#" class="loginhere-link">connectez vous ici</a>
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+    {{ form_end(registrationForm) }}
+{% endblock %}
