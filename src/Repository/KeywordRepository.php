@@ -35,6 +35,14 @@ class KeywordRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findAllVisible()
+    {
+        return $this->createQueryBuilder('k')
+            ->Where('k.visible = 1')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Keyword

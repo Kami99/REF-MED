@@ -5,9 +5,14 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\CategoriesRepository")
+ * @Vich\Uploadable
  */
 class Categories
 {
@@ -16,15 +21,36 @@ class Categories
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
+    
     private $id;
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $fileName;
+
+    /**
+     *@Vich\UploadableField(mapping="categoriesImages", fileNameProperty="fileName")
+     *@var File|null
+     */
+    private $imageFile;
+    /**
+     * @var \DateTime $updatedAt
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+        
+    private $updatedAt;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $name;
 
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @Gedmo\Slug(fields={"name"})
+     * @ORM\Column(length=128, unique=true)
      */
     private $slug;
 
@@ -32,6 +58,11 @@ class Categories
      * @ORM\ManyToMany(targetEntity="App\Entity\Articles", mappedBy="categories")
      */
     private $articles;
+
+    /**
+     * @ORM\Column(type="boolean", options={"default":true})
+     */
+    private $visible;
 
     public function __construct()
     {
@@ -60,12 +91,6 @@ class Categories
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Articles[]
@@ -91,6 +116,68 @@ class Categories
             $this->articles->removeElement($article);
             $article->removeCategory($this);
         }
+
+        return $this;
+    }
+    public function __toString(){
+        return$this->name;
+
+    }
+
+    /**
+     * Get the value of fileName
+     *
+     * @return  string|null
+     */ 
+    public function getFileName()
+    {
+        return $this->fileName;
+    }
+
+    /**
+     * Set the value of fileName
+     *
+     * @param  string|null  $fileName
+     *
+     * @return  self
+     */ 
+    public function setFileName($fileName)
+    {
+        $this->fileName = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * 
+     */ 
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * Set 
+     *
+     * @return  self
+     */ 
+    public function setImageFile($image=null)
+    {
+        $this->imageFile = $image;
+        if($image){
+            $this->updatedAt=new \DateTime('now');
+        }
+
+    }
+
+    public function getVisible(): ?bool
+    {
+        return $this->visible;
+    }
+
+    public function setVisible(bool $visible): self
+    {
+        $this->visible = $visible;
 
         return $this;
     }

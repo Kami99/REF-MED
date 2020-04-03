@@ -5,7 +5,6 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
-//use  App\Entity\Blog\UsersBlog;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsersRepository")
  *ORM\@DiscriminatorColumn(name="discr", type="string")
@@ -38,6 +37,10 @@ class Users implements UserInterface
      */
     private $password;
 
+    public function __construct()
+    {
+        $this->roles[]='ROLE_USER';
+    }
     public function getId(): ?int
     {
         return $this->id;

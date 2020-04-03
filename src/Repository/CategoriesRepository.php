@@ -35,6 +35,23 @@ class CategoriesRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findAllVisible()
+    {
+        return $this->createQueryBuilder('c')
+            ->Where('c.visible = 1')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+    public function findTreeLastest()
+    {
+        return $this->createQueryBuilder('c')
+            ->orderBy('c.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Categories

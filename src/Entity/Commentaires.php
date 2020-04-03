@@ -22,7 +22,7 @@ class Commentaires
     private $contain;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean", options={"default":true})
      */
     private $active;
 
@@ -36,16 +36,18 @@ class Commentaires
      */
     private $updatedAt;
 
-    /**
-     * @ORM\Column(type="string", length=128)
-     */
-    private $slug;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Articles", inversedBy="commentaires")
      * @ORM\JoinColumn(nullable=false)
      */
     private $articles;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\UsersBlog", inversedBy="commentaires")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $usersBlog;
 
     public function getId(): ?int
     {
@@ -120,6 +122,18 @@ class Commentaires
     public function setArticles(?Articles $articles): self
     {
         $this->articles = $articles;
+
+        return $this;
+    }
+
+    public function getUsersBlog(): ?UsersBlog
+    {
+        return $this->usersBlog;
+    }
+
+    public function setUsersBlog(?UsersBlog $usersBlog): self
+    {
+        $this->usersBlog = $usersBlog;
 
         return $this;
     }

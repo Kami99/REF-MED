@@ -22,11 +22,7 @@
             {% if error %}
             <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
         {% endif %}
-        {% if app.user %}
-        <div class="mb-3">
-           Vous êtes déja connecté{{ app.user.username }}, <a href="{{ path('app_logout') }}">Déconnectez vous</a>
-        </div>
-     {% endif %}
+
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
                     <input class="input100"  value="{{ last_username }}" name="email" id="inputEmail" type="email" required autofocus>
                     <span class="focus-input100" data-placeholder="Email"></span>
@@ -54,7 +50,7 @@
                         Vous n'avez pas de compte
                     </span>
 
-                    <a class="txt2" href="{{ path('inscriptionBlog') }}">
+                    <a class="txt2" href="{{ path('app_inscription') }}">
                         Veuillez vous inscrire
                     </a>
                 </div>

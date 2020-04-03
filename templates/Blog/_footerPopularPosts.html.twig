@@ -1,0 +1,35 @@
+<section class="s-extra">
+<div class="row top">
+    
+    <div class="col-eight md-six tab-full popular">
+        <h3>Les Articles Populaires</h3>
+
+        <div class="block-1-2 block-m-full popular__posts">
+            {% for postsPopular in popular_posts %}
+                        <article class="col-block popular__post">
+                <a href="{{path('article.show', {id: postsPopular.id, slug:postsPopular.slug})}}" class="popular__thumb">
+                    {% if postsPopular.featuredImage %}
+                    <img src="{{vich_uploader_asset(postsPopular, 'imageFile')}}" 
+                    alt="Image Article">
+                        
+                    {% else %}
+                    <img src="{{asset('bower_components/images/imageNotAvailable.png') }}" 
+                     alt="Article not Image available">
+                    {% endif %}
+                </a>
+                <h5><a href="{{path('article.show', {id: postsPopular.id, slug:postsPopular.slug})}}">{{postsPopular.title}}</a></h5>
+                <section class="popular__meta">
+                        <span class="popular__author"><span>By</span> <a href="{{path('article.show', {id: postsPopular.id, slug:postsPopular.slug})}}"> {{postsPopular.usersBlog}}</a></span>
+                    <span class="popular__date"><span>Poster le </span> <time datetime="">{{popularPosts.updatedAt|date("d-m-Y à H:i:s")}}</time></span>
+                </section>
+            </article>
+            {% endfor %}
+        
+        </div> <!-- end popular_posts -->
+    </div> <!-- end popular -->
+    
+
+
+     
+
+</div>

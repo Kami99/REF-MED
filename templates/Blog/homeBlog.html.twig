@@ -1,0 +1,81 @@
+{% extends 'Blog/baseBlog.html.twig' %}
+{% block className %}top{% endblock className %}
+{% block body %}
+<section class="s-pageheader s-pageheader--home">
+{% include "Blog/_navigation.html.twig" %}
+<div class="pageheader-content row">
+    <div class="col-full">
+        <div class="featured">            
+            <div class="featured__column featured__column--big">
+                {% if lastestCategories[0].filename %}
+                <div class="entry" style="background-image:url('{{vich_uploader_asset(lastestCategories[0], 'imageFile')}}');">
+                    {% else %}
+                    <div class="entry" style="background-image:url('{{asset('bower_components/images/imageNotAvailable.png')}}');">
+                {% endif %}                    
+                    <div class="entry__content">
+                        <span class="entry__category"><a href="#0">{{lastestCategories[0].name}}</a></span>
+
+                    </div> <!-- end entry__content -->
+                    
+                </div> <!-- end entry -->
+            </div> <!-- end featured__big -->
+
+            <div class="featured__column featured__column--small">
+
+                {% if lastestCategories[1].filename %}
+                <div class="entry" style="background-image:url('{{vich_uploader_asset(lastestCategories[1], 'imageFile')}}');">
+                    {% else %}
+                    <div class="entry" style="background-image:url('{{asset('bower_components/images/imageNotAvailable.png')}}');">
+                {% endif %}
+                
+                    
+                    <div class="entry__content">
+                        <span class="entry__category"><a href="#0">{{lastestCategories[1].name}}</a></span>
+                    </div> <!-- end entry__content -->
+                  
+                </div> <!-- end entry -->
+                {% if lastestCategories[2].filename %}
+                <div class="entry" style="background-image:url('i{{vich_uploader_asset(lastestCategories[2], 'imageFile')}}');">
+                {% else %}
+                <div class="entry" style="background-image:url('{{asset('bower_components/images/imageNotAvailable.png')}}');">
+               {% endif %}
+
+
+
+                    <div class="entry__content">
+                        <span class="entry__category"><a href="#0">{{lastestCategories[2].name}}</a></span>
+                    </div> <!-- end entry__content -->
+
+                </div> <!-- end entry -->
+
+            </div> <!-- end featured__small -->
+
+        </div> <!-- end featured -->
+
+    </div> <!-- end col-full -->
+</div> <!-- end pageheader-content row -->
+
+</section> <!-- end s-pageheader -->
+
+</section>
+{% if articles %}
+{% include "Blog/_allShowArticle.html.twig" %}
+{% else %}
+<section class="s-content">
+<div class="notfound">
+    <h1 style="text-align: center;">Désolé Il n'y a pas d'articles pour le moment</h1>
+    <img width="80px" height="90px" style="margin-top: 5px;" src="{{asset('bower_components/images/sadEmoji.png')}}" alt="">
+    <img width="80px" height="90px" style="margin-top: 5px;" src="{{asset('bower_components/images/sadEmoji.png')}}" alt="">
+    <img width="80px" height="90px" style="margin-top: 5px;" src="{{asset('bower_components/images/sadEmoji.png')}}" alt="">
+</div>
+    <br>
+    <br>
+    <br>
+</section>
+{% endif %}
+{% include "Blog/_footerPopularPosts.html.twig" %}
+{% include "Blog/_footerKeyword.html.twig" %}
+
+
+
+{% endblock body %} 

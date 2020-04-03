@@ -5,9 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticlesRepository")
+ * @Vich\Uploadable
  */
 class Articles
 {
@@ -19,7 +23,8 @@ class Articles
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     *@Gedmo\Slug(fields={"title"})
+     * @ORM\Column(length=128, unique=true)
      */
     private $slug;
 
@@ -29,19 +34,30 @@ class Articles
     private $contenu;
 
     /**
+     * @var \DateTime $createdAt
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime")
      */
     private $createdAt;
 
     /**
+     * @var \DateTime $updatedAt
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $featuredImage;
+
+     /**
+     * @Vich\UploadableField(mapping="featuredImages", fileNameProperty="featuredImage")
+     * @var File
+     */
+    private $imageFile;
+
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\UsersBlog", inversedBy="articles")
@@ -64,6 +80,16 @@ class Articles
      */
     private $categories;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $title;
+
+    /**
+     * @ORM\Column(type="boolean", options={"default":true})
+     */
+    private $visible;
+
     public function __construct()
     {
         $this->commentaires = new ArrayCollection();
@@ -81,12 +107,7 @@ class Articles
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
 
-        return $this;
-    }
 
     public function getContenu(): ?string
     {
@@ -105,24 +126,11 @@ class Articles
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
     public function getUpdatedAt(): ?\DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
 
     public function getFeaturedImage(): ?string
     {
@@ -227,6 +235,80 @@ class Articles
         if ($this->categories->contains($category)) {
             $this->categories->removeElement($category);
         }
+
+        return $this;
+    }
+
+    public function getTitle(): ?string
+    {
+        return $this->title;
+    }
+
+    public function setTitle(string $title): self
+    {
+        $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of fileName
+     *
+     * @return  string|null
+     */ 
+    public function getFileName()
+    {
+        return $this->fileName;
+    }
+
+    /**
+     * Set the value of fileName
+     *
+     * @param  string|null  $fileName
+     *
+     * @return  self
+     */ 
+    public function setFileName($fileName)
+    {
+        $this->fileName = $fileName;
+
+        return $this;
+    }
+
+    /**
+     * 
+     */ 
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * Set 
+     *
+     * @return  self
+     */ 
+    public function setImageFile($image=null)
+    {
+        $this->imageFile = $image;
+        if($image){
+            $this->updatedAt=new \DateTime('now');
+        }
+
+    }
+    public function __toString(){
+        return$this->title;
+
+    }
+
+    public function getVisible(): ?bool
+    {
+        return $this->visible;
+    }
+
+    public function setVisible(bool $visible): self
+    {
+        $this->visible = $visible;
 
         return $this;
     }

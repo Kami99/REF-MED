@@ -2,14 +2,17 @@
 
 namespace App\Entity;
 use App\Entity\Users;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
-
-
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UsersBlogRepository")
+ * @Vich\Uploadable()
  */
 class UsersBlog extends Users
 {
@@ -19,6 +22,18 @@ class UsersBlog extends Users
      * @ORM\Column(type="integer")
      */
     private $id;
+    /**
+     * @var string|null
+     * @ORM\Column(type="string", length=255, nullable=true)
+     * 
+     */
+    private $fileName;
+    /**
+     * @var File|null
+     * @Vich\UploadableField(mapping="avatar", fileNameProperty="fileName")
+     */
+
+    private $imageFile;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -28,10 +43,10 @@ class UsersBlog extends Users
     /**
      * @ORM\Column(type="boolean")
      */
-    private $active=0;
+    private $active=1;
 
     /**
-     * @ORM\Column(type="string", length=128, nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $avatar;
 
@@ -41,24 +56,28 @@ class UsersBlog extends Users
     private $createdAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @var \DateTime $updatedAt
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updatedAt;
-
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Articles", mappedBy="usersBlog", orphanRemoval=true)
      */
     private $articles;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Commentaires", mappedBy="usersBlog", orphanRemoval=true)
+     */
+    private $commentaires;
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->createdAt= new \DateTime();
+        $this->commentaires = new ArrayCollection();
     }
-
-    public function getId(): ?int
-    {
-        return $this->id;
+    public function getIdUsers(){
+        return $this->getId();
     }
 
     public function getPseudo(): ?string
@@ -114,12 +133,6 @@ class UsersBlog extends Users
         return $this->updatedAt;
     }
 
-    public function setUpdatedAt(\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
 
     /**
      * @return Collection|Articles[]
@@ -146,6 +159,92 @@ class UsersBlog extends Users
             // set the owning side to null (unless already changed)
             if ($article->getUsersBlog() === $this) {
                 $article->setUsersBlog(null);
+            }
+        }
+
+        return $this;
+    }
+
+
+    /**
+     * Get the value of fileName
+     *
+     * @return  string|null
+     */ 
+    public function getFileName()
+    {
+        return $this->fileName;
+    }
+
+    /**
+     * Set the value of fileName
+     *
+     * @param  string|null  $fileName
+     *
+     * @return  self
+     */ 
+    public function setFileName($fileName)
+    {
+        $this->fileName = $fileName;
+
+        return $this;
+
+    }
+
+    /**
+     * Get the value of imageFile
+     */ 
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+    /**
+     * Set the value of imageFile
+     *
+     * @return  self
+     */ 
+    public function setImageFile($imageFile)
+    {
+        $this->imageFile = $imageFile;
+        if($this->imageFile instanceof UploadedFile)
+        {
+            $this->updatedAt = new \DateTime('now');
+
+        }
+
+        return $this;
+    }
+    public function __toString(){
+        return $this->getEmail();
+
+    }
+
+    /**
+     * @return Collection|Commentaires[]
+     */
+    public function getCommentaires(): Collection
+    {
+        return $this->commentaires;
+    }
+
+    public function addCommentaire(Commentaires $commentaire): self
+    {
+        if (!$this->commentaires->contains($commentaire)) {
+            $this->commentaires[] = $commentaire;
+            $commentaire->setUsersBlog($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommentaire(Commentaires $commentaire): self
+    {
+        if ($this->commentaires->contains($commentaire)) {
+            $this->commentaires->removeElement($commentaire);
+            // set the owning side to null (unless already changed)
+            if ($commentaire->getUsersBlog() === $this) {
+                $commentaire->setUsersBlog(null);
             }
         }
 

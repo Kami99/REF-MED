@@ -35,6 +35,14 @@ class CommentairesRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function findAllVisible()
+    {
+        return $this->createQueryBuilder('c')
+            ->Where('c.visible = 1')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Commentaires

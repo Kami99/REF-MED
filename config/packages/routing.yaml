@@ -1,3 +1,6 @@
 framework:
     router:
         utf8: true
+
+#app/config/routing.yaml
+# app / config / routing.yaml 

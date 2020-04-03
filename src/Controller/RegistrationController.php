@@ -54,11 +54,12 @@ class RegistrationController extends AbstractController
     }
 
      /**
-     * @Route("/inscriptionBlog", name="inscriptionBlog")
+     * @Route("/inscription", name="app_inscription")
      */
     public function registerBlog(Request $request, UserPasswordEncoderInterface $passwordEncoder, GuardAuthenticatorHandler $guardHandler, UsersAuthenticator $authenticator): Response
     {
         $userBlog = new UsersBlog();
+        $userBlog->setRoles(['ROLE_USER']);
         $form = $this->createForm(UsersBlogFormType::class, $userBlog);
         $form->handleRequest($request);
 
@@ -67,14 +68,13 @@ class RegistrationController extends AbstractController
             $userBlog->setPassword(
                 $passwordEncoder->encodePassword(
                     $userBlog,
-                    $form->get('plainPassword')->getData()
+                    $form->get('password')->getData()
                 )
             );
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($userBlog);
             $entityManager->flush();
-
             // do anything else you need here, like send an email
 
             return $guardHandler->authenticateUserAndHandleSuccess(

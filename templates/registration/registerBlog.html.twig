@@ -8,12 +8,11 @@
 <div class="main">
 
     <section class="signup">
-        <!-- <img src="images/signup-bg.jpg" alt=""> -->
         <div class="container">
             <div class="signup-content">
                 <div id="signup-form" class="signup-form">
                     {{ form_start(registrationForm) }}
-                    <h2 class="form-title">S'inscrire Au Blog</h2>
+                    <h2 class="form-title">Creer un Compte REF-MED</h2>
                     <div class="form-group">
                         {{ form_row(registrationForm.email,{ 'attr': {'class': 'form-input'}}) }}
                     </div>
@@ -21,7 +20,7 @@
                         {{ form_row(registrationForm.pseudo,{ 'attr': {'class': 'form-input'}}) }}
                     </div>
                     <div class="form-group">
-                        {{ form_row(registrationForm.avatar,{ 'attr': {'class': 'form-input'}}) }}
+                        {{ form_row(registrationForm.imageFile,{ 'attr': {'class': 'upload-box'}}) }}
                     </div>
                     <div class="form-group">
                         {{ form_row(registrationForm.password,{ 'attr': {'class': 'form-input'}}) }}
@@ -32,7 +31,7 @@
                     </div>
                 </div>
                 <p class="loginhere">
-                    Avez un compte <a href="#" class="loginhere-link">connectez vous ici</a>
+                    Avez un compte <a href="{{path('app_login')}}" class="loginhere-link">connectez vous ici</a>
                 </p>
 
             </div>

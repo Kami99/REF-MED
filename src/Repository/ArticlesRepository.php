@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
+use Doctrine\ORM\Query;
 use App\Entity\Articles;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Articles|null find($id, $lockMode = null, $lockVersion = null)
@@ -35,6 +36,23 @@ class ArticlesRepository extends ServiceEntityRepository
         ;
     }
     */
+
+        public function findAllVisibleQuery():Query
+    {
+        return $this->createQueryBuilder('a')
+            ->Where('a.visible = 1') 
+            ->getQuery()
+        ;
+    }
+    public function findPopularPost()
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.id', 'DESC')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 
     /*
     public function findOneBySomeField($value): ?Articles
