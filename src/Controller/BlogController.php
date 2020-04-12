@@ -56,7 +56,7 @@ class BlogController extends AbstractController
         
     }
     /**
-     * @Route("/home", name="homeBlog")
+     * @Route("/home", name="home")
      */
     public function index(Request $request, Security $security)
     {
@@ -78,7 +78,7 @@ class BlogController extends AbstractController
 
     
     /**
-     * @Route("/contactBlog", name="contactBlog")
+     * @Route("/contact", name="contact")
      */
     public function contactBlog()
     {

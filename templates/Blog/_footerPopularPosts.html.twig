@@ -20,7 +20,7 @@
                 <h5><a href="{{path('article.show', {id: postsPopular.id, slug:postsPopular.slug})}}">{{postsPopular.title}}</a></h5>
                 <section class="popular__meta">
                         <span class="popular__author"><span>By</span> <a href="{{path('article.show', {id: postsPopular.id, slug:postsPopular.slug})}}"> {{postsPopular.usersBlog}}</a></span>
-                    <span class="popular__date"><span>Poster le </span> <time datetime="">{{popularPosts.updatedAt|date("d-m-Y à H:i:s")}}</time></span>
+                    <span class="popular__date"><span>Poster le </span> <time datetime="">{{postsPopular.updatedAt|date("d-m-Y à H:i:s")}}</time></span>
                 </section>
             </article>
             {% endfor %}

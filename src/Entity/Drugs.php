@@ -22,11 +22,6 @@ class Drugs
     private $nameDrugs;
 
     /**
-     * @ORM\Column(type="float")
-     */
-    private $price;
-
-    /**
      * @ORM\Column(type="text")
      */
     private $consigne;
@@ -49,18 +44,6 @@ class Drugs
     public function setNameDrugs(string $nameDrugs): self
     {
         $this->nameDrugs = $nameDrugs;
-
-        return $this;
-    }
-
-    public function getPrice(): ?float
-    {
-        return $this->price;
-    }
-
-    public function setPrice(float $price): self
-    {
-        $this->price = $price;
 
         return $this;
     }

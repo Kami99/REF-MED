@@ -6,7 +6,7 @@
             <div class="header__content row">
 
                 <div class="header__logo">
-                    <a class="logo" href="{{path('homeBlog')}}">
+                    <a class="logo" href="{{path('home')}}">
                         <img src="{{asset('bower_components/images/logoRFMD.png')}}" alt="Homepage">
                     </a>
                 </div> <!-- end header__logo -->
@@ -54,14 +54,14 @@
                         {% set currentPath = path(app.request.attributes.get('_route'),
                        app.request.attributes.get('_route_params')) %}
    
-                        <li {% if currentPath == '/blog/home' %} class="current" {% endif %}><a href="{{path('homeBlog')}}" title="">Acceuil</a></li>
+                        <li {% if currentPath == '/blog/home' %} class="current" {% endif %}><a href="{{path('home')}}" title="">Acceuil</a></li>
                         <li {% if currentPath == '/blog/allPostCategory' %} class="current" {% endif %}>
                             <a href="{{path('allPostCategory')}}" title="Categories">Categories</a>
                         </li>
                         {% if app.user %}
                         <li {% if currentPath == '/blog/createPost' %} class="current" {% endif %}><a href="{{path('createPost')}}" title="Creer une Publication">Créer une nouvelle Publication  <i class="fa fa-edit"></i></a></li>
                         {% endif %}
-                        <li {% if currentPath == '/blog/contactBlog' %} class="current" {% endif %}><a href="{{path('contactBlog')}}" title="Contact">Contact</a></li>
+                        <li {% if currentPath == '/blog/contact' %} class="current" {% endif %}><a href="{{path('contact')}}" title="Contact">Contact</a></li>
                         {% if app.user %}
                         <ul class="nav navbar-nav navbar-right" style="margin: 0;">
                             <li class="dropdown" {% if currentPath == '/blog/home ' %} class="current" {% endif %}>
