@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:Core:create_button.html.twig */
+/* @SonataAdmin/Core/create_button.html.twig */
 class __TwigTemplate_c8ab48e407dce680c35bdfef69531c765dbadfce0ebb2fec5864b59b122754cf extends \Twig\Template
 {
     private $source;
@@ -38,12 +38,12 @@ class __TwigTemplate_c8ab48e407dce680c35bdfef69531c765dbadfce0ebb2fec5864b59b122
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:Core:create_button.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/Core/create_button.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:Core:create_button.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/Core/create_button.html.twig"));
 
-        $this->parent = $this->loadTemplate("@SonataAdmin/Button/create_button.html.twig", "SonataAdminBundle:Core:create_button.html.twig", 15);
+        $this->parent = $this->loadTemplate("@SonataAdmin/Button/create_button.html.twig", "@SonataAdmin/Core/create_button.html.twig", 15);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -55,7 +55,7 @@ class __TwigTemplate_c8ab48e407dce680c35bdfef69531c765dbadfce0ebb2fec5864b59b122
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:Core:create_button.html.twig";
+        return "@SonataAdmin/Core/create_button.html.twig";
     }
 
     public function isTraitable()
@@ -85,6 +85,6 @@ file that was distributed with this source code.
 {# This file is kept here for backward compatibility - Rather use @SonataAdmin/Button/create_button.html.twig #}
 
 {% extends '@SonataAdmin/Button/create_button.html.twig' %}
-", "SonataAdminBundle:Core:create_button.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\Core\\create_button.html.twig");
+", "@SonataAdmin/Core/create_button.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\Core\\create_button.html.twig");
     }
 }

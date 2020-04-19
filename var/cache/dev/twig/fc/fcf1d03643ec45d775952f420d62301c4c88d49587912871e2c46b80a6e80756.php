@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* EasyAdminBundle:page:blank.html.twig */
+/* @EasyAdmin/page/blank.html.twig */
 class __TwigTemplate_26a3dc3ec2bd9e9c9bb36c84eb150ef0846dbcb0d6a75d2104fd007b7cc68a74 extends \Twig\Template
 {
     private $source;
@@ -33,20 +33,20 @@ class __TwigTemplate_26a3dc3ec2bd9e9c9bb36c84eb150ef0846dbcb0d6a75d2104fd007b7cc
     protected function doGetParent(array $context)
     {
         // line 2
-        return $this->loadTemplate($this->extensions['EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension']->getBackendConfiguration("design.templates.layout"), "EasyAdminBundle:page:blank.html.twig", 2);
+        return $this->loadTemplate($this->extensions['EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension']->getBackendConfiguration("design.templates.layout"), "@EasyAdmin/page/blank.html.twig", 2);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:page:blank.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/page/blank.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:page:blank.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/page/blank.html.twig"));
 
         // line 1
-        $context["__internal_d904cdebdc593fd2998121657616d296f5c601364b86dd3047e9b1934085ce0d"] = $this->extensions['EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension']->getBackendConfiguration("translation_domain");
+        $context["__internal_b370ba3b31fe8a227c4658524cd558c2ebb0c69cdeccb6fc7c3c819c67fb7a59"] = $this->extensions['EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension']->getBackendConfiguration("translation_domain");
         // line 2
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -97,7 +97,7 @@ class __TwigTemplate_26a3dc3ec2bd9e9c9bb36c84eb150ef0846dbcb0d6a75d2104fd007b7cc
 
     public function getTemplateName()
     {
-        return "EasyAdminBundle:page:blank.html.twig";
+        return "@EasyAdmin/page/blank.html.twig";
     }
 
     public function isTraitable()
@@ -118,6 +118,6 @@ class __TwigTemplate_26a3dc3ec2bd9e9c9bb36c84eb150ef0846dbcb0d6a75d2104fd007b7cc
 {% block body_class 'page-blank' %}
 
 {% block content '' %}
-", "EasyAdminBundle:page:blank.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\page\\blank.html.twig");
+", "@EasyAdmin/page/blank.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\page\\blank.html.twig");
     }
 }

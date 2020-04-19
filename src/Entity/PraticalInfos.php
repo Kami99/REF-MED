@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PraticalInfosRepository")
@@ -22,6 +24,7 @@ class PraticalInfos
     private $infoName;
 
     /**
+     *  @Gedmo\Slug(fields={"infoName"})
      * @ORM\Column(type="string", length=255)
      */
     private $slug;

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataCoreBundle:Form:datepicker.html.twig */
+/* @SonataCore/Form/datepicker.html.twig */
 class __TwigTemplate_6b3dd24648a55f60330df7f89f5ef1243db99afbe8778008376a80a6a30a10d1 extends \Twig\Template
 {
     private $source;
@@ -41,10 +41,10 @@ class __TwigTemplate_6b3dd24648a55f60330df7f89f5ef1243db99afbe8778008376a80a6a30
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataCoreBundle:Form:datepicker.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataCore/Form/datepicker.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataCoreBundle:Form:datepicker.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataCore/Form/datepicker.html.twig"));
 
         // line 11
         $this->displayBlock('sonata_type_date_picker_widget_html', $context, $blocks);
@@ -394,7 +394,7 @@ class __TwigTemplate_6b3dd24648a55f60330df7f89f5ef1243db99afbe8778008376a80a6a30
 
     public function getTemplateName()
     {
-        return "SonataCoreBundle:Form:datepicker.html.twig";
+        return "@SonataCore/Form/datepicker.html.twig";
     }
 
     public function getDebugInfo()
@@ -503,6 +503,6 @@ file that was distributed with this source code.
     {% set endId = (form.children.end.vars.datepicker_use_button ? 'dp_' : '') ~ form.children.end.vars.id %}
     {{ block('sonata_type_datetime_range_script_block') }}
 {% endblock sonata_type_date_range_picker_widget %}
-", "SonataCoreBundle:Form:datepicker.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\core-bundle\\src\\CoreBundle\\Resources\\views\\Form\\datepicker.html.twig");
+", "@SonataCore/Form/datepicker.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\core-bundle\\src\\CoreBundle\\Resources\\views\\Form\\datepicker.html.twig");
     }
 }

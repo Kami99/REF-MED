@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:base_edit.html.twig */
+/* @SonataAdmin/CRUD/base_edit.html.twig */
 class __TwigTemplate_27fca01847e3f80396b944ed465c74b6b3834ba7b3e8c421f0a88908a12c7b87 extends \Twig\Template
 {
     private $source;
@@ -25,7 +25,7 @@ class __TwigTemplate_27fca01847e3f80396b944ed465c74b6b3834ba7b3e8c421f0a88908a12
         $this->source = $this->getSourceContext();
 
         // line 43
-        $_trait_0 = $this->loadTemplate("@SonataAdmin/CRUD/base_edit_form.html.twig", "SonataAdminBundle:CRUD:base_edit.html.twig", 43);
+        $_trait_0 = $this->loadTemplate("@SonataAdmin/CRUD/base_edit_form.html.twig", "@SonataAdmin/CRUD/base_edit.html.twig", 43);
         if (!$_trait_0->isTraitable()) {
             throw new RuntimeError('Template "'."@SonataAdmin/CRUD/base_edit_form.html.twig".'" cannot be used as a trait.', 43, $this->source);
         }
@@ -54,17 +54,17 @@ class __TwigTemplate_27fca01847e3f80396b944ed465c74b6b3834ba7b3e8c421f0a88908a12
     protected function doGetParent(array $context)
     {
         // line 12
-        return $this->loadTemplate((isset($context["base_template"]) || array_key_exists("base_template", $context) ? $context["base_template"] : (function () { throw new RuntimeError('Variable "base_template" does not exist.', 12, $this->source); })()), "SonataAdminBundle:CRUD:base_edit.html.twig", 12);
+        return $this->loadTemplate((isset($context["base_template"]) || array_key_exists("base_template", $context) ? $context["base_template"] : (function () { throw new RuntimeError('Variable "base_template" does not exist.', 12, $this->source); })()), "@SonataAdmin/CRUD/base_edit.html.twig", 12);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:base_edit.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/base_edit.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:base_edit.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/base_edit.html.twig"));
 
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -156,7 +156,7 @@ class __TwigTemplate_27fca01847e3f80396b944ed465c74b6b3834ba7b3e8c421f0a88908a12
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "actions"));
 
         // line 33
-        $this->loadTemplate("@SonataAdmin/CRUD/action_buttons.html.twig", "SonataAdminBundle:CRUD:base_edit.html.twig", 33)->display($context);
+        $this->loadTemplate("@SonataAdmin/CRUD/action_buttons.html.twig", "@SonataAdmin/CRUD/base_edit.html.twig", 33)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -210,7 +210,7 @@ class __TwigTemplate_27fca01847e3f80396b944ed465c74b6b3834ba7b3e8c421f0a88908a12
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:base_edit.html.twig";
+        return "@SonataAdmin/CRUD/base_edit.html.twig";
     }
 
     public function isTraitable()
@@ -272,6 +272,6 @@ file that was distributed with this source code.
 {% block form %}
     {{ block('parentForm') }}
 {% endblock %}
-", "SonataAdminBundle:CRUD:base_edit.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\base_edit.html.twig");
+", "@SonataAdmin/CRUD/base_edit.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\base_edit.html.twig");
     }
 }

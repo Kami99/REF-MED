@@ -1,0 +1,19 @@
+# config/packages/sonata_admin.yaml
+sonata_admin:
+    dashboard:
+        groups:
+            app.admin.group.content:
+                label: app.admin.group.content
+                label_catalogue: App
+                items:
+                    - app.admin.post
+
+            app.admin.group.blog:
+                items: ~
+                item_adds:
+                    - sonata.admin.page
+                roles: ['ROLE_ONE', 'ROLE_TWO']
+
+            app.admin.group.misc: ~
+      
+

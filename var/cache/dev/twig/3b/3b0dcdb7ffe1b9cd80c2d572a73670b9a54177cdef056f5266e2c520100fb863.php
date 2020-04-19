@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:list_array.html.twig */
+/* @SonataAdmin/CRUD/list_array.html.twig */
 class __TwigTemplate_ce19b2a99efff2fc219eeaea896e96e083c24679eb162d2aa0be20cf81b4d7d3 extends \Twig\Template
 {
     private $source;
@@ -32,20 +32,20 @@ class __TwigTemplate_ce19b2a99efff2fc219eeaea896e96e083c24679eb162d2aa0be20cf81b
     protected function doGetParent(array $context)
     {
         // line 13
-        return $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getAdminTemplate("base_list_field", twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 13, $this->source); })()), "code", [], "any", false, false, false, 13)), "SonataAdminBundle:CRUD:list_array.html.twig", 13);
+        return $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getAdminTemplate("base_list_field", twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 13, $this->source); })()), "code", [], "any", false, false, false, 13)), "@SonataAdmin/CRUD/list_array.html.twig", 13);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_array.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list_array.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_array.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list_array.html.twig"));
 
         // line 11
-        $macros["list"] = $this->macros["list"] = $this->loadTemplate("@SonataAdmin/CRUD/base_array_macro.html.twig", "SonataAdminBundle:CRUD:list_array.html.twig", 11)->unwrap();
+        $macros["list"] = $this->macros["list"] = $this->loadTemplate("@SonataAdmin/CRUD/base_array_macro.html.twig", "@SonataAdmin/CRUD/list_array.html.twig", 11)->unwrap();
         // line 13
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -81,7 +81,7 @@ class __TwigTemplate_ce19b2a99efff2fc219eeaea896e96e083c24679eb162d2aa0be20cf81b
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:list_array.html.twig";
+        return "@SonataAdmin/CRUD/list_array.html.twig";
     }
 
     public function isTraitable()
@@ -113,6 +113,6 @@ file that was distributed with this source code.
 {% block field %}
     {{ list.render_array(value, field_description.options.inline is not defined or field_description.options.inline) }}
 {% endblock %}
-", "SonataAdminBundle:CRUD:list_array.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list_array.html.twig");
+", "@SonataAdmin/CRUD/list_array.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list_array.html.twig");
     }
 }

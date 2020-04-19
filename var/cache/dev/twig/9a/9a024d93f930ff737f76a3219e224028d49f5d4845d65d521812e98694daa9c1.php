@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* FOSCKEditorBundle:Form:ckeditor_widget.html.twig */
+/* @FOSCKEditor/Form/ckeditor_widget.html.twig */
 class __TwigTemplate_787709abfdc5a1fa17dd98a5d4d8230b90334515b18e8adb0d116f63719a0d7e extends \Twig\Template
 {
     private $source;
@@ -38,10 +38,10 @@ class __TwigTemplate_787709abfdc5a1fa17dd98a5d4d8230b90334515b18e8adb0d116f63719
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FOSCKEditorBundle:Form:ckeditor_widget.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@FOSCKEditor/Form/ckeditor_widget.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FOSCKEditorBundle:Form:ckeditor_widget.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@FOSCKEditor/Form/ckeditor_widget.html.twig"));
 
         // line 1
         $this->displayBlock('ckeditor_widget', $context, $blocks);
@@ -295,7 +295,7 @@ class __TwigTemplate_787709abfdc5a1fa17dd98a5d4d8230b90334515b18e8adb0d116f63719
 
     public function getTemplateName()
     {
-        return "FOSCKEditorBundle:Form:ckeditor_widget.html.twig";
+        return "@FOSCKEditor/Form/ckeditor_widget.html.twig";
     }
 
     public function getDebugInfo()
@@ -370,6 +370,6 @@ class __TwigTemplate_787709abfdc5a1fa17dd98a5d4d8230b90334515b18e8adb0d116f63719
         {% endif %}
     </script>
 {% endblock %}
-", "FOSCKEditorBundle:Form:ckeditor_widget.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\friendsofsymfony\\ckeditor-bundle\\src\\Resources\\views\\Form\\ckeditor_widget.html.twig");
+", "@FOSCKEditor/Form/ckeditor_widget.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\friendsofsymfony\\ckeditor-bundle\\src\\Resources\\views\\Form\\ckeditor_widget.html.twig");
     }
 }

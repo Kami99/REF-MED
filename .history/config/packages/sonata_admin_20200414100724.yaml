@@ -1,0 +1,43 @@
+# config/packages/sonata_admin.yaml
+sonata_admin:
+    title: 'REF-MED ADMINSTRATION'
+    dashboard:
+        blocks:
+            -
+                class:    col-lg-3 col-xs-6          # twitter bootstrap responsive code
+                position: top                        # zone in the dashboard
+                type:     sonata.admin.block.stats   # block id
+                settings:
+                    code:  language   # admin code - service id
+                    icon:  fa-magic                  # font awesome icon
+                    text:  app.page.stats            # static text or translation message
+                    color: bg-yellow                 # colors: bg-green, bg-red and bg-aqua
+                    filters:                         # filter values
+                        edited: { value: 1 }
+            -
+                class:    col-lg-3 col-xs-6          # twitter bootstrap responsive code
+                position: top                        # zone in the dashboard
+                type:     sonata.admin.block.stats   # block id
+                settings:
+                    code:  SocialNetwork    # admin code - service id
+                    icon:  fa-magic                  # font awesome icon
+                    text:  app.page.stats            # static text or translation message
+                    color: bg-yellow                 # colors: bg-green, bg-red and bg-aqua
+                    filters:                         # filter values
+                        edited: { value: 1 }
+            -
+                class:    col-lg-3 col-xs-6          # twitter bootstrap responsive code
+                position: top                        # zone in the dashboard
+                type:     sonata.admin.block.stats   # block id
+                settings:
+                    code:  admin.category_drugs    # admin code - service id
+                    icon:  fa-magic                  # font awesome icon
+                    text:  app.page.stats            # static text or translation message
+                    color: bg-yellow                 # colors: bg-green, bg-red and bg-aqua
+                    filters:                         # filter values
+                        edited: { value: 1 }
+
+
+
+
+

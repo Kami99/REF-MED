@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* FMElfinderBundle:Form:elfinder_widget.html.twig */
+/* @FMElfinder/Form/elfinder_widget.html.twig */
 class __TwigTemplate_1431e4b303235e6a53cc3511eb5f84f4a421b3363efa2e4c45d5196884616de2 extends \Twig\Template
 {
     private $source;
@@ -35,10 +35,10 @@ class __TwigTemplate_1431e4b303235e6a53cc3511eb5f84f4a421b3363efa2e4c45d51968846
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FMElfinderBundle:Form:elfinder_widget.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@FMElfinder/Form/elfinder_widget.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FMElfinderBundle:Form:elfinder_widget.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@FMElfinder/Form/elfinder_widget.html.twig"));
 
         // line 1
         $this->displayBlock('elfinder_widget', $context, $blocks);
@@ -116,7 +116,7 @@ class __TwigTemplate_1431e4b303235e6a53cc3511eb5f84f4a421b3363efa2e4c45d51968846
 
     public function getTemplateName()
     {
-        return "FMElfinderBundle:Form:elfinder_widget.html.twig";
+        return "@FMElfinder/Form/elfinder_widget.html.twig";
     }
 
     public function getDebugInfo()
@@ -154,6 +154,6 @@ class __TwigTemplate_1431e4b303235e6a53cc3511eb5f84f4a421b3363efa2e4c45d51968846
         </script>
     {% endif %}
 {% endblock %}
-", "FMElfinderBundle:Form:elfinder_widget.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\helios-ag\\fm-elfinder-bundle\\src\\Resources\\views\\Form\\elfinder_widget.html.twig");
+", "@FMElfinder/Form/elfinder_widget.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\helios-ag\\fm-elfinder-bundle\\src\\Resources\\views\\Form\\elfinder_widget.html.twig");
     }
 }

@@ -16,3 +16,8 @@ framework:
     #fragments: true
     php_errors:
         log: true
+    
+    default_locale: '%locale%'
+    translator:
+        fallbacks:
+            - '%locale%'

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* EasyAdminBundle:default/includes:_filters_modal.html.twig */
+/* @EasyAdmin/default/includes/_filters_modal.html.twig */
 class __TwigTemplate_1598bac2c7b5bb2d7d35253a183fec36775b897ed446a78532a36a38e99799c2 extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_1598bac2c7b5bb2d7d35253a183fec36775b897ed446a78532a36a38e99
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default/includes:_filters_modal.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/includes/_filters_modal.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default/includes:_filters_modal.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/includes/_filters_modal.html.twig"));
 
         // line 1
         echo "<div id=\"modal-filters\" class=\"modal fade\">
@@ -101,7 +101,7 @@ class __TwigTemplate_1598bac2c7b5bb2d7d35253a183fec36775b897ed446a78532a36a38e99
 
     public function getTemplateName()
     {
-        return "EasyAdminBundle:default/includes:_filters_modal.html.twig";
+        return "@EasyAdmin/default/includes/_filters_modal.html.twig";
     }
 
     public function isTraitable()
@@ -155,6 +155,6 @@ class __TwigTemplate_1598bac2c7b5bb2d7d35253a183fec36775b897ed446a78532a36a38e99
         filterModal.querySelector('form').submit();
     });
 </script>
-", "EasyAdminBundle:default/includes:_filters_modal.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\includes\\_filters_modal.html.twig");
+", "@EasyAdmin/default/includes/_filters_modal.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\includes\\_filters_modal.html.twig");
     }
 }

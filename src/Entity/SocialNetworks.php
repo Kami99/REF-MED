@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SocialNetworksRepository")
@@ -17,6 +18,7 @@ class SocialNetworks
     private $id;
 
     /**
+     * 
      * @ORM\Column(type="string", length=255)
      */
     private $socialName;
@@ -32,6 +34,8 @@ class SocialNetworks
     private $links;
 
     /**
+     * @Gedmo\Slug(fields={"socialName"})
+     * 
      * @ORM\Column(type="string", length=255)
      */
     private $slug;

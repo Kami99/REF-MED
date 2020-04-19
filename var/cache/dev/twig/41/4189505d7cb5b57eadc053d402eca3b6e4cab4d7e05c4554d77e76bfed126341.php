@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:tree.html.twig */
+/* @SonataAdmin/CRUD/tree.html.twig */
 class __TwigTemplate_03c0a0f80f28b5f685c3735fecb76dacdc4ecdfa8da635631bc0f0e1c6cce7dc extends \Twig\Template
 {
     private $source;
@@ -41,15 +41,15 @@ class __TwigTemplate_03c0a0f80f28b5f685c3735fecb76dacdc4ecdfa8da635631bc0f0e1c6c
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:tree.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/tree.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:tree.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/tree.html.twig"));
 
         // line 18
         $macros["tree"] = $this->macros["tree"] = $this;
         // line 16
-        $this->parent = $this->loadTemplate("@SonataAdmin/CRUD/base_list.html.twig", "SonataAdminBundle:CRUD:tree.html.twig", 16);
+        $this->parent = $this->loadTemplate("@SonataAdmin/CRUD/base_list.html.twig", "@SonataAdmin/CRUD/tree.html.twig", 16);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -71,7 +71,7 @@ class __TwigTemplate_03c0a0f80f28b5f685c3735fecb76dacdc4ecdfa8da635631bc0f0e1c6c
 
         // line 41
         echo "    ";
-        $this->loadTemplate("@SonataAdmin/CRUD/list_tab_menu.html.twig", "SonataAdminBundle:CRUD:tree.html.twig", 41)->display(twig_to_array(["mode" => "tree", "action" =>         // line 43
+        $this->loadTemplate("@SonataAdmin/CRUD/list_tab_menu.html.twig", "@SonataAdmin/CRUD/tree.html.twig", 41)->display(twig_to_array(["mode" => "tree", "action" =>         // line 43
 (isset($context["action"]) || array_key_exists("action", $context) ? $context["action"] : (function () { throw new RuntimeError('Variable "action" does not exist.', 43, $this->source); })()), "admin" =>         // line 44
 (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 44, $this->source); })())]));
         
@@ -260,7 +260,7 @@ class __TwigTemplate_03c0a0f80f28b5f685c3735fecb76dacdc4ecdfa8da635631bc0f0e1c6c
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:tree.html.twig";
+        return "@SonataAdmin/CRUD/tree.html.twig";
     }
 
     public function isTraitable()
@@ -355,6 +355,6 @@ file that was distributed with this source code.
         </div>
     </div>
 {% endblock %}
-", "SonataAdminBundle:CRUD:tree.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\tree.html.twig");
+", "@SonataAdmin/CRUD/tree.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\tree.html.twig");
     }
 }

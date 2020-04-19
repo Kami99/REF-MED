@@ -66,10 +66,10 @@ class UsersBlog extends \App\Entity\UsersBlog implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug'];
     }
 
     /**
@@ -405,6 +405,28 @@ class UsersBlog extends \App\Entity\UsersBlog implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeCommentaire', [$commentaire]);
 
         return parent::removeCommentaire($commentaire);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSlug(): ?string
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSlug', []);
+
+        return parent::getSlug();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setSlug(string $slug): \App\Entity\UsersBlog
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSlug', [$slug]);
+
+        return parent::setSlug($slug);
     }
 
     /**

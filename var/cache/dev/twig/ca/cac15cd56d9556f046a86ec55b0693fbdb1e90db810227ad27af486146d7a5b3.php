@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* EasyAdminBundle:default:field_country.html.twig */
+/* @EasyAdmin/default/field_country.html.twig */
 class __TwigTemplate_b581b1392aa496ae8c9f578fd7dec9f1088f8b1f8f04733624aa5d6ae24f0e3a extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_b581b1392aa496ae8c9f578fd7dec9f1088f8b1f8f04733624aa5d6ae24
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default:field_country.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/field_country.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default:field_country.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/field_country.html.twig"));
 
         // line 1
         if (((((twig_get_attribute($this->env, $this->source, ($context["field_options"] ?? null), "with_flag", [], "any", true, true, false, 1) &&  !(null === twig_get_attribute($this->env, $this->source, ($context["field_options"] ?? null), "with_flag", [], "any", false, false, false, 1)))) ? (twig_get_attribute($this->env, $this->source, ($context["field_options"] ?? null), "with_flag", [], "any", false, false, false, 1)) : (true)) &&  !(null === (isset($context["country_name"]) || array_key_exists("country_name", $context) ? $context["country_name"] : (function () { throw new RuntimeError('Variable "country_name" does not exist.', 1, $this->source); })())))) {
@@ -75,7 +75,7 @@ class __TwigTemplate_b581b1392aa496ae8c9f578fd7dec9f1088f8b1f8f04733624aa5d6ae24
 
     public function getTemplateName()
     {
-        return "EasyAdminBundle:default:field_country.html.twig";
+        return "@EasyAdmin/default/field_country.html.twig";
     }
 
     public function isTraitable()
@@ -99,6 +99,6 @@ class __TwigTemplate_b581b1392aa496ae8c9f578fd7dec9f1088f8b1f8f04733624aa5d6ae24
 {% if country_name is null %}
     {{ include(entity_config.templates.label_null) }}
 {% endif %}
-", "EasyAdminBundle:default:field_country.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\field_country.html.twig");
+", "@EasyAdmin/default/field_country.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\field_country.html.twig");
     }
 }

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:Pager:base_links.html.twig */
+/* @SonataAdmin/Pager/base_links.html.twig */
 class __TwigTemplate_88a253b07fb7a134161a194bde4229bddfa2bccec452e44e928bf83e329655ce extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_88a253b07fb7a134161a194bde4229bddfa2bccec452e44e928bf83e329
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:Pager:base_links.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/Pager/base_links.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:Pager:base_links.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/Pager/base_links.html.twig"));
 
         // line 11
         echo "
@@ -140,7 +140,7 @@ class __TwigTemplate_88a253b07fb7a134161a194bde4229bddfa2bccec452e44e928bf83e329
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:Pager:base_links.html.twig";
+        return "@SonataAdmin/Pager/base_links.html.twig";
     }
 
     public function isTraitable()
@@ -194,6 +194,6 @@ file that was distributed with this source code.
         {% endif %}
     </ul>
 </div>
-", "SonataAdminBundle:Pager:base_links.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\Pager\\base_links.html.twig");
+", "@SonataAdmin/Pager/base_links.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\Pager\\base_links.html.twig");
     }
 }

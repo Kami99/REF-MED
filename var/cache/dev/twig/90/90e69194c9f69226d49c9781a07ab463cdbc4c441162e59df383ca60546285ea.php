@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:Form/Type:sonata_type_model_autocomplete.html.twig */
+/* @SonataAdmin/Form/Type/sonata_type_model_autocomplete.html.twig */
 class __TwigTemplate_2388bbfe84f7d2e4b3166f50db3f817af3c6e3d47fa5c7496a256ea04110c8cc extends \Twig\Template
 {
     private $source;
@@ -37,10 +37,10 @@ class __TwigTemplate_2388bbfe84f7d2e4b3166f50db3f817af3c6e3d47fa5c7496a256ea0411
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:Form/Type:sonata_type_model_autocomplete.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/Form/Type/sonata_type_model_autocomplete.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:Form/Type:sonata_type_model_autocomplete.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/Form/Type/sonata_type_model_autocomplete.html.twig"));
 
         // line 11
         ob_start();
@@ -184,10 +184,10 @@ class __TwigTemplate_2388bbfe84f7d2e4b3166f50db3f817af3c6e3d47fa5c7496a256ea0411
                 </a>
                 ";
                 // line 53
-                $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_modal.html.twig", "SonataAdminBundle:Form/Type:sonata_type_model_autocomplete.html.twig", 53)->display($context);
+                $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_modal.html.twig", "@SonataAdmin/Form/Type/sonata_type_model_autocomplete.html.twig", 53)->display($context);
                 // line 54
                 echo "                ";
-                $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_script.html.twig", "SonataAdminBundle:Form/Type:sonata_type_model_autocomplete.html.twig", 54)->display($context);
+                $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_script.html.twig", "@SonataAdmin/Form/Type/sonata_type_model_autocomplete.html.twig", 54)->display($context);
                 // line 55
                 echo "            ";
             }
@@ -779,7 +779,7 @@ class __TwigTemplate_2388bbfe84f7d2e4b3166f50db3f817af3c6e3d47fa5c7496a256ea0411
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:Form/Type:sonata_type_model_autocomplete.html.twig";
+        return "@SonataAdmin/Form/Type/sonata_type_model_autocomplete.html.twig";
     }
 
     public function isTraitable()
@@ -1117,6 +1117,6 @@ file that was distributed with this source code.
         {% endautoescape %}
     </script>
 {% endapply %}
-", "SonataAdminBundle:Form/Type:sonata_type_model_autocomplete.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\Form\\Type\\sonata_type_model_autocomplete.html.twig");
+", "@SonataAdmin/Form/Type/sonata_type_model_autocomplete.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\Form\\Type\\sonata_type_model_autocomplete.html.twig");
     }
 }

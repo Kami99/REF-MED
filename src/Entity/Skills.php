@@ -26,6 +26,11 @@ class Skills
      */
     private $percentSkills;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $enable;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -51,6 +56,18 @@ class Skills
     public function setPercentSkills(int $percentSkills): self
     {
         $this->percentSkills = $percentSkills;
+
+        return $this;
+    }
+
+    public function getEnable(): ?bool
+    {
+        return $this->enable;
+    }
+
+    public function setEnable(bool $enable): self
+    {
+        $this->enable = $enable;
 
         return $this;
     }

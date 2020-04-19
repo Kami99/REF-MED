@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:show_html.html.twig */
+/* @SonataAdmin/CRUD/show_html.html.twig */
 class __TwigTemplate_5f519ba9dc08e8c827cc2f17aad85123562292c2cd42c46220bec7d481e45d1a extends \Twig\Template
 {
     private $source;
@@ -39,12 +39,12 @@ class __TwigTemplate_5f519ba9dc08e8c827cc2f17aad85123562292c2cd42c46220bec7d481e
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:show_html.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/show_html.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:show_html.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/show_html.html.twig"));
 
-        $this->parent = $this->loadTemplate("@SonataAdmin/CRUD/base_show_field.html.twig", "SonataAdminBundle:CRUD:show_html.html.twig", 1);
+        $this->parent = $this->loadTemplate("@SonataAdmin/CRUD/base_show_field.html.twig", "@SonataAdmin/CRUD/show_html.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -82,7 +82,7 @@ class __TwigTemplate_5f519ba9dc08e8c827cc2f17aad85123562292c2cd42c46220bec7d481e
                 if (twig_get_attribute($this->env, $this->source, ($context["truncate"] ?? null), "preserve", [], "any", true, true, false, 10)) {
                     // line 11
                     echo "                ";
-                    @trigger_error("The \"truncate.preserve\" option is deprecated since sonata-project/admin-bundle 3.x, to be removed in 4.0. Use \"truncate.cut\" instead."." (\"SonataAdminBundle:CRUD:show_html.html.twig\" at line 11).", E_USER_DEPRECATED);
+                    @trigger_error("The \"truncate.preserve\" option is deprecated since sonata-project/admin-bundle 3.x, to be removed in 4.0. Use \"truncate.cut\" instead."." (\"@SonataAdmin/CRUD/show_html.html.twig\" at line 11).", E_USER_DEPRECATED);
                     // line 12
                     echo "            ";
                 }
@@ -94,7 +94,7 @@ class __TwigTemplate_5f519ba9dc08e8c827cc2f17aad85123562292c2cd42c46220bec7d481e
                 if (twig_get_attribute($this->env, $this->source, ($context["truncate"] ?? null), "separator", [], "any", true, true, false, 14)) {
                     // line 15
                     echo "                ";
-                    @trigger_error("The \"truncate.separator\" option is deprecated since sonata-project/admin-bundle 3.x, to be removed in 4.0. Use \"truncate.ellipsis\" instead."." (\"SonataAdminBundle:CRUD:show_html.html.twig\" at line 15).", E_USER_DEPRECATED);
+                    @trigger_error("The \"truncate.separator\" option is deprecated since sonata-project/admin-bundle 3.x, to be removed in 4.0. Use \"truncate.ellipsis\" instead."." (\"@SonataAdmin/CRUD/show_html.html.twig\" at line 15).", E_USER_DEPRECATED);
                     // line 16
                     echo "            ";
                 }
@@ -128,7 +128,7 @@ class __TwigTemplate_5f519ba9dc08e8c827cc2f17aad85123562292c2cd42c46220bec7d481e
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:show_html.html.twig";
+        return "@SonataAdmin/CRUD/show_html.html.twig";
     }
 
     public function isTraitable()
@@ -169,6 +169,6 @@ class __TwigTemplate_5f519ba9dc08e8c827cc2f17aad85123562292c2cd42c46220bec7d481e
         {% endif %}
     {% endif %}
 {% endblock %}
-", "SonataAdminBundle:CRUD:show_html.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\show_html.html.twig");
+", "@SonataAdmin/CRUD/show_html.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\show_html.html.twig");
     }
 }

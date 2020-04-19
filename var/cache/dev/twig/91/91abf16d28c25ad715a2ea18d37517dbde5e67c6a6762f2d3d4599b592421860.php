@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataDatagridBundle:Search:pager.html.twig */
+/* @SonataDatagrid/Search/pager.html.twig */
 class __TwigTemplate_236845e975b029bee607e7a19b581a9a195981c22a3ecfb6a16602ab4f9b04aa extends \Twig\Template
 {
     private $source;
@@ -35,10 +35,10 @@ class __TwigTemplate_236845e975b029bee607e7a19b581a9a195981c22a3ecfb6a16602ab4f9
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDatagridBundle:Search:pager.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDatagrid/Search/pager.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDatagridBundle:Search:pager.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDatagrid/Search/pager.html.twig"));
 
         // line 11
         echo "
@@ -165,7 +165,7 @@ class __TwigTemplate_236845e975b029bee607e7a19b581a9a195981c22a3ecfb6a16602ab4f9
 
     public function getTemplateName()
     {
-        return "SonataDatagridBundle:Search:pager.html.twig";
+        return "@SonataDatagrid/Search/pager.html.twig";
     }
 
     public function getDebugInfo()
@@ -213,6 +213,6 @@ file that was distributed with this source code.
             <li><a href=\"{{ url(app.request.attributes.get('_route'), app.request.query.all|merge({page: datagrid.pager.lastpage})) }}\" title=\"{{ 'link_last_pager'|trans({}, 'SonataDatagridBundle') }}\">&raquo;</a></li>
         {% endif %}
     </ul>
-{% endblock %}", "SonataDatagridBundle:Search:pager.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\datagrid-bundle\\src\\Resources\\views\\Search\\pager.html.twig");
+{% endblock %}", "@SonataDatagrid/Search/pager.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\datagrid-bundle\\src\\Resources\\views\\Search\\pager.html.twig");
     }
 }

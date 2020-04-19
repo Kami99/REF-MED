@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* FMElfinderBundle:Elfinder:tinymce.html.twig */
+/* @FMElfinder/Elfinder/tinymce.html.twig */
 class __TwigTemplate_a5f56a50b34e6379c12abe766dff1128b1be54bca85ee990df14a42fe5021d6e extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_a5f56a50b34e6379c12abe766dff1128b1be54bca85ee990df14a42fe50
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FMElfinderBundle:Elfinder:tinymce.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@FMElfinder/Elfinder/tinymce.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "FMElfinderBundle:Elfinder:tinymce.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@FMElfinder/Elfinder/tinymce.html.twig"));
 
         // line 1
         echo "<!DOCTYPE html>
@@ -172,7 +172,7 @@ class __TwigTemplate_a5f56a50b34e6379c12abe766dff1128b1be54bca85ee990df14a42fe50
 
     public function getTemplateName()
     {
-        return "FMElfinderBundle:Elfinder:tinymce.html.twig";
+        return "@FMElfinder/Elfinder/tinymce.html.twig";
     }
 
     public function isTraitable()
@@ -293,6 +293,6 @@ class __TwigTemplate_a5f56a50b34e6379c12abe766dff1128b1be54bca85ee990df14a42fe50
 <div id=\"elfinder\"></div>
 
 </body>
-</html>", "FMElfinderBundle:Elfinder:tinymce.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\helios-ag\\fm-elfinder-bundle\\src\\Resources\\views\\Elfinder\\tinymce.html.twig");
+</html>", "@FMElfinder/Elfinder/tinymce.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\helios-ag\\fm-elfinder-bundle\\src\\Resources\\views\\Elfinder\\tinymce.html.twig");
     }
 }

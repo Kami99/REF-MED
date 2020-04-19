@@ -1,0 +1,29 @@
+# config/packages/sonata_admin.yaml
+sonata_admin:
+    title: 'REF-MED ADMINSTRATION'
+    dashboard:
+        blocks:
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [Gestion_pharmarcy, Gestion_Doctor, Gestion_Laboratoire]
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [sonata_page3]
+
+        groups:
+            Gestion_pharmarcy:
+                items:
+                    - sonata.page.admin.myitem1
+
+            Gestion_Doctor:
+                items:
+                    - sonata.page.admin.myitem2
+                    - sonata.page.admin.myitem3
+
+            sonata_page3:
+                items:
+                    - sonata.page.admin.myitem4

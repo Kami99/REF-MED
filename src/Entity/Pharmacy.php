@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PharmacyRepository")
@@ -32,11 +34,13 @@ class Pharmacy
     private $picture;
 
     /**
+     * @Gedmo\Slug(fields={"pharmacyName"})
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
 
     /**
+     * 
      * @ORM\Column(type="boolean")
      */
     private $enable;

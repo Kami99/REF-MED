@@ -70,6 +70,12 @@ class UsersBlog extends Users
      * @ORM\OneToMany(targetEntity="App\Entity\Commentaires", mappedBy="usersBlog", orphanRemoval=true)
      */
     private $commentaires;
+
+    /**
+     * @Gedmo\Slug(fields={"pseudo"})
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
     public function __construct()
     {
         $this->articles = new ArrayCollection();
@@ -247,6 +253,18 @@ class UsersBlog extends Users
                 $commentaire->setUsersBlog(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
