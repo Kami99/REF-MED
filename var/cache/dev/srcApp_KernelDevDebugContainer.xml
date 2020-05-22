@@ -25,7 +25,6 @@
       <parameter key="VichUploaderBundle">Vich\UploaderBundle\VichUploaderBundle</parameter>
       <parameter key="EasyAdminBundle">EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle</parameter>
       <parameter key="LiipImagineBundle">Liip\ImagineBundle\LiipImagineBundle</parameter>
-      <parameter key="FMElfinderBundle">FM\ElfinderBundle\FMElfinderBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
       <parameter key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
@@ -101,10 +100,6 @@
         <parameter key="path">C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\liip\imagine-bundle</parameter>
         <parameter key="namespace">Liip\ImagineBundle</parameter>
       </parameter>
-      <parameter key="FMElfinderBundle" type="collection">
-        <parameter key="path">C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\helios-ag\fm-elfinder-bundle\src</parameter>
-        <parameter key="namespace">FM\ElfinderBundle</parameter>
-      </parameter>
       <parameter key="KnpPaginatorBundle" type="collection">
         <parameter key="path">C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\knplabs\knp-paginator-bundle</parameter>
         <parameter key="namespace">Knp\Bundle\PaginatorBundle</parameter>
@@ -148,6 +143,9 @@
     <parameter key="container.dumper.inline_factories">true</parameter>
     <parameter key="locale">fr</parameter>
     <parameter key="app.path.avatar">/uploads/images/avatar</parameter>
+    <parameter key="app.path.profile">/uploads/images/doctor</parameter>
+    <parameter key="app.path.laboratory">/uploads/images/laboratory</parameter>
+    <parameter key="app.path.pharmacy">/uploads/images/pharmacy</parameter>
     <parameter key="app.path.featured">/uploads/images/featured</parameter>
     <parameter key="app.path.categories">/uploads/images/categories</parameter>
     <parameter key="fragment.renderer.hinclude.global_template">null</parameter>
@@ -212,7 +210,29 @@
     <parameter key="stof_doctrine_extensions.listener.reference_integrity.class">Gedmo\ReferenceIntegrity\ReferenceIntegrityListener</parameter>
     <parameter key="security.authentication.trust_resolver.anonymous_class">null</parameter>
     <parameter key="security.authentication.trust_resolver.rememberme_class">null</parameter>
-    <parameter key="security.role_hierarchy.roles" type="collection"/>
+    <parameter key="security.role_hierarchy.roles" type="collection">
+      <parameter key="ROLE_ADMIN" type="collection">
+        <parameter>ROLE_USER</parameter>
+      </parameter>
+      <parameter key="ROLE_SUPER_ADMIN" type="collection">
+        <parameter>ROLE_ADMIN</parameter>
+      </parameter>
+      <parameter key="ROLE_USER_BLOG" type="collection">
+        <parameter>ROLE_USER</parameter>
+      </parameter>
+      <parameter key="ROLE_USER_LABORATORY" type="collection">
+        <parameter>ROLE_USER</parameter>
+      </parameter>
+      <parameter key="ROLE_USER_PHARMACY" type="collection">
+        <parameter>ROLE_USER</parameter>
+      </parameter>
+      <parameter key="ROLE_USER_DOCTOR" type="collection">
+        <parameter>ROLE_USER</parameter>
+      </parameter>
+      <parameter key="ROLE_MODO" type="collection">
+        <parameter>ROLE_USER</parameter>
+      </parameter>
+    </parameter>
     <parameter key="security.access.denied_url">null</parameter>
     <parameter key="security.authentication.manager.erase_credentials">true</parameter>
     <parameter key="security.authentication.session_strategy.strategy">migrate</parameter>
@@ -220,7 +240,6 @@
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="twig.exception_listener.controller">null</parameter>
     <parameter key="twig.form.resources" type="collection">
-      <parameter>@FMElfinder/Form/elfinder_widget.html.twig</parameter>
       <parameter>@VichUploader/Form/fields.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@FOSCKEditor/Form/ckeditor_widget.html.twig</parameter>
@@ -266,7 +285,7 @@
     <parameter key="doctrine.orm.cache.xcache.class">Doctrine\Common\Cache\XcacheCache</parameter>
     <parameter key="doctrine.orm.cache.wincache.class">Doctrine\Common\Cache\WinCacheCache</parameter>
     <parameter key="doctrine.orm.cache.zenddata.class">Doctrine\Common\Cache\ZendDataCache</parameter>
-    <parameter key="doctrine.orm.metadata.driver_chain.class">Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain</parameter>
+    <parameter key="doctrine.orm.metadata.driver_chain.class">Doctrine\Persistence\Mapping\Driver\MappingDriverChain</parameter>
     <parameter key="doctrine.orm.metadata.annotation.class">Doctrine\ORM\Mapping\Driver\AnnotationDriver</parameter>
     <parameter key="doctrine.orm.metadata.xml.class">Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver</parameter>
     <parameter key="doctrine.orm.metadata.yml.class">Doctrine\ORM\Mapping\Driver\SimplifiedYamlDriver</parameter>
@@ -366,6 +385,54 @@
           <parameter key="options" type="collection"/>
         </parameter>
         <parameter key="upload_destination">C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED/public//uploads/images/categories</parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
+      <parameter key="pictureProfile" type="collection">
+        <parameter key="uri_prefix">/uploads/images/doctor</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\UniqidNamer.pictureProfile</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="upload_destination">C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED/public//uploads/images/doctor</parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
+      <parameter key="laboratoryPicture" type="collection">
+        <parameter key="uri_prefix">/uploads/images/laboratory</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\UniqidNamer.laboratoryPicture</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="upload_destination">C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED/public//uploads/images/doctor</parameter>
+        <parameter key="directory_namer" type="collection">
+          <parameter key="service">null</parameter>
+          <parameter key="options">null</parameter>
+        </parameter>
+        <parameter key="delete_on_remove">true</parameter>
+        <parameter key="delete_on_update">true</parameter>
+        <parameter key="inject_on_load">false</parameter>
+        <parameter key="db_driver">orm</parameter>
+      </parameter>
+      <parameter key="pharmacyPicture" type="collection">
+        <parameter key="uri_prefix">/uploads/images/pharmacy</parameter>
+        <parameter key="namer" type="collection">
+          <parameter key="service">Vich\UploaderBundle\Naming\UniqidNamer.pharmacyPicture</parameter>
+          <parameter key="options" type="collection"/>
+        </parameter>
+        <parameter key="upload_destination">C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED/public//uploads/images/doctor</parameter>
         <parameter key="directory_namer" type="collection">
           <parameter key="service">null</parameter>
           <parameter key="options">null</parameter>
@@ -831,158 +898,11 @@
     <parameter key="liip_imagine.binary.loader.default">default</parameter>
     <parameter key="liip_imagine.controller.filter_action">Liip\ImagineBundle\Controller\ImagineController::filterAction</parameter>
     <parameter key="liip_imagine.controller.filter_runtime_action">Liip\ImagineBundle\Controller\ImagineController::filterRuntimeAction</parameter>
-    <parameter key="fm_elfinder.loader">FM\ElfinderBundle\Loader\ElFinderLoader</parameter>
-    <parameter key="fm_elfinder.configurator">FM\ElfinderBundle\Configuration\ElFinderConfigurationReader</parameter>
-    <parameter key="elfinder.form.type.class">FM\ElfinderBundle\Form\Type\ElFinderType</parameter>
-    <parameter key="fm_elfinder" type="collection">
-      <parameter key="assets_path">/assets</parameter>
-      <parameter key="instances" type="collection">
-        <parameter key="default" type="collection">
-          <parameter key="locale">fr</parameter>
-          <parameter key="editor">ckeditor</parameter>
-          <parameter key="fullscreen">true</parameter>
-          <parameter key="theme">smoothness</parameter>
-          <parameter key="connector" type="collection">
-            <parameter key="debug">false</parameter>
-            <parameter key="roots" type="collection">
-              <parameter key="uploads" type="collection">
-                <parameter key="driver">LocalFileSystem</parameter>
-                <parameter key="path">uploads/images</parameter>
-                <parameter key="upload_allow" type="collection">
-                  <parameter>image/png</parameter>
-                  <parameter>image/jpg</parameter>
-                  <parameter>image/jpeg</parameter>
-                </parameter>
-                <parameter key="upload_deny" type="collection">
-                  <parameter>all</parameter>
-                </parameter>
-                <parameter key="upload_max_size">2M</parameter>
-                <parameter key="volume_id">0</parameter>
-                <parameter key="autoload">false</parameter>
-                <parameter key="phash"></parameter>
-                <parameter key="trash_hash"></parameter>
-                <parameter key="locale"></parameter>
-                <parameter key="i18n_folder_name">false</parameter>
-                <parameter key="mime_detect">auto</parameter>
-                <parameter key="mimefile"></parameter>
-                <parameter key="security_voter"></parameter>
-                <parameter key="start_path"></parameter>
-                <parameter key="encoding">UTF-8</parameter>
-                <parameter key="url"></parameter>
-                <parameter key="alias"></parameter>
-                <parameter key="img_lib">auto</parameter>
-                <parameter key="tmb_path">.tmb</parameter>
-                <parameter key="tmb_path_mode">511</parameter>
-                <parameter key="tmb_url"></parameter>
-                <parameter key="tmb_size">48</parameter>
-                <parameter key="tmb_crop">true</parameter>
-                <parameter key="tmb_bg_color">#ffffff</parameter>
-                <parameter key="copy_overwrite">true</parameter>
-                <parameter key="copy_join">true</parameter>
-                <parameter key="copy_from">true</parameter>
-                <parameter key="copy_to">true</parameter>
-                <parameter key="upload_overwrite">true</parameter>
-                <parameter key="fileMode">420</parameter>
-                <parameter key="upload_order" type="collection">
-                  <parameter>deny</parameter>
-                  <parameter>allow</parameter>
-                </parameter>
-                <parameter key="upload_max_conn">3</parameter>
-                <parameter key="defaults" type="collection">
-                  <parameter key="read">true</parameter>
-                  <parameter key="write">true</parameter>
-                </parameter>
-                <parameter key="attributes" type="collection"/>
-                <parameter key="accepted_name">/^\w[\w\s\.\%\-]*$/u</parameter>
-                <parameter key="show_hidden">false</parameter>
-                <parameter key="disabled_commands" type="collection"/>
-                <parameter key="tree_deep">0</parameter>
-                <parameter key="check_subfolders">1</parameter>
-                <parameter key="separator">\</parameter>
-                <parameter key="date_format">j M Y H:i</parameter>
-                <parameter key="time_format">H:i</parameter>
-                <parameter key="archive_mimes" type="collection"/>
-                <parameter key="archivers" type="collection">
-                  <parameter key="enabled">false</parameter>
-                  <parameter key="create" type="collection"/>
-                  <parameter key="extract" type="collection"/>
-                </parameter>
-                <parameter key="flysystem" type="collection">
-                  <parameter key="enabled">false</parameter>
-                  <parameter key="filesystem"></parameter>
-                  <parameter key="type"></parameter>
-                  <parameter key="adapter_service"></parameter>
-                </parameter>
-                <parameter key="glide_url"></parameter>
-                <parameter key="glide_key"></parameter>
-                <parameter key="plugins" type="collection"/>
-                <parameter key="driver_options" type="collection"/>
-                <parameter key="dropbox2_settings" type="collection">
-                  <parameter key="enabled">false</parameter>
-                  <parameter key="aliasFormat">%s@Dropbox</parameter>
-                  <parameter key="path">/</parameter>
-                  <parameter key="separator">/</parameter>
-                  <parameter key="acceptedName">%s@Dropbox</parameter>
-                  <parameter key="rootCssClass">elfinder-navbar-root-dropbox</parameter>
-                  <parameter key="getThumbSize">medium</parameter>
-                </parameter>
-                <parameter key="box_settings" type="collection">
-                  <parameter key="enabled">false</parameter>
-                  <parameter key="root">Box.com</parameter>
-                  <parameter key="path">/</parameter>
-                  <parameter key="separator">/</parameter>
-                  <parameter key="tmbPath"></parameter>
-                  <parameter key="tmbURL"></parameter>
-                  <parameter key="tmpPath"></parameter>
-                  <parameter key="acceptedName">#^[^/\?*:|"&lt;&gt;]*[^./\?*:|"&lt;&gt;]$#</parameter>
-                  <parameter key="rootCssClass">elfinder-navbar-root-box</parameter>
-                </parameter>
-                <parameter key="onedrive_settings" type="collection">
-                  <parameter key="enabled">false</parameter>
-                  <parameter key="root">OneDrive.com</parameter>
-                  <parameter key="OneDriveApiClient"></parameter>
-                  <parameter key="path">/</parameter>
-                  <parameter key="separator">/</parameter>
-                  <parameter key="tmbPath"></parameter>
-                  <parameter key="tmbURL"></parameter>
-                  <parameter key="tmpPath"></parameter>
-                  <parameter key="acceptedName">#^[^/\?*:|"&lt;&gt;]*[^./\?*:|"&lt;&gt;]$#</parameter>
-                  <parameter key="rootCssClass">elfinder-navbar-root-onedrive</parameter>
-                  <parameter key="useApiThumbnail">true</parameter>
-                </parameter>
-                <parameter key="ftp_settings" type="collection">
-                  <parameter key="enabled">false</parameter>
-                </parameter>
-                <parameter key="mysql_settings" type="collection">
-                  <parameter key="enabled">false</parameter>
-                  <parameter key="port">null</parameter>
-                  <parameter key="socket">null</parameter>
-                  <parameter key="files_table">elfinder_file</parameter>
-                  <parameter key="tmbPath"></parameter>
-                  <parameter key="tmpPath"></parameter>
-                  <parameter key="rootCssClass">elfinder-navbar-root-sql</parameter>
-                  <parameter key="noSessionCache">hasdirs</parameter>
-                </parameter>
-              </parameter>
-            </parameter>
-            <parameter key="binds" type="collection"/>
-            <parameter key="plugins" type="collection"/>
-          </parameter>
-          <parameter key="cors_support">false</parameter>
-          <parameter key="editor_template">null</parameter>
-          <parameter key="tinymce_popup_path"></parameter>
-          <parameter key="relative_path">true</parameter>
-          <parameter key="path_prefix">/</parameter>
-          <parameter key="visible_mime_types" type="collection"/>
-        </parameter>
-      </parameter>
-      <parameter key="configuration_provider">fm_elfinder.configurator.default</parameter>
-      <parameter key="loader">fm_elfinder.loader.default</parameter>
-    </parameter>
     <parameter key="knp_paginator.template.pagination">@KnpPaginator/Pagination/twitter_bootstrap_v4_pagination.html.twig</parameter>
     <parameter key="knp_paginator.template.filtration">@KnpPaginator/Pagination/filtration.html.twig</parameter>
     <parameter key="knp_paginator.template.sortable">@KnpPaginator/Pagination/sortable_link.html.twig</parameter>
     <parameter key="knp_paginator.page_range">5</parameter>
+    <parameter key="knp_paginator.page_limit">null</parameter>
     <parameter key="knp_menu.factory.class">Knp\Menu\MenuFactory</parameter>
     <parameter key="knp_menu.factory_extension.routing.class">Knp\Menu\Integration\Symfony\RoutingExtension</parameter>
     <parameter key="knp_menu.helper.class">Knp\Menu\Twig\Helper</parameter>
@@ -1150,7 +1070,7 @@
     </parameter>
     <parameter key="sonata.admin.configuration.admin_services" type="collection"/>
     <parameter key="sonata.admin.configuration.dashboard_groups" type="collection">
-      <parameter key="Gestion_pharmarcy" type="collection">
+      <parameter key="Gestion des infos des pharmacies" type="collection">
         <parameter key="items" type="collection">
           <parameter type="collection">
             <parameter key="admin">admin.category_drugs</parameter>
@@ -1183,7 +1103,7 @@
         <parameter key="item_adds" type="collection"/>
         <parameter key="roles" type="collection"/>
       </parameter>
-      <parameter key="Gestion_Doctor" type="collection">
+      <parameter key="Gestion des Médecins" type="collection">
         <parameter key="items" type="collection">
           <parameter type="collection">
             <parameter key="admin">admin.expertise</parameter>
@@ -1209,22 +1129,6 @@
             <parameter key="route_absolute">false</parameter>
             <parameter key="roles" type="collection"/>
           </parameter>
-          <parameter type="collection">
-            <parameter key="admin">admin.pratical_infos</parameter>
-            <parameter key="label"></parameter>
-            <parameter key="route"></parameter>
-            <parameter key="route_params" type="collection"/>
-            <parameter key="route_absolute">false</parameter>
-            <parameter key="roles" type="collection"/>
-          </parameter>
-          <parameter type="collection">
-            <parameter key="admin">admin.skills</parameter>
-            <parameter key="label"></parameter>
-            <parameter key="route"></parameter>
-            <parameter key="route_params" type="collection"/>
-            <parameter key="route_absolute">false</parameter>
-            <parameter key="roles" type="collection"/>
-          </parameter>
         </parameter>
         <parameter key="icon">&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</parameter>
         <parameter key="on_top">false</parameter>
@@ -1232,7 +1136,7 @@
         <parameter key="item_adds" type="collection"/>
         <parameter key="roles" type="collection"/>
       </parameter>
-      <parameter key="Gestion_Laboratoire" type="collection">
+      <parameter key="Gestion des Laboratoires" type="collection">
         <parameter key="items" type="collection">
           <parameter type="collection">
             <parameter key="admin">admin.category_laboratory</parameter>
@@ -1249,7 +1153,7 @@
         <parameter key="item_adds" type="collection"/>
         <parameter key="roles" type="collection"/>
       </parameter>
-      <parameter key="Gestion_contenu_site" type="collection">
+      <parameter key="Gestion du contenu du site" type="collection">
         <parameter key="items" type="collection">
           <parameter type="collection">
             <parameter key="admin">admin.news</parameter>
@@ -1275,6 +1179,22 @@
             <parameter key="route_absolute">false</parameter>
             <parameter key="roles" type="collection"/>
           </parameter>
+          <parameter type="collection">
+            <parameter key="admin">admin.members</parameter>
+            <parameter key="label"></parameter>
+            <parameter key="route"></parameter>
+            <parameter key="route_params" type="collection"/>
+            <parameter key="route_absolute">false</parameter>
+            <parameter key="roles" type="collection"/>
+          </parameter>
+          <parameter type="collection">
+            <parameter key="admin">admin.skills</parameter>
+            <parameter key="label"></parameter>
+            <parameter key="route"></parameter>
+            <parameter key="route_params" type="collection"/>
+            <parameter key="route_absolute">false</parameter>
+            <parameter key="roles" type="collection"/>
+          </parameter>
         </parameter>
         <parameter key="icon">&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</parameter>
         <parameter key="on_top">false</parameter>
@@ -1282,7 +1202,7 @@
         <parameter key="item_adds" type="collection"/>
         <parameter key="roles" type="collection"/>
       </parameter>
-      <parameter key="Gestion_infos" type="collection">
+      <parameter key="Gestion des infos" type="collection">
         <parameter key="items" type="collection">
           <parameter type="collection">
             <parameter key="admin">admin.refund</parameter>
@@ -1331,6 +1251,23 @@
         <parameter key="item_adds" type="collection"/>
         <parameter key="roles" type="collection"/>
       </parameter>
+      <parameter key="Admin" type="collection">
+        <parameter key="items" type="collection">
+          <parameter type="collection">
+            <parameter key="admin">admin.adminstrators</parameter>
+            <parameter key="label"></parameter>
+            <parameter key="route"></parameter>
+            <parameter key="route_params" type="collection"/>
+            <parameter key="route_absolute">false</parameter>
+            <parameter key="roles" type="collection"/>
+          </parameter>
+        </parameter>
+        <parameter key="icon">&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</parameter>
+        <parameter key="on_top">false</parameter>
+        <parameter key="keep_open">false</parameter>
+        <parameter key="item_adds" type="collection"/>
+        <parameter key="roles" type="collection"/>
+      </parameter>
     </parameter>
     <parameter key="sonata.admin.configuration.dashboard_blocks" type="collection">
       <parameter type="collection">
@@ -1338,9 +1275,9 @@
         <parameter key="type">sonata.admin.block.admin_list</parameter>
         <parameter key="settings" type="collection">
           <parameter key="groups" type="collection">
-            <parameter>Gestion_pharmarcy</parameter>
-            <parameter>Gestion_Doctor</parameter>
-            <parameter>Gestion_Laboratoire</parameter>
+            <parameter>Gestion des infos des pharmacies</parameter>
+            <parameter>Gestion des Médecins</parameter>
+            <parameter>Gestion des Laboratoires</parameter>
           </parameter>
         </parameter>
         <parameter key="roles" type="collection"/>
@@ -1351,8 +1288,9 @@
         <parameter key="type">sonata.admin.block.admin_list</parameter>
         <parameter key="settings" type="collection">
           <parameter key="groups" type="collection">
-            <parameter>Gestion_contenu_site</parameter>
-            <parameter>Gestion_infos</parameter>
+            <parameter>Gestion du contenu du site</parameter>
+            <parameter>Gestion des infos</parameter>
+            <parameter>Admin</parameter>
           </parameter>
         </parameter>
         <parameter key="roles" type="collection"/>
@@ -1556,7 +1494,21 @@
       </parameter>
     </parameter>
     <parameter key="sonata.core.form.types" type="collection">
+      <parameter>App\Form\AddArticleType</parameter>
+      <parameter>App\Form\DoctorType</parameter>
+      <parameter>App\Form\EditDoctorType</parameter>
+      <parameter>App\Form\EditLaboratoryType</parameter>
+      <parameter>App\Form\EditPharmacyType</parameter>
+      <parameter>App\Form\LaboratoryRegisterType</parameter>
+      <parameter>App\Form\LocationType</parameter>
+      <parameter>App\Form\PasswordUpdateType</parameter>
+      <parameter>App\Form\PharmacyRegisterType</parameter>
       <parameter>App\Form\RegistrationFormType</parameter>
+      <parameter>App\Form\SearchDoctorType</parameter>
+      <parameter>App\Form\SearchDrugsType</parameter>
+      <parameter>App\Form\SearchLabotaryType</parameter>
+      <parameter>App\Form\SocialNetworksDoctorType</parameter>
+      <parameter>App\Form\SocialType</parameter>
       <parameter>App\Form\UsersBlogFormType</parameter>
       <parameter>form.type.form</parameter>
       <parameter>form.type.choice</parameter>
@@ -1574,7 +1526,6 @@
       <parameter>easyadmin.form.type.section</parameter>
       <parameter>easyadmin.form.type.group</parameter>
       <parameter>liip_imagine.form.type.image</parameter>
-      <parameter>fm_elfinder.form.type</parameter>
       <parameter>sonata.core.form.type.array_legacy</parameter>
       <parameter>sonata.core.form.type.boolean_legacy</parameter>
       <parameter>sonata.core.form.type.collection_legacy</parameter>
@@ -1643,6 +1594,7 @@
     <service id="EasyCorp\EasyLog\EasyLogHandler" class="EasyCorp\EasyLog\EasyLogHandler" public="false">
       <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\var\log/dev.log</argument>
     </service>
+    <service id="App\Admin\AdminstratorsAdmin" class="App\Admin\AdminstratorsAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\CategoryDrugsAdmin" class="App\Admin\CategoryDrugsAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\CategoryLaboratoryAdmin" class="App\Admin\CategoryLaboratoryAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\DrugsConsomersAdmin" class="App\Admin\DrugsConsomersAdmin" autowire="true" autoconfigure="true"/>
@@ -1650,6 +1602,7 @@
     <service id="App\Admin\FormDrugsAdmin" class="App\Admin\FormDrugsAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\LanguageAdmin" class="App\Admin\LanguageAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\MeansPaymentAdmin" class="App\Admin\MeansPaymentAdmin" autowire="true" autoconfigure="true"/>
+    <service id="App\Admin\MembersAdmin" class="App\Admin\MembersAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\NewsAdmin" class="App\Admin\NewsAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\PraticalInfosAdmin" class="App\Admin\PraticalInfosAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\ProfessionAdmin" class="App\Admin\ProfessionAdmin" autowire="true" autoconfigure="true"/>
@@ -1659,6 +1612,13 @@
     <service id="App\Admin\SkillsAdmin" class="App\Admin\SkillsAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\SocialNetworkAdmin" class="App\Admin\SocialNetworkAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\TimeSlotOpenAdmin" class="App\Admin\TimeSlotOpenAdmin" autowire="true" autoconfigure="true"/>
+    <service id="App\Controller\AccountProController" class="App\Controller\AccountProController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\AccountProController"/>
+      </call>
+    </service>
     <service id="App\Controller\BlogController" class="App\Controller\BlogController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -1671,25 +1631,29 @@
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\BlogController"/>
       </call>
     </service>
-    <service id="App\Controller\DoctorController" class="App\Controller\DoctorController" public="true" autowire="true" autoconfigure="true">
+    <service id="App\Controller\BlogProfileController" class="App\Controller\BlogProfileController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
-        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\DoctorController"/>
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\BlogProfileController"/>
+      </call>
+    </service>
+    <service id="App\Controller\EditAccountController" class="App\Controller\EditAccountController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\EditAccountController"/>
       </call>
     </service>
     <service id="App\Controller\MainREFMEDController" class="App\Controller\MainREFMEDController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
+      <argument type="service" id="App\Repository\DoctorRepository"/>
+      <argument type="service" id="App\Repository\PharmacyRepository"/>
+      <argument type="service" id="App\Repository\LaboratoryRepository"/>
+      <argument type="service" id="knp_paginator"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MainREFMEDController"/>
-      </call>
-    </service>
-    <service id="App\Controller\PharmacieController" class="App\Controller\PharmacieController" public="true" autowire="true" autoconfigure="true">
-      <tag name="controller.service_arguments"/>
-      <tag name="container.service_subscriber"/>
-      <call method="setContainer">
-        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\PharmacieController"/>
       </call>
     </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
@@ -1724,7 +1688,49 @@
     <service id="App\DataFixtures\UsersBlogFixtures" class="App\DataFixtures\UsersBlogFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
+    <service id="App\Form\AddArticleType" class="App\Form\AddArticleType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EditDoctorType" class="App\Form\EditDoctorType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EditLaboratoryType" class="App\Form\EditLaboratoryType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\EditPharmacyType" class="App\Form\EditPharmacyType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\LaboratoryRegisterType" class="App\Form\LaboratoryRegisterType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\LocationType" class="App\Form\LocationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PharmacyRegisterType" class="App\Form\PharmacyRegisterType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SearchDoctorType" class="App\Form\SearchDoctorType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SearchDrugsType" class="App\Form\SearchDrugsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SearchLabotaryType" class="App\Form\SearchLabotaryType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SocialNetworksDoctorType" class="App\Form\SocialNetworksDoctorType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\SocialType" class="App\Form\SocialType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\UsersBlogFormType" class="App\Form\UsersBlogFormType" autowire="true" autoconfigure="true">
@@ -1733,7 +1739,11 @@
     <service id="App\Listener\ImageCacheSubscriber" class="App\Listener\ImageCacheSubscriber" autowire="true" autoconfigure="true">
       <tag name="doctrine.event_subscriber"/>
       <argument type="service" id="liip_imagine.cache.manager"/>
-      <argument type="service" id="vich_uploader.templating.helper.uploader_helper"/>
+      <argument type="service" id="Vich\UploaderBundle\Templating\Helper\UploaderHelper"/>
+    </service>
+    <service id="App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
@@ -1756,6 +1766,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\DoctorRepository" class="App\Repository\DoctorRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\DoctorSocialNetworksRepository" class="App\Repository\DoctorSocialNetworksRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1783,6 +1797,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\LaboratorySocialNetworksRepository" class="App\Repository\LaboratorySocialNetworksRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\LanguageRepository" class="App\Repository\LanguageRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1803,7 +1821,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\PharmacyAvailabeDrugsRepository" class="App\Repository\PharmacyAvailabeDrugsRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\PharmacyRepository" class="App\Repository\PharmacyRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\PharmacySocialNetworksRepository" class="App\Repository\PharmacySocialNetworksRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1854,7 +1880,7 @@
       <argument type="service" id="security.user_password_encoder.generic"/>
     </service>
     <service id="admin.language" class="App\Admin\LanguageAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_infos" label="Langage Parle" label_catalogue="App"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des infos" label="Langage Parle" label_catalogue="App"/>
       <argument>admin.language</argument>
       <argument>App\Entity\Language</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -1932,7 +1958,7 @@
       </call>
     </service>
     <service id="admin.social_networks" class="App\Admin\SocialNetworkAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_infos" label="Résaux sociaux" label_catalogue="App"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des infos" label="Résaux sociaux" label_catalogue="App"/>
       <argument>admin.social_networks</argument>
       <argument>App\Entity\SocialNetworks</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2010,7 +2036,7 @@
       </call>
     </service>
     <service id="admin.category_drugs" class="App\Admin\CategoryDrugsAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_pharmarcy" label="Catégories de médicaments"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des pharmacies" label="Catégories de médicaments"/>
       <argument>admin.category_drugs</argument>
       <argument>App\Entity\CategoryDrugs</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2088,7 +2114,7 @@
       </call>
     </service>
     <service id="admin.category_laboratory" class="App\Admin\CategoryLaboratoryAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_Laboratoire" label="Catégories de Laboratoires"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des Laboratoires" label="Catégories de Laboratoires"/>
       <argument>admin.category_laboratory</argument>
       <argument>App\Entity\CategoryLaboratory</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2166,7 +2192,7 @@
       </call>
     </service>
     <service id="admin.drugs_consomers" class="App\Admin\DrugsConsomersAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_Laboratoire" label="Consommateurs "/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des Laboratoires" label="Consommateurs "/>
       <argument>admin.drugs_consomers</argument>
       <argument>App\Entity\DrugsConsomers</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2244,7 +2270,7 @@
       </call>
     </service>
     <service id="admin.expertise" class="App\Admin\ExpertiseAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_Doctor" label="Expertise"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des Médecins" label="Expertise"/>
       <argument>admin.expertise</argument>
       <argument>App\Entity\Expertise</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2322,7 +2348,7 @@
       </call>
     </service>
     <service id="admin.form_drugs" class="App\Admin\FormDrugsAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_pharmarcy" label="Forme de médicaments"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des pharmacies" label="Forme de médicaments"/>
       <argument>admin.form_drugs</argument>
       <argument>App\Entity\FormDrugs</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2400,7 +2426,7 @@
       </call>
     </service>
     <service id="admin.means_payment" class="App\Admin\MeansPaymentAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_infos" label="Moyen de Paiement"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des infos" label="Moyen de Paiement"/>
       <argument>admin.means_payment</argument>
       <argument>App\Entity\MeansPayment</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2478,7 +2504,7 @@
       </call>
     </service>
     <service id="admin.news" class="App\Admin\NewsAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_contenu_site" label="News"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion contenu du site" label="News"/>
       <argument>admin.news</argument>
       <argument>App\Entity\News</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2556,7 +2582,7 @@
       </call>
     </service>
     <service id="admin.pratical_infos" class="App\Admin\PraticalInfosAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_Doctor" label="Les infos pratiques"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des Médecins" label="Les infos pratiques"/>
       <argument>admin.pratical_infos</argument>
       <argument>App\Entity\PraticalInfos</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2634,7 +2660,7 @@
       </call>
     </service>
     <service id="admin.profession" class="App\Admin\ProfessionAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_Doctor" label="Profession"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des Médecins" label="Profession"/>
       <argument>admin.profession</argument>
       <argument>App\Entity\Profession</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2712,7 +2738,7 @@
       </call>
     </service>
     <service id="admin.quality_services" class="App\Admin\QualityServicesAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_contenu_site" label="Qualités des services"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion contenu du site" label="Qualités des services"/>
       <argument>admin.quality_services</argument>
       <argument>App\Entity\QualityServices</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2790,7 +2816,7 @@
       </call>
     </service>
     <service id="admin.refund" class="App\Admin\RefundAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_infos" label="Remboursement"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des infos" label="Remboursement"/>
       <argument>admin.refund</argument>
       <argument>App\Entity\Refund</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2868,7 +2894,7 @@
       </call>
     </service>
     <service id="admin.services" class="App\Admin\ServicesAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_contenu_site" label="Services"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion contenu du site" label="Services"/>
       <argument>admin.services</argument>
       <argument>App\Entity\Services</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -2946,7 +2972,7 @@
       </call>
     </service>
     <service id="admin.skills" class="App\Admin\SkillsAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_Doctor" label="Compétences"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des Médecins" label="Compétences"/>
       <argument>admin.skills</argument>
       <argument>App\Entity\Skills</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -3024,7 +3050,7 @@
       </call>
     </service>
     <service id="admin.time_slot_open" class="App\Admin\TimeSlotOpenAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
-      <tag name="sonata.admin" manager_type="orm" group="Gestion_infos" label="Créneau"/>
+      <tag name="sonata.admin" manager_type="orm" group="Gestion des infos" label="Créneau"/>
       <argument>admin.time_slot_open</argument>
       <argument>App\Entity\TimeSlotOpen</argument>
       <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
@@ -3082,6 +3108,162 @@
       </call>
       <call method="setTemplateRegistry">
         <argument type="service" id="admin.time_slot_open.template_registry"/>
+      </call>
+      <call method="setSecurityInformation">
+        <argument type="collection"/>
+      </call>
+      <call method="initialize"/>
+      <call method="addExtension">
+        <argument type="service" id="sonata.admin.event.extension"/>
+      </call>
+      <call method="setFormTheme">
+        <argument type="collection">
+          <argument>@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setFilterTheme">
+        <argument type="collection">
+          <argument>@SonataDoctrineORMAdmin/Form/filter_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="admin.members" class="App\Admin\MembersAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
+      <tag name="sonata.admin" manager_type="orm" group="Gestion contenu du site" label="Equipe de REF-MED"/>
+      <argument>admin.members</argument>
+      <argument>App\Entity\Members</argument>
+      <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
+      <call method="setManagerType">
+        <argument>orm</argument>
+      </call>
+      <call method="setModelManager">
+        <argument type="service" id="sonata.admin.manager.orm"/>
+      </call>
+      <call method="setFormContractor">
+        <argument type="service" id="sonata.admin.builder.orm_form"/>
+      </call>
+      <call method="setShowBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_show"/>
+      </call>
+      <call method="setListBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_list"/>
+      </call>
+      <call method="setDatagridBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_datagrid"/>
+      </call>
+      <call method="setTranslator">
+        <argument type="service" id="translator.data_collector"/>
+        <argument>false</argument>
+      </call>
+      <call method="setConfigurationPool">
+        <argument type="service" id="sonata.admin.pool"/>
+      </call>
+      <call method="setRouteGenerator">
+        <argument type="service" id="sonata.admin.route.default_generator"/>
+      </call>
+      <call method="setValidator">
+        <argument type="service" id="debug.validator"/>
+      </call>
+      <call method="setSecurityHandler">
+        <argument type="service" id="sonata.admin.security.handler.noop"/>
+      </call>
+      <call method="setMenuFactory">
+        <argument type="service" id="knp_menu.factory"/>
+      </call>
+      <call method="setRouteBuilder">
+        <argument type="service" id="sonata.admin.route.path_info"/>
+      </call>
+      <call method="setLabelTranslatorStrategy">
+        <argument type="service" id="sonata.admin.label.strategy.native"/>
+      </call>
+      <call method="setPagerType">
+        <argument>default</argument>
+      </call>
+      <call method="setLabel">
+        <argument>Equipe de REF-MED</argument>
+      </call>
+      <call method="showMosaicButton">
+        <argument>true</argument>
+      </call>
+      <call method="setTemplateRegistry">
+        <argument type="service" id="admin.members.template_registry"/>
+      </call>
+      <call method="setSecurityInformation">
+        <argument type="collection"/>
+      </call>
+      <call method="initialize"/>
+      <call method="addExtension">
+        <argument type="service" id="sonata.admin.event.extension"/>
+      </call>
+      <call method="setFormTheme">
+        <argument type="collection">
+          <argument>@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setFilterTheme">
+        <argument type="collection">
+          <argument>@SonataDoctrineORMAdmin/Form/filter_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+    </service>
+    <service id="admin.adminstrators" class="App\Admin\AdminstratorsAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
+      <tag name="sonata.admin" manager_type="orm" group="Admin" label="Admin"/>
+      <argument>admin.adminstrators</argument>
+      <argument>App\Entity\Admin</argument>
+      <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
+      <call method="setManagerType">
+        <argument>orm</argument>
+      </call>
+      <call method="setModelManager">
+        <argument type="service" id="sonata.admin.manager.orm"/>
+      </call>
+      <call method="setFormContractor">
+        <argument type="service" id="sonata.admin.builder.orm_form"/>
+      </call>
+      <call method="setShowBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_show"/>
+      </call>
+      <call method="setListBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_list"/>
+      </call>
+      <call method="setDatagridBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_datagrid"/>
+      </call>
+      <call method="setTranslator">
+        <argument type="service" id="translator.data_collector"/>
+        <argument>false</argument>
+      </call>
+      <call method="setConfigurationPool">
+        <argument type="service" id="sonata.admin.pool"/>
+      </call>
+      <call method="setRouteGenerator">
+        <argument type="service" id="sonata.admin.route.default_generator"/>
+      </call>
+      <call method="setValidator">
+        <argument type="service" id="debug.validator"/>
+      </call>
+      <call method="setSecurityHandler">
+        <argument type="service" id="sonata.admin.security.handler.noop"/>
+      </call>
+      <call method="setMenuFactory">
+        <argument type="service" id="knp_menu.factory"/>
+      </call>
+      <call method="setRouteBuilder">
+        <argument type="service" id="sonata.admin.route.path_info"/>
+      </call>
+      <call method="setLabelTranslatorStrategy">
+        <argument type="service" id="sonata.admin.label.strategy.native"/>
+      </call>
+      <call method="setPagerType">
+        <argument>default</argument>
+      </call>
+      <call method="setLabel">
+        <argument>Admin</argument>
+      </call>
+      <call method="showMosaicButton">
+        <argument>true</argument>
+      </call>
+      <call method="setTemplateRegistry">
+        <argument type="service" id="admin.adminstrators.template_registry"/>
       </call>
       <call method="setSecurityInformation">
         <argument type="collection"/>
@@ -3579,7 +3761,6 @@
         <argument>Vich\UploaderBundle\Form\Type</argument>
         <argument>EasyCorp\Bundle\EasyAdminBundle\Form\Type</argument>
         <argument>Liip\ImagineBundle\Form\Type</argument>
-        <argument></argument>
         <argument>Sonata\CoreBundle\Form\Type</argument>
         <argument>Sonata\Form\Type</argument>
         <argument>Sonata\BlockBundle\Form\Type</argument>
@@ -3587,7 +3768,21 @@
         <argument>Sonata\AdminBundle\Form\Type\Filter</argument>
       </argument>
       <argument type="collection">
+        <argument>App\Form\AddArticleType</argument>
+        <argument>App\Form\DoctorType</argument>
+        <argument>App\Form\EditDoctorType</argument>
+        <argument>App\Form\EditLaboratoryType</argument>
+        <argument>App\Form\EditPharmacyType</argument>
+        <argument>App\Form\LaboratoryRegisterType</argument>
+        <argument>App\Form\LocationType</argument>
+        <argument>App\Form\PasswordUpdateType</argument>
+        <argument>App\Form\PharmacyRegisterType</argument>
         <argument>App\Form\RegistrationFormType</argument>
+        <argument>App\Form\SearchDoctorType</argument>
+        <argument>App\Form\SearchDrugsType</argument>
+        <argument>App\Form\SearchLabotaryType</argument>
+        <argument>App\Form\SocialNetworksDoctorType</argument>
+        <argument>App\Form\SocialType</argument>
         <argument>App\Form\UsersBlogFormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\ChoiceType</argument>
@@ -3605,7 +3800,6 @@
         <argument>EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminSectionType</argument>
         <argument>EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminGroupType</argument>
         <argument>Liip\ImagineBundle\Form\Type\ImageType</argument>
-        <argument>FM\ElfinderBundle\Form\Type\ElFinderType</argument>
         <argument>Sonata\CoreBundle\Form\Type\ImmutableArrayType</argument>
         <argument>Sonata\CoreBundle\Form\Type\BooleanType</argument>
         <argument>Sonata\CoreBundle\Form\Type\CollectionType</argument>
@@ -3917,8 +4111,6 @@
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <argument type="service" id="session.storage.native"/>
-      <argument type="service" id="session.attribute_bag"/>
-      <argument type="service" id="session.flash_bag"/>
     </service>
     <service id="session.storage.metadata_bag" class="Symfony\Component\HttpFoundation\Session\Storage\MetadataBag" public="false">
       <argument>_sf2_meta</argument>
@@ -3933,8 +4125,13 @@
       <argument>null</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
-    <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false"/>
-    <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false"/>
+    <service id="session.flash_bag" class="Symfony\Component\HttpFoundation\Session\Flash\FlashBag" public="false">
+      <factory service="session" method="getFlashBag"/>
+    </service>
+    <service id="session.attribute_bag" class="Symfony\Component\HttpFoundation\Session\Attribute\AttributeBag" public="false">
+      <argument>attributes</argument>
+      <factory service="session" method="getBag"/>
+    </service>
     <service id="session.storage.mock_file" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage" public="false">
       <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\var\cache\dev/sessions</argument>
       <argument>MOCKSESSID</argument>
@@ -3988,7 +4185,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.qgGbAYE"/>
+      <argument type="service" id=".service_locator.GBzNfqx"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4713,6 +4910,8 @@
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\symfony\validator/Resources/translations\validators.no.xlf</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\symfony\form/Resources/translations\validators.no.xlf</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\symfony\security-core/Resources/translations\security.no.xlf</argument>
+            <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\easycorp\easyadmin-bundle\src/Resources/translations\EasyAdminBundle.no.xlf</argument>
+            <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\easycorp\easyadmin-bundle\src/Resources/translations\messages.no.xlf</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.no.xliff</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\sonata-project\admin-bundle\src/Resources/translations\SonataAdminBundle.no.xliff</argument>
           </argument>
@@ -4742,6 +4941,8 @@
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\symfony\validator/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\symfony\form/Resources/translations\validators.pt_BR.xlf</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\symfony\security-core/Resources/translations\security.pt_BR.xlf</argument>
+            <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\easycorp\easyadmin-bundle\src/Resources/translations\EasyAdminBundle.pt_BR.xlf</argument>
+            <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\easycorp\easyadmin-bundle\src/Resources/translations\messages.pt_BR.xlf</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\knplabs\knp-paginator-bundle/translations\KnpPaginatorBundle.pt_BR.xliff</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\sonata-project\datagrid-bundle\src/Resources/translations\SonataDatagridBundle.pt_BR.xliff</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\sonata-project\core-bundle\src\CoreBundle/Resources/translations\SonataCoreBundle.pt_BR.xliff</argument>
@@ -4924,8 +5125,6 @@
           <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/EasyAdminBundle/translations</argument>
           <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\liip\imagine-bundle/translations</argument>
           <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/LiipImagineBundle/translations</argument>
-          <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\helios-ag\fm-elfinder-bundle\src/translations</argument>
-          <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/FMElfinderBundle/translations</argument>
           <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/KnpPaginatorBundle/translations</argument>
           <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\knplabs\knp-menu-bundle\src/translations</argument>
           <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/KnpMenuBundle/translations</argument>
@@ -4984,8 +5183,6 @@
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/EasyAdminBundle/translations</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\liip\imagine-bundle/translations</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/LiipImagineBundle/translations</argument>
-            <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\helios-ag\fm-elfinder-bundle\src/translations</argument>
-            <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/FMElfinderBundle/translations</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/KnpPaginatorBundle/translations</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\knplabs\knp-menu-bundle\src/translations</argument>
             <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\src/Resources/KnpMenuBundle/translations</argument>
@@ -5742,6 +5939,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -6372,12 +6577,12 @@
         <argument type="service" id="annotations.cached_reader"/>
       </call>
     </service>
-    <service id="sensio_framework_extra.controller.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener" public="false">
+    <service id="sensio_framework_extra.controller.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="annotations.cached_reader"/>
     </service>
-    <service id="sensio_framework_extra.converter.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener" public="false">
+    <service id="sensio_framework_extra.converter.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\ParamConverterListener">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="sensio_framework_extra.converter.manager"/>
@@ -6395,30 +6600,33 @@
         <argument>datetime</argument>
       </call>
     </service>
-    <service id="sensio_framework_extra.converter.doctrine.orm" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter" public="false">
+    <service id="sensio_framework_extra.converter.doctrine.orm" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DoctrineParamConverter">
       <tag name="request.param_converter" converter="doctrine.orm"/>
       <argument type="service" id="doctrine" on-invalid="ignore"/>
       <argument type="service" id="sensio_framework_extra.converter.doctrine.orm.expression_language.default" on-invalid="null"/>
     </service>
-    <service id="framework_extra_bundle.date_time_param_converter" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter" public="false">
+    <service id="framework_extra_bundle.date_time_param_converter" class="Sensio\Bundle\FrameworkExtraBundle\Request\ParamConverter\DateTimeParamConverter">
       <tag name="request.param_converter" converter="datetime"/>
     </service>
-    <service id="sensio_framework_extra.converter.doctrine.orm.expression_language.default" class="Symfony\Component\ExpressionLanguage\ExpressionLanguage" public="false"/>
-    <service id="sensio_framework_extra.view.guesser" class="Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser" public="false">
+    <service id="sensio_framework_extra.converter.doctrine.orm.expression_language.default" class="Symfony\Component\ExpressionLanguage\ExpressionLanguage"/>
+    <service id="sensio_framework_extra.view.guesser" class="Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser">
       <argument type="service" id="kernel"/>
     </service>
-    <service id="sensio_framework_extra.view.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener" public="false">
+    <service id="sensio_framework_extra.view.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener">
       <tag name="kernel.event_subscriber"/>
+      <tag name="container.service_subscriber" id="twig"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="sensio_framework_extra.view.guesser"/>
-      <argument type="service" id="twig" on-invalid="null"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.C2Thyvr.sensio_framework_extra.view.listener"/>
+      </call>
     </service>
-    <service id="sensio_framework_extra.cache.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener" public="false">
+    <service id="sensio_framework_extra.cache.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\HttpCacheListener">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <tag name="container.hot_path"/>
     </service>
-    <service id="sensio_framework_extra.security.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener" public="false">
+    <service id="sensio_framework_extra.security.listener" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\SecurityListener">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="framework_extra_bundle.argument_name_convertor"/>
@@ -6429,14 +6637,14 @@
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
       <argument type="service" id="monolog.logger" on-invalid="null"/>
     </service>
-    <service id="sensio_framework_extra.security.expression_language.default" class="Sensio\Bundle\FrameworkExtraBundle\Security\ExpressionLanguage" public="false"/>
-    <service id="framework_extra_bundle.event.is_granted" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener" public="false">
+    <service id="sensio_framework_extra.security.expression_language.default" class="Sensio\Bundle\FrameworkExtraBundle\Security\ExpressionLanguage"/>
+    <service id="framework_extra_bundle.event.is_granted" class="Sensio\Bundle\FrameworkExtraBundle\EventListener\IsGrantedListener">
       <tag name="kernel.event_subscriber"/>
       <tag name="container.hot_path"/>
       <argument type="service" id="framework_extra_bundle.argument_name_convertor"/>
       <argument type="service" id="security.authorization_checker" on-invalid="null"/>
     </service>
-    <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter" public="false">
+    <service id="framework_extra_bundle.argument_name_convertor" class="Sensio\Bundle\FrameworkExtraBundle\Request\ArgumentNameConverter">
       <argument type="service" id="argument_metadata_factory"/>
     </service>
     <service id="security.authorization_checker" class="Symfony\Component\Security\Core\Authorization\AuthorizationChecker" public="true">
@@ -6503,14 +6711,15 @@
       <argument type="service" id="request_stack"/>
     </service>
     <service id="security.role_hierarchy" class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
-      <argument type="collection"/>
-    </service>
-    <service id="security.access.simple_role_voter" class="Symfony\Component\Security\Core\Authorization\Voter\RoleVoter" public="false">
-      <tag name="security.voter" priority="245"/>
+      <argument>%security.role_hierarchy.roles%</argument>
     </service>
     <service id="security.access.authenticated_voter" class="Symfony\Component\Security\Core\Authorization\Voter\AuthenticatedVoter" public="false">
       <tag name="security.voter" priority="250"/>
       <argument type="service" id="security.authentication.trust_resolver"/>
+    </service>
+    <service id="security.access.role_hierarchy_voter" class="Symfony\Component\Security\Core\Authorization\Voter\RoleHierarchyVoter" public="false">
+      <tag name="security.voter" priority="245"/>
+      <argument type="service" id="security.role_hierarchy"/>
     </service>
     <service id="security.access.expression_voter" class="Symfony\Component\Security\Core\Authorization\Voter\ExpressionVoter" public="false">
       <tag name="security.voter" priority="245"/>
@@ -6622,7 +6831,53 @@
       <argument type="service" id="security.authentication.retry_entry_point"/>
       <argument type="service" id="monolog.logger.security" on-invalid="null"/>
     </service>
-    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false">
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.K49IZxB"/>
+        <argument type="collection">
+          <argument>ROLE_USER_BLOG</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="collection">
+          <argument>ROLE_SUPER_ADMIN</argument>
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.62GtIk3"/>
+        <argument type="collection">
+          <argument>ROLE_SUPER_ADMIN</argument>
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_MODO</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.KqS3Jvn"/>
+        <argument type="collection">
+          <argument>ROLE_USER_DOCTOR</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.mM.vgz9"/>
+        <argument type="collection">
+          <argument>ROLE_USER_PHARMACY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.m7xI6Gl"/>
+        <argument type="collection">
+          <argument>ROLE_USER_LABORATORY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
       <argument type="service" id="security.untracked_token_storage"/>
@@ -7078,6 +7333,24 @@
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
     </service>
+    <service id=".security.request_matcher.K49IZxB" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/profil/blog</argument>
+    </service>
+    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin</argument>
+    </service>
+    <service id=".security.request_matcher.62GtIk3" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/admin/blog</argument>
+    </service>
+    <service id=".security.request_matcher.KqS3Jvn" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/profil/praticien</argument>
+    </service>
+    <service id=".security.request_matcher.mM.vgz9" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/profil/pharmacie</argument>
+    </service>
+    <service id=".security.request_matcher.m7xI6Gl" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/profil/laboratoire</argument>
+    </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
       <argument type="service" id="security.encoder_factory.generic"/>
@@ -7163,16 +7436,13 @@
         <argument type="service" id="fos_ck_editor.twig_extension"/>
       </call>
       <call method="addExtension">
-        <argument type="service" id="vich_uploader.twig.extension.uploader"/>
+        <argument type="service" id="Vich\UploaderBundle\Twig\Extension\UploaderExtension"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="easyadmin.twig.extension"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="liip_imagine.templating.filter_extension"/>
-      </call>
-      <call method="addExtension">
-        <argument type="service" id="twig.extension.fm_elfinder_init"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="knp_paginator.twig.extension.pagination"/>
@@ -7366,14 +7636,6 @@
       <call method="addPath">
         <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\liip\imagine-bundle/Resources/views</argument>
         <argument>!LiipImagine</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\helios-ag\fm-elfinder-bundle\src/Resources/views</argument>
-        <argument>FMElfinder</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\helios-ag\fm-elfinder-bundle\src/Resources/views</argument>
-        <argument>!FMElfinder</argument>
       </call>
       <call method="addPath">
         <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\knplabs\knp-paginator-bundle/templates</argument>
@@ -7646,14 +7908,6 @@
         <argument>!LiipImagine</argument>
       </call>
       <call method="addPath">
-        <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\helios-ag\fm-elfinder-bundle\src/Resources/views</argument>
-        <argument>FMElfinder</argument>
-      </call>
-      <call method="addPath">
-        <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\helios-ag\fm-elfinder-bundle\src/Resources/views</argument>
-        <argument>!FMElfinder</argument>
-      </call>
-      <call method="addPath">
         <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\knplabs\knp-paginator-bundle/templates</argument>
         <argument>KnpPaginator</argument>
       </call>
@@ -7866,6 +8120,15 @@
         <argument type="service" id="vich_uploader.listener.clean.categoriesImages"/>
       </call>
       <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.clean.pictureProfile"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.clean.laboratoryPicture"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.clean.pharmacyPicture"/>
+      </call>
+      <call method="addEventSubscriber">
         <argument type="service" id="App\Listener\ImageCacheSubscriber"/>
       </call>
       <call method="addEventSubscriber">
@@ -7891,6 +8154,24 @@
       </call>
       <call method="addEventSubscriber">
         <argument type="service" id="vich_uploader.listener.upload.categoriesImages"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.remove.pictureProfile"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.upload.pictureProfile"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.remove.laboratoryPicture"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.upload.laboratoryPicture"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.remove.pharmacyPicture"/>
+      </call>
+      <call method="addEventSubscriber">
+        <argument type="service" id="vich_uploader.listener.upload.pharmacyPicture"/>
       </call>
       <call method="addEventListener">
         <argument type="collection">
@@ -7953,7 +8234,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.K8H.KhM"/>
+      <argument type="service" id=".service_locator.w6i5ykD"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -8127,7 +8408,7 @@
         <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\vendor\tattali\calendar-bundle\src\Entity</argument>
       </argument>
     </service>
-    <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+    <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain" public="false">
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>App\Entity</argument>
@@ -8141,21 +8422,21 @@
         <argument>CalendarBundle\Entity</argument>
       </call>
     </service>
-    <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
+    <service id="cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <argument type="service" id="cache.doctrine.orm.default.metadata.recorder_inner"/>
     </service>
     <service id="doctrine.orm.cache.provider.cache.doctrine.orm.default.metadata" class="Symfony\Component\Cache\DoctrineProvider">
       <argument type="service" id="cache.doctrine.orm.default.metadata"/>
     </service>
-    <service id="cache.doctrine.orm.default.result" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
+    <service id="cache.doctrine.orm.default.result" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <argument type="service" id="cache.doctrine.orm.default.result.recorder_inner"/>
     </service>
     <service id="doctrine.orm.cache.provider.cache.doctrine.orm.default.result" class="Symfony\Component\Cache\DoctrineProvider">
       <argument type="service" id="cache.doctrine.orm.default.result"/>
     </service>
-    <service id="cache.doctrine.orm.default.query" class="Symfony\Component\Cache\Adapter\TraceableAdapter" public="true">
+    <service id="cache.doctrine.orm.default.query" class="Symfony\Component\Cache\Adapter\TraceableAdapter">
       <tag name="cache.pool"/>
       <argument type="service" id="cache.doctrine.orm.default.query.recorder_inner"/>
     </service>
@@ -8252,6 +8533,7 @@
     <service id="maker.file_manager" class="Symfony\Bundle\MakerBundle\FileManager" public="false">
       <argument type="service" id="filesystem"/>
       <argument type="service" id="maker.autoloader_util"/>
+      <argument type="service" id="maker.file_link_formatter"/>
       <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED</argument>
       <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED/templates</argument>
     </service>
@@ -8260,6 +8542,9 @@
     </service>
     <service id="maker.autoloader_util" class="Symfony\Bundle\MakerBundle\Util\AutoloaderUtil" public="false">
       <argument type="service" id="maker.autoloader_finder"/>
+    </service>
+    <service id="maker.file_link_formatter" class="Symfony\Bundle\MakerBundle\Util\MakerFileLinkFormatter" public="false">
+      <argument type="service" id="debug.file_link_formatter" on-invalid="ignore"/>
     </service>
     <service id="maker.event_registry" class="Symfony\Bundle\MakerBundle\EventRegistry" public="false">
       <argument type="service" id="debug.event_dispatcher"/>
@@ -8282,6 +8567,10 @@
     </service>
     <service id="maker.entity_class_generator" class="Symfony\Bundle\MakerBundle\Doctrine\EntityClassGenerator" public="false">
       <argument type="service" id="maker.generator"/>
+      <argument type="service" id="maker.doctrine_helper"/>
+      <call method="setMangerRegistryClassName">
+        <argument>Doctrine\Persistence\ManagerRegistry</argument>
+      </call>
     </service>
     <service id="maker.user_class_builder" class="Symfony\Bundle\MakerBundle\Security\UserClassBuilder" public="false"/>
     <service id="maker.security_config_updater" class="Symfony\Bundle\MakerBundle\Security\SecurityConfigUpdater" public="false"/>
@@ -8313,6 +8602,7 @@
       <argument type="service" id="maker.doctrine_helper"/>
       <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED</argument>
       <argument type="service" id="maker.generator"/>
+      <argument type="service" id="maker.entity_class_generator"/>
     </service>
     <service id="maker.maker.make_fixtures" class="Symfony\Bundle\MakerBundle\Maker\MakeFixtures" public="false">
       <tag name="maker.command"/>
@@ -8325,11 +8615,22 @@
     <service id="maker.maker.make_functional_test" class="Symfony\Bundle\MakerBundle\Maker\MakeFunctionalTest" public="false">
       <tag name="maker.command"/>
     </service>
+    <service id="maker.maker.make_message" class="Symfony\Bundle\MakerBundle\Maker\MakeMessage" public="false">
+      <tag name="maker.command"/>
+      <argument type="service" id="maker.file_manager"/>
+    </service>
+    <service id="maker.maker.make_messenger_middleware" class="Symfony\Bundle\MakerBundle\Maker\MakeMessengerMiddleware" public="false">
+      <tag name="maker.command"/>
+    </service>
     <service id="maker.maker.make_registration_form" class="Symfony\Bundle\MakerBundle\Maker\MakeRegistrationForm" public="false">
       <tag name="maker.command"/>
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.renderer.form_type_renderer"/>
       <argument type="service" id="router.default"/>
+    </service>
+    <service id="maker.maker.make_reset_password" class="Symfony\Bundle\MakerBundle\Maker\MakeResetPassword" public="false">
+      <tag name="maker.command"/>
+      <argument type="service" id="maker.file_manager"/>
     </service>
     <service id="maker.maker.make_serializer_encoder" class="Symfony\Bundle\MakerBundle\Maker\MakeSerializerEncoder" public="false">
       <tag name="maker.command"/>
@@ -8358,6 +8659,8 @@
       <argument type="service" id="maker.file_manager"/>
       <argument type="service" id="maker.user_class_builder"/>
       <argument type="service" id="maker.security_config_updater"/>
+      <argument type="service" id="maker.doctrine_helper"/>
+      <argument type="service" id="maker.entity_class_generator"/>
     </service>
     <service id="maker.maker.make_migration" class="Symfony\Bundle\MakerBundle\Maker\MakeMigration" public="false">
       <tag name="maker.command"/>
@@ -8593,50 +8896,6 @@
     </service>
     <service id="fos_ck_editor.configuration" class="FOS\CKEditorBundle\Config\CKEditorConfiguration">
       <argument type="collection">
-        <argument key="configs" type="collection">
-          <argument key="main_config" type="collection">
-            <argument key="toolbar" type="collection">
-              <argument type="collection">
-                <argument key="name">styles</argument>
-                <argument key="items" type="collection">
-                  <argument>Bold</argument>
-                  <argument>Italic</argument>
-                  <argument>Underline</argument>
-                  <argument>Strike</argument>
-                  <argument>Blockquote</argument>
-                  <argument>-</argument>
-                  <argument>Link</argument>
-                  <argument>-</argument>
-                  <argument>RemoveFormat</argument>
-                  <argument>-</argument>
-                  <argument>NumberedList</argument>
-                  <argument>BulletedList</argument>
-                  <argument>-</argument>
-                  <argument>Outdent</argument>
-                  <argument>Indent</argument>
-                  <argument>-</argument>
-                  <argument>-</argument>
-                  <argument>JustifyLeft</argument>
-                  <argument>JustifyCenter</argument>
-                  <argument>JustifyRight</argument>
-                  <argument>JustifyBlock</argument>
-                  <argument>-</argument>
-                  <argument>Image</argument>
-                  <argument>Table</argument>
-                  <argument>-</argument>
-                  <argument>Styles</argument>
-                  <argument>Format</argument>
-                  <argument>Font</argument>
-                  <argument>FontSize</argument>
-                  <argument>-</argument>
-                  <argument>TextColor</argument>
-                  <argument>BGColor</argument>
-                  <argument>Source</argument>
-                </argument>
-              </argument>
-            </argument>
-          </argument>
-        </argument>
         <argument key="enable">true</argument>
         <argument key="async">false</argument>
         <argument key="auto_inline">true</argument>
@@ -8649,6 +8908,7 @@
         <argument key="js_path">bundles/fosckeditor/ckeditor.js</argument>
         <argument key="jquery_path">bundles/fosckeditor/adapters/jquery.js</argument>
         <argument key="default_config">null</argument>
+        <argument key="configs" type="collection"/>
         <argument key="plugins" type="collection"/>
         <argument key="styles" type="collection"/>
         <argument key="templates" type="collection"/>
@@ -8679,6 +8939,9 @@
     <service id="Vich\UploaderBundle\Naming\UniqidNamer.avatar" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
     <service id="Vich\UploaderBundle\Naming\UniqidNamer.featuredImages" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
     <service id="Vich\UploaderBundle\Naming\UniqidNamer.categoriesImages" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\UniqidNamer.pictureProfile" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\UniqidNamer.laboratoryPicture" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
+    <service id="Vich\UploaderBundle\Naming\UniqidNamer.pharmacyPicture" class="Vich\UploaderBundle\Naming\UniqidNamer" public="true"/>
     <service id="vich_uploader.adapter.mongodb" class="Vich\UploaderBundle\Adapter\ODM\MongoDB\MongoDBAdapter" public="false"/>
     <service id="vich_uploader.adapter.orm" class="Vich\UploaderBundle\Adapter\ORM\DoctrineORMAdapter" public="false"/>
     <service id="vich_uploader.adapter.phpcr" class="Vich\UploaderBundle\Adapter\PHPCR\PHPCRAdapter" public="false"/>
@@ -8880,13 +9143,13 @@
       <argument type="service" id="property_accessor"/>
       <argument type="service" id="liip_imagine.cache.manager" on-invalid="null"/>
     </service>
-    <service id="vich_uploader.templating.helper.uploader_helper" class="Vich\UploaderBundle\Templating\Helper\UploaderHelper" public="true">
+    <service id="Vich\UploaderBundle\Templating\Helper\UploaderHelper" class="Vich\UploaderBundle\Templating\Helper\UploaderHelper" public="false">
       <tag name="templating.helper" alias="vich_uploader"/>
       <argument type="service" id="vich_uploader.storage.file_system"/>
     </service>
-    <service id="vich_uploader.twig.extension.uploader" class="Vich\UploaderBundle\Twig\Extension\UploaderExtension" public="false">
+    <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" class="Vich\UploaderBundle\Twig\Extension\UploaderExtension" public="false">
       <tag name="twig.extension"/>
-      <argument type="service" id="vich_uploader.templating.helper.uploader_helper"/>
+      <argument type="service" id="Vich\UploaderBundle\Templating\Helper\UploaderHelper"/>
     </service>
     <service id="vich_uploader.listener.clean.avatar" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
       <tag name="doctrine.event_subscriber" priority="50"/>
@@ -8947,6 +9210,69 @@
     <service id="vich_uploader.listener.upload.categoriesImages" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
       <tag name="doctrine.event_subscriber" priority="0"/>
       <argument>categoriesImages</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.pictureProfile" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="50"/>
+      <argument>pictureProfile</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.pictureProfile" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>pictureProfile</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.pictureProfile" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>pictureProfile</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.laboratoryPicture" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="50"/>
+      <argument>laboratoryPicture</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.laboratoryPicture" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>laboratoryPicture</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.laboratoryPicture" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>laboratoryPicture</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.clean.pharmacyPicture" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="50"/>
+      <argument>pharmacyPicture</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.remove.pharmacyPicture" class="Vich\UploaderBundle\EventListener\Doctrine\RemoveListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>pharmacyPicture</argument>
+      <argument type="service" id="vich_uploader.adapter.orm"/>
+      <argument type="service" id="vich_uploader.metadata_reader"/>
+      <argument type="service" id="vich_uploader.upload_handler"/>
+    </service>
+    <service id="vich_uploader.listener.upload.pharmacyPicture" class="Vich\UploaderBundle\EventListener\Doctrine\UploadListener" public="false">
+      <tag name="doctrine.event_subscriber" priority="0"/>
+      <argument>pharmacyPicture</argument>
       <argument type="service" id="vich_uploader.adapter.orm"/>
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
@@ -9088,15 +9414,16 @@
       <tag name="form.type" alias="easyadmin"/>
       <argument type="service" id="easyadmin.config.manager"/>
       <argument type="collection">
-        <argument key="8" type="service" id="easyadmin.form.type.configurator.code_editor"/>
-        <argument key="7" type="service" id="easyadmin.form.type.configurator.textarea"/>
-        <argument key="6" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
-        <argument key="5" type="service" id="easyadmin.form.type.configurator.collection"/>
-        <argument key="4" type="service" id="easyadmin.form.type.configurator.checkbox"/>
+        <argument key="9" type="service" id="easyadmin.form.type.configurator.code_editor"/>
+        <argument key="8" type="service" id="easyadmin.form.type.configurator.textarea"/>
+        <argument key="7" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
+        <argument key="6" type="service" id="easyadmin.form.type.configurator.collection"/>
+        <argument key="5" type="service" id="easyadmin.form.type.configurator.checkbox"/>
+        <argument key="4" type="service" id="easyadmin.filter.type.configurator.choice"/>
         <argument key="3" type="service" id="easyadmin.form.type.configurator.type"/>
-        <argument key="2" type="service" id="easyadmin.filter.type.configurator.choice"/>
-        <argument key="1" type="service" id="easyadmin.form.type.configurator.entity"/>
-        <argument key="0" type="service" id="easyadmin.form.type.configurator.ivory_ckeditor"/>
+        <argument key="2" type="service" id="easyadmin.form.type.configurator.entity"/>
+        <argument key="1" type="service" id="easyadmin.form.type.configurator.ivory_ckeditor"/>
+        <argument key="0" type="service" id="easyadmin.form.type.configurator.fos_ckeditor"/>
       </argument>
       <argument type="service" id="easyadmin.security.authorization_checker"/>
     </service>
@@ -9108,15 +9435,16 @@
       <tag name="form.type" alias="easyadmin_filters"/>
       <argument type="service" id="easyadmin.config.manager"/>
       <argument type="collection">
-        <argument key="8" type="service" id="easyadmin.form.type.configurator.code_editor"/>
-        <argument key="7" type="service" id="easyadmin.form.type.configurator.textarea"/>
-        <argument key="6" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
-        <argument key="5" type="service" id="easyadmin.form.type.configurator.collection"/>
-        <argument key="4" type="service" id="easyadmin.form.type.configurator.checkbox"/>
+        <argument key="9" type="service" id="easyadmin.form.type.configurator.code_editor"/>
+        <argument key="8" type="service" id="easyadmin.form.type.configurator.textarea"/>
+        <argument key="7" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
+        <argument key="6" type="service" id="easyadmin.form.type.configurator.collection"/>
+        <argument key="5" type="service" id="easyadmin.form.type.configurator.checkbox"/>
+        <argument key="4" type="service" id="easyadmin.filter.type.configurator.choice"/>
         <argument key="3" type="service" id="easyadmin.form.type.configurator.type"/>
-        <argument key="2" type="service" id="easyadmin.filter.type.configurator.choice"/>
-        <argument key="1" type="service" id="easyadmin.form.type.configurator.entity"/>
-        <argument key="0" type="service" id="easyadmin.form.type.configurator.ivory_ckeditor"/>
+        <argument key="2" type="service" id="easyadmin.form.type.configurator.entity"/>
+        <argument key="1" type="service" id="easyadmin.form.type.configurator.ivory_ckeditor"/>
+        <argument key="0" type="service" id="easyadmin.form.type.configurator.fos_ckeditor"/>
       </argument>
     </service>
     <service id="easyadmin.form.type.autocomplete" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType">
@@ -9166,6 +9494,9 @@
       <tag name="easyadmin.form.type.configurator" priority="-20"/>
     </service>
     <service id="easyadmin.form.type.configurator.ivory_ckeditor" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\IvoryCKEditorTypeConfigurator" public="false">
+      <tag name="easyadmin.form.type.configurator" priority="-130"/>
+    </service>
+    <service id="easyadmin.form.type.configurator.fos_ckeditor" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\FOSCKEditorTypeConfigurator" public="false">
       <tag name="easyadmin.form.type.configurator" priority="-130"/>
     </service>
     <service id="easyadmin.filter.registry" class="EasyCorp\Bundle\EasyAdminBundle\Form\Filter\FilterRegistry" public="true">
@@ -9712,35 +10043,6 @@
       <argument type="service" id="liip_imagine.cache.manager"/>
       <deprecated>The "%service_id%" service is deprecated since LiipImagineBundle 2.2 and will be removed in 3.0.</deprecated>
     </service>
-    <service id="fm_elfinder.configurator.default" class="FM\ElfinderBundle\Configuration\ElFinderConfigurationReader">
-      <argument>%fm_elfinder%</argument>
-      <argument type="service" id="request_stack"/>
-      <argument type="service" id="service_container"/>
-    </service>
-    <service id="fm_elfinder.loader.default" class="FM\ElfinderBundle\Loader\ElFinderLoader">
-      <argument type="service" id="fm_elfinder.configurator.default"/>
-    </service>
-    <service id="twig.extension.fm_elfinder_init" class="FM\ElfinderBundle\Twig\Extension\FMElfinderExtension">
-      <tag name="twig.extension" alias="fm_elfinder_init"/>
-      <argument type="service" id="twig"/>
-    </service>
-    <service id="FM\ElfinderBundle\Controller\ElFinderController" class="FM\ElfinderBundle\Controller\ElFinderController" public="true">
-      <tag name="controller.service_arguments"/>
-      <call method="setContainer">
-        <argument type="service" id="service_container"/>
-      </call>
-    </service>
-    <service id="fm_elfinder.form.type" class="FM\ElfinderBundle\Form\Type\ElFinderType">
-      <tag name="form.type"/>
-    </service>
-    <service id="fm_elfinder.command.installer" class="FM\ElfinderBundle\Command\ElFinderInstallerCommand">
-      <tag name="console.command" command="elfinder:install"/>
-      <argument type="service" id="filesystem"/>
-      <argument type="service" id="parameter_bag"/>
-      <call method="setName">
-        <argument>elfinder:install</argument>
-      </call>
-    </service>
     <service id="knp_paginator" class="Knp\Component\Pager\Paginator" public="true" lazy="true">
       <argument type="service" id="debug.event_dispatcher"/>
       <argument type="service" id="request_stack"/>
@@ -9773,6 +10075,7 @@
         <argument key="defaultSortableTemplate">@KnpPaginator/Pagination/sortable_link.html.twig</argument>
         <argument key="defaultFiltrationTemplate">@KnpPaginator/Pagination/filtration.html.twig</argument>
         <argument key="defaultPageRange">5</argument>
+        <argument key="defaultPageLimit">null</argument>
       </argument>
     </service>
     <service id="knp_paginator.helper.processor" class="Knp\Bundle\PaginatorBundle\Helper\Processor">
@@ -10428,11 +10731,13 @@
           <argument>admin.services</argument>
           <argument>admin.skills</argument>
           <argument>admin.time_slot_open</argument>
+          <argument>admin.members</argument>
+          <argument>admin.adminstrators</argument>
         </argument>
       </call>
       <call method="setAdminGroups">
         <argument type="collection">
-          <argument key="Gestion_pharmarcy" type="collection">
+          <argument key="Gestion des infos des pharmacies" type="collection">
             <argument key="items" type="collection">
               <argument type="collection">
                 <argument key="admin">admin.category_drugs</argument>
@@ -10464,10 +10769,10 @@
             <argument key="keep_open">false</argument>
             <argument key="item_adds" type="collection"/>
             <argument key="roles" type="collection"/>
-            <argument key="label">Gestion_pharmarcy</argument>
+            <argument key="label">Gestion des infos des pharmacies</argument>
             <argument key="label_catalogue">SonataAdminBundle</argument>
           </argument>
-          <argument key="Gestion_Doctor" type="collection">
+          <argument key="Gestion des Médecins" type="collection">
             <argument key="items" type="collection">
               <argument type="collection">
                 <argument key="admin">admin.expertise</argument>
@@ -10493,32 +10798,16 @@
                 <argument key="route_absolute">false</argument>
                 <argument key="roles" type="collection"/>
               </argument>
-              <argument type="collection">
-                <argument key="admin">admin.pratical_infos</argument>
-                <argument key="label"></argument>
-                <argument key="route"></argument>
-                <argument key="route_params" type="collection"/>
-                <argument key="route_absolute">false</argument>
-                <argument key="roles" type="collection"/>
-              </argument>
-              <argument type="collection">
-                <argument key="admin">admin.skills</argument>
-                <argument key="label"></argument>
-                <argument key="route"></argument>
-                <argument key="route_params" type="collection"/>
-                <argument key="route_absolute">false</argument>
-                <argument key="roles" type="collection"/>
-              </argument>
             </argument>
             <argument key="icon">&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</argument>
             <argument key="on_top">false</argument>
             <argument key="keep_open">false</argument>
             <argument key="item_adds" type="collection"/>
             <argument key="roles" type="collection"/>
-            <argument key="label">Gestion_Doctor</argument>
+            <argument key="label">Gestion des Médecins</argument>
             <argument key="label_catalogue">SonataAdminBundle</argument>
           </argument>
-          <argument key="Gestion_Laboratoire" type="collection">
+          <argument key="Gestion des Laboratoires" type="collection">
             <argument key="items" type="collection">
               <argument type="collection">
                 <argument key="admin">admin.category_laboratory</argument>
@@ -10534,10 +10823,10 @@
             <argument key="keep_open">false</argument>
             <argument key="item_adds" type="collection"/>
             <argument key="roles" type="collection"/>
-            <argument key="label">Gestion_Laboratoire</argument>
+            <argument key="label">Gestion des Laboratoires</argument>
             <argument key="label_catalogue">SonataAdminBundle</argument>
           </argument>
-          <argument key="Gestion_contenu_site" type="collection">
+          <argument key="Gestion du contenu du site" type="collection">
             <argument key="items" type="collection">
               <argument type="collection">
                 <argument key="admin">admin.news</argument>
@@ -10563,16 +10852,32 @@
                 <argument key="route_absolute">false</argument>
                 <argument key="roles" type="collection"/>
               </argument>
+              <argument type="collection">
+                <argument key="admin">admin.members</argument>
+                <argument key="label"></argument>
+                <argument key="route"></argument>
+                <argument key="route_params" type="collection"/>
+                <argument key="route_absolute">false</argument>
+                <argument key="roles" type="collection"/>
+              </argument>
+              <argument type="collection">
+                <argument key="admin">admin.skills</argument>
+                <argument key="label"></argument>
+                <argument key="route"></argument>
+                <argument key="route_params" type="collection"/>
+                <argument key="route_absolute">false</argument>
+                <argument key="roles" type="collection"/>
+              </argument>
             </argument>
             <argument key="icon">&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</argument>
             <argument key="on_top">false</argument>
             <argument key="keep_open">false</argument>
             <argument key="item_adds" type="collection"/>
             <argument key="roles" type="collection"/>
-            <argument key="label">Gestion_contenu_site</argument>
+            <argument key="label">Gestion du contenu du site</argument>
             <argument key="label_catalogue">SonataAdminBundle</argument>
           </argument>
-          <argument key="Gestion_infos" type="collection">
+          <argument key="Gestion des infos" type="collection">
             <argument key="items" type="collection">
               <argument type="collection">
                 <argument key="admin">admin.refund</argument>
@@ -10620,7 +10925,26 @@
             <argument key="keep_open">false</argument>
             <argument key="item_adds" type="collection"/>
             <argument key="roles" type="collection"/>
-            <argument key="label">Gestion_infos</argument>
+            <argument key="label">Gestion des infos</argument>
+            <argument key="label_catalogue">SonataAdminBundle</argument>
+          </argument>
+          <argument key="Admin" type="collection">
+            <argument key="items" type="collection">
+              <argument type="collection">
+                <argument key="admin">admin.adminstrators</argument>
+                <argument key="label"></argument>
+                <argument key="route"></argument>
+                <argument key="route_params" type="collection"/>
+                <argument key="route_absolute">false</argument>
+                <argument key="roles" type="collection"/>
+              </argument>
+            </argument>
+            <argument key="icon">&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</argument>
+            <argument key="on_top">false</argument>
+            <argument key="keep_open">false</argument>
+            <argument key="item_adds" type="collection"/>
+            <argument key="roles" type="collection"/>
+            <argument key="label">Admin</argument>
             <argument key="label_catalogue">SonataAdminBundle</argument>
           </argument>
         </argument>
@@ -10675,6 +10999,12 @@
           <argument key="App\Entity\TimeSlotOpen" type="collection">
             <argument>admin.time_slot_open</argument>
           </argument>
+          <argument key="App\Entity\Members" type="collection">
+            <argument>admin.members</argument>
+          </argument>
+          <argument key="App\Entity\Admin" type="collection">
+            <argument>admin.adminstrators</argument>
+          </argument>
         </argument>
       </call>
     </service>
@@ -10698,6 +11028,8 @@
         <argument>admin.services</argument>
         <argument>admin.skills</argument>
         <argument>admin.time_slot_open</argument>
+        <argument>admin.members</argument>
+        <argument>admin.adminstrators</argument>
       </argument>
       <argument type="service" id="service_container"/>
     </service>
@@ -10776,6 +11108,7 @@
     </service>
     <service id="sonata.admin.form.type.admin" class="Sonata\AdminBundle\Form\Type\AdminType" public="true">
       <tag name="form.type" alias="sonata_type_admin"/>
+      <argument type="service" id="sonata.admin.helper"/>
     </service>
     <service id="sonata.admin.form.type.model_choice" class="Sonata\AdminBundle\Form\Type\ModelType" public="true">
       <tag name="form.type" alias="sonata_type_model"/>
@@ -11231,18 +11564,21 @@
       <tag name="sonata.admin.filter.type" alias="doctrine_orm_class"/>
     </service>
     <service id="sonata.admin.manipulator.acl.object.orm" class="Sonata\DoctrineORMAdminBundle\Util\ObjectAclManipulator" public="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AccountProController" class="App\Controller\AccountProController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AccountProController" class="App\Controller\AccountProController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AccountProController" class="App\Controller\AccountProController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BlogController" class="App\Controller\BlogController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BlogController" class="App\Controller\BlogController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BlogController" class="App\Controller\BlogController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DoctorController" class="App\Controller\DoctorController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DoctorController" class="App\Controller\DoctorController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\DoctorController" class="App\Controller\DoctorController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BlogProfileController" class="App\Controller\BlogProfileController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BlogProfileController" class="App\Controller\BlogProfileController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\BlogProfileController" class="App\Controller\BlogProfileController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\EditAccountController" class="App\Controller\EditAccountController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\EditAccountController" class="App\Controller\EditAccountController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\EditAccountController" class="App\Controller\EditAccountController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainREFMEDController" class="App\Controller\MainREFMEDController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainREFMEDController" class="App\Controller\MainREFMEDController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainREFMEDController" class="App\Controller\MainREFMEDController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PharmacieController" class="App\Controller\PharmacieController" autowire="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PharmacieController" class="App\Controller\PharmacieController" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Controller\PharmacieController" class="App\Controller\PharmacieController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -11259,10 +11595,40 @@
     <service id=".abstract.instanceof.App\DataFixtures\KeywordFixture" class="App\DataFixtures\KeywordFixture" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UsersBlogFixtures" class="App\DataFixtures\UsersBlogFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\UsersBlogFixtures" class="App\DataFixtures\UsersBlogFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddArticleType" class="App\Form\AddArticleType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AddArticleType" class="App\Form\AddArticleType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EditDoctorType" class="App\Form\EditDoctorType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EditDoctorType" class="App\Form\EditDoctorType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EditLaboratoryType" class="App\Form\EditLaboratoryType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EditLaboratoryType" class="App\Form\EditLaboratoryType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EditPharmacyType" class="App\Form\EditPharmacyType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EditPharmacyType" class="App\Form\EditPharmacyType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LaboratoryRegisterType" class="App\Form\LaboratoryRegisterType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\LaboratoryRegisterType" class="App\Form\LaboratoryRegisterType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LocationType" class="App\Form\LocationType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\LocationType" class="App\Form\LocationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PharmacyRegisterType" class="App\Form\PharmacyRegisterType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PharmacyRegisterType" class="App\Form\PharmacyRegisterType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchDoctorType" class="App\Form\SearchDoctorType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SearchDoctorType" class="App\Form\SearchDoctorType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchDrugsType" class="App\Form\SearchDrugsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SearchDrugsType" class="App\Form\SearchDrugsType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SearchLabotaryType" class="App\Form\SearchLabotaryType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SearchLabotaryType" class="App\Form\SearchLabotaryType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SocialNetworksDoctorType" class="App\Form\SocialNetworksDoctorType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SocialNetworksDoctorType" class="App\Form\SocialNetworksDoctorType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SocialType" class="App\Form\SocialType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SocialType" class="App\Form\SocialType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UsersBlogFormType" class="App\Form\UsersBlogFormType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UsersBlogFormType" class="App\Form\UsersBlogFormType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoriesRepository" class="App\Repository\CategoriesRepository" autowire="true" abstract="true"/>
@@ -11275,6 +11641,8 @@
     <service id=".abstract.instanceof.App\Repository\CommentairesRepository" class="App\Repository\CommentairesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DoctorRepository" class="App\Repository\DoctorRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\DoctorRepository" class="App\Repository\DoctorRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DoctorSocialNetworksRepository" class="App\Repository\DoctorSocialNetworksRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DoctorSocialNetworksRepository" class="App\Repository\DoctorSocialNetworksRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DrugsConsomersRepository" class="App\Repository\DrugsConsomersRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\DrugsConsomersRepository" class="App\Repository\DrugsConsomersRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DrugsRepository" class="App\Repository\DrugsRepository" autowire="true" abstract="true"/>
@@ -11287,6 +11655,8 @@
     <service id=".abstract.instanceof.App\Repository\KeywordRepository" class="App\Repository\KeywordRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LaboratoryRepository" class="App\Repository\LaboratoryRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\LaboratoryRepository" class="App\Repository\LaboratoryRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LaboratorySocialNetworksRepository" class="App\Repository\LaboratorySocialNetworksRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\LaboratorySocialNetworksRepository" class="App\Repository\LaboratorySocialNetworksRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LanguageRepository" class="App\Repository\LanguageRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\LanguageRepository" class="App\Repository\LanguageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LocationRepository" class="App\Repository\LocationRepository" autowire="true" abstract="true"/>
@@ -11297,8 +11667,12 @@
     <service id=".abstract.instanceof.App\Repository\MembersRepository" class="App\Repository\MembersRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NewsRepository" class="App\Repository\NewsRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NewsRepository" class="App\Repository\NewsRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PharmacyAvailabeDrugsRepository" class="App\Repository\PharmacyAvailabeDrugsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PharmacyAvailabeDrugsRepository" class="App\Repository\PharmacyAvailabeDrugsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PharmacyRepository" class="App\Repository\PharmacyRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PharmacyRepository" class="App\Repository\PharmacyRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PharmacySocialNetworksRepository" class="App\Repository\PharmacySocialNetworksRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\PharmacySocialNetworksRepository" class="App\Repository\PharmacySocialNetworksRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\PraticalInfosRepository" class="App\Repository\PraticalInfosRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\PraticalInfosRepository" class="App\Repository\PraticalInfosRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ProfessionRepository" class="App\Repository\ProfessionRepository" autowire="true" abstract="true"/>
@@ -11412,6 +11786,24 @@
         <argument>make:functional-test</argument>
       </call>
     </service>
+    <service id="maker.auto_command.make_message" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
+      <tag name="console.command" command="make:message"/>
+      <argument type="service" id="maker.maker.make_message"/>
+      <argument type="service" id="maker.file_manager"/>
+      <argument type="service" id="maker.generator"/>
+      <call method="setName">
+        <argument>make:message</argument>
+      </call>
+    </service>
+    <service id="maker.auto_command.make_messenger_middleware" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
+      <tag name="console.command" command="make:messenger-middleware"/>
+      <argument type="service" id="maker.maker.make_messenger_middleware"/>
+      <argument type="service" id="maker.file_manager"/>
+      <argument type="service" id="maker.generator"/>
+      <call method="setName">
+        <argument>make:messenger-middleware</argument>
+      </call>
+    </service>
     <service id="maker.auto_command.make_registration_form" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
       <tag name="console.command" command="make:registration-form"/>
       <argument type="service" id="maker.maker.make_registration_form"/>
@@ -11419,6 +11811,15 @@
       <argument type="service" id="maker.generator"/>
       <call method="setName">
         <argument>make:registration-form</argument>
+      </call>
+    </service>
+    <service id="maker.auto_command.make_reset_password" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
+      <tag name="console.command" command="make:reset-password"/>
+      <argument type="service" id="maker.maker.make_reset_password"/>
+      <argument type="service" id="maker.file_manager"/>
+      <argument type="service" id="maker.generator"/>
+      <call method="setName">
+        <argument>make:reset-password</argument>
       </call>
     </service>
     <service id="maker.auto_command.make_serializer_encoder" class="Symfony\Bundle\MakerBundle\Command\MakerCommand" public="false">
@@ -11530,6 +11931,24 @@
         <argument key="easyadmin.filter.type.time" type="service" id="easyadmin.filter.type.time"/>
       </argument>
     </service>
+    <service id=".service_locator.ZLiBugb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctor" type="service" id=".errored..service_locator.ZLiBugb.App\Entity\Doctor"/>
+      </argument>
+    </service>
+    <service id=".service_locator.nj7G1To" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="pharmacy" type="service" id=".errored..service_locator.nj7G1To.App\Entity\Pharmacy"/>
+      </argument>
+    </service>
+    <service id=".service_locator.N8gjrmL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="laboratory" type="service" id=".errored..service_locator.N8gjrmL.App\Entity\Laboratory"/>
+      </argument>
+    </service>
     <service id=".service_locator..UeDvn1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -11540,6 +11959,12 @@
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="article" type="service" id=".errored..service_locator.LcskAYA.App\Entity\Articles"/>
+      </argument>
+    </service>
+    <service id=".service_locator.ccM2MGC" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
     <service id=".service_locator.XGQv6wh" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -11556,28 +11981,31 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.A9ce80i" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.JB1s1ZL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="eventDispatcher" type="service" id="debug.event_dispatcher"/>
-        <argument key="session" type="service" id="session"/>
-      </argument>
-    </service>
-    <service id=".service_locator._STIV_h" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
+        <argument key="App\Controller\AccountProController::showAccountDoctor" type="service" id=".service_locator.ZLiBugb"/>
+        <argument key="App\Controller\AccountProController::showAccountLaboratory" type="service" id=".service_locator.N8gjrmL"/>
+        <argument key="App\Controller\AccountProController::showAccountPharmarcy" type="service" id=".service_locator.nj7G1To"/>
         <argument key="App\Controller\BlogController::index" type="service" id=".service_locator..UeDvn1"/>
         <argument key="App\Controller\BlogController::showArticle" type="service" id=".service_locator.LcskAYA"/>
-        <argument key="App\Controller\RegistrationController::register" type="service" id=".service_locator.XGQv6wh"/>
+        <argument key="App\Controller\EditAccountController::index" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\RegistrationController::registerBlog" type="service" id=".service_locator.XGQv6wh"/>
+        <argument key="App\Controller\RegistrationController::registerDoctor" type="service" id=".service_locator.XGQv6wh"/>
+        <argument key="App\Controller\RegistrationController::registerLaboratory" type="service" id=".service_locator.XGQv6wh"/>
+        <argument key="App\Controller\RegistrationController::registerPharmacy" type="service" id=".service_locator.XGQv6wh"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.g.xob4v"/>
-        <argument key="FM\ElfinderBundle\Controller\ElFinderController::load" type="service" id=".service_locator.A9ce80i"/>
+        <argument key="App\Controller\AccountProController:showAccountDoctor" type="service" id=".service_locator.ZLiBugb"/>
+        <argument key="App\Controller\AccountProController:showAccountLaboratory" type="service" id=".service_locator.N8gjrmL"/>
+        <argument key="App\Controller\AccountProController:showAccountPharmarcy" type="service" id=".service_locator.nj7G1To"/>
         <argument key="App\Controller\BlogController:index" type="service" id=".service_locator..UeDvn1"/>
         <argument key="App\Controller\BlogController:showArticle" type="service" id=".service_locator.LcskAYA"/>
-        <argument key="App\Controller\RegistrationController:register" type="service" id=".service_locator.XGQv6wh"/>
+        <argument key="App\Controller\EditAccountController:index" type="service" id=".service_locator.ccM2MGC"/>
         <argument key="App\Controller\RegistrationController:registerBlog" type="service" id=".service_locator.XGQv6wh"/>
+        <argument key="App\Controller\RegistrationController:registerDoctor" type="service" id=".service_locator.XGQv6wh"/>
+        <argument key="App\Controller\RegistrationController:registerLaboratory" type="service" id=".service_locator.XGQv6wh"/>
+        <argument key="App\Controller\RegistrationController:registerPharmacy" type="service" id=".service_locator.XGQv6wh"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.g.xob4v"/>
-        <argument key="FM\ElfinderBundle\Controller\ElFinderController:load" type="service" id=".service_locator.A9ce80i"/>
       </argument>
     </service>
     <service id=".service_locator.01hWFN3" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -11643,10 +12071,24 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.qgGbAYE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.GBzNfqx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Form\AddArticleType" type="service" id="App\Form\AddArticleType"/>
+        <argument key="App\Form\DoctorType" type="service" id="App\Form\DoctorType"/>
+        <argument key="App\Form\EditDoctorType" type="service" id="App\Form\EditDoctorType"/>
+        <argument key="App\Form\EditLaboratoryType" type="service" id="App\Form\EditLaboratoryType"/>
+        <argument key="App\Form\EditPharmacyType" type="service" id="App\Form\EditPharmacyType"/>
+        <argument key="App\Form\LaboratoryRegisterType" type="service" id="App\Form\LaboratoryRegisterType"/>
+        <argument key="App\Form\LocationType" type="service" id="App\Form\LocationType"/>
+        <argument key="App\Form\PasswordUpdateType" type="service" id="App\Form\PasswordUpdateType"/>
+        <argument key="App\Form\PharmacyRegisterType" type="service" id="App\Form\PharmacyRegisterType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
+        <argument key="App\Form\SearchDoctorType" type="service" id="App\Form\SearchDoctorType"/>
+        <argument key="App\Form\SearchDrugsType" type="service" id="App\Form\SearchDrugsType"/>
+        <argument key="App\Form\SearchLabotaryType" type="service" id="App\Form\SearchLabotaryType"/>
+        <argument key="App\Form\SocialNetworksDoctorType" type="service" id="App\Form\SocialNetworksDoctorType"/>
+        <argument key="App\Form\SocialType" type="service" id="App\Form\SocialType"/>
         <argument key="App\Form\UsersBlogFormType" type="service" id="App\Form\UsersBlogFormType"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType" type="service" id="easyadmin.form.type.autocomplete"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminBatchFormType" type="service" id="easyadmin.form.type.batch"/>
@@ -11656,7 +12098,6 @@
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminGroupType" type="service" id="easyadmin.form.type.group"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminSectionType" type="service" id="easyadmin.form.type.section"/>
         <argument key="EasyCorp\Bundle\EasyAdminBundle\Form\Type\FileUploadType" type="service" id="easyadmin.form.type.fileupload"/>
-        <argument key="FM\ElfinderBundle\Form\Type\ElFinderType" type="service" id="fm_elfinder.form.type"/>
         <argument key="FOS\CKEditorBundle\Form\Type\CKEditorType" type="service" id="fos_ck_editor.form.type"/>
         <argument key="Liip\ImagineBundle\Form\Type\ImageType" type="service" id="liip_imagine.form.type.image"/>
         <argument key="Sonata\AdminBundle\Form\Type\AdminType" type="service" id="sonata.admin.form.type.admin"/>
@@ -11750,8 +12191,8 @@
       <argument type="service" id="security.access.authenticated_voter"/>
       <argument type="service" id="debug.event_dispatcher"/>
     </service>
-    <service id="debug.security.voter.security.access.simple_role_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
-      <argument type="service" id="security.access.simple_role_voter"/>
+    <service id="debug.security.voter.security.access.role_hierarchy_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
+      <argument type="service" id="security.access.role_hierarchy_voter"/>
       <argument type="service" id="debug.event_dispatcher"/>
     </service>
     <service id="debug.security.voter.security.access.expression_voter" class="Symfony\Component\Security\Core\Authorization\Voter\TraceableVoter">
@@ -11767,27 +12208,32 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.K8H.KhM" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.w6i5ykD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="App\Repository\AdminRepository" type="service" id="App\Repository\AdminRepository"/>
         <argument key="App\Repository\ArticlesRepository" type="service" id="App\Repository\ArticlesRepository"/>
         <argument key="App\Repository\CategoriesRepository" type="service" id="App\Repository\CategoriesRepository"/>
         <argument key="App\Repository\CategoryDrugsRepository" type="service" id="App\Repository\CategoryDrugsRepository"/>
         <argument key="App\Repository\CategoryLaboratoryRepository" type="service" id="App\Repository\CategoryLaboratoryRepository"/>
         <argument key="App\Repository\CommentairesRepository" type="service" id="App\Repository\CommentairesRepository"/>
         <argument key="App\Repository\DoctorRepository" type="service" id="App\Repository\DoctorRepository"/>
+        <argument key="App\Repository\DoctorSocialNetworksRepository" type="service" id="App\Repository\DoctorSocialNetworksRepository"/>
         <argument key="App\Repository\DrugsConsomersRepository" type="service" id="App\Repository\DrugsConsomersRepository"/>
         <argument key="App\Repository\DrugsRepository" type="service" id="App\Repository\DrugsRepository"/>
         <argument key="App\Repository\ExpertiseRepository" type="service" id="App\Repository\ExpertiseRepository"/>
         <argument key="App\Repository\FormDrugsRepository" type="service" id="App\Repository\FormDrugsRepository"/>
         <argument key="App\Repository\KeywordRepository" type="service" id="App\Repository\KeywordRepository"/>
         <argument key="App\Repository\LaboratoryRepository" type="service" id="App\Repository\LaboratoryRepository"/>
+        <argument key="App\Repository\LaboratorySocialNetworksRepository" type="service" id="App\Repository\LaboratorySocialNetworksRepository"/>
         <argument key="App\Repository\LanguageRepository" type="service" id="App\Repository\LanguageRepository"/>
         <argument key="App\Repository\LocationRepository" type="service" id="App\Repository\LocationRepository"/>
         <argument key="App\Repository\MeansPaymentRepository" type="service" id="App\Repository\MeansPaymentRepository"/>
         <argument key="App\Repository\MembersRepository" type="service" id="App\Repository\MembersRepository"/>
         <argument key="App\Repository\NewsRepository" type="service" id="App\Repository\NewsRepository"/>
+        <argument key="App\Repository\PharmacyAvailabeDrugsRepository" type="service" id="App\Repository\PharmacyAvailabeDrugsRepository"/>
         <argument key="App\Repository\PharmacyRepository" type="service" id="App\Repository\PharmacyRepository"/>
+        <argument key="App\Repository\PharmacySocialNetworksRepository" type="service" id="App\Repository\PharmacySocialNetworksRepository"/>
         <argument key="App\Repository\PraticalInfosRepository" type="service" id="App\Repository\PraticalInfosRepository"/>
         <argument key="App\Repository\ProfessionRepository" type="service" id="App\Repository\ProfessionRepository"/>
         <argument key="App\Repository\QualityServicesRepository" type="service" id="App\Repository\QualityServicesRepository"/>
@@ -12046,6 +12492,14 @@
       <tag name="sonata.admin.template_registry"/>
       <argument>%sonata.admin.configuration.templates%</argument>
     </service>
+    <service id="admin.members.template_registry" class="Sonata\AdminBundle\Templating\TemplateRegistry" public="true">
+      <tag name="sonata.admin.template_registry"/>
+      <argument>%sonata.admin.configuration.templates%</argument>
+    </service>
+    <service id="admin.adminstrators.template_registry" class="Sonata\AdminBundle\Templating\TemplateRegistry" public="true">
+      <tag name="sonata.admin.template_registry"/>
+      <argument>%sonata.admin.configuration.templates%</argument>
+    </service>
     <service id=".service_locator.V.o0zE7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -12082,27 +12536,33 @@
         <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
       </argument>
     </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\AccountProController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AccountProController"/>
+      <argument>App\Controller\AccountProController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.vdmMuyE.App\Controller\BlogController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\BlogController"/>
       <argument>App\Controller\BlogController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\DoctorController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\DoctorController"/>
-      <argument>App\Controller\DoctorController</argument>
+    <service id=".service_locator.vdmMuyE.App\Controller\BlogProfileController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\BlogProfileController"/>
+      <argument>App\Controller\BlogProfileController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\EditAccountController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\EditAccountController"/>
+      <argument>App\Controller\EditAccountController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
     <service id=".service_locator.vdmMuyE.App\Controller\MainREFMEDController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MainREFMEDController"/>
       <argument>App\Controller\MainREFMEDController</argument>
-      <argument type="service" id="service_container"/>
-      <factory service=".service_locator.vdmMuyE" method="withContext"/>
-    </service>
-    <service id=".service_locator.vdmMuyE.App\Controller\PharmacieController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator_context" id="App\Controller\PharmacieController"/>
-      <argument>App\Controller\PharmacieController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -12153,6 +12613,18 @@
       <argument>router.cache_warmer</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.m90YCjy" method="withContext"/>
+    </service>
+    <service id=".service_locator.C2Thyvr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id=".service_locator.C2Thyvr.sensio_framework_extra.view.listener" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="sensio_framework_extra.view.listener"/>
+      <argument>sensio_framework_extra.view.listener</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.C2Thyvr" method="withContext"/>
     </service>
     <service id=".service_locator.o9nGMXB" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
@@ -12265,7 +12737,7 @@
     <service id="debug.security.access.decision_manager.inner" class="Symfony\Component\Security\Core\Authorization\AccessDecisionManager" public="false">
       <argument type="iterator">
         <argument type="service" id="debug.security.voter.security.access.authenticated_voter"/>
-        <argument type="service" id="debug.security.voter.security.access.simple_role_voter"/>
+        <argument type="service" id="debug.security.voter.security.access.role_hierarchy_voter"/>
         <argument type="service" id="debug.security.voter.security.access.expression_voter"/>
       </argument>
       <argument>affirmative</argument>
@@ -12289,12 +12761,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator._STIV_h"/>
+      <argument type="service" id=".service_locator.JB1s1ZL"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator._STIV_h"/>
+      <argument type="service" id=".service_locator.JB1s1ZL"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus" public="false">
       <argument type="iterator">
@@ -12315,9 +12787,12 @@
       </call>
       <factory class="Symfony\Component\HttpClient\HttpClient" method="create"/>
     </service>
+    <service id=".errored..service_locator.ZLiBugb.App\Entity\Doctor" class="App\Entity\Doctor"/>
+    <service id=".errored..service_locator.nj7G1To.App\Entity\Pharmacy" class="App\Entity\Pharmacy"/>
+    <service id=".errored..service_locator.N8gjrmL.App\Entity\Laboratory" class="App\Entity\Laboratory"/>
     <service id=".errored..service_locator.LcskAYA.App\Entity\Articles" class="App\Entity\Articles"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id=".service_locator.L_9q26s"/>
+      <argument type="service" id=".service_locator.nYbdW03"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -12392,7 +12867,6 @@
         <argument key="make:admin:migration">easyadmin.command.make_admin_migration</argument>
         <argument key="liip:imagine:cache:remove">liip_imagine.command.cache_remove</argument>
         <argument key="liip:imagine:cache:resolve">liip_imagine.command.cache_resolve</argument>
-        <argument key="elfinder:install">fm_elfinder.command.installer</argument>
         <argument key="doctrine:fixtures:load">doctrine.fixtures_load_command</argument>
         <argument key="sonata:block:debug">Sonata\BlockBundle\Command\DebugBlocksCommand</argument>
         <argument key="cache:create-cache-class">Sonata\AdminBundle\Command\CreateClassCacheCommand</argument>
@@ -12408,7 +12882,10 @@
         <argument key="make:fixtures">maker.auto_command.make_fixtures</argument>
         <argument key="make:form">maker.auto_command.make_form</argument>
         <argument key="make:functional-test">maker.auto_command.make_functional_test</argument>
+        <argument key="make:message">maker.auto_command.make_message</argument>
+        <argument key="make:messenger-middleware">maker.auto_command.make_messenger_middleware</argument>
         <argument key="make:registration-form">maker.auto_command.make_registration_form</argument>
+        <argument key="make:reset-password">maker.auto_command.make_reset_password</argument>
         <argument key="make:serializer:encoder">maker.auto_command.make_serializer_encoder</argument>
         <argument key="make:serializer:normalizer">maker.auto_command.make_serializer_normalizer</argument>
         <argument key="make:subscriber">maker.auto_command.make_subscriber</argument>
@@ -12421,7 +12898,7 @@
         <argument key="make:sonata:admin">maker.auto_command.make_sonata_admin</argument>
       </argument>
     </service>
-    <service id=".service_locator.L_9q26s" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.nYbdW03" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Sonata\AdminBundle\Command\CreateClassCacheCommand" type="service" id="Sonata\AdminBundle\Command\CreateClassCacheCommand"/>
@@ -12492,7 +12969,6 @@
         <argument key="doctrine_migrations.up_to_date_command" type="service" id="doctrine_migrations.up_to_date_command"/>
         <argument key="doctrine_migrations.version_command" type="service" id="doctrine_migrations.version_command"/>
         <argument key="easyadmin.command.make_admin_migration" type="service" id="easyadmin.command.make_admin_migration"/>
-        <argument key="fm_elfinder.command.installer" type="service" id="fm_elfinder.command.installer"/>
         <argument key="fos_ck_editor.command.installer" type="service" id="fos_ck_editor.command.installer"/>
         <argument key="liip_imagine.command.cache_remove" type="service" id="liip_imagine.command.cache_remove"/>
         <argument key="liip_imagine.command.cache_resolve" type="service" id="liip_imagine.command.cache_resolve"/>
@@ -12504,8 +12980,11 @@
         <argument key="maker.auto_command.make_fixtures" type="service" id="maker.auto_command.make_fixtures"/>
         <argument key="maker.auto_command.make_form" type="service" id="maker.auto_command.make_form"/>
         <argument key="maker.auto_command.make_functional_test" type="service" id="maker.auto_command.make_functional_test"/>
+        <argument key="maker.auto_command.make_message" type="service" id="maker.auto_command.make_message"/>
+        <argument key="maker.auto_command.make_messenger_middleware" type="service" id="maker.auto_command.make_messenger_middleware"/>
         <argument key="maker.auto_command.make_migration" type="service" id="maker.auto_command.make_migration"/>
         <argument key="maker.auto_command.make_registration_form" type="service" id="maker.auto_command.make_registration_form"/>
+        <argument key="maker.auto_command.make_reset_password" type="service" id="maker.auto_command.make_reset_password"/>
         <argument key="maker.auto_command.make_serializer_encoder" type="service" id="maker.auto_command.make_serializer_encoder"/>
         <argument key="maker.auto_command.make_serializer_normalizer" type="service" id="maker.auto_command.make_serializer_normalizer"/>
         <argument key="maker.auto_command.make_sonata_admin" type="service" id="maker.auto_command.make_sonata_admin"/>
@@ -12762,8 +13241,6 @@
     <service id="Vich\UploaderBundle\Handler\UploadHandler" alias="vich_uploader.upload_handler" public="false"/>
     <service id="Vich\UploaderBundle\Form\Type\VichFileType" alias="vich_uploader.form.type.file" public="false"/>
     <service id="Vich\UploaderBundle\Form\Type\VichImageType" alias="vich_uploader.form.type.image" public="false"/>
-    <service id="Vich\UploaderBundle\Templating\Helper\UploaderHelper" alias="vich_uploader.templating.helper.uploader_helper" public="false"/>
-    <service id="Vich\UploaderBundle\Twig\Extension\UploaderExtension" alias="vich_uploader.twig.extension.uploader" public="false"/>
     <service id="easyadmin.property_accessor" alias="property_accessor" public="true"/>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Configuration\ConfigManager" alias="easyadmin.config.manager"/>
     <service id="EasyCorp\Bundle\EasyAdminBundle\Search\QueryBuilder" alias="easyadmin.query_builder"/>
@@ -12779,8 +13256,6 @@
     <service id="Liip\ImagineBundle\Imagine\Cache\CacheManager" alias="liip_imagine.cache.manager" public="false"/>
     <service id="Liip\ImagineBundle\Imagine\Data\DataManager" alias="liip_imagine.data.manager" public="false"/>
     <service id="Liip\ImagineBundle\Imagine\Filter\FilterManager" alias="liip_imagine.filter.manager" public="false"/>
-    <service id="fm_elfinder.configurator" alias="fm_elfinder.configurator.default"/>
-    <service id="fm_elfinder.loader" alias="fm_elfinder.loader.default" public="true"/>
     <service id="Knp\Component\Pager\PaginatorInterface" alias="knp_paginator"/>
     <service id="Knp\Menu\Provider\MenuProviderInterface" alias="knp_menu.menu_provider.chain" public="false"/>
     <service id="Knp\Menu\FactoryInterface" alias="knp_menu.factory" public="false"/>
@@ -12814,7 +13289,7 @@
     <service id="Sonata\AdminBundle\Templating\MutableTemplateRegistryInterface" alias="sonata.admin.global_template_registry"/>
     <service id="sonata.admin.security.handler" alias="sonata.admin.security.handler.noop"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator._STIV_h"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.JB1s1ZL"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="twig.loader" alias="twig.loader.filesystem"/>
@@ -12836,7 +13311,6 @@
     <service id="knp_menu.menu_provider" alias="knp_menu.menu_provider.chain"/>
     <service id=".service_locator.BgI5J6G" alias="messenger.retry_strategy_locator" public="false"/>
     <service id=".service_locator.NiAfvwb" alias=".service_locator.01hWFN3" public="false"/>
-    <service id=".service_locator.qlNA3YX" alias=".service_locator.qgGbAYE" public="false"/>
     <service id="validator" alias="debug.validator" public="true"/>
     <service id="translator.data_collector.inner" alias="translator.default" public="false"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>

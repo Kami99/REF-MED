@@ -1,0 +1,120 @@
+{% extends 'appMain.html.twig' %}
+{% block body %}
+{% include "includeApp/_navigation.html.twig" %}
+{% for label,messages in app.flashes %}
+<div class="container">
+    <div class="alert alert-{{label}}">
+        {% for message in messages %}
+        <p>{{message}}</p>                    
+        {% endfor %}
+{% endfor %}
+ <!-- ***** Hero Area Start ***** -->
+ <section class="breadcumb-area bg-img gradient-background-overlay" id="map">
+
+</section>
+    <!-- ***** Hero Area End ***** -->
+
+    <div class="medilife-services-area section-padding-100-20">
+        <div class="container">
+            <div class="row">
+                {% if doctors != null %}
+                {% for doctor in doctors %}
+                {% set i = 0 %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card-container">
+                        <span class="pro">{{distance[i]}}</span>
+                        {% if doctor.pictureProfil %}
+                        <img class="round" src="{{vich_uploader_asset(doctor, 'imageFile')}}"alt="user" />
+                        {% else %}
+                        <img src="{{asset('bower_components/images/NotImageProfile.png')}}" 
+                        alt="Empty Image">
+                       {% endif %}
+                        <h5> {{doctor.FullName}}, <h6>{{doctor.profession }}</h6></h5>
+                        <h6>{{doctor.location.nameLocation |u.truncate(50, '...')}}</h6>
+                        <p>  Tarif consultation Min : {{doctor.tarifMin}}
+                        <br/>  Tarif consultation Max : {{doctor.tarifMax}}
+                        </p>
+                        <div class="buttons">
+                            <button class="primary">
+                                Prendre RDV
+                            </button>
+                            <button class="primary ghost">
+                                Voir plus
+                            </button>
+                        </div>
+                        <div class="skills">
+                                
+                            <h6>Expertise</h6>
+                            <ul>
+                                {% for expertise in doctor.expertise %}                      
+                                <li>{{expertise}}</li>
+                            {% endfor %}
+
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+                {% else %}
+                <h1 class="h2">Désolé, nous n'avons trouvé aucun professionnel pour votre recherche… </h1>
+                <br>
+                <br>
+                <br>
+                <h2 class="h3">Essayez avec d'autres critères de recherche.</h2>
+                <br>
+    <div class="medilife-book-an-appoinment-area">
+
+                <div class="appointment-form-content p-25">
+
+                {% include "includeApp/_form_search_doctor.html.twig" %}       
+                </div>      
+            </div>      
+                <br><br>
+                <br><br>
+                <br><br>
+                <br><br>
+
+                <div class="container mt-50 p-20">
+                    <div class="row " style="    position: relative;
+                    display: -ms-flexbox;
+                    display: flex;
+                    min-width: 0;
+                    word-wrap: break-word;
+                    background-color: #fff;
+                    background-clip: border-box;
+                    border: 1px solid rgba(0,0,0,.125);
+                    border-radius: .25rem;">
+                        <div class="col-8 col-md-12">
+                            <h3>Vous êtes praticien et vous n'apparaissez pas dans cette recherche ?
+                            </h3>
+                            <h5>Contactez-nous pour obtenir un référencement de votre cabinet.
+                            </h5>
+                        </div>
+                        <div class="col-lg-4 col-md-12 mt-25">
+        <button type="button" class="btn btn-primary btn-lg">AJOUTER VOTRE CABINET</button> 
+    
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                    
+                {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% include "includeApp/_footer.html.twig" %}
+
+{% endblock body %}
+{% block javascripts %}
+<script src="{{asset('bower_components/mainRefMed/js/alert.js')}}"></script>
+{{ parent() }}
+
+{% endblock %}

@@ -61,13 +61,17 @@ class __TwigTemplate_6486755574e8f4c4378f33de4a581d46626a4dd5fb7bcdc3c41ee26dadf
         echo "</title>
     </head>
     <body>
+
+            </div>
+        </div>
+                    
         ";
-        // line 33
+        // line 37
         $this->displayBlock('body', $context, $blocks);
-        // line 34
+        // line 38
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 47
+        // line 52
         echo "    </body>
 </html>
 ";
@@ -164,7 +168,7 @@ class __TwigTemplate_6486755574e8f4c4378f33de4a581d46626a4dd5fb7bcdc3c41ee26dadf
 
     }
 
-    // line 33
+    // line 37
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -182,7 +186,7 @@ class __TwigTemplate_6486755574e8f4c4378f33de4a581d46626a4dd5fb7bcdc3c41ee26dadf
 
     }
 
-    // line 34
+    // line 38
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -192,35 +196,39 @@ class __TwigTemplate_6486755574e8f4c4378f33de4a581d46626a4dd5fb7bcdc3c41ee26dadf
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 35
+        // line 39
         echo "        <!-- jQuery (Necessary for All JavaScript Plugins) -->
     <script src=\"";
-        // line 36
+        // line 40
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/jquery.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 37
+        // line 41
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/js/jquery/jquery-2.2.4.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Popper js -->
     <script src=\"";
-        // line 39
+        // line 43
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/js/popper.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Bootstrap js -->
     <script src=\"";
-        // line 41
+        // line 45
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <!-- Plugins js -->
     <script src=\"";
-        // line 43
+        // line 47
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/js/plugins.js"), "html", null, true);
         echo "\"></script>
     <!-- Active js -->
     <script src=\"";
-        // line 45
+        // line 49
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/js/active.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/js/modules/sweetalert/dist/sweetalert.min.js"), "html", null, true);
         echo "\"></script>
         ";
         
@@ -238,7 +246,7 @@ class __TwigTemplate_6486755574e8f4c4378f33de4a581d46626a4dd5fb7bcdc3c41ee26dadf
 
     public function getDebugInfo()
     {
-        return array (  223 => 45,  218 => 43,  213 => 41,  208 => 39,  203 => 37,  199 => 36,  196 => 35,  186 => 34,  168 => 33,  149 => 30,  139 => 17,  129 => 16,  108 => 18,  106 => 16,  100 => 13,  93 => 8,  83 => 7,  71 => 47,  68 => 34,  66 => 33,  59 => 30,  57 => 7,  54 => 6,  48 => 1,);
+        return array (  231 => 50,  227 => 49,  222 => 47,  217 => 45,  212 => 43,  207 => 41,  203 => 40,  200 => 39,  190 => 38,  172 => 37,  153 => 30,  143 => 17,  133 => 16,  112 => 18,  110 => 16,  104 => 13,  97 => 8,  87 => 7,  75 => 52,  72 => 38,  70 => 37,  59 => 30,  57 => 7,  54 => 6,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -275,6 +283,10 @@ class __TwigTemplate_6486755574e8f4c4378f33de4a581d46626a4dd5fb7bcdc3c41ee26dadf
         <title>{% block title %}REF-MED{% endblock %}</title>
     </head>
     <body>
+
+            </div>
+        </div>
+                    
         {% block body %}{% endblock %}
         {% block javascripts %}
         <!-- jQuery (Necessary for All JavaScript Plugins) -->
@@ -288,6 +300,7 @@ class __TwigTemplate_6486755574e8f4c4378f33de4a581d46626a4dd5fb7bcdc3c41ee26dadf
     <script src=\"{{asset('bower_components/mainRefMed/js/plugins.js')}}\"></script>
     <!-- Active js -->
     <script src=\"{{asset('bower_components/mainRefMed/js/active.js')}}\"></script>
+    <script src=\"{{asset('bower_components/mainRefMed/js/modules/sweetalert/dist/sweetalert.min.js')}}\"></script>
         {% endblock %}
     </body>
 </html>

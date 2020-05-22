@@ -108,55 +108,105 @@ class __TwigTemplate_8c0bb750bab04773dbd7aa0ff84d8f57e84933deae047e33c860335e012
                                         </li>
 
                                     </li>
-                                    <li class=\"nav-item dropdown\">
+                                    ";
+        // line 38
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38)) {
+            // line 39
+            echo "                                    <li class=\"nav-item dropdown\">
+                                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
+                                            role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
+                                            aria-expanded=\"false\">Gestion de votre compte</a>
+                                        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                            <a class=\"dropdown-item\" href=\"#\">Accédez à votre espace</a>
+                                            <a class=\"dropdown-item\" href=\"#\">Gérer votre compte</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 46
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+            echo "\">Déconnecter vous</a>
+                                        </div>
+                                    </li>
+                                  ";
+        } else {
+            // line 50
+            echo "                                    <li class=\"nav-item dropdown\">
                                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
                                             role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
                                             aria-expanded=\"false\">Compte Professionnel</a>
                                         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                            <a class=\"dropdown-item\" href=\"index.html\">S'inscire</a>
-                                            <a class=\"dropdown-item\" href=\"about-us.html\">Se Connecter</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 55
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_pharmacy");
+            echo "\">Inscription pharmacie</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 56
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_doctor");
+            echo "\">Inscription praticien</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 57
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_laboratory");
+            echo "\">Inscription Laboratoire</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 58
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Se Connecter</a>
                                         </div>
                                     </li>
                                     <li class=\"nav-item dropdown\">
                                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
                                             role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
-                                            aria-expanded=\"false\">Compte communautaire</a>
+                                            aria-expanded=\"false\">Notre Forum </a>
                                         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                            <a class=\"dropdown-item\" href=\"index.html\">S'inscire</a>
-                                            <a class=\"dropdown-item\" href=\"about-us.html\">Se Connecter</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 66
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\">accueil</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 67
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_blog");
+            echo "\">S'inscire</a>
+                                            <a class=\"dropdown-item\" href=\"";
+            // line 68
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            echo "\">Se Connecter</a>
                                         </div>
                                     </li>
+       
+                                    ";
+        }
+        // line 73
+        echo "
+
                                     <li class=\"nav-item ";
-        // line 56
-        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 56, $this->source); })()) == "/contact")) {
+        // line 75
+        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 75, $this->source); })()) == "/contact")) {
             echo "active";
         }
         echo "\">
                                         <a class=\"nav-link\" href=\"";
-        // line 57
+        // line 76
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact ";
-        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 57, $this->source); })()) == "/contact")) {
+        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 76, $this->source); })()) == "/contact")) {
             echo "<span
                                             class=\"sr-only\">(current)</span>";
         }
-        // line 58
+        // line 77
         echo "</a>
                                     <li class=\"nav-item ";
-        // line 59
-        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 59, $this->source); })()) == "/about")) {
+        // line 78
+        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 78, $this->source); })()) == "/about")) {
             echo "active";
         }
         echo "\">
                                         <a class=\"nav-link\" href=\"";
-        // line 60
+        // line 79
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about");
         echo "\">A propos ";
-        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 60, $this->source); })()) == "/about")) {
+        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 79, $this->source); })()) == "/about")) {
             echo "<span
                                             class=\"sr-only\">(current)</span>";
         }
-        // line 61
+        // line 80
         echo " </a>
                                     </li>
                                     </ul>
@@ -194,7 +244,7 @@ class __TwigTemplate_8c0bb750bab04773dbd7aa0ff84d8f57e84933deae047e33c860335e012
 
     public function getDebugInfo()
     {
-        return array (  160 => 61,  153 => 60,  147 => 59,  144 => 58,  137 => 57,  131 => 56,  107 => 34,  100 => 33,  94 => 32,  90 => 30,  83 => 29,  76 => 28,  74 => 27,  73 => 26,  60 => 16,  43 => 1,);
+        return array (  210 => 80,  203 => 79,  197 => 78,  194 => 77,  187 => 76,  181 => 75,  177 => 73,  169 => 68,  165 => 67,  161 => 66,  150 => 58,  146 => 57,  142 => 56,  138 => 55,  131 => 50,  124 => 46,  115 => 39,  113 => 38,  107 => 34,  100 => 33,  94 => 32,  90 => 30,  83 => 29,  76 => 28,  74 => 27,  73 => 26,  60 => 16,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -236,24 +286,43 @@ class __TwigTemplate_8c0bb750bab04773dbd7aa0ff84d8f57e84933deae047e33c860335e012
                                         </li>
 
                                     </li>
+                                    {% if app.user %}
+                                    <li class=\"nav-item dropdown\">
+                                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
+                                            role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
+                                            aria-expanded=\"false\">Gestion de votre compte</a>
+                                        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                            <a class=\"dropdown-item\" href=\"#\">Accédez à votre espace</a>
+                                            <a class=\"dropdown-item\" href=\"#\">Gérer votre compte</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('app_logout')}}\">Déconnecter vous</a>
+                                        </div>
+                                    </li>
+                                  {% else %}
                                     <li class=\"nav-item dropdown\">
                                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
                                             role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
                                             aria-expanded=\"false\">Compte Professionnel</a>
                                         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                            <a class=\"dropdown-item\" href=\"index.html\">S'inscire</a>
-                                            <a class=\"dropdown-item\" href=\"about-us.html\">Se Connecter</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('app_register_pharmacy')}}\">Inscription pharmacie</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('app_register_doctor')}}\">Inscription praticien</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('app_register_laboratory')}}\">Inscription Laboratoire</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('app_login')}}\">Se Connecter</a>
                                         </div>
                                     </li>
                                     <li class=\"nav-item dropdown\">
                                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
                                             role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
-                                            aria-expanded=\"false\">Compte communautaire</a>
+                                            aria-expanded=\"false\">Notre Forum </a>
                                         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
-                                            <a class=\"dropdown-item\" href=\"index.html\">S'inscire</a>
-                                            <a class=\"dropdown-item\" href=\"about-us.html\">Se Connecter</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('home')}}\">accueil</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('app_register_blog')}}\">S'inscire</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('app_login')}}\">Se Connecter</a>
                                         </div>
                                     </li>
+       
+                                    {% endif %}
+
+
                                     <li class=\"nav-item {% if currentPath == '/contact' %}active{% endif %}\">
                                         <a class=\"nav-link\" href=\"{{path('contact')}}\">Contact {% if currentPath == '/contact' %}<span
                                             class=\"sr-only\">(current)</span>{% endif %}</a>

@@ -1,0 +1,48 @@
+# config/packages/sonata_admin.yaml
+sonata_admin:
+    title: 'REF-MED ADMINSTRATION'
+    dashboard:
+        blocks:
+            -
+                position: left
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [Gestion des infos des pharmacies, Gestion_Doctor, Gestion_Laboratoire]
+            -
+                position: right
+                type: sonata.admin.block.admin_list
+                settings:
+                    groups: [Gestion du contenu du site, Gestion des infos]
+
+        groups:
+            Gestion des infos des pharmacies:
+                items:
+                    - admin.category_drugs
+                    - admin.form_drugs
+                    - admin.drugs_consomers
+
+            Gestion_Doctor:
+                items:
+                    - admin.expertise
+                    - admin.profession
+                    - admin.pratical_infos
+                    - admin.pratical_infos
+                    - admin.skills
+
+            Gestion_Laboratoire:
+                items:
+                    - admin.category_laboratory
+            Gestion du contenu du site:
+                items:
+                    - admin.news
+                    - admin.services
+                    - admin.quality_services
+            Gestion des infos:
+                items:
+                    - admin.refund
+                    - admin.time_slot_open
+                    - admin.means_payment
+                    - admin.social_networks
+                    - admin.language
+    global_search:
+        empty_boxes: fade

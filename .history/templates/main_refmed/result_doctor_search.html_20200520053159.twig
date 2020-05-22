@@ -1,0 +1,150 @@
+{% extends 'appMain.html.twig' %}
+{% block body %}
+{% include "includeApp/_navigation.html.twig" %}
+{% for label,messages in app.flashes %}
+<div class="container">
+    <div class="alert alert-{{label}}">
+        {% for message in messages %}
+        <p>{{message}}</p>                    
+        {% endfor %}
+{% endfor %}
+ <!-- ***** Hero Area Start ***** -->
+ <section class="breadcumb-area bg-img gradient-background-overlay" style="background-image: url(img/bg-img/breadcumb2.jpg);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-12">
+                <div class="breadcumb-content">
+                    <h3 class="breadcumb-title">Services</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- ***** Hero Area End ***** -->
+
+    <!-- ***** Book An Appoinment Area Start ***** -->
+    <div class="medilife-book-an-appoinment-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="appointment-form-content">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col-12 col-lg-9">
+                                <div class="medilife-appointment-form">
+                                    <h4>Recherchez un médecin</h4>
+                                    <br>
+                                        
+                                    {{form_start(formDoctor)}}
+                                        <div class="row align-items-end">
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    {{ form_row(formDoctor.profession) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <div class="form-group">
+                                                    {{ form_row(formDoctor.distance) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 mb-0">
+                                                <div class="form-group mb-0">
+                                                    <button type="submit" class="btn medilife-btn">Recherchez<span><i class="fa fa-search" aria-hidden="true"></i></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{form_end(formDoctor)}}
+                                       
+                                        {{form_row(formDoctor)}}
+                                        
+
+                                    <br>
+                                    <br>
+                                    <h4> Recherchez un Laboratoire</h4>
+                                    <br>
+                                    {{form_start(formLaboratory)}}
+                                        <div class="row align-items-end">
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    {{ form_row(formLaboratory.categorie) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <div class="form-group">
+                                                    {{ form_row(formLaboratory.distance) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 mb-0">
+                                                <div class="form-group mb-0">
+                                                    <button type="submit" class="btn medilife-btn">Recherchez<span><i class="fa fa-search" aria-hidden="true"></i></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{form_end(formLaboratory)}}
+                                       
+                                        {{form_row(formLaboratory)}}
+                                    <br>
+                                    <br>
+                                    <h4>Recherchez un Medicament</h4>
+                                    <br>
+
+                                    {{form_start(formDrugs)}}
+                                        <div class="row align-items-end">
+                                            <div class="col-12 col-md-6">
+                                                <div class="form-group">
+                                                    {{ form_row(formDrugs.name) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-4">
+                                                <div class="form-group">
+                                                    {{ form_row(formDrugs.distance) }}
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-md-5 mb-0">
+                                                <div class="form-group mb-0">
+                                                    <button type="submit" class="btn medilife-btn">Recherchez<span><i class="fa fa-search" aria-hidden="true"></i></span></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {{form_end(formDrugs)}}
+                                       
+                                        {{form_row(formDrugs)}}
+                                </div>
+                            </div>
+                            {% if app.user == null %}
+                            <div class="col-12 col-lg-3">
+                                <div class="medilife-contact-info">
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info mb-30">
+                                        <p>Pour Profitez pleinement de nos services veuillez vous inscrire  <a href="" style="color:#54e6bf;">En cliquant ici ou </a></p>
+                                    </div>
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info mb-30">
+                                       
+                                    </div>
+                                    <!-- Single Contact Info -->
+                                    <div class="single-contact-info">
+                                        <p>Si vous avez déja créer un compte veuillez vous connectez en<a href="" style="color:#54e6bf;"> cliquant ici </a></p>
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% include "includeApp/_footer.html.twig" %}
+
+{% endblock body %}
+{% block javascripts %}
+<script src="{{asset('bower_components/mainRefMed/js/alert.js')}}"></script>
+{{ parent() }}
+
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends 'base.html.twig' %}
+{%block addStyleSheets%}
+<link href="{{asset('bower_components/js/leaflet/leaflet.css')}}" rel="stylesheet">
+<link rel="stylesheet" href="{{asset('bower_components/css/form-account-pro.css')}}">
+{%endblock %}
+{% block body %}
+
+
+<div id="booking" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+            
+
+                <div class="booking-form">
+                    <h1  class="h2">Creer Votre compte REF-MED</h1>
+                    <div class="form-header" id="map">
+                    </div>
+                    <div>
+                        <h4>Inserez votre Position</h2>
+                        <blockquote>Utilisez le marqueur ou recherchez votre position avec le champ ci-dessous</blockquote>  
+                        
+                    </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span class="form-label">Adresse</span>
+                                    {{ form_widget(registrationForm.location.nameLocation, { 'attr': {'class': 'form-control', 'id': 'adress'}}) }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span class="form-label">Latitude</span>
+                                    {{ form_widget(registrationForm.location.latitude, { 'attr': {'class': 'form-control', 'id': 'lat'}}) }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span class="form-label">Longitude</span>
+                                    {{ form_widget(registrationForm.location.longitude, { 'attr': {'class': 'form-control', 'id': 'lon'}}) }}
+                                </div>
+                            </div>
+                        </div>
+                {{ form_start(registrationForm) }}
+
+                        <div class="row">
+                          
+                        <div class="col-md-4">
+                                <div class="form-group">
+                                    <span class="form-label">Email</span>
+                                    {{ form_widget(registrationForm.email,{ 'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span class="form-label">Nom de Famille</span>
+                                    {{ form_widget(registrationForm.firstName,{ 'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <span class="form-label">Prénom</span>
+                                    {{ form_widget(registrationForm.LastName,{ 'attr': {'class': 'form-control'}}) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    {{ form_widget(registrationForm.password,{ }) }}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <span class="form-label">Numero de téléphone</span>
+                                        {{ form_widget(registrationForm.numberPhone,{ 'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Photo de Profile</span>
+                                            {{ form_widget(registrationForm.pictureProfil,{ 'attr': {'class': 'form-control'}}) }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <span class="form-label">Profession</span>
+                                            {{ form_widget(registrationForm.profession,{ 'attr': {'class': 'form-control'}}) }}
+										<span class="select-arrow"></span>
+
+                                        </div>
+                                    </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {{ form_widget(registrationForm.expertise,{ 'attr': {}}) }}
+                                    </div>
+                                    </div>
+
+                            </div>
+
+                        <div class="form-btn">
+                            <button class="submit-btn">Créer votre compte</button>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+{% endblock body %}
+{% block javascripts %}<script src="{{asset('bower_components/js/leaflet.js')}}"></script>
+{% block javascripts %}<script src="{{asset('bower_components/js/jquery.js')}}"></script>
+<script src="{{asset('bower_components/js/map.js')}}"></script>
+{% endblock %}
+

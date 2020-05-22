@@ -1,0 +1,62 @@
+{% extends "main_refmed/main_account_show.html.twig" %}
+{% block style %}
+<style>
+  .tab-profiles .slider {
+  position: relative;
+  width: 50%;
+  -webkit-transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+  transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+}
+</style>
+
+{% endblock style %}
+{% block header_picture %}{{asset('bower_components/images/laboratory-header.jpg') }}{% endblock %}
+              {% block picture %}
+              {% if laboratory.imageName %}             
+              {% else %}
+              <img class="photo" src="{{asset('bower_components/images/notImageProfile.png') }}" 
+               alt="Profile image not available">
+              {% endif %}
+              {% endblock %}
+            {% block entityName %}
+            <h4 class="name">{{laboratory.nameLaboratory}}</h4>
+            {% endblock entityName %}
+                {% block numberPhone %}
+                <p class="number-stat">{{laboratory.numberPhone|replace({'-':' ' }) }} </p>  
+                {% endblock numberPhone %}
+              {% block linksSocial %}
+
+              {% endblock %}
+              {% block input %}
+              <input type="radio" id="tab-profile1" name="tab-profile-control" checked>
+              {% endblock %}         
+                  {% block liName %}
+                  <li title="Informations"><label for="tab-profile2" role="button"><i class="fa fa-map"></i> <br> <span>Carte et Informations</span></label></li>
+                  {% endblock %}
+                  {% block slider %}slider1{% endblock slider %}
+                  {% block content %}
+                        <section>
+                          <p> <span class="info-titre">les catégories de laboratoires</span>: {% for category in laboratory.categoryLaboratory %} <span class="badge badge-primary">{{category}}</span>  {% endfor %}</p>
+                          <div id="map"></div>                        
+                          <p>
+                            {% if laboratory.laboratorySocialNetworks is defined %}
+                            {% else %}
+                            {% for socialLinks in laboratory.laboratorySocialNetworks %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "facebook" %}
+                           <a href="{{socialLinks}}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "twitter" %}
+                           <a href="{{socialLinks}}"> <i class="fa fa-twitter-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "linkedin" %}
+                            <a href="{{socialLinks}}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "google+" %}
+                          <a href="{{socialLinks}}">  <i class="fa fa-google-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                              
+                            {% endfor %}
+                            {% endif %}
+                          </p>
+                          </section>
+                  {% endblock %}

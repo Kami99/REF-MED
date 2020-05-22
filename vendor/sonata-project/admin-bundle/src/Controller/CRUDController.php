@@ -66,7 +66,7 @@ class CRUDController implements ContainerAwareInterface
      */
     private $templateRegistry;
 
-    public function setContainer(ContainerInterface $container = null)
+    public function setContainer(?ContainerInterface $container = null)
     {
         $this->container = $container;
 
@@ -78,14 +78,14 @@ class CRUDController implements ContainerAwareInterface
      *
      * @see renderWithExtraParams()
      *
-     * @param string $view       The view name
-     * @param array  $parameters An array of parameters to pass to the view
+     * @param string               $view       The view name
+     * @param array<string, mixed> $parameters An array of parameters to pass to the view
      *
      * @return Response A Response instance
      *
      * @deprecated since sonata-project/admin-bundle 3.27, to be removed in 4.0. Use Sonata\AdminBundle\Controller\CRUDController::renderWithExtraParams() instead.
      */
-    public function render($view, array $parameters = [], Response $response = null)
+    public function render($view, array $parameters = [], ?Response $response = null)
     {
         @trigger_error(
             'Method '.__CLASS__.'::render has been renamed to '.__CLASS__.'::renderWithExtraParams.',
@@ -98,25 +98,15 @@ class CRUDController implements ContainerAwareInterface
     /**
      * Renders a view while passing mandatory parameters on to the template.
      *
-     * @param string $view The view name
+     * @param string               $view       The view name
+     * @param array<string, mixed> $parameters An array of parameters to pass to the view
      *
      * @return Response A Response instance
      */
-    public function renderWithExtraParams($view, array $parameters = [], Response $response = null)
+    public function renderWithExtraParams($view, array $parameters = [], ?Response $response = null)
     {
-        if (!$this->isXmlHttpRequest()) {
-            $parameters['breadcrumbs_builder'] = $this->get('sonata.admin.breadcrumbs_builder');
-        }
-        $parameters['admin'] = $parameters['admin'] ??
-            $this->admin;
-
-        $parameters['base_template'] = $parameters['base_template'] ??
-            $this->getBaseTemplate();
-
-        $parameters['admin_pool'] = $this->get('sonata.admin.pool');
-
         //NEXT_MAJOR: Remove method alias and use $this->render() directly.
-        return $this->originalRender($view, $parameters, $response);
+        return $this->originalRender($view, $this->addRenderExtraParams($parameters), $response);
     }
 
     /**
@@ -279,7 +269,6 @@ class CRUDController implements ContainerAwareInterface
      * @param int|string|null $deprecatedId
      *
      * @throws NotFoundHttpException If the object does not exist
-     * @throws \RuntimeException     If no editable field is defined
      * @throws AccessDeniedException If access is not granted
      *
      * @return Response|RedirectResponse
@@ -320,12 +309,6 @@ class CRUDController implements ContainerAwareInterface
         $objectId = $this->admin->getNormalizedIdentifier($existingObject);
 
         $form = $this->admin->getForm();
-
-        if (!\is_array($fields = $form->all()) || 0 === \count($fields)) {
-            throw new \RuntimeException(
-                'No editable field defined. Did you forget to implement the "configureFormFields" method?'
-            );
-        }
 
         $form->setData($existingObject);
         $form->handleRequest($request);
@@ -547,7 +530,6 @@ class CRUDController implements ContainerAwareInterface
      * Create action.
      *
      * @throws AccessDeniedException If access is not granted
-     * @throws \RuntimeException     If no editable field is defined
      *
      * @return Response
      */
@@ -583,12 +565,6 @@ class CRUDController implements ContainerAwareInterface
         $this->admin->setSubject($newObject);
 
         $form = $this->admin->getForm();
-
-        if (!\is_array($fields = $form->all()) || 0 === \count($fields)) {
-            throw new \RuntimeException(
-                'No editable field defined. Did you forget to implement the "configureFormFields" method?'
-            );
-        }
 
         $form->setData($newObject);
         $form->handleRequest($request);
@@ -707,16 +683,6 @@ class CRUDController implements ContainerAwareInterface
 
         $fields = $this->admin->getShow();
         \assert($fields instanceof FieldDescriptionCollection);
-
-        // NEXT_MAJOR: replace deprecation with exception
-        if (!\is_array($fields->getElements()) || 0 === $fields->count()) {
-            @trigger_error(
-                'Calling this method without implementing "configureShowFields"'
-                .' is not supported since sonata-project/admin-bundle 3.40.0'
-                .' and will no longer be possible in 4.0',
-                E_USER_DEPRECATED
-            );
-        }
 
         // NEXT_MAJOR: Remove this line and use commented line below it instead
         $template = $this->admin->getTemplate('show');
@@ -1081,6 +1047,24 @@ class CRUDController implements ContainerAwareInterface
     public function getRequest()
     {
         return $this->container->get('request_stack')->getCurrentRequest();
+    }
+
+    /**
+     * @param array<string, mixed> $parameters
+     *
+     * @return array<string, mixed>
+     */
+    protected function addRenderExtraParams(array $parameters = []): array
+    {
+        if (!$this->isXmlHttpRequest()) {
+            $parameters['breadcrumbs_builder'] = $this->get('sonata.admin.breadcrumbs_builder');
+        }
+
+        $parameters['admin'] = $parameters['admin'] ?? $this->admin;
+        $parameters['base_template'] = $parameters['base_template'] ?? $this->getBaseTemplate();
+        $parameters['admin_pool'] = $this->get('sonata.admin.pool');
+
+        return $parameters;
     }
 
     /**
@@ -1554,7 +1538,7 @@ class CRUDController implements ContainerAwareInterface
 
     private function checkParentChildAssociation(Request $request, $object): void
     {
-        if (!($parentAdmin = $this->admin->getParent())) {
+        if (!$this->admin->isChild()) {
             return;
         }
 
@@ -1563,6 +1547,7 @@ class CRUDController implements ContainerAwareInterface
             return;
         }
 
+        $parentAdmin = $this->admin->getParent();
         $parentId = $request->get($parentAdmin->getIdParameter());
 
         $propertyAccessor = PropertyAccess::createPropertyAccessor();
@@ -1581,7 +1566,7 @@ class CRUDController implements ContainerAwareInterface
     /**
      * Sets the admin form theme to form view. Used for compatibility between Symfony versions.
      */
-    private function setFormTheme(FormView $formView, array $theme = null): void
+    private function setFormTheme(FormView $formView, ?array $theme = null): void
     {
         $twig = $this->get('twig');
 

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* Blog/createPost.html.twig */
+/* blog/createPost.html.twig */
 class __TwigTemplate_dbfd8920880bd30bc554c47de529052e67ce02dad0e3ca075d26361dff26ff92 extends \Twig\Template
 {
     private $source;
@@ -40,12 +40,12 @@ class __TwigTemplate_dbfd8920880bd30bc554c47de529052e67ce02dad0e3ca075d26361dff2
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Blog/createPost.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/createPost.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Blog/createPost.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/createPost.html.twig"));
 
-        $this->parent = $this->loadTemplate("Blog/baseBlog.html.twig", "Blog/createPost.html.twig", 1);
+        $this->parent = $this->loadTemplate("Blog/baseBlog.html.twig", "blog/createPost.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -94,7 +94,7 @@ class __TwigTemplate_dbfd8920880bd30bc554c47de529052e67ce02dad0e3ca075d26361dff2
 
         ";
         // line 12
-        $this->loadTemplate("Blog/_navigation.html.twig", "Blog/createPost.html.twig", 12)->display($context);
+        $this->loadTemplate("Blog/_navigation.html.twig", "blog/createPost.html.twig", 12)->display($context);
         // line 13
         echo "
     </section> <!-- end s-pageheader -->
@@ -116,6 +116,20 @@ class __TwigTemplate_dbfd8920880bd30bc554c47de529052e67ce02dad0e3ca075d26361dff2
                    display:flex;\">
                        Créer votre aricle
                    </h4>
+                          
+                   ";
+        // line 34
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 34, $this->source); })()), 'form_start');
+        echo "
+                   ";
+        // line 35
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 35, $this->source); })()), 'widget');
+        echo "
+                   
+                   ";
+        // line 37
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 37, $this->source); })()), 'form_end');
+        echo "
      
     
                 </div>
@@ -209,7 +223,7 @@ class __TwigTemplate_dbfd8920880bd30bc554c47de529052e67ce02dad0e3ca075d26361dff2
 
     public function getTemplateName()
     {
-        return "Blog/createPost.html.twig";
+        return "blog/createPost.html.twig";
     }
 
     public function isTraitable()
@@ -219,7 +233,7 @@ class __TwigTemplate_dbfd8920880bd30bc554c47de529052e67ce02dad0e3ca075d26361dff2
 
     public function getDebugInfo()
     {
-        return array (  99 => 13,  97 => 12,  90 => 7,  80 => 6,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  131 => 37,  126 => 35,  122 => 34,  99 => 13,  97 => 12,  90 => 7,  80 => 6,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -256,6 +270,11 @@ class __TwigTemplate_dbfd8920880bd30bc554c47de529052e67ce02dad0e3ca075d26361dff2
                    display:flex;\">
                        Créer votre aricle
                    </h4>
+                          
+                   {{form_start(form)}}
+                   {{form_widget(form)}}
+                   
+                   {{form_end(form)}}
      
     
                 </div>
@@ -338,6 +357,6 @@ class __TwigTemplate_dbfd8920880bd30bc554c47de529052e67ce02dad0e3ca075d26361dff2
 
     </section> <!-- end s-extra -->
     
-{% endblock body %}", "Blog/createPost.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\Blog\\createPost.html.twig");
+{% endblock body %}", "blog/createPost.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\Blog\\createPost.html.twig");
     }
 }

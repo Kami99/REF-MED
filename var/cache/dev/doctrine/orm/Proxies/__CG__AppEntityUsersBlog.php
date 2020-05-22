@@ -26,7 +26,7 @@ class UsersBlog extends \App\Entity\UsersBlog implements \Doctrine\ORM\Proxy\Pro
     /**
      * @var boolean flag indicating if this object was already initialized
      *
-     * @see \Doctrine\Common\Persistence\Proxy::__isInitialized
+     * @see \Doctrine\Persistence\Proxy::__isInitialized
      */
     public $__isInitialized__ = false;
 
@@ -66,10 +66,10 @@ class UsersBlog extends \App\Entity\UsersBlog implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug'];
+            return ['__isInitialized__', 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug', 'roles', 'password'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug'];
+        return ['__isInitialized__', 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug', 'roles', 'password'];
     }
 
     /**
@@ -541,6 +541,28 @@ class UsersBlog extends \App\Entity\UsersBlog implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'eraseCredentials', []);
 
         return parent::eraseCredentials();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function serialize()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'serialize', []);
+
+        return parent::serialize();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function unserialize($serialized)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'unserialize', [$serialized]);
+
+        return parent::unserialize($serialized);
     }
 
 }

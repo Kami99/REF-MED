@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+{%block addStyleSheets%}
+<link rel="stylesheet" href="{{asset('bower_components/css/formRegisterBlog.css')}}">
+{%endblock%}
+
+{% include "_register.html.twig" %}
+                    <div class="form-group">
+                        <input type="submit" name="submit" id="submit" class="form-submit" value="S'inscrire"/>
+                    </div>
+                </div>
+                <p class="loginhere">
+                    Avez un compte <a href="{{path('app_login_blog')}}" class="loginhere-link">connectez vous ici</a>
+                </p>
+
+            </div>
+        </div>
+    </section>
+
+</div>
+
+
+    {{ form_end(registrationForm) }}

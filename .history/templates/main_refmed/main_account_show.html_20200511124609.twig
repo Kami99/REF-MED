@@ -1,0 +1,48 @@
+{% extends "appMain.html.twig" %}
+{% block body %}
+{% include "includeApp/_navigation.html.twig" %}
+<div class="container-profile">
+    <header style="background-image: url('{% block header_picture %}{% endblock %}');">
+    </header>
+      <main>
+        <div class="row">
+          <div class="left col-lg-4">
+            <div class="photo-left">
+              {% block picture %}
+              {% endblock %}
+            </div>
+            {% block entityName %}
+            {% endblock entityName %}
+            <div class="stats row">
+              <div class="stat col-xs-4">
+                {% block numberPhone %}
+                {% endblock numberPhone %}
+              </div>
+            </div>
+            <div class="social">
+              {% block linksSocial %}
+              {% endblock %}
+  
+   
+            </div>
+          </div>
+          <div class="right col-lg-8">
+            <div class="tab-profiles">
+              {% block input %}   
+              {% endblock %}         
+              <ul>
+                  {% block liName %}
+                  {% endblock %}
+               </ul>
+              
+              <div class="slider"><div class="indicator"></div></div>
+              <div class="content">
+                  {% block content %}
+                  {% endblock %}
+              
+            </div>          
+          </div>
+      </main>
+    </div>
+    <br>
+{% endblock body %}

@@ -10,7 +10,6 @@ use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\DependencyInjection\Reference;
 use Vich\UploaderBundle\Storage\StorageInterface;
-use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 /**
  * @author Dustin Dobervich <ddobervich@gmail.com>
@@ -73,11 +72,8 @@ final class VichUploaderExtension extends Extension
         if ($config['form']) {
             $loader->load('form.xml');
         }
-        if ($config['templating']) {
-            $loader->load('templating.xml');
-            $container->setAlias(UploaderHelper::class, new Alias('vich_uploader.templating.helper.uploader_helper', false));
-        }
-        if ($config['twig'] && $config['templating']) {
+
+        if ($config['twig']) {
             $loader->load('twig.xml');
         }
     }
@@ -199,9 +195,7 @@ final class VichUploaderExtension extends Extension
     protected function createNamerService(ContainerBuilder $container, string $mappingName, array $mapping): array
     {
         $serviceId = \sprintf('%s.%s', $mapping['namer']['service'], $mappingName);
-        $container->setDefinition(
-            $serviceId, new ChildDefinition($mapping['namer']['service'])
-        );
+        $container->setDefinition($serviceId, new ChildDefinition($mapping['namer']['service']));
 
         $mapping['namer']['service'] = $serviceId;
 
@@ -220,7 +214,6 @@ final class VichUploaderExtension extends Extension
             ->replaceArgument(0, $name)
             ->replaceArgument(1, new Reference('vich_uploader.adapter.'.$driver));
 
-        // propel does not require tags to work TODO check if this test still makes sense
         if (isset($this->tagMap[$driver])) {
             $definition->addTag($this->tagMap[$driver], ['priority' => $priority]);
         }

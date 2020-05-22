@@ -26,6 +26,7 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
 
         $this->blocks = [
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -67,6 +68,34 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
         // line 3
         $this->loadTemplate("includeApp/_navigation.html.twig", "main_refmed/index.html.twig", 3)->display($context);
         // line 4
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 4, $this->source); })()), "flashes", [], "any", false, false, false, 4));
+        foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
+            // line 5
+            echo "<div class=\"container\">
+    <div class=\"alert alert-";
+            // line 6
+            echo twig_escape_filter($this->env, $context["label"], "html", null, true);
+            echo "\">
+        ";
+            // line 7
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($context["messages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 8
+                echo "        <p>";
+                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                echo "</p>                    
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 11
         echo " <!-- ***** Hero Area Start ***** -->
     <section class=\"hero-area\">
         <div class=\"hero-slides owl-carousel\">
@@ -78,7 +107,7 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
                             <div class=\"hero-slides-content\">
                                 <h2 data-animation=\"fadeInUp\" data-delay=\"100ms\">Découvrez notre application</h2>
                                 <h6 data-animation=\"fadeInUp\" data-delay=\"400ms\">En la téléchargeant sur Playstore ou directement sur notre site </h6>
-                                <a href=\"#\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
+                                <a href=\"\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
                                     data-delay=\"700ms\">Telechargez REF-MED App<span><i class=\"fa fa-download\" aria-hidden=\"true\"></i></span></a>
                             </div>
                         </div>
@@ -90,14 +119,39 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
                 style=\"background-image: url(img/bg-img/breadcumb3.jpg);\">
                 <div class=\"container h-100\">
                     <div class=\"row h-100 align-items-center\">
-                        <div class=\"col-12\">
+                        ";
+        // line 34
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "user", [], "any", false, false, false, 34)) {
+            // line 35
+            echo "                        <div class=\"col-12\">
+                            <div class=\"hero-slides-content\">
+                                <h2 data-animation=\"fadeInUp\" data-delay=\"100ms\">Venant jettez un coup d'oeil aux forum</h2>
+                                <h6 data-animation=\"fadeInUp\" data-delay=\"400ms\">Suivez le lien ci-dessous pour y accéder</h6>
+                                <a href=\"";
+            // line 39
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
+                                    data-delay=\"700ms\">Accueil du fortum<span><i class=\"fa fa-user-circle\" aria-hidden=\"true\"></i></span></a>
+                            </div>
+                        </div>    
+                        ";
+        } else {
+            // line 44
+            echo "                        <div class=\"col-12\">
                             <div class=\"hero-slides-content\">
                                 <h2 data-animation=\"fadeInUp\" data-delay=\"100ms\">Inscrivez vous à notre Forum et communiquez sur des sujets divers</h2>
                                 <h6 data-animation=\"fadeInUp\" data-delay=\"400ms\">Suivez le lien ci-dessous pour vous inscrire</h6>
-                                <a href=\"#\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
+                                <a href=\"";
+            // line 48
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_blog");
+            echo "\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
                                     data-delay=\"700ms\">S'inscrire<span><i class=\"fa fa-user-circle\" aria-hidden=\"true\"></i></span></a>
                             </div>
-                        </div>
+                        </div>       
+                        ";
+        }
+        // line 53
+        echo "
                     </div>
                 </div>
             </div>
@@ -131,159 +185,34 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
                             <div class=\"col-12 col-lg-9\">
                                 <div class=\"medilife-appointment-form\">
                                     <h4>Recherchez un médecin</h4>
+                                    <br>                                     
+                            ";
+        // line 88
+        $this->loadTemplate("includeApp/_form_search_doctor.html.twig", "main_refmed/index.html.twig", 88)->display($context);
+        // line 89
+        echo "                                    <br>
                                     <br>
-                                    <form action=\"#\" method=\"post\">
-                                        <div class=\"row align-items-end\">
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"speciality\">
-                                                        <option>Speciality 1</option>
-                                                        <option>Speciality 2</option>
-                                                        <option>Speciality 3</option>
-                                                        <option>Speciality 4</option>
-                                                        <option>Speciality 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"lieu\">
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"motifs\">
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <input type=\"text\"
-                                                        class=\"form-control border-top-0 border-right-0 border-left-0\"
-                                                        name=\"number\" id=\"number\" placeholder=\"Phone\">
-                                                </div>
-                                            </div>
-
-
-                                            <div class=\"col-12 col-md-5 mb-0\">
-                                                <div class=\"form-group mb-0\" style=\"margin-top: -72px;\">
-                                                    <button type=\"submit\" class=\"btn medilife-btn\">Recherchez des
-                                                        médecins<span><i class=\"fa fa-search\" aria-hidden=\"true\"></i></span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <h4> Recherchez un Laboratoire</h4>
+                                    <br>
+                            ";
+        // line 93
+        $this->loadTemplate("includeApp/_form_search_laboratory.html.twig", "main_refmed/index.html.twig", 93)->display($context);
+        echo "                                       
                                     <br>
                                     <br>
-                                    <h4> Recherchez un médicament</h4>
+                                    <h4>Recherchez un Medicament</h4>
                                     <br>
-
-                                    <form action=\"#\" method=\"post\">
-                                        <div class=\"row align-items-end\">
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"speciality\">
-                                                        <option>Speciality 1</option>
-                                                        <option>Speciality 2</option>
-                                                        <option>Speciality 3</option>
-                                                        <option>Speciality 4</option>
-                                                        <option>Speciality 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"lieu\">
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"motifs\">
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <input type=\"text\"
-                                                        class=\"form-control border-top-0 border-right-0 border-left-0\"
-                                                        name=\"number\" id=\"number\" placeholder=\"Phone\">
-                                                </div>
-                                            </div>
-
-
-                                            <div class=\"col-12 col-md-5 mb-0\">
-                                                <div class=\"form-group mb-0\" style=\"margin-top: -72px;\">
-                                                    <button type=\"submit\" class=\"btn medilife-btn\">Recherchez des
-                                                        médecins<span><i class=\"fa fa-search\" aria-hidden=\"true\"></i></span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <br>
-                                    <br>
-                                    <h4>Recherchez un Laboratoire</h4>
-                                    <br>
-
-
-                                    <form action=\"#\" method=\"post\">
-                                        <div class=\"row align-items-end\">
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"speciality\">
-                                                        <option>Speciality 1</option>
-                                                        <option>Speciality 2</option>
-                                                        <option>Speciality 3</option>
-                                                        <option>Speciality 4</option>
-                                                        <option>Speciality 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"lieu\">
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-
-                                            <div class=\"col-12 col-md-5 mb-0\">
-                                                <div class=\"form-group mb-0\">
-                                                    <button type=\"submit\" class=\"btn medilife-btn\">Recherchez des
-                                                        médecins<span><i class=\"fa fa-search\" aria-hidden=\"true\"></i></span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+                            ";
+        // line 98
+        $this->loadTemplate("includeApp/_form_search_drugs.html.twig", "main_refmed/index.html.twig", 98)->display($context);
+        echo "                                       
+                    </div>
                             </div>
-                            <div class=\"col-12 col-lg-3\">
+                            ";
+        // line 101
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 101, $this->source); })()), "user", [], "any", false, false, false, 101) == null)) {
+            // line 102
+            echo "                            <div class=\"col-12 col-lg-3\">
                                 <div class=\"medilife-contact-info\">
                                     <!-- Single Contact Info -->
                                     <div class=\"single-contact-info mb-30\">
@@ -301,6 +230,11 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
                                     </div>
                                 </div>
                             </div>
+                            ";
+        }
+        // line 121
+        echo "                            
+
                         </div>
                     </div>
                 </div>
@@ -429,9 +363,66 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
             </div>
         </div>
 
+    ";
+        // line 251
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 251, $this->source); })()), "user", [], "any", false, false, false, 251) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 251, $this->source); })()), "user", [], "any", false, false, false, 251), "roles", [], "any", false, false, false, 251), 0, [], "array", false, false, false, 251) == "ROLE_USER_DOCTOR"))) {
+            // line 252
+            echo "    <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    ";
+        }
+        // line 254
+        echo "    ";
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "roles", [], "any", false, false, false, 254), 0, [], "array", false, false, false, 254) == "ROLE_USER_PHARMACY"))) {
+            // line 255
+            echo "    <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    ";
+        }
+        // line 257
+        echo "    ";
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 257, $this->source); })()), "user", [], "any", false, false, false, 257) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 257, $this->source); })()), "user", [], "any", false, false, false, 257), "roles", [], "any", false, false, false, 257), 0, [], "array", false, false, false, 257) == "ROLE_USER_lABORATORY"))) {
+            // line 258
+            echo "    <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    ";
+        }
+        // line 260
+        $this->loadTemplate("includeApp/_footer.html.twig", "main_refmed/index.html.twig", 260)->display($context);
+        // line 261
+        echo "
 ";
-        // line 366
-        $this->loadTemplate("includeApp/_footer.html.twig", "main_refmed/index.html.twig", 366)->display($context);
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 263
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 264
+        echo "<script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/js/alert.js"), "html", null, true);
+        echo "\"></script>
+";
+        // line 265
+        $this->displayParentBlock("javascripts", $context, $blocks);
+        echo "
+
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -452,7 +443,7 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
 
     public function getDebugInfo()
     {
-        return array (  434 => 366,  70 => 4,  68 => 3,  58 => 2,  35 => 1,);
+        return array (  422 => 265,  417 => 264,  407 => 263,  396 => 261,  394 => 260,  388 => 258,  385 => 257,  379 => 255,  376 => 254,  370 => 252,  368 => 251,  236 => 121,  215 => 102,  213 => 101,  207 => 98,  199 => 93,  193 => 89,  191 => 88,  154 => 53,  146 => 48,  140 => 44,  132 => 39,  126 => 35,  124 => 34,  99 => 11,  86 => 8,  82 => 7,  78 => 6,  75 => 5,  71 => 4,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -460,6 +451,13 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
         return new Source("{% extends 'appMain.html.twig' %}
 {% block body %}
 {% include \"includeApp/_navigation.html.twig\" %}
+{% for label,messages in app.flashes %}
+<div class=\"container\">
+    <div class=\"alert alert-{{label}}\">
+        {% for message in messages %}
+        <p>{{message}}</p>                    
+        {% endfor %}
+{% endfor %}
  <!-- ***** Hero Area Start ***** -->
     <section class=\"hero-area\">
         <div class=\"hero-slides owl-carousel\">
@@ -471,7 +469,7 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
                             <div class=\"hero-slides-content\">
                                 <h2 data-animation=\"fadeInUp\" data-delay=\"100ms\">Découvrez notre application</h2>
                                 <h6 data-animation=\"fadeInUp\" data-delay=\"400ms\">En la téléchargeant sur Playstore ou directement sur notre site </h6>
-                                <a href=\"#\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
+                                <a href=\"\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
                                     data-delay=\"700ms\">Telechargez REF-MED App<span><i class=\"fa fa-download\" aria-hidden=\"true\"></i></span></a>
                             </div>
                         </div>
@@ -483,14 +481,26 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
                 style=\"background-image: url(img/bg-img/breadcumb3.jpg);\">
                 <div class=\"container h-100\">
                     <div class=\"row h-100 align-items-center\">
+                        {% if app.user %}
+                        <div class=\"col-12\">
+                            <div class=\"hero-slides-content\">
+                                <h2 data-animation=\"fadeInUp\" data-delay=\"100ms\">Venant jettez un coup d'oeil aux forum</h2>
+                                <h6 data-animation=\"fadeInUp\" data-delay=\"400ms\">Suivez le lien ci-dessous pour y accéder</h6>
+                                <a href=\"{{path('home')}}\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
+                                    data-delay=\"700ms\">Accueil du fortum<span><i class=\"fa fa-user-circle\" aria-hidden=\"true\"></i></span></a>
+                            </div>
+                        </div>    
+                        {% else %}
                         <div class=\"col-12\">
                             <div class=\"hero-slides-content\">
                                 <h2 data-animation=\"fadeInUp\" data-delay=\"100ms\">Inscrivez vous à notre Forum et communiquez sur des sujets divers</h2>
                                 <h6 data-animation=\"fadeInUp\" data-delay=\"400ms\">Suivez le lien ci-dessous pour vous inscrire</h6>
-                                <a href=\"#\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
+                                <a href=\"{{path('app_register_blog')}}\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
                                     data-delay=\"700ms\">S'inscrire<span><i class=\"fa fa-user-circle\" aria-hidden=\"true\"></i></span></a>
                             </div>
-                        </div>
+                        </div>       
+                        {% endif %}
+
                     </div>
                 </div>
             </div>
@@ -524,158 +534,21 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
                             <div class=\"col-12 col-lg-9\">
                                 <div class=\"medilife-appointment-form\">
                                     <h4>Recherchez un médecin</h4>
-                                    <br>
-                                    <form action=\"#\" method=\"post\">
-                                        <div class=\"row align-items-end\">
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"speciality\">
-                                                        <option>Speciality 1</option>
-                                                        <option>Speciality 2</option>
-                                                        <option>Speciality 3</option>
-                                                        <option>Speciality 4</option>
-                                                        <option>Speciality 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"lieu\">
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"motifs\">
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <input type=\"text\"
-                                                        class=\"form-control border-top-0 border-right-0 border-left-0\"
-                                                        name=\"number\" id=\"number\" placeholder=\"Phone\">
-                                                </div>
-                                            </div>
-
-
-                                            <div class=\"col-12 col-md-5 mb-0\">
-                                                <div class=\"form-group mb-0\" style=\"margin-top: -72px;\">
-                                                    <button type=\"submit\" class=\"btn medilife-btn\">Recherchez des
-                                                        médecins<span><i class=\"fa fa-search\" aria-hidden=\"true\"></i></span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <br>                                     
+                            {% include \"includeApp/_form_search_doctor.html.twig\" %}
                                     <br>
                                     <br>
-                                    <h4> Recherchez un médicament</h4>
+                                    <h4> Recherchez un Laboratoire</h4>
                                     <br>
-
-                                    <form action=\"#\" method=\"post\">
-                                        <div class=\"row align-items-end\">
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"speciality\">
-                                                        <option>Speciality 1</option>
-                                                        <option>Speciality 2</option>
-                                                        <option>Speciality 3</option>
-                                                        <option>Speciality 4</option>
-                                                        <option>Speciality 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"lieu\">
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"motifs\">
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                        <option>Motifs</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <input type=\"text\"
-                                                        class=\"form-control border-top-0 border-right-0 border-left-0\"
-                                                        name=\"number\" id=\"number\" placeholder=\"Phone\">
-                                                </div>
-                                            </div>
-
-
-                                            <div class=\"col-12 col-md-5 mb-0\">
-                                                <div class=\"form-group mb-0\" style=\"margin-top: -72px;\">
-                                                    <button type=\"submit\" class=\"btn medilife-btn\">Recherchez des
-                                                        médecins<span><i class=\"fa fa-search\" aria-hidden=\"true\"></i></span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                            {% include \"includeApp/_form_search_laboratory.html.twig\" %}                                       
                                     <br>
                                     <br>
-                                    <h4>Recherchez un Laboratoire</h4>
+                                    <h4>Recherchez un Medicament</h4>
                                     <br>
-
-
-                                    <form action=\"#\" method=\"post\">
-                                        <div class=\"row align-items-end\">
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"speciality\">
-                                                        <option>Speciality 1</option>
-                                                        <option>Speciality 2</option>
-                                                        <option>Speciality 3</option>
-                                                        <option>Speciality 4</option>
-                                                        <option>Speciality 5</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class=\"col-12 col-md-4\">
-                                                <div class=\"form-group\">
-                                                    <select class=\"form-control\" id=\"lieu\">
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                        <option>Lieu</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-
-                                            <div class=\"col-12 col-md-5 mb-0\">
-                                                <div class=\"form-group mb-0\">
-                                                    <button type=\"submit\" class=\"btn medilife-btn\">Recherchez des
-                                                        médecins<span><i class=\"fa fa-search\" aria-hidden=\"true\"></i></span></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
+                            {% include \"includeApp/_form_search_drugs.html.twig\" %}                                       
+                    </div>
                             </div>
+                            {% if app.user == null %}
                             <div class=\"col-12 col-lg-3\">
                                 <div class=\"medilife-contact-info\">
                                     <!-- Single Contact Info -->
@@ -694,6 +567,9 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
                                     </div>
                                 </div>
                             </div>
+                            {% endif %}
+                            
+
                         </div>
                     </div>
                 </div>
@@ -822,7 +698,22 @@ class __TwigTemplate_1e1669359b2a39f0b752ac463036f7c490362d2114083a5313f45d7b22e
             </div>
         </div>
 
+    {% if app.user and app.user.roles[0] == \"ROLE_USER_DOCTOR\" %}
+    <a href=\"{{path('home')}}\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    {% endif %}
+    {% if app.user and app.user.roles[0] == \"ROLE_USER_PHARMACY\" %}
+    <a href=\"{{path('home')}}\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    {% endif %}
+    {% if app.user and app.user.roles[0] == \"ROLE_USER_lABORATORY\" %}
+    <a href=\"{{path('home')}}\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    {% endif %}
 {% include \"includeApp/_footer.html.twig\" %}
-{% endblock body %}", "main_refmed/index.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\main_refmed\\index.html.twig");
+
+{% endblock body %}
+{% block javascripts %}
+<script src=\"{{asset('bower_components/mainRefMed/js/alert.js')}}\"></script>
+{{ parent() }}
+
+{% endblock %}", "main_refmed/index.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\main_refmed\\index.html.twig");
     }
 }

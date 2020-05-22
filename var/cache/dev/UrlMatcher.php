@@ -14,20 +14,23 @@ return [
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/blog/home' => [[['_route' => 'home', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
+        '/blog/contact' => [[['_route' => 'contactBlog', '_controller' => 'App\\Controller\\BlogController::contactBlog'], null, null, null, false, false, null]],
         '/blog/createPost' => [[['_route' => 'createPost', '_controller' => 'App\\Controller\\BlogController::createPost'], null, null, null, false, false, null]],
         '/blog/allPostCategory' => [[['_route' => 'allPostCategory', '_controller' => 'App\\Controller\\BlogController::allPostCategory'], null, null, null, false, false, null]],
-        '/doctor' => [[['_route' => 'doctor', '_controller' => 'App\\Controller\\DoctorController::index'], null, null, null, false, false, null]],
+        '/blog/profile' => [[['_route' => 'blog_profile', '_controller' => 'App\\Controller\\BlogProfileController::index'], null, null, null, false, false, null]],
+        '/edit/account' => [[['_route' => 'edit_account', '_controller' => 'App\\Controller\\EditAccountController::index'], null, null, null, true, false, null]],
         '/' => [[['_route' => 'Home', '_controller' => 'App\\Controller\\MainREFMEDController::index'], null, null, null, false, false, null]],
         '/services' => [[['_route' => 'services', '_controller' => 'App\\Controller\\MainREFMEDController::service'], null, null, null, false, false, null]],
         '/contact' => [[['_route' => 'contact', '_controller' => 'App\\Controller\\MainREFMEDController::contact'], null, null, null, false, false, null]],
         '/about' => [[['_route' => 'about', '_controller' => 'App\\Controller\\MainREFMEDController::about'], null, null, null, false, false, null]],
-        '/pharmacie' => [[['_route' => 'pharmacie', '_controller' => 'App\\Controller\\PharmacieController::index'], null, null, null, false, false, null]],
-        '/register' => [[['_route' => 'app_register', '_controller' => 'App\\Controller\\RegistrationController::register'], null, null, null, false, false, null]],
-        '/inscription' => [[['_route' => 'app_inscription', '_controller' => 'App\\Controller\\RegistrationController::registerBlog'], null, null, null, false, false, null]],
+        '/inscription/praticien' => [[['_route' => 'app_register_doctor', '_controller' => 'App\\Controller\\RegistrationController::registerDoctor'], null, null, null, false, false, null]],
+        '/inscription/pharmacy' => [[['_route' => 'app_register_pharmacy', '_controller' => 'App\\Controller\\RegistrationController::registerPharmacy'], null, null, null, false, false, null]],
+        '/inscription/laboratory' => [[['_route' => 'app_register_laboratory', '_controller' => 'App\\Controller\\RegistrationController::registerLaboratory'], null, null, null, false, false, null]],
+        '/inscription/blog' => [[['_route' => 'app_register_blog', '_controller' => 'App\\Controller\\RegistrationController::registerBlog'], null, null, null, false, false, null]],
         '/connexion' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
-        '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/deconnexion' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/fc-load-events' => [[['_route' => 'fc_load_events', '_controller' => 'CalendarBundle\\Controller\\CalendarController:loadAction'], null, null, null, false, false, null]],
-        '/blog/admin' => [[['_route' => 'easyadmin', '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\EasyAdminController::indexAction'], null, null, null, true, false, null]],
+        '/admin/blog' => [[['_route' => 'easyadmin', '_controller' => 'EasyCorp\\Bundle\\EasyAdminBundle\\Controller\\EasyAdminController::indexAction'], null, null, null, true, false, null]],
         '/admin' => [[['_route' => 'sonata_admin_redirect', '_controller' => 'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController::redirectAction', 'route' => 'sonata_admin_dashboard', 'permanent' => 'true'], null, null, null, true, false, null]],
         '/admin/dashboard' => [[['_route' => 'sonata_admin_dashboard', '_controller' => 'Sonata\\AdminBundle\\Action\\DashboardAction'], null, null, null, false, false, null]],
         '/admin/core/get-form-field-element' => [[['_route' => 'sonata_admin_retrieve_form_element', '_controller' => 'sonata.admin.action.retrieve_form_field_element'], null, null, null, false, false, null]],
@@ -99,6 +102,14 @@ return [
         '/admin/app/timeslotopen/create' => [[['_route' => 'admin_app_timeslotopen_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_create'], null, null, null, false, false, null]],
         '/admin/app/timeslotopen/batch' => [[['_route' => 'admin_app_timeslotopen_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_batch'], null, null, null, false, false, null]],
         '/admin/app/timeslotopen/export' => [[['_route' => 'admin_app_timeslotopen_export', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_export'], null, null, null, false, false, null]],
+        '/admin/app/members/list' => [[['_route' => 'admin_app_members_list', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction', '_sonata_admin' => 'admin.members', '_sonata_name' => 'admin_app_members_list'], null, null, null, false, false, null]],
+        '/admin/app/members/create' => [[['_route' => 'admin_app_members_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.members', '_sonata_name' => 'admin_app_members_create'], null, null, null, false, false, null]],
+        '/admin/app/members/batch' => [[['_route' => 'admin_app_members_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.members', '_sonata_name' => 'admin_app_members_batch'], null, null, null, false, false, null]],
+        '/admin/app/members/export' => [[['_route' => 'admin_app_members_export', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction', '_sonata_admin' => 'admin.members', '_sonata_name' => 'admin_app_members_export'], null, null, null, false, false, null]],
+        '/admin/app/admin/list' => [[['_route' => 'admin_app_admin_list', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction', '_sonata_admin' => 'admin.adminstrators', '_sonata_name' => 'admin_app_admin_list'], null, null, null, false, false, null]],
+        '/admin/app/admin/create' => [[['_route' => 'admin_app_admin_create', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction', '_sonata_admin' => 'admin.adminstrators', '_sonata_name' => 'admin_app_admin_create'], null, null, null, false, false, null]],
+        '/admin/app/admin/batch' => [[['_route' => 'admin_app_admin_batch', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction', '_sonata_admin' => 'admin.adminstrators', '_sonata_name' => 'admin_app_admin_batch'], null, null, null, false, false, null]],
+        '/admin/app/admin/export' => [[['_route' => 'admin_app_admin_export', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction', '_sonata_admin' => 'admin.adminstrators', '_sonata_name' => 'admin_app_admin_export'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -117,99 +128,116 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/blog/article/([a-z0-9\\-]*)\\-([^/]++)(*:206)'
+                .'|/p(?'
+                    .'|raticien/([^/]++)(*:191)'
+                    .'|harmacie/([^/]++)(*:216)'
+                .')'
+                .'|/laboratoire/([^/]++)(*:246)'
+                .'|/blog/article/([a-z0-9\\-]*)\\-([^/]++)(*:291)'
                 .'|/media/cache/resolve/(?'
-                    .'|([A-z0-9_-]*)/rc/([^/]++)/(.+)(*:268)'
-                    .'|([A-z0-9_-]*)/(.+)(*:294)'
+                    .'|([A-z0-9_-]*)/rc/([^/]++)/(.+)(*:353)'
+                    .'|([A-z0-9_-]*)/(.+)(*:379)'
                 .')'
                 .'|/admin/(?'
-                    .'|core/get\\-short\\-object\\-description(?:\\.(html|json))?(*:367)'
+                    .'|core/get\\-short\\-object\\-description(?:\\.(html|json))?(*:452)'
                     .'|app/(?'
                         .'|language/([^/]++)/(?'
-                            .'|edit(*:407)'
-                            .'|delete(*:421)'
-                            .'|show(*:433)'
+                            .'|edit(*:492)'
+                            .'|delete(*:506)'
+                            .'|show(*:518)'
                         .')'
                         .'|s(?'
                             .'|ocialnetworks/([^/]++)/(?'
-                                .'|edit(*:476)'
-                                .'|delete(*:490)'
-                                .'|show(*:502)'
+                                .'|edit(*:561)'
+                                .'|delete(*:575)'
+                                .'|show(*:587)'
                             .')'
                             .'|ervices/([^/]++)/(?'
-                                .'|edit(*:535)'
-                                .'|delete(*:549)'
-                                .'|show(*:561)'
+                                .'|edit(*:620)'
+                                .'|delete(*:634)'
+                                .'|show(*:646)'
                             .')'
                             .'|kills/([^/]++)/(?'
-                                .'|edit(*:592)'
-                                .'|delete(*:606)'
-                                .'|show(*:618)'
+                                .'|edit(*:677)'
+                                .'|delete(*:691)'
+                                .'|show(*:703)'
                             .')'
                         .')'
                         .'|category(?'
                             .'|drugs/([^/]++)/(?'
-                                .'|edit(*:661)'
-                                .'|delete(*:675)'
-                                .'|show(*:687)'
+                                .'|edit(*:746)'
+                                .'|delete(*:760)'
+                                .'|show(*:772)'
                             .')'
                             .'|laboratory/([^/]++)/(?'
-                                .'|edit(*:723)'
-                                .'|delete(*:737)'
-                                .'|show(*:749)'
+                                .'|edit(*:808)'
+                                .'|delete(*:822)'
+                                .'|show(*:834)'
                             .')'
                         .')'
                         .'|drugsconsomers/([^/]++)/(?'
-                            .'|edit(*:790)'
-                            .'|delete(*:804)'
-                            .'|show(*:816)'
+                            .'|edit(*:875)'
+                            .'|delete(*:889)'
+                            .'|show(*:901)'
                         .')'
                         .'|expertise/([^/]++)/(?'
-                            .'|edit(*:851)'
-                            .'|delete(*:865)'
-                            .'|show(*:877)'
+                            .'|edit(*:936)'
+                            .'|delete(*:950)'
+                            .'|show(*:962)'
                         .')'
                         .'|formdrugs/([^/]++)/(?'
-                            .'|edit(*:912)'
-                            .'|delete(*:926)'
-                            .'|show(*:938)'
+                            .'|edit(*:997)'
+                            .'|delete(*:1011)'
+                            .'|show(*:1024)'
                         .')'
-                        .'|meanspayment/([^/]++)/(?'
-                            .'|edit(*:976)'
-                            .'|delete(*:990)'
-                            .'|show(*:1002)'
+                        .'|me(?'
+                            .'|anspayment/([^/]++)/(?'
+                                .'|edit(*:1066)'
+                                .'|delete(*:1081)'
+                                .'|show(*:1094)'
+                            .')'
+                            .'|mbers/([^/]++)/(?'
+                                .'|edit(*:1126)'
+                                .'|delete(*:1141)'
+                                .'|show(*:1154)'
+                            .')'
                         .')'
                         .'|news/([^/]++)/(?'
-                            .'|edit(*:1033)'
-                            .'|delete(*:1048)'
-                            .'|show(*:1061)'
+                            .'|edit(*:1186)'
+                            .'|delete(*:1201)'
+                            .'|show(*:1214)'
                         .')'
                         .'|pr(?'
                             .'|aticalinfos/([^/]++)/(?'
-                                .'|edit(*:1104)'
-                                .'|delete(*:1119)'
-                                .'|show(*:1132)'
+                                .'|edit(*:1257)'
+                                .'|delete(*:1272)'
+                                .'|show(*:1285)'
                             .')'
                             .'|ofession/([^/]++)/(?'
-                                .'|edit(*:1167)'
-                                .'|delete(*:1182)'
-                                .'|show(*:1195)'
+                                .'|edit(*:1320)'
+                                .'|delete(*:1335)'
+                                .'|show(*:1348)'
                             .')'
                         .')'
                         .'|qualityservices/([^/]++)/(?'
-                            .'|edit(*:1238)'
-                            .'|delete(*:1253)'
-                            .'|show(*:1266)'
+                            .'|edit(*:1391)'
+                            .'|delete(*:1406)'
+                            .'|show(*:1419)'
                         .')'
                         .'|refund/([^/]++)/(?'
-                            .'|edit(*:1299)'
-                            .'|delete(*:1314)'
-                            .'|show(*:1327)'
+                            .'|edit(*:1452)'
+                            .'|delete(*:1467)'
+                            .'|show(*:1480)'
                         .')'
                         .'|timeslotopen/([^/]++)/(?'
-                            .'|edit(*:1366)'
-                            .'|delete(*:1381)'
-                            .'|show(*:1394)'
+                            .'|edit(*:1519)'
+                            .'|delete(*:1534)'
+                            .'|show(*:1547)'
+                        .')'
+                        .'|admin/([^/]++)/(?'
+                            .'|edit(*:1579)'
+                            .'|delete(*:1594)'
+                            .'|show(*:1607)'
                         .')'
                     .')'
                 .')'
@@ -223,59 +251,68 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        206 => [[['_route' => 'article.show', '_controller' => 'App\\Controller\\BlogController::showArticle'], ['slug', 'id'], null, null, false, true, null]],
-        268 => [[['_route' => 'liip_imagine_filter_runtime', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterRuntimeAction'], ['filter', 'hash', 'path'], ['GET' => 0], null, false, true, null]],
-        294 => [[['_route' => 'liip_imagine_filter', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterAction'], ['filter', 'path'], ['GET' => 0], null, false, true, null]],
-        367 => [[['_route' => 'sonata_admin_short_object_information', '_controller' => 'sonata.admin.action.get_short_object_description', '_format' => 'html'], ['_format'], null, null, false, true, null]],
-        407 => [[['_route' => 'admin_app_language_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.language', '_sonata_name' => 'admin_app_language_edit'], ['id'], null, null, false, false, null]],
-        421 => [[['_route' => 'admin_app_language_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.language', '_sonata_name' => 'admin_app_language_delete'], ['id'], null, null, false, false, null]],
-        433 => [[['_route' => 'admin_app_language_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.language', '_sonata_name' => 'admin_app_language_show'], ['id'], null, null, false, false, null]],
-        476 => [[['_route' => 'admin_app_socialnetworks_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.social_networks', '_sonata_name' => 'admin_app_socialnetworks_edit'], ['id'], null, null, false, false, null]],
-        490 => [[['_route' => 'admin_app_socialnetworks_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.social_networks', '_sonata_name' => 'admin_app_socialnetworks_delete'], ['id'], null, null, false, false, null]],
-        502 => [[['_route' => 'admin_app_socialnetworks_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.social_networks', '_sonata_name' => 'admin_app_socialnetworks_show'], ['id'], null, null, false, false, null]],
-        535 => [[['_route' => 'admin_app_services_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.services', '_sonata_name' => 'admin_app_services_edit'], ['id'], null, null, false, false, null]],
-        549 => [[['_route' => 'admin_app_services_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.services', '_sonata_name' => 'admin_app_services_delete'], ['id'], null, null, false, false, null]],
-        561 => [[['_route' => 'admin_app_services_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.services', '_sonata_name' => 'admin_app_services_show'], ['id'], null, null, false, false, null]],
-        592 => [[['_route' => 'admin_app_skills_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.skills', '_sonata_name' => 'admin_app_skills_edit'], ['id'], null, null, false, false, null]],
-        606 => [[['_route' => 'admin_app_skills_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.skills', '_sonata_name' => 'admin_app_skills_delete'], ['id'], null, null, false, false, null]],
-        618 => [[['_route' => 'admin_app_skills_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.skills', '_sonata_name' => 'admin_app_skills_show'], ['id'], null, null, false, false, null]],
-        661 => [[['_route' => 'admin_app_categorydrugs_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.category_drugs', '_sonata_name' => 'admin_app_categorydrugs_edit'], ['id'], null, null, false, false, null]],
-        675 => [[['_route' => 'admin_app_categorydrugs_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.category_drugs', '_sonata_name' => 'admin_app_categorydrugs_delete'], ['id'], null, null, false, false, null]],
-        687 => [[['_route' => 'admin_app_categorydrugs_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.category_drugs', '_sonata_name' => 'admin_app_categorydrugs_show'], ['id'], null, null, false, false, null]],
-        723 => [[['_route' => 'admin_app_categorylaboratory_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.category_laboratory', '_sonata_name' => 'admin_app_categorylaboratory_edit'], ['id'], null, null, false, false, null]],
-        737 => [[['_route' => 'admin_app_categorylaboratory_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.category_laboratory', '_sonata_name' => 'admin_app_categorylaboratory_delete'], ['id'], null, null, false, false, null]],
-        749 => [[['_route' => 'admin_app_categorylaboratory_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.category_laboratory', '_sonata_name' => 'admin_app_categorylaboratory_show'], ['id'], null, null, false, false, null]],
-        790 => [[['_route' => 'admin_app_drugsconsomers_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.drugs_consomers', '_sonata_name' => 'admin_app_drugsconsomers_edit'], ['id'], null, null, false, false, null]],
-        804 => [[['_route' => 'admin_app_drugsconsomers_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.drugs_consomers', '_sonata_name' => 'admin_app_drugsconsomers_delete'], ['id'], null, null, false, false, null]],
-        816 => [[['_route' => 'admin_app_drugsconsomers_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.drugs_consomers', '_sonata_name' => 'admin_app_drugsconsomers_show'], ['id'], null, null, false, false, null]],
-        851 => [[['_route' => 'admin_app_expertise_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.expertise', '_sonata_name' => 'admin_app_expertise_edit'], ['id'], null, null, false, false, null]],
-        865 => [[['_route' => 'admin_app_expertise_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.expertise', '_sonata_name' => 'admin_app_expertise_delete'], ['id'], null, null, false, false, null]],
-        877 => [[['_route' => 'admin_app_expertise_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.expertise', '_sonata_name' => 'admin_app_expertise_show'], ['id'], null, null, false, false, null]],
-        912 => [[['_route' => 'admin_app_formdrugs_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.form_drugs', '_sonata_name' => 'admin_app_formdrugs_edit'], ['id'], null, null, false, false, null]],
-        926 => [[['_route' => 'admin_app_formdrugs_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.form_drugs', '_sonata_name' => 'admin_app_formdrugs_delete'], ['id'], null, null, false, false, null]],
-        938 => [[['_route' => 'admin_app_formdrugs_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.form_drugs', '_sonata_name' => 'admin_app_formdrugs_show'], ['id'], null, null, false, false, null]],
-        976 => [[['_route' => 'admin_app_meanspayment_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.means_payment', '_sonata_name' => 'admin_app_meanspayment_edit'], ['id'], null, null, false, false, null]],
-        990 => [[['_route' => 'admin_app_meanspayment_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.means_payment', '_sonata_name' => 'admin_app_meanspayment_delete'], ['id'], null, null, false, false, null]],
-        1002 => [[['_route' => 'admin_app_meanspayment_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.means_payment', '_sonata_name' => 'admin_app_meanspayment_show'], ['id'], null, null, false, false, null]],
-        1033 => [[['_route' => 'admin_app_news_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.news', '_sonata_name' => 'admin_app_news_edit'], ['id'], null, null, false, false, null]],
-        1048 => [[['_route' => 'admin_app_news_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.news', '_sonata_name' => 'admin_app_news_delete'], ['id'], null, null, false, false, null]],
-        1061 => [[['_route' => 'admin_app_news_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.news', '_sonata_name' => 'admin_app_news_show'], ['id'], null, null, false, false, null]],
-        1104 => [[['_route' => 'admin_app_praticalinfos_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.pratical_infos', '_sonata_name' => 'admin_app_praticalinfos_edit'], ['id'], null, null, false, false, null]],
-        1119 => [[['_route' => 'admin_app_praticalinfos_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.pratical_infos', '_sonata_name' => 'admin_app_praticalinfos_delete'], ['id'], null, null, false, false, null]],
-        1132 => [[['_route' => 'admin_app_praticalinfos_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.pratical_infos', '_sonata_name' => 'admin_app_praticalinfos_show'], ['id'], null, null, false, false, null]],
-        1167 => [[['_route' => 'admin_app_profession_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.profession', '_sonata_name' => 'admin_app_profession_edit'], ['id'], null, null, false, false, null]],
-        1182 => [[['_route' => 'admin_app_profession_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.profession', '_sonata_name' => 'admin_app_profession_delete'], ['id'], null, null, false, false, null]],
-        1195 => [[['_route' => 'admin_app_profession_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.profession', '_sonata_name' => 'admin_app_profession_show'], ['id'], null, null, false, false, null]],
-        1238 => [[['_route' => 'admin_app_qualityservices_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.quality_services', '_sonata_name' => 'admin_app_qualityservices_edit'], ['id'], null, null, false, false, null]],
-        1253 => [[['_route' => 'admin_app_qualityservices_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.quality_services', '_sonata_name' => 'admin_app_qualityservices_delete'], ['id'], null, null, false, false, null]],
-        1266 => [[['_route' => 'admin_app_qualityservices_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.quality_services', '_sonata_name' => 'admin_app_qualityservices_show'], ['id'], null, null, false, false, null]],
-        1299 => [[['_route' => 'admin_app_refund_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.refund', '_sonata_name' => 'admin_app_refund_edit'], ['id'], null, null, false, false, null]],
-        1314 => [[['_route' => 'admin_app_refund_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.refund', '_sonata_name' => 'admin_app_refund_delete'], ['id'], null, null, false, false, null]],
-        1327 => [[['_route' => 'admin_app_refund_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.refund', '_sonata_name' => 'admin_app_refund_show'], ['id'], null, null, false, false, null]],
-        1366 => [[['_route' => 'admin_app_timeslotopen_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_edit'], ['id'], null, null, false, false, null]],
-        1381 => [[['_route' => 'admin_app_timeslotopen_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_delete'], ['id'], null, null, false, false, null]],
-        1394 => [
-            [['_route' => 'admin_app_timeslotopen_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_show'], ['id'], null, null, false, false, null],
+        191 => [[['_route' => 'doctor.show', '_controller' => 'App\\Controller\\AccountProController::showAccountDoctor'], ['slug'], null, null, false, true, null]],
+        216 => [[['_route' => 'pharmacy.show', '_controller' => 'App\\Controller\\AccountProController::showAccountPharmarcy'], ['slug'], null, null, false, true, null]],
+        246 => [[['_route' => 'laboratoire.show', '_controller' => 'App\\Controller\\AccountProController::showAccountLaboratory'], ['slug'], null, null, false, true, null]],
+        291 => [[['_route' => 'article.show', '_controller' => 'App\\Controller\\BlogController::showArticle'], ['slug', 'id'], null, null, false, true, null]],
+        353 => [[['_route' => 'liip_imagine_filter_runtime', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterRuntimeAction'], ['filter', 'hash', 'path'], ['GET' => 0], null, false, true, null]],
+        379 => [[['_route' => 'liip_imagine_filter', '_controller' => 'Liip\\ImagineBundle\\Controller\\ImagineController::filterAction'], ['filter', 'path'], ['GET' => 0], null, false, true, null]],
+        452 => [[['_route' => 'sonata_admin_short_object_information', '_controller' => 'sonata.admin.action.get_short_object_description', '_format' => 'html'], ['_format'], null, null, false, true, null]],
+        492 => [[['_route' => 'admin_app_language_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.language', '_sonata_name' => 'admin_app_language_edit'], ['id'], null, null, false, false, null]],
+        506 => [[['_route' => 'admin_app_language_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.language', '_sonata_name' => 'admin_app_language_delete'], ['id'], null, null, false, false, null]],
+        518 => [[['_route' => 'admin_app_language_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.language', '_sonata_name' => 'admin_app_language_show'], ['id'], null, null, false, false, null]],
+        561 => [[['_route' => 'admin_app_socialnetworks_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.social_networks', '_sonata_name' => 'admin_app_socialnetworks_edit'], ['id'], null, null, false, false, null]],
+        575 => [[['_route' => 'admin_app_socialnetworks_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.social_networks', '_sonata_name' => 'admin_app_socialnetworks_delete'], ['id'], null, null, false, false, null]],
+        587 => [[['_route' => 'admin_app_socialnetworks_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.social_networks', '_sonata_name' => 'admin_app_socialnetworks_show'], ['id'], null, null, false, false, null]],
+        620 => [[['_route' => 'admin_app_services_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.services', '_sonata_name' => 'admin_app_services_edit'], ['id'], null, null, false, false, null]],
+        634 => [[['_route' => 'admin_app_services_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.services', '_sonata_name' => 'admin_app_services_delete'], ['id'], null, null, false, false, null]],
+        646 => [[['_route' => 'admin_app_services_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.services', '_sonata_name' => 'admin_app_services_show'], ['id'], null, null, false, false, null]],
+        677 => [[['_route' => 'admin_app_skills_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.skills', '_sonata_name' => 'admin_app_skills_edit'], ['id'], null, null, false, false, null]],
+        691 => [[['_route' => 'admin_app_skills_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.skills', '_sonata_name' => 'admin_app_skills_delete'], ['id'], null, null, false, false, null]],
+        703 => [[['_route' => 'admin_app_skills_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.skills', '_sonata_name' => 'admin_app_skills_show'], ['id'], null, null, false, false, null]],
+        746 => [[['_route' => 'admin_app_categorydrugs_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.category_drugs', '_sonata_name' => 'admin_app_categorydrugs_edit'], ['id'], null, null, false, false, null]],
+        760 => [[['_route' => 'admin_app_categorydrugs_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.category_drugs', '_sonata_name' => 'admin_app_categorydrugs_delete'], ['id'], null, null, false, false, null]],
+        772 => [[['_route' => 'admin_app_categorydrugs_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.category_drugs', '_sonata_name' => 'admin_app_categorydrugs_show'], ['id'], null, null, false, false, null]],
+        808 => [[['_route' => 'admin_app_categorylaboratory_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.category_laboratory', '_sonata_name' => 'admin_app_categorylaboratory_edit'], ['id'], null, null, false, false, null]],
+        822 => [[['_route' => 'admin_app_categorylaboratory_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.category_laboratory', '_sonata_name' => 'admin_app_categorylaboratory_delete'], ['id'], null, null, false, false, null]],
+        834 => [[['_route' => 'admin_app_categorylaboratory_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.category_laboratory', '_sonata_name' => 'admin_app_categorylaboratory_show'], ['id'], null, null, false, false, null]],
+        875 => [[['_route' => 'admin_app_drugsconsomers_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.drugs_consomers', '_sonata_name' => 'admin_app_drugsconsomers_edit'], ['id'], null, null, false, false, null]],
+        889 => [[['_route' => 'admin_app_drugsconsomers_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.drugs_consomers', '_sonata_name' => 'admin_app_drugsconsomers_delete'], ['id'], null, null, false, false, null]],
+        901 => [[['_route' => 'admin_app_drugsconsomers_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.drugs_consomers', '_sonata_name' => 'admin_app_drugsconsomers_show'], ['id'], null, null, false, false, null]],
+        936 => [[['_route' => 'admin_app_expertise_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.expertise', '_sonata_name' => 'admin_app_expertise_edit'], ['id'], null, null, false, false, null]],
+        950 => [[['_route' => 'admin_app_expertise_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.expertise', '_sonata_name' => 'admin_app_expertise_delete'], ['id'], null, null, false, false, null]],
+        962 => [[['_route' => 'admin_app_expertise_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.expertise', '_sonata_name' => 'admin_app_expertise_show'], ['id'], null, null, false, false, null]],
+        997 => [[['_route' => 'admin_app_formdrugs_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.form_drugs', '_sonata_name' => 'admin_app_formdrugs_edit'], ['id'], null, null, false, false, null]],
+        1011 => [[['_route' => 'admin_app_formdrugs_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.form_drugs', '_sonata_name' => 'admin_app_formdrugs_delete'], ['id'], null, null, false, false, null]],
+        1024 => [[['_route' => 'admin_app_formdrugs_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.form_drugs', '_sonata_name' => 'admin_app_formdrugs_show'], ['id'], null, null, false, false, null]],
+        1066 => [[['_route' => 'admin_app_meanspayment_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.means_payment', '_sonata_name' => 'admin_app_meanspayment_edit'], ['id'], null, null, false, false, null]],
+        1081 => [[['_route' => 'admin_app_meanspayment_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.means_payment', '_sonata_name' => 'admin_app_meanspayment_delete'], ['id'], null, null, false, false, null]],
+        1094 => [[['_route' => 'admin_app_meanspayment_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.means_payment', '_sonata_name' => 'admin_app_meanspayment_show'], ['id'], null, null, false, false, null]],
+        1126 => [[['_route' => 'admin_app_members_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.members', '_sonata_name' => 'admin_app_members_edit'], ['id'], null, null, false, false, null]],
+        1141 => [[['_route' => 'admin_app_members_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.members', '_sonata_name' => 'admin_app_members_delete'], ['id'], null, null, false, false, null]],
+        1154 => [[['_route' => 'admin_app_members_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.members', '_sonata_name' => 'admin_app_members_show'], ['id'], null, null, false, false, null]],
+        1186 => [[['_route' => 'admin_app_news_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.news', '_sonata_name' => 'admin_app_news_edit'], ['id'], null, null, false, false, null]],
+        1201 => [[['_route' => 'admin_app_news_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.news', '_sonata_name' => 'admin_app_news_delete'], ['id'], null, null, false, false, null]],
+        1214 => [[['_route' => 'admin_app_news_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.news', '_sonata_name' => 'admin_app_news_show'], ['id'], null, null, false, false, null]],
+        1257 => [[['_route' => 'admin_app_praticalinfos_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.pratical_infos', '_sonata_name' => 'admin_app_praticalinfos_edit'], ['id'], null, null, false, false, null]],
+        1272 => [[['_route' => 'admin_app_praticalinfos_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.pratical_infos', '_sonata_name' => 'admin_app_praticalinfos_delete'], ['id'], null, null, false, false, null]],
+        1285 => [[['_route' => 'admin_app_praticalinfos_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.pratical_infos', '_sonata_name' => 'admin_app_praticalinfos_show'], ['id'], null, null, false, false, null]],
+        1320 => [[['_route' => 'admin_app_profession_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.profession', '_sonata_name' => 'admin_app_profession_edit'], ['id'], null, null, false, false, null]],
+        1335 => [[['_route' => 'admin_app_profession_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.profession', '_sonata_name' => 'admin_app_profession_delete'], ['id'], null, null, false, false, null]],
+        1348 => [[['_route' => 'admin_app_profession_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.profession', '_sonata_name' => 'admin_app_profession_show'], ['id'], null, null, false, false, null]],
+        1391 => [[['_route' => 'admin_app_qualityservices_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.quality_services', '_sonata_name' => 'admin_app_qualityservices_edit'], ['id'], null, null, false, false, null]],
+        1406 => [[['_route' => 'admin_app_qualityservices_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.quality_services', '_sonata_name' => 'admin_app_qualityservices_delete'], ['id'], null, null, false, false, null]],
+        1419 => [[['_route' => 'admin_app_qualityservices_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.quality_services', '_sonata_name' => 'admin_app_qualityservices_show'], ['id'], null, null, false, false, null]],
+        1452 => [[['_route' => 'admin_app_refund_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.refund', '_sonata_name' => 'admin_app_refund_edit'], ['id'], null, null, false, false, null]],
+        1467 => [[['_route' => 'admin_app_refund_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.refund', '_sonata_name' => 'admin_app_refund_delete'], ['id'], null, null, false, false, null]],
+        1480 => [[['_route' => 'admin_app_refund_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.refund', '_sonata_name' => 'admin_app_refund_show'], ['id'], null, null, false, false, null]],
+        1519 => [[['_route' => 'admin_app_timeslotopen_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_edit'], ['id'], null, null, false, false, null]],
+        1534 => [[['_route' => 'admin_app_timeslotopen_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_delete'], ['id'], null, null, false, false, null]],
+        1547 => [[['_route' => 'admin_app_timeslotopen_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.time_slot_open', '_sonata_name' => 'admin_app_timeslotopen_show'], ['id'], null, null, false, false, null]],
+        1579 => [[['_route' => 'admin_app_admin_edit', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction', '_sonata_admin' => 'admin.adminstrators', '_sonata_name' => 'admin_app_admin_edit'], ['id'], null, null, false, false, null]],
+        1594 => [[['_route' => 'admin_app_admin_delete', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction', '_sonata_admin' => 'admin.adminstrators', '_sonata_name' => 'admin_app_admin_delete'], ['id'], null, null, false, false, null]],
+        1607 => [
+            [['_route' => 'admin_app_admin_show', '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction', '_sonata_admin' => 'admin.adminstrators', '_sonata_name' => 'admin_app_admin_show'], ['id'], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

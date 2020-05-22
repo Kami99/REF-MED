@@ -1,0 +1,53 @@
+{% extends "main_refmed/main_account_show.html.twig" %}
+{% block header_picture %}{{asset('bower_components/images/pharmacy-header.jpg') }}{% endblock %}
+              {% block picture %}
+              {% if pharmacy.pictureProfil %}             
+              {% else %}
+              <img class="photo" src="{{asset('bower_components/images/notImageProfile.png') }}" 
+               alt="Profile image not available">
+              {% endif %}
+              {% endblock %}
+            {% block entityName %}
+            <h4 class="name">{{pharmacy.pharmacyName}}</h4>
+            {% endblock entityName %}
+                {% block numberPhone %}
+                <p class="number-stat">{{pharmacy.phoneNumber|replace({'-':' ' }) }} </p>  
+                {% endblock numberPhone %}
+              {% block linksSocial %}
+              {% for socialLinks in pharmacy.pharmacySocialNetworks %}
+              {% if socialLinks.socialNetworks.socialName|lower == "facebook" %}
+             <a href="{{socialLinks}}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> 
+              {% endif %}
+              {% if socialLinks.socialNetworks.socialName|lower == "twitter" %}
+             <a href="{{socialLinks}}"> <i class="fa fa-twitter-square" aria-hidden="true"></i></a> 
+              {% endif %}
+              {% if socialLinks.socialNetworks.socialName|lower == "linkedin" %}
+              <a href="{{socialLinks}}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> 
+              {% endif %}
+              {% if socialLinks.socialNetworks.socialName|lower == "google+" %}
+            <a href="{{socialLinks}}">  <i class="fa fa-google-square" aria-hidden="true"></i></a> 
+              {% endif %}
+                
+              {% endfor %}
+              {% endblock %}
+              {% block input %}
+              <input type="radio" id="tab-profile1" name="tab-profile-control" checked>
+              <input type="radio" id="tab-profile2" name="tab-profile-control">
+              <input type="radio" id="tab-profile3" name="tab-profile-control">    
+              {% endblock %}         
+                  {% block liName %}
+                  <li title="Presentation"><label for="tab-profile1" role="button"><i class="fa fa-book"></i><br><span>Presentation</span></label></li>
+                  <li title="Informations"><label for="tab-profile2" role="button"><i class="fa fa-info-circle"></i> <br><span>Carte</span></label></li>
+                  {% endblock %}
+                  {% block content %}
+                        <section>
+                           <p> <span class="info-titre">Tarifs</span> : {{pharmacy.fullTarif}}</p>
+                          <p>  <span class="info-titre">Langue Parlées</span>: {% for langue in pharmacy.language %} {{langue}} {% endfor %}</p>
+                          <p> <span class="info-titre">Paiement accèptés </span>: {% for means in pharmacy.meansPayment %} {{means}} {% endfor %}</p>
+                          <p> <span class="info-titre">Moyens d'accès</span> :  {% for info in pharmacy.praticalInfos %} {{info}} {% endfor %}</p>
+                          <p> <span class="info-titre">Remboursement(s) accèpté(s)</span> : {% for refund in pharmacy.refund %} {{refund}} {% endfor %}</p>
+                          </section>
+                        <section>
+                          <div id="map"></div>
+                          </section>
+                  {% endblock %}

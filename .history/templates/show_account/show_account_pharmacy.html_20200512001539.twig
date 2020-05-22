@@ -1,0 +1,66 @@
+{% extends "show_account/main_account_show.html.twig" %}
+{% block style %}
+<style>
+  .tab-profiles .slider {
+  position: relative;
+  width: 50%;
+  -webkit-transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+  transition: all 0.33s cubic-bezier(0.38, 0.8, 0.32, 1.07);
+}
+</style>
+
+{% endblock style %}
+{% block header_picture %}{{asset('bower_components/images/pharmacy-header.jpg') }}{% endblock %}
+              {% block picture %}
+              {% if pharmacy.picture %}             
+              {% else %}
+              <img class="photo" src="{{asset('bower_components/images/notImageProfile.png') }}" 
+               alt="Profile image not available">
+              {% endif %}
+              {% endblock %}
+            {% block entityName %}
+            <h4 class="name">{{pharmacy.pharmacyName}}</h4>
+            {% endblock entityName %}
+                {% block numberPhone %}
+                <p class="number-stat">{{pharmacy.phoneNumber|replace({'-':' ' }) }} </p>  
+                {% endblock numberPhone %}
+              {% block linksSocial %}
+
+              {% endblock %}
+              {% block input %}
+              <input type="radio" id="tab-profile1" name="tab-profile-control" checked>
+              <input type="radio" id="tab-profile2" name="tab-profile-control">
+              {% endblock %}         
+                  {% block liName %}
+                  <li title="Informations"><label for="tab-profile1" role="button"><i class="fa fa-info-circle"></i> <br> <span>Informations</span></label></li>
+                  <li title="Informations"><label for="tab-profile2" role="button"><i class="fa fa-map"></i> <br> <span>Carte</span></label></li>
+                  {% endblock %}
+                  {% block slider %}slider2{% endblock slider %}
+                  {% block content %}
+                        <section>
+                          <p> <span class="info-titre">Paiement accèptés </span>: {% for means in pharmacy.meansPayment %} {{means}} {% endfor %}</p>
+                          <p>
+                            {% if pharmacy.pharmacySocialNetworks is defined %}
+                            {% else %}
+                            {% for socialLinks in pharmacy.pharmacySocialNetworks %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "facebook" %}
+                           <a href="{{socialLinks}}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "twitter" %}
+                           <a href="{{socialLinks}}"> <i class="fa fa-twitter-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "linkedin" %}
+                            <a href="{{socialLinks}}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "google+" %}
+                          <a href="{{socialLinks}}">  <i class="fa fa-google-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                              
+                            {% endfor %}
+                            {% endif %}
+                          </p>
+                          </section>
+                        <section>
+                          <div id="map"></div>
+                          </section>
+                  {% endblock %}

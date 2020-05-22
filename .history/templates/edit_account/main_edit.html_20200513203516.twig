@@ -1,0 +1,267 @@
+{% extends 'appMain.html.twig' %} {% block title %}Edition du compte{% endblock
+%} {% block body %} {% include "includeApp/_navigation.html.twig" %}
+
+<div class="container mt-30">
+    <div class="row">
+        <div class="col-lg-12 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a
+                        href=""
+                        data-target="#profile"
+                        data-toggle="tab"
+                        class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#messages" data-toggle="tab"
+                        class="nav-link">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#edit" data-toggle="tab"
+                        class="nav-link">Edit</a>
+                </li>
+                <li class="nav-item">
+                    <a
+                        href=""
+                        data-target="#change_password"
+                        data-toggle="tab"
+                        class="nav-link">Changer le mots de passe</a>
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h5 class="mb-3">Vos informations</h5>
+                    <div class="row">
+                        <div class="col-md-6 mb-10 p-4">
+                            <h6>A propos de vous</h6>
+                            <p>Vous etes un {{ doctor.profession }}</p>
+                            <h6>Vos réseaux</h6>
+                            <p>
+                                Les réseaux sociaux présents sont :
+                            </p>
+                            <h6>Langue</h6>
+                            <p>
+                                Les langues parlées :
+                            </p>
+                            <h6>Accès</h6>
+                            <p>
+                                Accès:
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-10 p-4">
+                            <h6>Votre expertise est</h6>
+                            {% for expertise in doctor.expertise %}
+                            <span class="badge badge-pill badge-primary">{{
+                                expertise
+                                }}</span>
+                            {% endfor %}
+                            <hr />
+                            {% if doctor.doctorSocialNetworks is defined %} {%
+                            block
+                            linksSocial %} {% for socialLinks in
+                            doctor.doctorSocialNetworks
+                            %} {% if socialLinks.socialNetworks.socialName|lower
+                            == "facebook"
+                            %}
+                            <a href="{{ socialLinks }}" class="link-rs"><i
+                                    class="fa fa-facebook-square"
+                                    aria-hidden="true"></i></a>
+                            {% endif %} {% if
+                            socialLinks.socialNetworks.socialName|lower ==
+                            "twitter" %}
+                            <a href="{{ socialLinks }}" class="link-rs">
+                                <i class="fa fa-twitter-square"
+                                    aria-hidden="true"></i></a>
+                            {% endif %} {% if
+                            socialLinks.socialNetworks.socialName|lower ==
+                            "linkedin" %}
+                            <a href="{{ socialLinks }}" class="link-rs"><i
+                                    class="fa fa-linkedin-square"
+                                    aria-hidden="true"></i></a>
+                            {% endif %} {% if
+                            socialLinks.socialNetworks.socialName|lower ==
+                            "google+" %}
+                            <a href="{{ socialLinks }}" class="link-rs">
+                                <i class="fa fa-google-square"
+                                    aria-hidden="true"></i></a>
+                            {% endif %} {% endfor %} {% endblock %} {% else %}
+                            <span>Vous n'avez pas mis de réseaux sociaux</span>
+                            {% endif %}
+                            <hr />
+                            {% if doctor.languague is defined %}
+                            <span>Vous n'avez pas sélectionnés de langue</span>
+                            {% else %} {% for language in doctor.language %}
+                            <span> {{ language }}</span>
+                            {% endfor %} {% endif %}
+                            <hr />
+                            {% if doctor.praticalInfos is defined %} {% for
+                            infos in
+                            doctor.praticalInfos %}
+                            <span> {{ infos }}</span>
+                            {% else %}
+                            <span>Vous n'avez pas sélectionnés d'accès</span>
+                            {% endfor %} {% endif %}
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <h5 class="mt-2">Règlement</h5>
+
+                            <ul class="list-group">
+                                <li class="list-group-item text-muted">
+                                    Moyen de paiement et remboursement acceptés
+                                    <i class="fa fa-money" aria-hidden="true"></i>
+                                    {% for means in
+                                    doctor.meansPayment %}
+                                </li>
+                                <li class="list-group-item text-right">
+                                    <span class="pull-left"><strong>Vous
+                                            acceptez</strong></span>
+                                    {{ means }}
+                                </li>
+                                {% endfor %} {% for refund in doctor.refund %}
+                                <li class="list-group-item text-right">
+                                    <span class="pull-left"><strong>Vous
+                                            acceptez</strong></span>
+                                    {{ refund }}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                    <!--/row-->
+                </div>
+                <div class="tab-pane" id="messages">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a>
+                        Notifications
+                    </div>
+                    <table class="table table-hover table-striped">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <span class="float-right font-weight-bold">3
+                                        hrs ago</span>
+                                    Here is your a link to the latest summary
+                                    report from the..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="float-right font-weight-bold">Yesterday</span>
+                                    There has been a request on your account
+                                    since that was..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="float-right font-weight-bold">9/10</span>
+                                    Porttitor vitae ultrices quis, dapibus id
+                                    dolor. Morbi
+                                    venenatis lacinia rhoncus.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="float-right font-weight-bold">9/4</span>
+                                    Vestibulum tincidunt ullamcorper eros eget
+                                    luctus.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span class="float-right font-weight-bold">9/4</span>
+                                    Maxamillion ais the fix for tibulum
+                                    tincidunt ullamcorper
+                                    eros.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="tab-pane" id="edit">
+                    <div class="container">
+                        {{ form_start(form) }}
+                        <div class="row">
+                        
+                            
+                            <div class="col-8">
+                                <div class="row">
+                                    <div class="col-3">
+                                        {{ form_widget(form.location.nameLocation, { 'attr': {'class': 'form-control locationLon hidden'}}) }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form_widget(form.location.latitude, { 'attr': {'class': 'form-control locationLon hidden'}}) }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form_widget(form.location.longitude, { 'attr': {'class': 'form-control locationLon hidden'}}) }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                    {{ form_widget(form.firstName) }}
+                                    </div>
+                                    <div class="col-6">
+                                    {{ form_widget(form.LastName) }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                    {{ form_widget(form.email) }}
+                                    </div>
+                                    <div class="col-6">
+                                    {{ form_widget(form.numberPhone) }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        {{ form_widget(form.profession,{ 'attr': {'class': 'js-form-selected'}}) }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form_widget(form.expertise,{ 'attr': {'class': 'form-selected'}}) }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form_widget(form.praticalInfos,{ 'attr': {'class': 'form-selected'}}) }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        {{ form_widget(form.language,{ 'attr': {'class': 'js-form-selected'}}) }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form_widget(form.meansPayment,{ 'attr': {'class': 'form-selected'}}) }}
+                                    </div>
+                                    <div class="col-3">
+                                        {{ form_widget(form.refund,{ 'attr': {'class': 'form-selected'}}) }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-3">
+                                        {{ form_widget(form.presentation,{ 'attr': {'class': 'js-form-selected'}}) }}
+                                    </div>
+ 
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <h6 class="mt-2">Uploadez une photo différente</h6>
+                                <label class="custom-file">
+                                    {{ form_widget(form.imageFile) }}
+                                    <span class="custom-file-control">Choisissez un fichier </span>
+                                </label>
+                            </div>
+                        </div>
+			            {{ form_start(form) }}
+                        
+                    </div>
+                    </div>
+         
+
+                        
+                </div>
+                <div class="tab-pane" id="change_password">  
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

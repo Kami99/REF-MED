@@ -1402,7 +1402,7 @@ class Configuration implements ConfigurationInterface
                                             if (!\is_array($config)) {
                                                 return [];
                                             }
-                                            if (!isset($config['host'])) {
+                                            if (!isset($config['host'], $config['value']) || \count($config) > 2) {
                                                 return $config;
                                             }
 
@@ -1482,7 +1482,7 @@ class Configuration implements ConfigurationInterface
                                     ->thenInvalid('Either "scope" or "base_uri" should be defined.')
                                 ->end()
                                 ->validate()
-                                    ->ifTrue(function ($v) { return isset($v['query']) && !isset($v['base_uri']); })
+                                    ->ifTrue(function ($v) { return !empty($v['query']) && !isset($v['base_uri']); })
                                     ->thenInvalid('"query" applies to "base_uri" but no base URI is defined.')
                                 ->end()
                                 ->children()
@@ -1511,7 +1511,7 @@ class Configuration implements ConfigurationInterface
                                                 if (!\is_array($config)) {
                                                     return [];
                                                 }
-                                                if (!isset($config['key'])) {
+                                                if (!isset($config['key'], $config['value']) || \count($config) > 2) {
                                                     return $config;
                                                 }
 
@@ -1541,7 +1541,7 @@ class Configuration implements ConfigurationInterface
                                                 if (!\is_array($config)) {
                                                     return [];
                                                 }
-                                                if (!isset($config['host'])) {
+                                                if (!isset($config['host'], $config['value']) || \count($config) > 2) {
                                                     return $config;
                                                 }
 

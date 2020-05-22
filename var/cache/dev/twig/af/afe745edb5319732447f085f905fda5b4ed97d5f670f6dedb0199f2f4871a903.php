@@ -164,18 +164,6 @@ class __TwigTemplate_b7a25fe3ece1ddc9cef277b7bd6589b087dd19cef0eca2cf627aee03b13
                     </div>
                 </div>
 
-                <div class=\"text-center p-t-115\">
-                    <span class=\"txt1\">
-                        Vous n'avez pas de compte
-                    </span>
-
-                    <a class=\"txt2\" href=\"";
-        // line 53
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_inscription");
-        echo "\">
-                        Veuillez vous inscrire
-                    </a>
-                </div>
             </form>
         </div>
     </div>
@@ -187,7 +175,7 @@ class __TwigTemplate_b7a25fe3ece1ddc9cef277b7bd6589b087dd19cef0eca2cf627aee03b13
 
 
   ";
-        // line 88
+        // line 79
         echo "
 ";
         
@@ -210,7 +198,7 @@ class __TwigTemplate_b7a25fe3ece1ddc9cef277b7bd6589b087dd19cef0eca2cf627aee03b13
 
     public function getDebugInfo()
     {
-        return array (  191 => 88,  174 => 53,  156 => 38,  142 => 27,  138 => 25,  132 => 23,  130 => 22,  116 => 10,  106 => 9,  94 => 6,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
+        return array (  179 => 79,  156 => 38,  142 => 27,  138 => 25,  132 => 23,  130 => 22,  116 => 10,  106 => 9,  94 => 6,  89 => 5,  79 => 4,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -262,15 +250,6 @@ class __TwigTemplate_b7a25fe3ece1ddc9cef277b7bd6589b087dd19cef0eca2cf627aee03b13
                     </div>
                 </div>
 
-                <div class=\"text-center p-t-115\">
-                    <span class=\"txt1\">
-                        Vous n'avez pas de compte
-                    </span>
-
-                    <a class=\"txt2\" href=\"{{ path('app_inscription') }}\">
-                        Veuillez vous inscrire
-                    </a>
-                </div>
             </form>
         </div>
     </div>

@@ -126,7 +126,7 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                         </li>
                         ";
         // line 61
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "user", [], "any", false, false, false, 61)) {
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "user", [], "any", false, false, false, 61) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 61, $this->source); })()), "user", [], "any", false, false, false, 61), "roles", [], "any", false, false, false, 61), 0, [], "array", false, false, false, 61) == "ROLE_USER_BLOG"))) {
             // line 62
             echo "                        <li ";
             if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 62, $this->source); })()) == "/blog/createPost")) {
@@ -143,11 +143,11 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
             echo " class=\"current\" ";
         }
         echo "><a href=\"";
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contactBlog");
         echo "\" title=\"Contact\">Contact</a></li>
                         ";
         // line 65
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 65, $this->source); })()), "user", [], "any", false, false, false, 65)) {
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 65, $this->source); })()), "user", [], "any", false, false, false, 65) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 65, $this->source); })()), "user", [], "any", false, false, false, 65), "roles", [], "any", false, false, false, 65), 0, [], "array", false, false, false, 65) == "ROLE_USER_BLOG"))) {
             // line 66
             echo "                        <ul class=\"nav navbar-nav navbar-right\" style=\"margin: 0;\">
                             <li class=\"dropdown\" ";
@@ -225,9 +225,15 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                                 </ul>
                             </li>
                         </ul>
+                        
+                        ";
+        } elseif (twig_get_attribute($this->env, $this->source,         // line 113
+(isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 113, $this->source); })()), "user", [], "any", false, false, false, 113)) {
+            // line 114
+            echo "                        
                         ";
         } else {
-            // line 113
+            // line 116
             echo "                        <ul class=\"nav navbar-nav navbar-right\" style=\"margin: 0;\">
                             <li class=\"dropdown\">
                                 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
@@ -241,8 +247,8 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                                                 <div class=\"col-lg-12\">
                                                     <p>
                                                         <a href=\"";
-            // line 125
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_inscription");
+            // line 128
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_blog");
             echo "\" class=\"btn btn-primary\">S'inscrire'</a>
                                                     </p>
                                                 </div>
@@ -256,7 +262,7 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                                                 <div class=\"col-lg-12\">
                                                     <p>
                                                         <a href=\"";
-            // line 137
+            // line 140
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-primary\">Se connecter</a>
                                                     </p>
@@ -266,11 +272,12 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                                     </li>
                                 </ul>
                             </li>
-                        </ul>                            
+                        </ul>    
                         ";
         }
-        // line 147
+        // line 150
         echo "
+
                     </ul> <!-- end header__nav -->
 
                     <a href=\"#0\" title=\"Close Menu\" class=\"header__overlay-close close-mobile-menu\">Fermer</a>
@@ -300,7 +307,7 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
 
     public function getDebugInfo()
     {
-        return array (  273 => 147,  260 => 137,  245 => 125,  231 => 113,  206 => 91,  201 => 89,  197 => 88,  193 => 86,  187 => 83,  184 => 82,  178 => 79,  175 => 78,  173 => 77,  163 => 70,  155 => 67,  152 => 66,  150 => 65,  141 => 64,  131 => 62,  129 => 61,  124 => 59,  118 => 58,  110 => 57,  107 => 56,  105 => 55,  104 => 54,  57 => 10,  53 => 9,  43 => 1,);
+        return array (  279 => 150,  266 => 140,  251 => 128,  237 => 116,  233 => 114,  231 => 113,  206 => 91,  201 => 89,  197 => 88,  193 => 86,  187 => 83,  184 => 82,  178 => 79,  175 => 78,  173 => 77,  163 => 70,  155 => 67,  152 => 66,  150 => 65,  141 => 64,  131 => 62,  129 => 61,  124 => 59,  118 => 58,  110 => 57,  107 => 56,  105 => 55,  104 => 54,  57 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -365,11 +372,11 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                         <li {% if currentPath == '/blog/allPostCategory' %} class=\"current\" {% endif %}>
                             <a href=\"{{path('allPostCategory')}}\" title=\"Categories\">Categories</a>
                         </li>
-                        {% if app.user %}
+                        {% if app.user and app.user.roles[0] == 'ROLE_USER_BLOG'%}
                         <li {% if currentPath == '/blog/createPost' %} class=\"current\" {% endif %}><a href=\"{{path('createPost')}}\" title=\"Creer une Publication\">Créer une nouvelle Publication  <i class=\"fa fa-edit\"></i></a></li>
                         {% endif %}
-                        <li {% if currentPath == '/blog/contact' %} class=\"current\" {% endif %}><a href=\"{{path('contact')}}\" title=\"Contact\">Contact</a></li>
-                        {% if app.user %}
+                        <li {% if currentPath == '/blog/contact' %} class=\"current\" {% endif %}><a href=\"{{path('contactBlog')}}\" title=\"Contact\">Contact</a></li>
+                        {% if app.user and app.user.roles[0] == 'ROLE_USER_BLOG'%}
                         <ul class=\"nav navbar-nav navbar-right\" style=\"margin: 0;\">
                             <li class=\"dropdown\" {% if currentPath == '/blog/home ' %} class=\"current\" {% endif %}>
                                 <a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">
@@ -416,6 +423,9 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                                 </ul>
                             </li>
                         </ul>
+                        
+                        {% elseif app.user %}
+                        
                         {% else %}
                         <ul class=\"nav navbar-nav navbar-right\" style=\"margin: 0;\">
                             <li class=\"dropdown\">
@@ -429,7 +439,7 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                                             <div class=\"row\">
                                                 <div class=\"col-lg-12\">
                                                     <p>
-                                                        <a href=\"{{path('app_inscription')}}\" class=\"btn btn-primary\">S'inscrire'</a>
+                                                        <a href=\"{{path('app_register_blog')}}\" class=\"btn btn-primary\">S'inscrire'</a>
                                                     </p>
                                                 </div>
                                             </div>
@@ -449,8 +459,9 @@ class __TwigTemplate_096a0fa6957ad908bb8b42b859ec754cc3a5edeacffe1152d0eb4502935
                                     </li>
                                 </ul>
                             </li>
-                        </ul>                            
+                        </ul>    
                         {% endif %}
+
 
                     </ul> <!-- end header__nav -->
 

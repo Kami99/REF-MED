@@ -109,7 +109,7 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
     /**
      * @var AdminInterface|null the parent Admin instance
      */
-    protected $parent = null;
+    protected $parent;
 
     /**
      * @var AdminInterface the related admin instance
@@ -209,6 +209,13 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
 
     public function getTemplate()
     {
+        if (null !== $this->template && !\is_string($this->template) && 'sonata_deprecation_mute' !== (\func_get_args()[0] ?? null)) {
+            @trigger_error(sprintf(
+                'Returning other type than string or null in method %s() is deprecated since sonata-project/admin-bundle 3.65. It will return only those types in version 4.0.',
+                __METHOD__
+            ), E_USER_DEPRECATED);
+        }
+
         return $this->template;
     }
 
@@ -398,7 +405,15 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
 
     public function getLabel()
     {
-        return $this->getOption('label');
+        $label = $this->getOption('label');
+        if (null !== $label && false !== $label && !\is_string($label) && 'sonata_deprecation_mute' !== (\func_get_args()[0] ?? null)) {
+            @trigger_error(sprintf(
+                'Returning other type than string, false or null in method %s() is deprecated since sonata-project/admin-bundle 3.65. It will return only those types in version 4.0.',
+                __METHOD__
+            ), E_USER_DEPRECATED);
+        }
+
+        return $label;
     }
 
     public function isSortable()

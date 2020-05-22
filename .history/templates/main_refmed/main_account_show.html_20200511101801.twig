@@ -1,0 +1,80 @@
+{% include "appMain.html.twig" %}
+<div class="container-profile">
+  <header style="background-image: url("{% block headerImage %}
+      
+  {% endblock headerImage %}");">
+  </header>
+    <main>
+      <div class="row">
+        <div class="left col-lg-4">
+          <div class="photo-left">
+            {% block picture %}
+            {% if doctor.pictureProfil %}             
+            {% else %}
+            <img class="photo" src="{{asset('bower_components/images/notImageProfile.png') }}" 
+             alt="Profile image not available">
+            {% endif %}
+            {% endblock %}
+          </div>
+          {% block entityName %}
+          <h4 class="name">{{doctor.fullName}}</h4>
+          <p class="info">{{doctor.profession}}</p>
+          {% endblock entityName %}
+          <div class="stats row">
+            <div class="stat col-xs-4">
+              {% block numberPhone %}
+              <p class="number-stat">{{doctor.numberPhone|replace({'-':' ' }) }} </p>  
+              {% endblock numberPhone %}
+            </div>
+          </div>
+<span class="info-titre">Domaines d'Expertise</span>          
+<p class="desc">{% for expertise in doctor.expertise %}<span class="badge badge-primary">{{expertise.expertiseName}} </span> {% endfor %}</p>
+          <div class="social">
+            {% for socialLinks in doctor.doctorSocialNetworks %}
+            {% if socialLinks.socialNetworks.socialName|lower == "facebook" %}
+           <a href="{{socialLinks}}"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
+            {% endif %}
+            {% if socialLinks.socialNetworks.socialName|lower == "twitter" %}
+           <a href="{{socialLinks}}"> <i class="fa fa-twitter" aria-hidden="true"></i></a> 
+            {% endif %}
+            {% if socialLinks.socialNetworks.socialName|lower == "linkedin" %}
+            <a href="{{socialLinks}}"><i class="fa fa-linkedin" aria-hidden="true"></i></a> 
+            {% endif %}
+            {% if socialLinks.socialNetworks.socialName|lower == "google+" %}
+          <a href="{{socialLinks}}">  <i class="fa fa-google" aria-hidden="true"></i></a> 
+            {% endif %}
+              
+            {% endfor %}
+ 
+          </div>
+        </div>
+        <div class="right col-lg-8">
+          <div class="tab-profiles">         
+            <input type="radio" id="tab-profile1" name="tab-profile-control" checked>
+            <input type="radio" id="tab-profile2" name="tab-profile-control">
+            <input type="radio" id="tab-profile3" name="tab-profile-control">  
+            <ul>
+              <li title="Presentation"><label for="tab-profile1" role="button"><i class="fas fa-book-reader"></i><br><span>Presentation</span></label></li>
+              <li title="Informations"><label for="tab-profile2" role="button"><i class="fas fa-info-circle"></i><br><span>Informations</span></label></li>
+              <li title="Carte"><label for="tab-profile3" role="button"><i class="fas fa-map-marked-alt"></i><br><span>Carte</span></label></li>    
+            </ul>
+            
+            <div class="slider"><div class="indicator"></div></div>
+            <div class="content">
+              <section>
+                {{doctor.presentation}}
+              </section>
+                  <section>
+                     <p> <span class="info-titre">Tarifs</span> : {{doctor.fullTarif}}</p>
+                    <p>  <span class="info-titre">Langue Parlées</span>: {% for langue in doctor.language %} {{langue}} {% endfor %}</p>
+                    <p> <span class="info-titre">Paiement accèptés </span>: {% for means in doctor.meansPayment %} {{means}} {% endfor %}</p>
+                    <p> <span class="info-titre">Moyens d'accès</span> :  {% for info in doctor.praticalInfos %} {{info}} {% endfor %}</p>
+                    <p> <span class="info-titre">Remboursement(s) accèpté(s)</span> : {% for refund in doctor.refund %} {{refund}} {% endfor %}</p>
+                    </section>
+                  <section>
+                    <div id="map"></div>
+                    </section>
+          </div>          
+        </div>
+    </main>
+  </div>

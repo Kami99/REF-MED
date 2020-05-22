@@ -1,0 +1,228 @@
+{% extends 'appMain.html.twig' %}
+
+{% block title %}Edition du compte{% endblock %}
+
+{% block body %}
+{% include "includeApp/_navigation.html.twig" %}
+
+<div class="container" style="    padding-top: 156px;
+z-index: 1; padding-bottom:126px;">
+    <div class="row my-2">
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit</a>
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h5 class="mb-3">Vos informations</h5>
+                    <div class="row">
+                        <div class="col-md-6  mb-10 p-5">
+                            <h6>A propos de vous </h6>
+                            <p>
+                                Vous etes un {{doctor.profession}} 
+                            </p>
+                            <h6> Vos réseaux </h6>
+                            <p>
+                                Les réseaux sociaux présents sont : 
+                            </p>
+                            <h6>Langue </h6>
+                            <p>
+                                Les langues parlées : 
+                            </p>
+                            <h6>Accès</h6>
+                            <p>
+                                Accès: 
+                            </p>
+                        </div>
+                        <div class="col-md-6 mb-10 p-5">
+                            <h6>Votre expertise est </h6>
+                            {% for expertise in doctor.expertise %}
+                            <span class="badge badge-pill badge-primary">{{expertise}}</span>
+                            {% endfor %}
+                            <hr>
+                            {% if doctor.doctorSocialNetworks is defined %}
+                            {% block linksSocial %}
+                            
+                            {% for socialLinks in doctor.doctorSocialNetworks %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "facebook" %}
+                           <a href="{{socialLinks}}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "twitter" %}
+                           <a href="{{socialLinks}}"> <i class="fa fa-twitter-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "linkedin" %}
+                            <a href="{{socialLinks}}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> 
+                            {% endif %}
+                            {% if socialLinks.socialNetworks.socialName|lower == "google+" %}
+                          <a href="{{socialLinks}}">  <i class="fa fa-google-square" aria-hidden="true"></i></a> 
+                            {% endif %}                          
+                            {% endfor %}
+                            {% endblock %}
+                            {% else %}
+                            <span>Vous n'avez pas mis de réseaux sociaux</span>
+                            {% endif %}
+                            <hr>
+                            {% if doctor.languague is defined %}
+                            
+                            {% for language in doctor.language %}
+                            <span> {{language}}</span>
+
+                            {% endfor %}
+                            {% else %}
+                            <span>Vous n'avez pas sélectionnés de langue</span>
+                            {% endif %}
+                            <hr>
+                            {% if doctor.praticalInfos is defined %}
+                            
+                            {% for infos in doctor.praticalInfos %}
+                            <span> {{infos}}</span>
+
+                            {% endfor %}
+                            {% else %}
+                            <span>Vous n'avez pas sélectionnés d'accès</span>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-12 mt-2">
+                            <h5 class="mt-2">Règlement </h5>
+                                      
+          <ul class="list-group">
+            <li class="list-group-item text-muted">Moyen de paiement et remboursement acceptés  <i class="fa fa-money" aria-hidden="true"></i>
+            {% for means in doctor.meansPayment %}<li class="list-group-item text-right"><span class="pull-left"><strong>Vous acceptez</strong></span> {{means}}</li>{% endfor %}
+            {% for refund in doctor.refund %}<li class="list-group-item text-right"><span class="pull-left"><strong>Vous acceptez</strong></span> {{refund}}</li>{% endfor %}
+
+          </ul> 
+                        </div>
+                    </div>
+                    <!--/row-->
+                </div>
+                <div class="tab-pane" id="messages">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a> Notifications
+                    </div>
+                    <table class="table table-hover table-striped">
+                        <tbody>                                    
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">Yesterday</span> There has been a request on your account since that was..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. 
+                                </td>
+                            </tr>
+                        </tbody> 
+                    </table>
+                </div>
+                <div class="tab-pane" id="edit">
+                    <form role="form">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Jane">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Bishop">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="email" value="email@gmail.com">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Company</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Website</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="url" value="">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="" placeholder="Street">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-6">
+                                <input class="form-control" type="text" value="" placeholder="City">
+                            </div>
+                            <div class="col-lg-3">
+                                <input class="form-control" type="text" value="" placeholder="State">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Username</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="janeuser">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                <input type="reset" class="btn btn-secondary" value="Revenir">
+                                <input type="button" class="btn btn-primary" value="Sauvergarder les changements">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 text-center">
+            <img src="empty.jpg" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            <h6 class="mt-2">Uploadez une photo différente</h6>
+            <label class="custom-file">
+                <input type="file" id="file" class="custom-file-input">
+                <span class="custom-file-control">Choisissez un fichier </span>
+            </label>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "main_refmed/main_account_show.html.twig" %}
+{% block header_picture %}{{asset('bower_components/images/pharmacy-header.jpg') }}{% endblock %}
+              {% block picture %}
+              {% if pharmacy.picture %}             
+              {% else %}
+              <img class="photo" src="{{asset('bower_components/images/notImageProfile.png') }}" 
+               alt="Profile image not available">
+              {% endif %}
+              {% endblock %}
+            {% block entityName %}
+            <h4 class="name">{{pharmacy.pharmacyName}}</h4>
+            {% endblock entityName %}
+                {% block numberPhone %}
+                <p class="number-stat">{{pharmacy.phoneNumber|replace({'-':' ' }) }} </p>  
+                {% endblock numberPhone %}
+              {% block linksSocial %}
+
+              {% endblock %}
+              {% block input %}
+              <input type="radio" id="tab-profile1" name="tab-profile-control" checked>
+              <input type="radio" id="tab-profile2" name="tab-profile-control">
+              {% endblock %}         
+                  {% block liName %}
+                  <li title="Informations"><label for="tab-profile1" role="button"><i class="fa fa-info-circle"></i> <br> <span>Informations</span></label></li>
+                  <li title="Informations"><label for="tab-profile2" role="button"><i class="fa fa-map"></i> <br> <span>Carte</span></label></li>
+                  {% endblock %}
+                  {% block content %}
+                        <section>
+                          <p> <span class="info-titre">Paiement accèptés </span>: {% for means in pharmacy.meansPayment %} {{means}} {% endfor %}</p>
+                          <p>
+                            {% if pharmacy.pharmacySocialNetworks is empty %}
+                            fuck
+                            {% endif %}
+                          </p>
+                          </section>
+                        <section>
+                          <div id="map"></div>
+                          </section>
+                  {% endblock %}

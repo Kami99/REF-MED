@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
@@ -33,6 +35,16 @@ class CategoryDrugs
      * @ORM\Column(type="boolean")
      */
     private $enable;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Drugs", mappedBy="categoryDrugs")
+     */
+    private $drugs;
+
+    public function __construct()
+    {
+        $this->drugs = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -71,6 +83,34 @@ class CategoryDrugs
     public function setEnable(bool $enable): self
     {
         $this->enable = $enable;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Drugs[]
+     */
+    public function getDrugs(): Collection
+    {
+        return $this->drugs;
+    }
+
+    public function addDrug(Drugs $drug): self
+    {
+        if (!$this->drugs->contains($drug)) {
+            $this->drugs[] = $drug;
+            $drug->addCategoryDrug($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDrug(Drugs $drug): self
+    {
+        if ($this->drugs->contains($drug)) {
+            $this->drugs->removeElement($drug);
+            $drug->removeCategoryDrug($this);
+        }
 
         return $this;
     }
