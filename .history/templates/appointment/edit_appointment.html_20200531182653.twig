@@ -1,0 +1,12 @@
+{% extends 'appointment/main_appointment.html.twig' %}
+{% block title %}Gestion des rendez vous{% endblock %}
+{% block appointment_content %}
+ <div class="jumbotron jumbotron-fluid">
+     <div class="container">
+         <h1 class="display-3">Editer ce rendez vous</h1>
+         <hr class="my-2">
+            {% include "appointment/_form_manage.html.twig" %}
+     </div>
+ </div>
+
+{% endblock %} 

@@ -243,6 +243,7 @@
       <parameter>@VichUploader/Form/fields.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@FOSCKEditor/Form/ckeditor_widget.html.twig</parameter>
+      <parameter>bootstrap_4_layout.html.twig</parameter>
       <parameter>@LiipImagine/Form/form_div_layout.html.twig</parameter>
     </parameter>
     <parameter key="twig.default_path">C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED/templates</parameter>
@@ -1129,6 +1130,14 @@
             <parameter key="route_absolute">false</parameter>
             <parameter key="roles" type="collection"/>
           </parameter>
+          <parameter type="collection">
+            <parameter key="admin">admin.appointment_type</parameter>
+            <parameter key="label"></parameter>
+            <parameter key="route"></parameter>
+            <parameter key="route_params" type="collection"/>
+            <parameter key="route_absolute">false</parameter>
+            <parameter key="roles" type="collection"/>
+          </parameter>
         </parameter>
         <parameter key="icon">&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</parameter>
         <parameter key="on_top">false</parameter>
@@ -1495,12 +1504,15 @@
     </parameter>
     <parameter key="sonata.core.form.types" type="collection">
       <parameter>App\Form\AddArticleType</parameter>
+      <parameter>App\Form\AppointmentType</parameter>
+      <parameter>App\Form\CommentType</parameter>
       <parameter>App\Form\DoctorType</parameter>
       <parameter>App\Form\EditDoctorType</parameter>
       <parameter>App\Form\EditLaboratoryType</parameter>
       <parameter>App\Form\EditPharmacyType</parameter>
       <parameter>App\Form\LaboratoryRegisterType</parameter>
       <parameter>App\Form\LocationType</parameter>
+      <parameter>App\Form\ManageAppointmentType</parameter>
       <parameter>App\Form\PasswordUpdateType</parameter>
       <parameter>App\Form\PharmacyRegisterType</parameter>
       <parameter>App\Form\RegistrationFormType</parameter>
@@ -1595,6 +1607,7 @@
       <argument>C:\Users\BETOE CHARLENE\Desktop\Projet\REF-MED\var\log/dev.log</argument>
     </service>
     <service id="App\Admin\AdminstratorsAdmin" class="App\Admin\AdminstratorsAdmin" autowire="true" autoconfigure="true"/>
+    <service id="App\Admin\AppointmentTypeAdmin" class="App\Admin\AppointmentTypeAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\CategoryDrugsAdmin" class="App\Admin\CategoryDrugsAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\CategoryLaboratoryAdmin" class="App\Admin\CategoryLaboratoryAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\DrugsConsomersAdmin" class="App\Admin\DrugsConsomersAdmin" autowire="true" autoconfigure="true"/>
@@ -1617,6 +1630,13 @@
       <tag name="container.service_subscriber"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\AccountProController"/>
+      </call>
+    </service>
+    <service id="App\Controller\AppointmentController" class="App\Controller\AppointmentController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\AppointmentController"/>
       </call>
     </service>
     <service id="App\Controller\BlogController" class="App\Controller\BlogController" public="true" autowire="true" autoconfigure="true">
@@ -1688,7 +1708,19 @@
     <service id="App\DataFixtures\UsersBlogFixtures" class="App\DataFixtures\UsersBlogFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
+    <service id="App\EventSubscriber\AppointmentSubscriber" class="App\EventSubscriber\AppointmentSubscriber" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="App\Repository\AppointmentRepository"/>
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="security.token_storage"/>
+    </service>
     <service id="App\Form\AddArticleType" class="App\Form\AddArticleType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\CommentType" class="App\Form\CommentType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" autoconfigure="true">
@@ -1707,6 +1739,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\LocationType" class="App\Form\LocationType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\ManageAppointmentType" class="App\Form\ManageAppointmentType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true">
@@ -1745,6 +1780,14 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\AppointmentRepository" class="App\Repository\AppointmentRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\AppointmentTypeRepository" class="App\Repository\AppointmentTypeRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -1769,7 +1812,7 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
-    <service id="App\Repository\DoctorSocialNetworksRepository" class="App\Repository\DoctorSocialNetworksRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\DoctorsRepository" class="App\Repository\DoctorsRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -3283,6 +3326,84 @@
         </argument>
       </call>
     </service>
+    <service id="admin.appointment_type" class="App\Admin\AppointmentTypeAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
+      <tag name="sonata.admin" manager_type="orm" group="admin" label="Type de rendez vous"/>
+      <argument>admin.appointment_type</argument>
+      <argument>App\Entity\AppointmentType</argument>
+      <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
+      <call method="setManagerType">
+        <argument>orm</argument>
+      </call>
+      <call method="setModelManager">
+        <argument type="service" id="sonata.admin.manager.orm"/>
+      </call>
+      <call method="setFormContractor">
+        <argument type="service" id="sonata.admin.builder.orm_form"/>
+      </call>
+      <call method="setShowBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_show"/>
+      </call>
+      <call method="setListBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_list"/>
+      </call>
+      <call method="setDatagridBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_datagrid"/>
+      </call>
+      <call method="setTranslator">
+        <argument type="service" id="translator.data_collector"/>
+        <argument>false</argument>
+      </call>
+      <call method="setConfigurationPool">
+        <argument type="service" id="sonata.admin.pool"/>
+      </call>
+      <call method="setRouteGenerator">
+        <argument type="service" id="sonata.admin.route.default_generator"/>
+      </call>
+      <call method="setValidator">
+        <argument type="service" id="debug.validator"/>
+      </call>
+      <call method="setSecurityHandler">
+        <argument type="service" id="sonata.admin.security.handler.noop"/>
+      </call>
+      <call method="setMenuFactory">
+        <argument type="service" id="knp_menu.factory"/>
+      </call>
+      <call method="setRouteBuilder">
+        <argument type="service" id="sonata.admin.route.path_info"/>
+      </call>
+      <call method="setLabelTranslatorStrategy">
+        <argument type="service" id="sonata.admin.label.strategy.native"/>
+      </call>
+      <call method="setPagerType">
+        <argument>default</argument>
+      </call>
+      <call method="setLabel">
+        <argument>Type de rendez vous</argument>
+      </call>
+      <call method="showMosaicButton">
+        <argument>true</argument>
+      </call>
+      <call method="setTemplateRegistry">
+        <argument type="service" id="admin.appointment_type.template_registry"/>
+      </call>
+      <call method="setSecurityInformation">
+        <argument type="collection"/>
+      </call>
+      <call method="initialize"/>
+      <call method="addExtension">
+        <argument type="service" id="sonata.admin.event.extension"/>
+      </call>
+      <call method="setFormTheme">
+        <argument type="collection">
+          <argument>@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setFilterTheme">
+        <argument type="collection">
+          <argument>@SonataDoctrineORMAdmin/Form/filter_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+    </service>
     <service id=".legacy_controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -3769,12 +3890,15 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AddArticleType</argument>
+        <argument>App\Form\AppointmentType</argument>
+        <argument>App\Form\CommentType</argument>
         <argument>App\Form\DoctorType</argument>
         <argument>App\Form\EditDoctorType</argument>
         <argument>App\Form\EditLaboratoryType</argument>
         <argument>App\Form\EditPharmacyType</argument>
         <argument>App\Form\LaboratoryRegisterType</argument>
         <argument>App\Form\LocationType</argument>
+        <argument>App\Form\ManageAppointmentType</argument>
         <argument>App\Form\PasswordUpdateType</argument>
         <argument>App\Form\PharmacyRegisterType</argument>
         <argument>App\Form\RegistrationFormType</argument>
@@ -4185,7 +4309,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.GBzNfqx"/>
+      <argument type="service" id=".service_locator.JPoXvzR"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5695,6 +5819,14 @@
         <argument type="collection">
           <argument type="service" id="sonata.block.cache.handler.default"/>
           <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>calendar.set_data</argument>
+        <argument type="collection">
+          <argument type="service" id="App\EventSubscriber\AppointmentSubscriber"/>
+          <argument>onCalendarSetData</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -7424,6 +7556,9 @@
         <argument type="service" id="twig.extension.dump"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="twig.extension.intl"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="twig.extension.string"/>
       </call>
       <call method="addExtension">
@@ -8020,6 +8155,9 @@
       <argument type="service" id="twig"/>
     </service>
     <service id="twig.missing_extension_suggestor" class="Twig\Extra\TwigExtraBundle\MissingExtensionSuggestor" public="false"/>
+    <service id="twig.extension.intl" class="Twig\Extra\Intl\IntlExtension" public="false">
+      <tag name="twig.extension"/>
+    </service>
     <service id="twig.extension.string" class="Twig\Extra\String\StringExtension" public="false">
       <tag name="twig.extension"/>
     </service>
@@ -8234,7 +8372,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.w6i5ykD"/>
+      <argument type="service" id=".service_locator.0NYserw"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -8896,6 +9034,50 @@
     </service>
     <service id="fos_ck_editor.configuration" class="FOS\CKEditorBundle\Config\CKEditorConfiguration">
       <argument type="collection">
+        <argument key="configs" type="collection">
+          <argument key="main_config" type="collection">
+            <argument key="toolbar" type="collection">
+              <argument type="collection">
+                <argument key="name">styles</argument>
+                <argument key="items" type="collection">
+                  <argument>Bold</argument>
+                  <argument>Italic</argument>
+                  <argument>Underline</argument>
+                  <argument>Strike</argument>
+                  <argument>Blockquote</argument>
+                  <argument>-</argument>
+                  <argument>Link</argument>
+                  <argument>-</argument>
+                  <argument>RemoveFormat</argument>
+                  <argument>-</argument>
+                  <argument>NumberedList</argument>
+                  <argument>BulletedList</argument>
+                  <argument>-</argument>
+                  <argument>Outdent</argument>
+                  <argument>Indent</argument>
+                  <argument>-</argument>
+                  <argument>-</argument>
+                  <argument>JustifyLeft</argument>
+                  <argument>JustifyCenter</argument>
+                  <argument>JustifyRight</argument>
+                  <argument>JustifyBlock</argument>
+                  <argument>-</argument>
+                  <argument>Image</argument>
+                  <argument>Table</argument>
+                  <argument>-</argument>
+                  <argument>Styles</argument>
+                  <argument>Format</argument>
+                  <argument>Font</argument>
+                  <argument>FontSize</argument>
+                  <argument>-</argument>
+                  <argument>TextColor</argument>
+                  <argument>BGColor</argument>
+                  <argument>Source</argument>
+                </argument>
+              </argument>
+            </argument>
+          </argument>
+        </argument>
         <argument key="enable">true</argument>
         <argument key="async">false</argument>
         <argument key="auto_inline">true</argument>
@@ -8908,7 +9090,6 @@
         <argument key="js_path">bundles/fosckeditor/ckeditor.js</argument>
         <argument key="jquery_path">bundles/fosckeditor/adapters/jquery.js</argument>
         <argument key="default_config">null</argument>
-        <argument key="configs" type="collection"/>
         <argument key="plugins" type="collection"/>
         <argument key="styles" type="collection"/>
         <argument key="templates" type="collection"/>
@@ -9414,16 +9595,15 @@
       <tag name="form.type" alias="easyadmin"/>
       <argument type="service" id="easyadmin.config.manager"/>
       <argument type="collection">
-        <argument key="9" type="service" id="easyadmin.form.type.configurator.code_editor"/>
-        <argument key="8" type="service" id="easyadmin.form.type.configurator.textarea"/>
-        <argument key="7" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
-        <argument key="6" type="service" id="easyadmin.form.type.configurator.collection"/>
-        <argument key="5" type="service" id="easyadmin.form.type.configurator.checkbox"/>
-        <argument key="4" type="service" id="easyadmin.filter.type.configurator.choice"/>
+        <argument key="8" type="service" id="easyadmin.form.type.configurator.code_editor"/>
+        <argument key="7" type="service" id="easyadmin.form.type.configurator.textarea"/>
+        <argument key="6" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
+        <argument key="5" type="service" id="easyadmin.form.type.configurator.collection"/>
+        <argument key="4" type="service" id="easyadmin.form.type.configurator.checkbox"/>
         <argument key="3" type="service" id="easyadmin.form.type.configurator.type"/>
-        <argument key="2" type="service" id="easyadmin.form.type.configurator.entity"/>
-        <argument key="1" type="service" id="easyadmin.form.type.configurator.ivory_ckeditor"/>
-        <argument key="0" type="service" id="easyadmin.form.type.configurator.fos_ckeditor"/>
+        <argument key="2" type="service" id="easyadmin.filter.type.configurator.choice"/>
+        <argument key="1" type="service" id="easyadmin.form.type.configurator.entity"/>
+        <argument key="0" type="service" id="easyadmin.form.type.configurator.ivory_ckeditor"/>
       </argument>
       <argument type="service" id="easyadmin.security.authorization_checker"/>
     </service>
@@ -9435,16 +9615,15 @@
       <tag name="form.type" alias="easyadmin_filters"/>
       <argument type="service" id="easyadmin.config.manager"/>
       <argument type="collection">
-        <argument key="9" type="service" id="easyadmin.form.type.configurator.code_editor"/>
-        <argument key="8" type="service" id="easyadmin.form.type.configurator.textarea"/>
-        <argument key="7" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
-        <argument key="6" type="service" id="easyadmin.form.type.configurator.collection"/>
-        <argument key="5" type="service" id="easyadmin.form.type.configurator.checkbox"/>
-        <argument key="4" type="service" id="easyadmin.filter.type.configurator.choice"/>
+        <argument key="8" type="service" id="easyadmin.form.type.configurator.code_editor"/>
+        <argument key="7" type="service" id="easyadmin.form.type.configurator.textarea"/>
+        <argument key="6" type="service" id="easyadmin.form.type.configurator.autocomplete"/>
+        <argument key="5" type="service" id="easyadmin.form.type.configurator.collection"/>
+        <argument key="4" type="service" id="easyadmin.form.type.configurator.checkbox"/>
         <argument key="3" type="service" id="easyadmin.form.type.configurator.type"/>
-        <argument key="2" type="service" id="easyadmin.form.type.configurator.entity"/>
-        <argument key="1" type="service" id="easyadmin.form.type.configurator.ivory_ckeditor"/>
-        <argument key="0" type="service" id="easyadmin.form.type.configurator.fos_ckeditor"/>
+        <argument key="2" type="service" id="easyadmin.filter.type.configurator.choice"/>
+        <argument key="1" type="service" id="easyadmin.form.type.configurator.entity"/>
+        <argument key="0" type="service" id="easyadmin.form.type.configurator.ivory_ckeditor"/>
       </argument>
     </service>
     <service id="easyadmin.form.type.autocomplete" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\EasyAdminAutocompleteType">
@@ -9494,9 +9673,6 @@
       <tag name="easyadmin.form.type.configurator" priority="-20"/>
     </service>
     <service id="easyadmin.form.type.configurator.ivory_ckeditor" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\IvoryCKEditorTypeConfigurator" public="false">
-      <tag name="easyadmin.form.type.configurator" priority="-130"/>
-    </service>
-    <service id="easyadmin.form.type.configurator.fos_ckeditor" class="EasyCorp\Bundle\EasyAdminBundle\Form\Type\Configurator\FOSCKEditorTypeConfigurator" public="false">
       <tag name="easyadmin.form.type.configurator" priority="-130"/>
     </service>
     <service id="easyadmin.filter.registry" class="EasyCorp\Bundle\EasyAdminBundle\Form\Filter\FilterRegistry" public="true">
@@ -10733,6 +10909,7 @@
           <argument>admin.time_slot_open</argument>
           <argument>admin.members</argument>
           <argument>admin.adminstrators</argument>
+          <argument>admin.appointment_type</argument>
         </argument>
       </call>
       <call method="setAdminGroups">
@@ -10792,6 +10969,14 @@
               </argument>
               <argument type="collection">
                 <argument key="admin">admin.pratical_infos</argument>
+                <argument key="label"></argument>
+                <argument key="route"></argument>
+                <argument key="route_params" type="collection"/>
+                <argument key="route_absolute">false</argument>
+                <argument key="roles" type="collection"/>
+              </argument>
+              <argument type="collection">
+                <argument key="admin">admin.appointment_type</argument>
                 <argument key="label"></argument>
                 <argument key="route"></argument>
                 <argument key="route_params" type="collection"/>
@@ -11005,6 +11190,9 @@
           <argument key="App\Entity\Admin" type="collection">
             <argument>admin.adminstrators</argument>
           </argument>
+          <argument key="App\Entity\AppointmentType" type="collection">
+            <argument>admin.appointment_type</argument>
+          </argument>
         </argument>
       </call>
     </service>
@@ -11030,6 +11218,7 @@
         <argument>admin.time_slot_open</argument>
         <argument>admin.members</argument>
         <argument>admin.adminstrators</argument>
+        <argument>admin.appointment_type</argument>
       </argument>
       <argument type="service" id="service_container"/>
     </service>
@@ -11567,6 +11756,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AccountProController" class="App\Controller\AccountProController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AccountProController" class="App\Controller\AccountProController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\AccountProController" class="App\Controller\AccountProController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\AppointmentController" class="App\Controller\AppointmentController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\AppointmentController" class="App\Controller\AppointmentController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\AppointmentController" class="App\Controller\AppointmentController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\BlogController" class="App\Controller\BlogController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\BlogController" class="App\Controller\BlogController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\BlogController" class="App\Controller\BlogController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -11595,8 +11787,14 @@
     <service id=".abstract.instanceof.App\DataFixtures\KeywordFixture" class="App\DataFixtures\KeywordFixture" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UsersBlogFixtures" class="App\DataFixtures\UsersBlogFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\UsersBlogFixtures" class="App\DataFixtures\UsersBlogFixtures" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.App\EventSubscriber\AppointmentSubscriber" class="App\EventSubscriber\AppointmentSubscriber" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\EventSubscriber\AppointmentSubscriber" class="App\EventSubscriber\AppointmentSubscriber" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AddArticleType" class="App\Form\AddArticleType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AddArticleType" class="App\Form\AddArticleType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\AppointmentType" class="App\Form\AppointmentType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CommentType" class="App\Form\CommentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\CommentType" class="App\Form\CommentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EditDoctorType" class="App\Form\EditDoctorType" autowire="true" abstract="true"/>
@@ -11609,6 +11807,8 @@
     <service id=".abstract.instanceof.App\Form\LaboratoryRegisterType" class="App\Form\LaboratoryRegisterType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\LocationType" class="App\Form\LocationType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\LocationType" class="App\Form\LocationType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ManageAppointmentType" class="App\Form\ManageAppointmentType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ManageAppointmentType" class="App\Form\ManageAppointmentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PharmacyRegisterType" class="App\Form\PharmacyRegisterType" autowire="true" abstract="true"/>
@@ -11629,6 +11829,10 @@
     <service id=".abstract.instanceof.App\Form\UsersBlogFormType" class="App\Form\UsersBlogFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AdminRepository" class="App\Repository\AdminRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AppointmentRepository" class="App\Repository\AppointmentRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AppointmentRepository" class="App\Repository\AppointmentRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AppointmentTypeRepository" class="App\Repository\AppointmentTypeRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\AppointmentTypeRepository" class="App\Repository\AppointmentTypeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoriesRepository" class="App\Repository\CategoriesRepository" autowire="true" abstract="true"/>
@@ -11641,8 +11845,8 @@
     <service id=".abstract.instanceof.App\Repository\CommentairesRepository" class="App\Repository\CommentairesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DoctorRepository" class="App\Repository\DoctorRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\DoctorRepository" class="App\Repository\DoctorRepository" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DoctorSocialNetworksRepository" class="App\Repository\DoctorSocialNetworksRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\DoctorSocialNetworksRepository" class="App\Repository\DoctorSocialNetworksRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DoctorsRepository" class="App\Repository\DoctorsRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DoctorsRepository" class="App\Repository\DoctorsRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DrugsConsomersRepository" class="App\Repository\DrugsConsomersRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\DrugsConsomersRepository" class="App\Repository\DrugsConsomersRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DrugsRepository" class="App\Repository\DrugsRepository" autowire="true" abstract="true"/>
@@ -11949,6 +12153,25 @@
         <argument key="laboratory" type="service" id=".errored..service_locator.N8gjrmL.App\Entity\Laboratory"/>
       </argument>
     </service>
+    <service id=".service_locator.hwJb32Y" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="appointmentRepository" type="service" id="App\Repository\AppointmentRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.q1t7Pqb" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="appointment" type="service" id=".errored..service_locator.q1t7Pqb.App\Entity\Appointment"/>
+      </argument>
+    </service>
+    <service id=".service_locator.xLJ0dQ." class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="appointment" type="service" id=".errored..service_locator.xLJ0dQ..App\Entity\Appointment"/>
+        <argument key="appointmentRepository" type="service" id="App\Repository\AppointmentRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator..UeDvn1" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -11981,12 +12204,16 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.JB1s1ZL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.fSPklAv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AccountProController::showAccountDoctor" type="service" id=".service_locator.ZLiBugb"/>
         <argument key="App\Controller\AccountProController::showAccountLaboratory" type="service" id=".service_locator.N8gjrmL"/>
         <argument key="App\Controller\AccountProController::showAccountPharmarcy" type="service" id=".service_locator.nj7G1To"/>
+        <argument key="App\Controller\AppointmentController::editAppointment" type="service" id=".service_locator.xLJ0dQ."/>
+        <argument key="App\Controller\AppointmentController::listAppoint" type="service" id=".service_locator.hwJb32Y"/>
+        <argument key="App\Controller\AppointmentController::showAppointment" type="service" id=".service_locator.q1t7Pqb"/>
+        <argument key="App\Controller\AppointmentController::unconfirmedAppoint" type="service" id=".service_locator.hwJb32Y"/>
         <argument key="App\Controller\BlogController::index" type="service" id=".service_locator..UeDvn1"/>
         <argument key="App\Controller\BlogController::showArticle" type="service" id=".service_locator.LcskAYA"/>
         <argument key="App\Controller\EditAccountController::index" type="service" id=".service_locator.ccM2MGC"/>
@@ -11998,6 +12225,10 @@
         <argument key="App\Controller\AccountProController:showAccountDoctor" type="service" id=".service_locator.ZLiBugb"/>
         <argument key="App\Controller\AccountProController:showAccountLaboratory" type="service" id=".service_locator.N8gjrmL"/>
         <argument key="App\Controller\AccountProController:showAccountPharmarcy" type="service" id=".service_locator.nj7G1To"/>
+        <argument key="App\Controller\AppointmentController:editAppointment" type="service" id=".service_locator.xLJ0dQ."/>
+        <argument key="App\Controller\AppointmentController:listAppoint" type="service" id=".service_locator.hwJb32Y"/>
+        <argument key="App\Controller\AppointmentController:showAppointment" type="service" id=".service_locator.q1t7Pqb"/>
+        <argument key="App\Controller\AppointmentController:unconfirmedAppoint" type="service" id=".service_locator.hwJb32Y"/>
         <argument key="App\Controller\BlogController:index" type="service" id=".service_locator..UeDvn1"/>
         <argument key="App\Controller\BlogController:showArticle" type="service" id=".service_locator.LcskAYA"/>
         <argument key="App\Controller\EditAccountController:index" type="service" id=".service_locator.ccM2MGC"/>
@@ -12071,16 +12302,19 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.GBzNfqx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.JPoXvzR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddArticleType" type="service" id="App\Form\AddArticleType"/>
+        <argument key="App\Form\AppointmentType" type="service" id="App\Form\AppointmentType"/>
+        <argument key="App\Form\CommentType" type="service" id="App\Form\CommentType"/>
         <argument key="App\Form\DoctorType" type="service" id="App\Form\DoctorType"/>
         <argument key="App\Form\EditDoctorType" type="service" id="App\Form\EditDoctorType"/>
         <argument key="App\Form\EditLaboratoryType" type="service" id="App\Form\EditLaboratoryType"/>
         <argument key="App\Form\EditPharmacyType" type="service" id="App\Form\EditPharmacyType"/>
         <argument key="App\Form\LaboratoryRegisterType" type="service" id="App\Form\LaboratoryRegisterType"/>
         <argument key="App\Form\LocationType" type="service" id="App\Form\LocationType"/>
+        <argument key="App\Form\ManageAppointmentType" type="service" id="App\Form\ManageAppointmentType"/>
         <argument key="App\Form\PasswordUpdateType" type="service" id="App\Form\PasswordUpdateType"/>
         <argument key="App\Form\PharmacyRegisterType" type="service" id="App\Form\PharmacyRegisterType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
@@ -12208,17 +12442,19 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.w6i5ykD" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.0NYserw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service" id="App\Repository\AdminRepository"/>
+        <argument key="App\Repository\AppointmentRepository" type="service" id="App\Repository\AppointmentRepository"/>
+        <argument key="App\Repository\AppointmentTypeRepository" type="service" id="App\Repository\AppointmentTypeRepository"/>
         <argument key="App\Repository\ArticlesRepository" type="service" id="App\Repository\ArticlesRepository"/>
         <argument key="App\Repository\CategoriesRepository" type="service" id="App\Repository\CategoriesRepository"/>
         <argument key="App\Repository\CategoryDrugsRepository" type="service" id="App\Repository\CategoryDrugsRepository"/>
         <argument key="App\Repository\CategoryLaboratoryRepository" type="service" id="App\Repository\CategoryLaboratoryRepository"/>
         <argument key="App\Repository\CommentairesRepository" type="service" id="App\Repository\CommentairesRepository"/>
         <argument key="App\Repository\DoctorRepository" type="service" id="App\Repository\DoctorRepository"/>
-        <argument key="App\Repository\DoctorSocialNetworksRepository" type="service" id="App\Repository\DoctorSocialNetworksRepository"/>
+        <argument key="App\Repository\DoctorsRepository" type="service" id="App\Repository\DoctorsRepository"/>
         <argument key="App\Repository\DrugsConsomersRepository" type="service" id="App\Repository\DrugsConsomersRepository"/>
         <argument key="App\Repository\DrugsRepository" type="service" id="App\Repository\DrugsRepository"/>
         <argument key="App\Repository\ExpertiseRepository" type="service" id="App\Repository\ExpertiseRepository"/>
@@ -12500,6 +12736,10 @@
       <tag name="sonata.admin.template_registry"/>
       <argument>%sonata.admin.configuration.templates%</argument>
     </service>
+    <service id="admin.appointment_type.template_registry" class="Sonata\AdminBundle\Templating\TemplateRegistry" public="true">
+      <tag name="sonata.admin.template_registry"/>
+      <argument>%sonata.admin.configuration.templates%</argument>
+    </service>
     <service id=".service_locator.V.o0zE7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -12539,6 +12779,12 @@
     <service id=".service_locator.vdmMuyE.App\Controller\AccountProController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\AccountProController"/>
       <argument>App\Controller\AccountProController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\AppointmentController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\AppointmentController"/>
+      <argument>App\Controller\AppointmentController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -12761,12 +13007,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.JB1s1ZL"/>
+      <argument type="service" id=".service_locator.fSPklAv"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.JB1s1ZL"/>
+      <argument type="service" id=".service_locator.fSPklAv"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus" public="false">
       <argument type="iterator">
@@ -12790,6 +13036,8 @@
     <service id=".errored..service_locator.ZLiBugb.App\Entity\Doctor" class="App\Entity\Doctor"/>
     <service id=".errored..service_locator.nj7G1To.App\Entity\Pharmacy" class="App\Entity\Pharmacy"/>
     <service id=".errored..service_locator.N8gjrmL.App\Entity\Laboratory" class="App\Entity\Laboratory"/>
+    <service id=".errored..service_locator.q1t7Pqb.App\Entity\Appointment" class="App\Entity\Appointment"/>
+    <service id=".errored..service_locator.xLJ0dQ..App\Entity\Appointment" class="App\Entity\Appointment"/>
     <service id=".errored..service_locator.LcskAYA.App\Entity\Articles" class="App\Entity\Articles"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.nYbdW03"/>
@@ -13289,7 +13537,7 @@
     <service id="Sonata\AdminBundle\Templating\MutableTemplateRegistryInterface" alias="sonata.admin.global_template_registry"/>
     <service id="sonata.admin.security.handler" alias="sonata.admin.security.handler.noop"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.JB1s1ZL"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.fSPklAv"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="twig.loader" alias="twig.loader.filesystem"/>

@@ -1,0 +1,54 @@
+	<div id="appoint" class="section">
+		<div class="section-center">
+			<div class="container">
+				<div class="row">
+					<div class="appoint-form">
+						<div class="form-header">
+							<h1>Prendre rendez avec Ce praticien</h1>
+						</div>
+                        {{form_start(formAppoint)}}
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+                                        {{ form_row(formAppoint.beginAt) }}
+										<span class="form-label-appoint">Debut du rendez-vous</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+                                        {{ form_row(formAppoint.endAt) }}
+										<span class="form-label-appoint">Fin du rendez-vous</span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+                                        {{ form_row(formAppoint.name) }}
+										<span class="form-label-appoint">Votre nom et prénom</span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+                                        {{ form_row(formAppoint.tel) }}
+										<span class="form-label-appoint">Numéro de téléphone</span>
+									</div>
+								</div>
+                            </div>
+                            <div class="row">
+								<div class="col-md-">
+									<div class="form-group-12">
+                                        {{ form_row(formAppoint.appointmentType) }}
+										<span class="form-label-appoint">Type de rendez-vous</span>
+									</div>
+								</div>
+							</div>
+							<div class="form-btn">
+								<button class="submit-btn">Prendre RDV</button>
+							</div>
+                        {{form_end(formAppoint)}}
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>

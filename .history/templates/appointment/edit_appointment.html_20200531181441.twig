@@ -1,0 +1,11 @@
+{% extends 'appointment/main_appointment.html.twig' %}
+{% block title %}Gestion des rendez vous{% endblock %}
+{% block appointment_content %}
+<div class="container-fluid p-5">
+    <div class="row">
+        {% include "appointment/_form_manage.html.twig" %}
+    </div> 
+
+</div>
+
+{% endblock appointment_content %}

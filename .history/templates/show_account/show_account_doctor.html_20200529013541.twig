@@ -1,0 +1,124 @@
+{% extends "show_account/main_account_show.html.twig" %}
+{%block addStyleSheets%}
+	<link rel="stylesheet" href="{{asset('bower_components/tail/css/bootstrap4/select-default.css')}}">
+	<link href="{{asset('bower_components/js/leaflet/leaflet.css')}}" rel="stylesheet">
+{%endblock %}
+{% block header_picture %}{{asset('bower_components/images/doctor-header.jpg') }}{% endblock %}
+              {% block picture %}
+              {% if doctor.pictureProfil %}             
+              {% else %}
+              <img class="photo" src="{{asset('bower_components/images/notImageProfile.png') }}" 
+               alt="Profile image not available">
+              {% endif %}
+              {% endblock %}
+            {% block entityName %}
+            <h4 class="name">{{doctor.fullName}}</h4>
+            <p class="info">{{doctor.profession}}</p>
+            {% endblock entityName %}
+                {% block numberPhone %}
+                <p class="number-stat">{{doctor.numberPhone|replace({'-':' ' }) }} </p>  
+                {% endblock numberPhone %}
+                {% block expertiseInfo %}<span class="info-titre">Domaines d'Expertise</span>          
+                <p class="desc">{% for expertise in doctor.expertise %}<span class="badge badge-primary">{{expertise.expertiseName}} </span> {% endfor %}</p>
+                <div class="social">{% endblock %}
+              {% if doctor.doctorSocialNetworks is defined %}
+              {% block linksSocial %}
+              
+              {% for socialLinks in doctor.doctorSocialNetworks %}
+              {% if socialLinks.socialNetworks.socialName|lower == "facebook" %}
+             <a href="{{socialLinks}}"><i class="fa fa-facebook-square" aria-hidden="true"></i></a> 
+              {% endif %}
+              {% if socialLinks.socialNetworks.socialName|lower == "twitter" %}
+             <a href="{{socialLinks}}"> <i class="fa fa-twitter-square" aria-hidden="true"></i></a> 
+              {% endif %}
+              {% if socialLinks.socialNetworks.socialName|lower == "linkedin" %}
+              <a href="{{socialLinks}}"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a> 
+              {% endif %}
+              {% if socialLinks.socialNetworks.socialName|lower == "google+" %}
+            <a href="{{socialLinks}}">  <i class="fa fa-google-square" aria-hidden="true"></i></a> 
+              {% endif %}
+                
+              {% endfor %}
+              {% endblock %}
+              {% else %}
+              {% endif %}
+                
+              {% block input %}
+              <input type="radio" id="tab-profile1" name="tab-profile-control" checked>
+              <input type="radio" id="tab-profile2" name="tab-profile-control">
+              <input type="radio" id="tab-profile3" name="tab-profile-control">    
+              {% endblock %}         
+                  {% block liName %}
+                  <li title="Presentation"><label for="tab-profile1" role="button"><i class="fa fa-book"></i><br><span>Presentation</span></label></li>
+                  <li title="Informations"><label for="tab-profile2" role="button"><i class="fa fa-info-circle"></i> <br><span>Informations</span></label></li>
+                  <li title="Carte"><label for="tab-profile3" role="button"> <i class="fa fa-map"></i> <br><span>Carte</span></label></li> 
+                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal" class="primary">
+                    Prendre RDV
+                </button>
+                <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true" style="height: 100%;">
+                  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                    <div class="modal-content">
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                        {% include "includeApp/_form_appoint.html.twig" %}
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                  {% endblock %}
+                  {% block content %}
+                  <section>
+                      {{doctor.presentation}}
+                    </section>
+                        <section>
+                           <p> <span class="info-titre">Tarifs</span> : {{doctor.fullTarif}}</p>
+                          <p>  <span class="info-titre">Langue Parlées</span>: {% for langue in doctor.language %} {{langue}} {% endfor %}</p>
+                          <p> <span class="info-titre">Paiement accèptés </span>: {% for means in doctor.meansPayment %} {{means}} {% endfor %}</p>
+                          <p> <span class="info-titre">Moyens d'accès</span> :  {% for info in doctor.praticalInfos %} {{info}} {% endfor %}</p>
+                          <p> <span class="info-titre">Remboursement(s) accèpté(s)</span> : {% for refund in doctor.refund %} {{refund}} {% endfor %}</p>
+                          </section>
+                        <section class="container">
+                          <div id="map" class="show-map" data-lat="{{doctor.location.latitude}}" data-nameLocation=" {{doctor.fullName}}  A  {{doctor.location.nameLocation}} " data-lon="{{doctor.location.longitude}}" class="col-12"></div>
+                          <div class="col-12 mt-15" id="calendar-holder"></div>
+                          </section>
+                  {% endblock %}
+ {% block javascripts %}
+
+{{ parent() }}
+		<script src="{{asset('bower_components/tail/js/select-full.min.js')}}"></script>
+<script src="{{asset('bower_components/js/leaflet.js')}}"></script>
+<script>
+  tail.select(".form", {
+    search: true,
+    deselect: true,
+  });
+    let lat =document.querySelector('[data-lat]')
+    let lon =document.querySelector('[data-lon]')
+    let nameLocation=document.querySelector('[data-nameLocation]')
+
+    window.onload=()=>{
+        lat=lat.dataset.lat
+        lon=lon.dataset.lon
+        name=nameLocation.dataset.namelocation
+
+        myMap = L.map('map').setView([lat, lon], 16);
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    attribution: 'Données &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>/ODbl -rendu  <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+    minZoom: 10,
+    maxZoom: 20,
+
+}).addTo(myMap);    
+let doctorIcon = L.icon({
+    iconUrl: "{{asset('bower_components/mainRefMed/doctor.png')}}",
+    iconSize:     [35, 50], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -90] // point from which the popup should open relative to the iconAnchor
+});
+myMap.panTo([lat, lon])
+    let marker = L.marker([lat, lon],  {icon: doctorIcon}).addTo(myMap)
+    marker.bindPopup(name)
+}
+    
+
+</script>
+{% endblock %}

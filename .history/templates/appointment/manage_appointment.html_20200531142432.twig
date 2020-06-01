@@ -1,0 +1,35 @@
+{% extends 'appointment/main_appointment.html.twig' %}
+{% block title %}Gestion des rendez vous{% endblock %}
+{% block appointment_content %}
+<div class="container-fluid p-4 ml-15 mt-15">
+    <div class="row">
+        {% for appointment in appointments %}
+        <li class="events__item col-12">
+            <div class="events__item--left">
+                <span class="events__name">{{appointment.title}}</span>
+            </div>
+            <div class="section-right">
+            <span class="events__tag events__tag--highlighted">Pas confirmé</span>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal" class="primary">
+                Editer
+            </button>
+            <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true" style="height: 100%;">
+              <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                <div class="modal-content appoint-background">
+                  <div class="modal-body">
+                    <div class="container-fluid p-5">
+                    {% include "appointment/_form_manage.html.twig" %}
+                    </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+         </li>
+            
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock appointment_content %}

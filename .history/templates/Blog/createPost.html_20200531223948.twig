@@ -1,0 +1,184 @@
+{% extends 'Blog/baseBlog.html.twig' %}
+{% block addStyleSheets %}
+	<link rel="stylesheet" href="{{asset('bower_components/tail/css/bootstrap4/select-default.css')}}">
+{% endblock addStyleSheets %}
+{% block className %}
+    top
+{% endblock className %}
+
+{% block body %}
+
+    <!-- pageheader
+    ================================================== -->
+    <section class="s-pageheader s-pageheader--home" style="height: auto; min-height:auto;">
+
+        {% include "Blog/_navigation.html.twig" %}
+
+    </section> <!-- end s-pageheader -->
+
+
+    <!-- s-content
+    ================================================== -->
+    <section class="s-content">
+
+        <div class="row masonry-wrap">
+            <div class="masonry">
+                <div class="col-2-3">
+                   <h4 style="font-weight: 500;
+                   line-height: 22px;
+                   flex: 1;
+                   border-bottom:#49af95 1px solid;
+                   padding: 4px;
+                   margin: 16px 0;
+                   display:flex;">
+                       Créer votre aricle
+                   </h4>
+                   <div class="container">
+                        <div class="row">
+                             {{form_start(form, { 'attr': {'class': 'form_create'}})}}
+
+                            <div class="col-md-6 col-lg-12 m-auto">
+                                <div class="form-group">
+                              {{form_row(form.title, { 'attr': {'class': 'form-create'}})}}
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-12 m-auto">
+                                <div class="form-group">
+                              {{form_row(form.imageFile, { 'attr': {'class': 'form_control'}})}}
+                                </div>
+                            </div>
+                        </div>
+                            <div class="row">
+                                <div class="col-md-6 col-lg-12 m-auto">
+                                    <div class="form-group">
+                                  {{form_row(form.keywords, { 'attr': {'class': 'js-form-selected'}})}}
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-12 m-auto">
+                                    <div class="form-group">
+                                  {{form_row(form.categories, { 'attr': {'class': 'js-form-selected'}})}}
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-12 m-auto">
+                                    <div class="form-group">
+                                  {{form_row(form.contenu, { 'attr': {'class': 'form_control'}})}}
+                                    </div>
+                                </div>
+                            </div> 
+                        <div class="row">
+
+                            <div class="col-md-6 col-lg-12 m-auto">
+                                <div class="form-group">
+                              {{form_row(form.contenu)}}
+                                </div>
+                            </div>
+                        </div> 
+                        
+
+                        <div class="form-btn col-12 mt-5">
+                            <button class="submit-btn">Publier</button>
+                        </div>
+                   {{form_end(form)}}
+                        
+                   </div>
+                          
+                   
+                   
+     
+    
+                </div>
+                <div class="col-1-3 right-rules">
+                    <div class="Rules">
+
+                    
+                    <div class="titleRules">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Publier sur Le Med-Blog</font>
+                        </font>
+                    </div>
+                    <ol class="list">
+                        <li class="liList">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Rappelez-vous avant de Poster</font>
+                            </font>
+                        </li>
+                        <li class="liList">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Soyez Courtois. Comportez-vous comme vous le feriez dans la vraie
+                                    vie</font>
+                            </font>
+                        </li>
+                        <li class="liList">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Recherchez la source d'origine de votre article</font>
+                            </font>
+                        </li>
+                        <li class="liList">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Rechercher des doublons avant de poster</font>
+                            </font>
+                        </li>
+                        <li class="liList">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Publiez que des articles avec des Sujet liées à la médicine ou la santé</font>
+                            </font>
+                        </li>
+                        <li class="liList">
+                            <font style="vertical-align: inherit;">
+                                <font style="vertical-align: inherit;">Respectez les règles de la communauté</font>
+                            </font>
+                        </li>
+                    </ol>
+                </div>
+                    <font style="vertical-align: inherit; color:#7c7c7c; font-style:italic; font-weight:bolder; font-size:12px;">
+                        Veuillez être conscient de la politique de contenu du Blog et n'y publiez des articles sur conforme aux thèmes
+                    </font>
+
+                </div>
+            </div>
+
+    </section> <!-- s-content -->
+
+
+    <!-- s-extra
+    ================================================== -->
+    <section class="s-extra">
+
+        <div class="row bottom tags-wrap">
+            <div class="col-full tags">
+                <h3>Mots clés </h3>
+
+                <div class="tagcloud">
+                    {% for keyword in keywords %}
+                    <a href="#0">{{keyword}}</a>
+                        
+                    {% endfor %}
+                </div> <!-- end tagcloud -->
+            </div> <!-- end tags -->
+        </div> <!-- end tags-wrap -->
+
+    </section> <!-- end s-extra -->
+    
+{% endblock body %}
+{% block javascripts %}
+	<script src="{{asset('bower_components/js/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{asset('bower_components/js/popper.js')}}"></script>
+	<script src="{{asset('bower_components/tail/js/select-full.min.js')}}"></script>
+    <script>
+    let attribute = document.querySelector(".js-form-selected");
+
+if (attribute != null) {
+  tail.select(".js-form-selected", {
+    search: true,
+    hideSelected: true,
+    hideDisabled: true,
+    multiShowCount: true,
+  });
+}
+
+
+</script>
+
+
+
+{% endblock javascripts %}

@@ -143,6 +143,11 @@ class Doctor extends Users
      */
     private $doctorSocialNetworks;
 
+    /**
+     * @ORM\ManyToMany(targetEntity=Appointment::class, inversedBy="doctors")
+     */
+    private $appointement;
+
     public function __construct()
     {
         parent::__construct();
@@ -152,6 +157,7 @@ class Doctor extends Users
         $this->praticalInfos = new ArrayCollection();
         $this->refund = new ArrayCollection();
         $this->doctorSocialNetworks = new ArrayCollection();
+        $this->appointement = new ArrayCollection();
     }
 
 
@@ -532,6 +538,32 @@ class Doctor extends Users
     }
     public function __toString(){
         return $this->getFullName();
+    }
+
+    /**
+     * @return Collection|Appointment[]
+     */
+    public function getAppointement(): Collection
+    {
+        return $this->appointement;
+    }
+
+    public function addAppointement(Appointment $appointement): self
+    {
+        if (!$this->appointement->contains($appointement)) {
+            $this->appointement[] = $appointement;
+        }
+
+        return $this;
+    }
+
+    public function removeAppointement(Appointment $appointement): self
+    {
+        if ($this->appointement->contains($appointement)) {
+            $this->appointement->removeElement($appointement);
+        }
+
+        return $this;
     }
 
 }

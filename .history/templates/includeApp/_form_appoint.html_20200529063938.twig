@@ -1,0 +1,41 @@
+
+            <div class="row">
+
+                    <div class="form-header mb-15">
+                        <h1>Prendre rendez vous avec ce praticien</h1>
+                    </div>
+                    {{form_start(formAppoint)}}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{form_row(formAppoint.appointmentType)}}
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="mt-15">Date du début</h3>
+                    <div class="row">
+								<div class="col-md-12 m-auto">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.beginAt)}}
+									</div>
+                                </div>
+                                <blockquote><p>Ce rendez vous durera une heure</p></blockquote>
+                            </div> 
+                            <div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+                                        {{form_row(formAppoint.name)}}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+                                        {{form_row(formAppoint.tel)}}
+									</div>
+								</div>
+                            </div>
+
+                    		<div class="form-btn">
+								<button class="submit-btn">Prendre RDV</button>
+							</div>
+                    {{form_end(formAppoint)}}
+            </div>

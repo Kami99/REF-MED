@@ -45,32 +45,38 @@ class __TwigTemplate_6d706fcff59eb986623756e5f5e58053805ae83ced874c55d6f1e5035fb
         // line 2
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formDoctor"]) || array_key_exists("formDoctor", $context) ? $context["formDoctor"] : (function () { throw new RuntimeError('Variable "formDoctor" does not exist.', 2, $this->source); })()), 'form_start');
         echo "
+                                    <div class=\"form-group row\">
+                                        <div class=\"col-12\">
+                                            <div id=\"map\" class=\"search-map\"></div>
+                                        </div>
+                                    </div>
                                     <div class=\"row align-items-end\">
-                                        <div class=\"col-12 col-md-6\">
+                                        <div class=\"col-12 col-md-4\">
                                             <div class=\"form-group\">
                                                 ";
-        // line 6
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formDoctor"]) || array_key_exists("formDoctor", $context) ? $context["formDoctor"] : (function () { throw new RuntimeError('Variable "formDoctor" does not exist.', 6, $this->source); })()), "profession", [], "any", false, false, false, 6), 'row');
+        // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formDoctor"]) || array_key_exists("formDoctor", $context) ? $context["formDoctor"] : (function () { throw new RuntimeError('Variable "formDoctor" does not exist.', 11, $this->source); })()), "profession", [], "any", false, false, false, 11), 'row');
         echo "
                                             </div>
                                         </div>
                                         <div class=\"col-12 col-md-4\">
                                             <div class=\"form-group\">
                                                 ";
-        // line 11
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formDoctor"]) || array_key_exists("formDoctor", $context) ? $context["formDoctor"] : (function () { throw new RuntimeError('Variable "formDoctor" does not exist.', 11, $this->source); })()), "distance", [], "any", false, false, false, 11), 'row');
+        // line 16
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formDoctor"]) || array_key_exists("formDoctor", $context) ? $context["formDoctor"] : (function () { throw new RuntimeError('Variable "formDoctor" does not exist.', 16, $this->source); })()), "distance", [], "any", false, false, false, 16), 'row');
         echo "
                                             </div>
                                         </div>
-                                        <div class=\"col-12 col-md-5 mb-0\">
+                                        <div class=\"col-12 col-md-4 mb-0\">
                                             <div class=\"form-group mb-0\">
                                                 <button type=\"submit\" class=\"btn medilife-btn\">Recherchez<span><i class=\"fa fa-search\" aria-hidden=\"true\"></i></span></button>
                                             </div>
                                         </div>
                                     </div>
+
                                     ";
-        // line 20
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formDoctor"]) || array_key_exists("formDoctor", $context) ? $context["formDoctor"] : (function () { throw new RuntimeError('Variable "formDoctor" does not exist.', 20, $this->source); })()), 'form_end');
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formDoctor"]) || array_key_exists("formDoctor", $context) ? $context["formDoctor"] : (function () { throw new RuntimeError('Variable "formDoctor" does not exist.', 26, $this->source); })()), 'form_end');
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -91,15 +97,20 @@ class __TwigTemplate_6d706fcff59eb986623756e5f5e58053805ae83ced874c55d6f1e5035fb
 
     public function getDebugInfo()
     {
-        return array (  73 => 20,  61 => 11,  53 => 6,  46 => 2,  43 => 1,);
+        return array (  79 => 26,  66 => 16,  58 => 11,  46 => 2,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("
                                     {{form_start(formDoctor)}}
+                                    <div class=\"form-group row\">
+                                        <div class=\"col-12\">
+                                            <div id=\"map\" class=\"search-map\"></div>
+                                        </div>
+                                    </div>
                                     <div class=\"row align-items-end\">
-                                        <div class=\"col-12 col-md-6\">
+                                        <div class=\"col-12 col-md-4\">
                                             <div class=\"form-group\">
                                                 {{ form_row(formDoctor.profession) }}
                                             </div>
@@ -109,12 +120,13 @@ class __TwigTemplate_6d706fcff59eb986623756e5f5e58053805ae83ced874c55d6f1e5035fb
                                                 {{ form_row(formDoctor.distance) }}
                                             </div>
                                         </div>
-                                        <div class=\"col-12 col-md-5 mb-0\">
+                                        <div class=\"col-12 col-md-4 mb-0\">
                                             <div class=\"form-group mb-0\">
                                                 <button type=\"submit\" class=\"btn medilife-btn\">Recherchez<span><i class=\"fa fa-search\" aria-hidden=\"true\"></i></span></button>
                                             </div>
                                         </div>
                                     </div>
+
                                     {{form_end(formDoctor)}}", "includeApp/_form_search_doctor.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\includeApp\\_form_search_doctor.html.twig");
     }
 }

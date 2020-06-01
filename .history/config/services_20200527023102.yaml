@@ -1,0 +1,178 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: 'fr'
+    app.path.avatar: /uploads/images/avatar
+    app.path.profile: /uploads/images/doctor
+    app.path.laboratory: /uploads/images/laboratory
+    app.path.pharmacy: /uploads/images/pharmacy
+    app.path.featured: /uploads/images/featured
+    app.path.categories: /uploads/images/categories
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+    App\Listener\ImageCacheSubscriber:
+        tags:
+        - { name: doctrine.event_subscriber }
+    
+    App\Subscriber\AppointmentSubscriber\:
+        resource: '../src/EventSubscriber/AppointmentSubscriber.php'
+        tags:
+            - { name: 'kernel.event_listener', event: 'calendar.set_data', method: load }
+
+    admin.language:
+        class: App\Admin\LanguageAdmin
+        arguments:
+            - ~
+            - App\Entity\Language
+            - ~
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: 'Gestion des infos'
+              label: 'Langage Parle'
+              label_catalogue: 'App'
+    admin.social_networks:
+        class: App\Admin\SocialNetworkAdmin
+        arguments:
+            - ~
+            - App\Entity\SocialNetworks
+            - ~
+        tags:
+            - name: sonata.admin
+              manager_type: orm
+              group: 'Gestion des infos'
+              label: "Résaux sociaux"
+              label_catalogue: 'App'
+
+    admin.category_drugs:
+        class: App\Admin\CategoryDrugsAdmin
+        arguments: [~, App\Entity\CategoryDrugs, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des pharmacies, label: "Catégories de médicaments", }
+        public: true
+
+    admin.category_laboratory:
+        class: App\Admin\CategoryLaboratoryAdmin
+        arguments: [~, App\Entity\CategoryLaboratory, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des Laboratoires, label: "Catégories de Laboratoires" }
+        public: true
+
+    admin.drugs_consomers:
+        class: App\Admin\DrugsConsomersAdmin
+        arguments: [~, App\Entity\DrugsConsomers, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des Laboratoires, label: "Consommateurs " }
+        public: true
+
+    admin.expertise:
+        class: App\Admin\ExpertiseAdmin
+        arguments: [~, App\Entity\Expertise, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des Médecins, label: Expertise }
+        public: true
+
+    admin.form_drugs:
+        class: App\Admin\FormDrugsAdmin
+        arguments: [~, App\Entity\FormDrugs, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des pharmacies, label: "Forme de médicaments" }
+        public: true
+
+    admin.means_payment:
+        class: App\Admin\MeansPaymentAdmin
+        arguments: [~, App\Entity\MeansPayment, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des infos, label: 'Moyen de Paiement'  }
+        public: true
+
+    admin.news:
+        class: App\Admin\NewsAdmin
+        arguments: [~, App\Entity\News, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion contenu du site, label: News }
+        public: true
+
+    admin.pratical_infos:
+        class: App\Admin\PraticalInfosAdmin
+        arguments: [~, App\Entity\PraticalInfos, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des Médecins, label: "Les infos pratiques" }
+        public: true
+
+    admin.profession:
+        class: App\Admin\ProfessionAdmin
+        arguments: [~, App\Entity\Profession, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des Médecins, label: Profession }
+        public: true
+
+    admin.quality_services:
+        class: App\Admin\QualityServicesAdmin
+        arguments: [~, App\Entity\QualityServices, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion contenu du site, label: "Qualités des services" }
+        public: true
+
+    admin.refund:
+        class: App\Admin\RefundAdmin
+        arguments: [~, App\Entity\Refund, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des infos, label: Remboursement }
+        public: true
+
+    admin.services:
+        class: App\Admin\ServicesAdmin
+        arguments: [~, App\Entity\Services, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion contenu du site, label: Services }
+        public: true
+
+    admin.skills:
+        class: App\Admin\SkillsAdmin
+        arguments: [~, App\Entity\Skills, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des Médecins, label: "Compétences" }
+        public: true
+
+    admin.time_slot_open:
+        class: App\Admin\TimeSlotOpenAdmin
+        arguments: [~, App\Entity\TimeSlotOpen, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion des infos, label: "Créneau" }
+        public: true
+
+    admin.members:
+        class: App\Admin\MembersAdmin
+        arguments: [~, App\Entity\Members, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Gestion contenu du site, label: Equipe de REF-MED }
+        public: true
+
+    admin.adminstrators:
+        class: App\Admin\AdminstratorsAdmin
+        arguments: [~, App\Entity\Admin, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Admin, label: Admin }
+        public: true

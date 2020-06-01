@@ -1,0 +1,93 @@
+{% extends 'appointment/main_appointment.html.twig' %}
+{% block title %}Rendez vous non confirmés{% endblock %}
+{% block appointment_content %}
+<main>
+    <div class="container">
+
+        <h2>Demande de rendez-vous</h2>           
+            <div class="alert alert-warning">
+                <p>Les nouveaux rendez-vous demandés par des patients</p>
+            </div>
+        
+            <hr />
+        
+            <div class="agenda">
+                <div class="table-responsive">
+                    <table class="table table-condensed table-striped table-hover table-success">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type de rendez-vous</th>
+                                <th>Evenement Prévu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for appoiment in appointments %}
+                                
+                            {% endfor %}
+                            <!-- Single event in a single day -->
+                            <tr>
+                                <td class="agenda-date" class="active" rowspan="1">
+                                    <div class="dayofmonth">Débute le:{{appointment.beginAt|format_datetime('full', 'full', locale='fr') }} et prend fin
+                                        {{appointment.endAt|format_datetime('none', 'short', locale='fr')}}  </div>
+                                  
+                                </td>
+                                <td class="agenda-time">
+                                   {{appointment.appointmentType}
+                                </td>
+                                <td class="agenda-events">
+                                    <div class="agenda-event">
+                                        <i class="glyphicon glyphicon-repeat text-muted" title="Repeating event"></i> 
+                                        Fishing
+                                    </div>
+                                </td>
+                            </tr>
+                            
+                            <!-- Multiple events in a single day (note the rowspan) -->
+                            <tr>
+                                <td class="agenda-date" class="active" rowspan="3">
+                                    <div class="dayofmonth">24</div>
+                                    <div class="dayofweek">Thursday</div>
+                                    <div class="shortdate text-muted">July, 2014</div>
+                                </td>
+                                <td class="agenda-time">
+                                    8:00 - 9:00 AM 
+                                </td>
+                                <td class="agenda-events">
+                                    <div class="agenda-event">
+                                        Doctor's Appointment
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="agenda-time">
+                                    10:15 AM - 12:00 PM 
+                                </td>
+                                <td class="agenda-events">
+                                    <div class="agenda-event">
+                                        Meeting with executives
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="agenda-time">
+                                    7:00 - 9:00 PM
+                                </td>
+                                <td class="agenda-events">
+                                    <li class="events__item">
+                                        <div class="events__item--left">
+                                          <span class="events__name">Visit Grandma</span>
+                                        </div>
+                                        <span class="events__tag events__tag--highlighted">Pas confirmé</span>
+                    
+                                      </li>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+</main>
+{% endblock appointment_content %}

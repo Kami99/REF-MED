@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Votre Espace{% endblock %}
+
+{% block body %}
+    <h1>Appointment</h1>
+    
+    b4card
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ appointment.id }}</td>
+            </tr>
+            <tr>
+                <th>BeginAt</th>
+                <td>{{ appointment.beginAt ? appointment.beginAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>EndAt</th>
+                <td>{{ appointment.endAt ? appointment.endAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DaysOfWeek</th>
+                <td>{{ appointment.daysOfWeek ? appointment.daysOfWeek|json_encode : '' }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ appointment.title }}</td>
+            </tr>
+            <tr>
+                <th>IsConfirmed</th>
+                <td>{{ appointment.isConfirmed ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ appointment.name }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ appointment.tel }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('appointment_list') }}">Retournez</a>
+
+    <a href="{{ path('appointment.edit', {'id': appointment.id}) }}">edit</a>
+
+{% endblock %}

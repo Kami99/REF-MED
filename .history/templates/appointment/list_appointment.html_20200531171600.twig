@@ -1,0 +1,32 @@
+{% extends 'appointment/main_appointment.html.twig' %}
+{% block title %}Gestion des rendez vous{% endblock %}
+{% block appointment_content %}
+<div class="container-fluid p-5">
+    <div class="row">
+        {% for appointment in appointments %}
+        <li class="events__item col-12">
+            <div class="events__item--left">
+                <span class="events__name">{{appointment.title}}</span>
+            </div>
+            <div class="section-right">
+                {% if appointment.isConfirmed == true %}
+                 <span class="events__tag events__tag">Pas confirmé</span>
+                    
+                {% else %}
+                 <span class="events__tag events__tag--highlighted">Pas confirmé</span>
+                    
+                {% endif %}
+         <a href="{{path('appointment.edit', {id: appointment.id})}}">
+            <button type="button" class="btn btn-primary" class="primary">
+                Editer
+            </button>
+          </a>
+            </div>
+         </li>
+            
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock appointment_content %}

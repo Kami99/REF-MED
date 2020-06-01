@@ -1,0 +1,167 @@
+{% extends 'Blog/baseBlog.html.twig' %}
+{% block className %}top{% endblock className %}
+{% block body %}
+<!-- pageheader
+    ================================================== -->
+    <div class="s-pageheader">
+        {% include "Blog/_navigation.html.twig" %}
+    </div>
+
+    <!-- s-content
+    ================================================== -->
+    <section class="s-content s-content--narrow s-content--no-padding-bottom">
+        
+
+        <article class="row format-standard">
+
+            <div class="s-content__header col-full">
+                <h1 class="s-content__header-title">
+                   {{article.title}}
+                </h1>
+                <ul class="s-content__header-meta">
+                    <li class="date">{{article.updatedAt|date("d-m-Y à H:i:s")}}</li>
+                    
+                    <li class="cat">
+                        {% for categorie in article.categories %}                            
+                        <a href="#0">{{categorie.name}}</a>
+                        {% endfor %}
+
+                    </li>
+                </ul>
+            </div> <!-- end s-content__header -->
+    
+            <div class="s-content__media col-full">
+                <div class="s-content__post-thumb">
+                    {% if article.featuredImage %}
+                    <img src="{{vich_uploader_asset(article, 'imageFile') |imagine_filter('featuredArticle')}}" 
+                    alt="Image Article" width="100%" > 
+                        
+                    {% else %}
+                    <img src="{{asset('bower_components/images/imageNotAvailable.png') |imagine_filter('featuredArticle')}}" 
+                     alt="Article not Image available" width="100%">
+                    {% endif %}
+                </div>
+            </div> <!-- end s-content__media -->
+
+            <div class="col-full s-content__main">
+
+                <p class="lead">{{article.contenu}}</p>
+                <p class="s-content__tags">
+                    <span>Les Mots Clés</span>
+
+                    <span class="s-content__tag-list">
+                        {% for keyword in article.keywords %}
+                        <a href="#0">{{keyword.keyword}}</a>   
+                        {% endfor %}
+                    </span>
+                </p> <!-- end s-content__tags -->
+
+                <div class="s-content__author">
+                    <img src="" alt="">
+
+                    <div class="s-content__author-about">
+                        <h4 class="s-content__author-name">
+                            Ecrit par {{article.usersBlog}}
+                        </h4>
+                    
+                    </div>
+                </div>
+
+                <div class="s-content__pagenav">
+                    <div class="s-content__nav">
+                        <div class="s-content__prev">
+                            <a href="{{path('article.show', {id: article.id - 1, slug: article.slug})}}" rel="prev">
+                                <span>Article Précedent</span>
+                            </a>
+                        </div>
+                        <div class="s-content__next">
+                            <a href="{{path('article.show', {id: article.id + 1, slug: article.slug})}}" rel="next">
+                                <span>Article Suivant</span>
+                            </a>
+                        </div>
+                    </div>
+                </div> <!-- end s-content__pagenav -->
+
+            </div> <!-- end s-content__main -->
+
+        </article>
+
+
+        <!-- comments
+        ================================================== -->
+        <div class="comments-wrap">
+
+            <div id="comments" class="row">
+                <div class="col-full">
+
+                    <h3 class="h2">5 Comments</h3>
+
+                    <!-- commentlist -->
+                    <ol class="commentlist">
+
+                        <li class="depth-1 comment">
+
+                            <div class="comment__avatar">
+                                <img width="50" height="50" class="avatar" src="images/avatars/user-01.jpg" alt="">
+                            </div>
+
+                            <div class="comment__content">
+
+                                <div class="comment__info">
+                                    <cite>Itachi Uchiha</cite>
+
+                                    <div class="comment__meta">
+                                        <time class="comment__time">Dec 16, 2017 @ 23:05</time>
+                                        <a class="reply" href="#0">Reply</a>
+                                    </div>
+                                </div>
+
+                                <div class="comment__text">
+                                <p>Adhuc quaerendum est ne, vis ut harum tantas noluisse, id suas iisque mei. Nec te inani ponderum vulputate,
+                                facilisi expetenda has et. Iudico dictas scriptorem an vim, ei alia mentitum est, ne has voluptua praesent.</p>
+                                </div>
+
+                            </div>
+
+                        </li> <!-- end comment level 1 -->
+
+
+
+                    </ol> <!-- end commentlist -->
+
+
+                    <!-- respond
+                    ================================================== -->
+                    <div class="respond">
+
+                        <h3 class="h2">Ajouter un commentaire</h3>
+
+                            <fieldset>
+                                
+
+                                <button type="submit" class="submit btn--primary btn--large full-width">Poster</button>
+
+                            </fieldset>
+
+                    </div> <!-- end respond -->
+
+                </div> <!-- end col-full -->
+
+            </div> <!-- end row comments -->
+        </div> <!-- end comments-wrap -->
+
+    </section> <!-- s-content -->
+
+
+    <!-- s-extra
+    ================================================== -->
+   
+    {% include "Blog/_footerPopularPosts.html.twig" %}
+
+    {% include "Blog/_footerKeyword.html.twig" %}
+       
+
+
+
+       
+{% endblock body %}

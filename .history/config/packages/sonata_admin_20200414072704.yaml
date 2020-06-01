@@ -1,9 +1,0 @@
-sonata_admin:
-    dashboard:
-        blocks:
-
-            # display dashboard block in the top zone with a col-md-6 css class
-            -
-                position: top
-                class: col-md-6
-                type: sonata.admin.block.admin_list

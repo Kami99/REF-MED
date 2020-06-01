@@ -25,6 +25,7 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
+            'addStyleSheets' => [$this, 'block_addStyleSheets'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
         ];
@@ -56,6 +57,29 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
     }
 
     // line 2
+    public function block_addStyleSheets($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "addStyleSheets"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "addStyleSheets"));
+
+        // line 3
+        echo "\t<link href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/leaflet/leaflet.css"), "html", null, true);
+        echo "\" rel=\"stylesheet\">
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -65,24 +89,24 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 3
-        $this->loadTemplate("includeApp/_navigation.html.twig", "main_refmed/index.html.twig", 3)->display($context);
-        // line 4
+        // line 6
+        $this->loadTemplate("includeApp/_navigation.html.twig", "main_refmed/index.html.twig", 6)->display($context);
+        // line 7
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 4, $this->source); })()), "flashes", [], "any", false, false, false, 4));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [], "any", false, false, false, 7));
         foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 5
+            // line 8
             echo "<div class=\"container\">
     <div class=\"alert alert-";
-            // line 6
+            // line 9
             echo twig_escape_filter($this->env, $context["label"], "html", null, true);
             echo "\">
         ";
-            // line 7
+            // line 10
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 8
+                // line 11
                 echo "        <p>";
                 echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                 echo "</p>                    
@@ -95,7 +119,7 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 11
+        // line 14
         echo " <!-- ***** Hero Area Start ***** -->
     <section class=\"hero-area\">
         <div class=\"hero-slides owl-carousel\">
@@ -120,15 +144,15 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
                 <div class=\"container h-100\">
                     <div class=\"row h-100 align-items-center\">
                         ";
-        // line 34
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 34, $this->source); })()), "user", [], "any", false, false, false, 34)) {
-            // line 35
+        // line 37
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 37, $this->source); })()), "user", [], "any", false, false, false, 37)) {
+            // line 38
             echo "                        <div class=\"col-12\">
                             <div class=\"hero-slides-content\">
                                 <h2 data-animation=\"fadeInUp\" data-delay=\"100ms\">Venant jettez un coup d'oeil aux forum</h2>
                                 <h6 data-animation=\"fadeInUp\" data-delay=\"400ms\">Suivez le lien ci-dessous pour y accéder</h6>
                                 <a href=\"";
-            // line 39
+            // line 42
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
             echo "\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
                                     data-delay=\"700ms\">Accueil du fortum<span><i class=\"fa fa-user-circle\" aria-hidden=\"true\"></i></span></a>
@@ -136,13 +160,13 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
                         </div>    
                         ";
         } else {
-            // line 44
+            // line 47
             echo "                        <div class=\"col-12\">
                             <div class=\"hero-slides-content\">
                                 <h2 data-animation=\"fadeInUp\" data-delay=\"100ms\">Inscrivez vous à notre Forum et communiquez sur des sujets divers</h2>
                                 <h6 data-animation=\"fadeInUp\" data-delay=\"400ms\">Suivez le lien ci-dessous pour vous inscrire</h6>
                                 <a href=\"";
-            // line 48
+            // line 51
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_blog");
             echo "\" class=\"btn medilife-btn mt-50\" data-animation=\"fadeInUp\"
                                     data-delay=\"700ms\">S'inscrire<span><i class=\"fa fa-user-circle\" aria-hidden=\"true\"></i></span></a>
@@ -150,7 +174,7 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
                         </div>       
                         ";
         }
-        // line 53
+        // line 56
         echo "
                     </div>
                 </div>
@@ -187,31 +211,31 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
                                     <h4>Recherchez un médecin</h4>
                                     <br>                                     
                             ";
-        // line 88
-        $this->loadTemplate("includeApp/_form_search_doctor.html.twig", "main_refmed/index.html.twig", 88)->display($context);
-        // line 89
+        // line 91
+        $this->loadTemplate("includeApp/_form_search_doctor.html.twig", "main_refmed/index.html.twig", 91)->display($context);
+        // line 92
         echo "                                    <br>
                                     <br>
                                     <h4> Recherchez un Laboratoire</h4>
                                     <br>
                             ";
-        // line 93
-        $this->loadTemplate("includeApp/_form_search_laboratory.html.twig", "main_refmed/index.html.twig", 93)->display($context);
+        // line 96
+        $this->loadTemplate("includeApp/_form_search_laboratory.html.twig", "main_refmed/index.html.twig", 96)->display($context);
         echo "                                       
                                     <br>
                                     <br>
                                     <h4>Recherchez un Medicament</h4>
                                     <br>
                             ";
-        // line 98
-        $this->loadTemplate("includeApp/_form_search_drugs.html.twig", "main_refmed/index.html.twig", 98)->display($context);
+        // line 101
+        $this->loadTemplate("includeApp/_form_search_drugs.html.twig", "main_refmed/index.html.twig", 101)->display($context);
         echo "                                       
                     </div>
                             </div>
                             ";
-        // line 101
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 101, $this->source); })()), "user", [], "any", false, false, false, 101) == null)) {
-            // line 102
+        // line 104
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 104, $this->source); })()), "user", [], "any", false, false, false, 104) == null)) {
+            // line 105
             echo "                            <div class=\"col-12 col-lg-3\">
                                 <div class=\"medilife-contact-info\">
                                     <!-- Single Contact Info -->
@@ -232,7 +256,7 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
                             </div>
                             ";
         }
-        // line 121
+        // line 124
         echo "                            
 
                         </div>
@@ -362,37 +386,42 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
                 </div>
             </div>
         </div>
-
     ";
-        // line 251
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 251, $this->source); })()), "user", [], "any", false, false, false, 251) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 251, $this->source); })()), "user", [], "any", false, false, false, 251), "roles", [], "any", false, false, false, 251), 0, [], "array", false, false, false, 251) == "ROLE_USER_DOCTOR"))) {
-            // line 252
-            echo "    <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-            echo "\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+        // line 253
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 253, $this->source); })()), "user", [], "any", false, false, false, 253) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 253, $this->source); })()), "user", [], "any", false, false, false, 253), "roles", [], "any", false, false, false, 253), 0, [], "array", false, false, false, 253) == "ROLE_USER_DOCTOR"))) {
+            // line 254
+            echo "    ";
+            if (((((((((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "presentation", [], "any", false, false, false, 254) == null) || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "tarifMin", [], "any", false, false, false, 254) == null)) || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "tarifMax", [], "any", false, false, false, 254) == null)) || twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "presentation", [], "any", false, false, false, 254))) || twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "meansPayment", [], "any", false, false, false, 254))) || twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "refund", [], "any", false, false, false, 254))) || twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "praticalInfos", [], "any", false, false, false, 254))) || twig_test_empty(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "language", [], "any", false, false, false, 254)))) {
+                // line 255
+                echo "    <a href=\"";
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_account");
+                echo "\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
     ";
+            }
+            // line 257
+            echo "    ";
         }
-        // line 254
+        // line 258
         echo "    ";
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 254, $this->source); })()), "user", [], "any", false, false, false, 254), "roles", [], "any", false, false, false, 254), 0, [], "array", false, false, false, 254) == "ROLE_USER_PHARMACY"))) {
-            // line 255
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 258, $this->source); })()), "user", [], "any", false, false, false, 258) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 258, $this->source); })()), "user", [], "any", false, false, false, 258), "roles", [], "any", false, false, false, 258), 0, [], "array", false, false, false, 258) == "ROLE_USER_PHARMACY"))) {
+            // line 259
             echo "    <a href=\"";
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
             echo "\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
     ";
         }
-        // line 257
-        echo "    ";
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 257, $this->source); })()), "user", [], "any", false, false, false, 257) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 257, $this->source); })()), "user", [], "any", false, false, false, 257), "roles", [], "any", false, false, false, 257), 0, [], "array", false, false, false, 257) == "ROLE_USER_lABORATORY"))) {
-            // line 258
-            echo "    <a href=\"";
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
-            echo "\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
-    ";
-        }
-        // line 260
-        $this->loadTemplate("includeApp/_footer.html.twig", "main_refmed/index.html.twig", 260)->display($context);
         // line 261
+        echo "    ";
+        if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 261, $this->source); })()), "user", [], "any", false, false, false, 261) && (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 261, $this->source); })()), "user", [], "any", false, false, false, 261), "roles", [], "any", false, false, false, 261), 0, [], "array", false, false, false, 261) == "ROLE_USER_lABORATORY"))) {
+            // line 262
+            echo "    <a href=\"";
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+            echo "\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    ";
+        }
+        // line 264
+        $this->loadTemplate("includeApp/_footer.html.twig", "main_refmed/index.html.twig", 264)->display($context);
+        // line 265
         echo "
 ";
         
@@ -403,7 +432,7 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
 
     }
 
-    // line 263
+    // line 267
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -413,15 +442,99 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 264
-        echo "<script src=\"";
+        // line 268
+        echo "
+<script src=\"";
+        // line 269
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/js/alert.js"), "html", null, true);
         echo "\"></script>
 ";
-        // line 265
+        // line 270
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
+<script src=\"";
+        // line 271
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/leaflet.js"), "html", null, true);
+        echo "\"></script>
 
+<script>
+let idLon = document.querySelector('.locationLon').getAttribute('id');
+let idLat = document.querySelector('.locationLat').getAttribute('id');
+let marker, myMap
+window.onload=()=>{
+    myMap = L.map('map').setView([14.6937000, -17.4440600], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    attribution: 'Données &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>/ODbl -rendu  <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>',
+    minZoom: 10,
+    maxZoom: 20,
+
+}).addTo(myMap);    
+myMap.on(\"click\", mapClickListen)
+
+}
+
+function mapClickListen(e) {
+    let pos= e.latlng
+    addMarker(pos)
+    console.log(e)
+
+    document.querySelector(\"#\"+idLat).value = pos.lat
+    document.querySelector(\"#\"+idLon).value = pos.lng
+     const xmlhttp = new XMLHttpRequest
+    xmlhttp.onreadystatechange = () => {
+        // Si la requête est terminée
+        if(xmlhttp.readyState == 4){
+            // Si nous avons une réponse
+            if(xmlhttp.status == 200){
+                //On récupère la réponse
+                let response = JSON.parse(xmlhttp.response)
+               name=response.display_name         
+               marker.bindPopup(name)   
+            }
+        }
+    }
+    // On ouvre la requête
+    xmlhttp.open('get', `https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\${pos.lat}&lon=\${pos.lng}`)
+    // On envoie la requête
+    xmlhttp.send();
+
+}
+
+function addMarker(pos) {
+    if(marker != undefined){
+        myMap.removeLayer(marker)
+    }
+    marker=L.marker(pos, {
+        draggable: true
+    })
+    marker.on(\"dragend\", function(e){
+        pos = e.target.getLatLng()
+    document.querySelector(\"#\"+idLat).value = pos.lat
+    document.querySelector(\"#\"+idLon).value = pos.lng
+    const xmlhttp = new XMLHttpRequest
+    xmlhttp.onreadystatechange = () => {
+        // Si la requête est terminée
+        if(xmlhttp.readyState == 4){
+            // Si nous avons une réponse
+            if(xmlhttp.status == 200){
+                //On récupère la réponse
+                let response = JSON.parse(xmlhttp.response)
+                name=response.display_name         
+                marker.bindPopup(name)             
+            }
+        }
+    }
+    // On ouvre la requête
+    xmlhttp.open('get', `https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\${pos.lat}&lon=\${pos.lng}`)
+    // On envoie la requête
+    xmlhttp.send();
+    })
+    // Listen Event dragabble on Marker
+
+    marker.addTo(myMap)
+
+}
+</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -443,12 +556,15 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
 
     public function getDebugInfo()
     {
-        return array (  422 => 265,  417 => 264,  407 => 263,  396 => 261,  394 => 260,  388 => 258,  385 => 257,  379 => 255,  376 => 254,  370 => 252,  368 => 251,  236 => 121,  215 => 102,  213 => 101,  207 => 98,  199 => 93,  193 => 89,  191 => 88,  154 => 53,  146 => 48,  140 => 44,  132 => 39,  126 => 35,  124 => 34,  99 => 11,  86 => 8,  82 => 7,  78 => 6,  75 => 5,  71 => 4,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  457 => 271,  453 => 270,  449 => 269,  446 => 268,  436 => 267,  425 => 265,  423 => 264,  417 => 262,  414 => 261,  408 => 259,  405 => 258,  402 => 257,  396 => 255,  393 => 254,  391 => 253,  260 => 124,  239 => 105,  237 => 104,  231 => 101,  223 => 96,  217 => 92,  215 => 91,  178 => 56,  170 => 51,  164 => 47,  156 => 42,  150 => 38,  148 => 37,  123 => 14,  110 => 11,  106 => 10,  102 => 9,  99 => 8,  95 => 7,  93 => 6,  83 => 5,  70 => 3,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'appMain.html.twig' %}
+{%block addStyleSheets%}
+\t<link href=\"{{asset('bower_components/js/leaflet/leaflet.css')}}\" rel=\"stylesheet\">
+{%endblock %}
 {% block body %}
 {% include \"includeApp/_navigation.html.twig\" %}
 {% for label,messages in app.flashes %}
@@ -697,9 +813,10 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
                 </div>
             </div>
         </div>
-
     {% if app.user and app.user.roles[0] == \"ROLE_USER_DOCTOR\" %}
-    <a href=\"{{path('home')}}\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    {% if app.user.presentation == null or app.user.tarifMin == null or app.user.tarifMax == null or app.user.presentation is empty or app.user.meansPayment is empty or app.user.refund is empty or app.user.praticalInfos is empty or app.user.language is empty %}
+    <a href=\"{{path('edit_account')}}\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
+    {% endif %}
     {% endif %}
     {% if app.user and app.user.roles[0] == \"ROLE_USER_PHARMACY\" %}
     <a href=\"{{path('home')}}\" id=\"\" class=\"js-link-profile\" style=\"display:none;\"></a>
@@ -711,9 +828,89 @@ class __TwigTemplate_f234d60f0dcee4573f41f8741083aa39e812e3dadb3e32667103ae734ab
 
 {% endblock body %}
 {% block javascripts %}
+
 <script src=\"{{asset('bower_components/mainRefMed/js/alert.js')}}\"></script>
 {{ parent() }}
+<script src=\"{{asset('bower_components/js/leaflet.js')}}\"></script>
 
+<script>
+let idLon = document.querySelector('.locationLon').getAttribute('id');
+let idLat = document.querySelector('.locationLat').getAttribute('id');
+let marker, myMap
+window.onload=()=>{
+    myMap = L.map('map').setView([14.6937000, -17.4440600], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    attribution: 'Données &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>/ODbl -rendu  <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>',
+    minZoom: 10,
+    maxZoom: 20,
+
+}).addTo(myMap);    
+myMap.on(\"click\", mapClickListen)
+
+}
+
+function mapClickListen(e) {
+    let pos= e.latlng
+    addMarker(pos)
+    console.log(e)
+
+    document.querySelector(\"#\"+idLat).value = pos.lat
+    document.querySelector(\"#\"+idLon).value = pos.lng
+     const xmlhttp = new XMLHttpRequest
+    xmlhttp.onreadystatechange = () => {
+        // Si la requête est terminée
+        if(xmlhttp.readyState == 4){
+            // Si nous avons une réponse
+            if(xmlhttp.status == 200){
+                //On récupère la réponse
+                let response = JSON.parse(xmlhttp.response)
+               name=response.display_name         
+               marker.bindPopup(name)   
+            }
+        }
+    }
+    // On ouvre la requête
+    xmlhttp.open('get', `https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\${pos.lat}&lon=\${pos.lng}`)
+    // On envoie la requête
+    xmlhttp.send();
+
+}
+
+function addMarker(pos) {
+    if(marker != undefined){
+        myMap.removeLayer(marker)
+    }
+    marker=L.marker(pos, {
+        draggable: true
+    })
+    marker.on(\"dragend\", function(e){
+        pos = e.target.getLatLng()
+    document.querySelector(\"#\"+idLat).value = pos.lat
+    document.querySelector(\"#\"+idLon).value = pos.lng
+    const xmlhttp = new XMLHttpRequest
+    xmlhttp.onreadystatechange = () => {
+        // Si la requête est terminée
+        if(xmlhttp.readyState == 4){
+            // Si nous avons une réponse
+            if(xmlhttp.status == 200){
+                //On récupère la réponse
+                let response = JSON.parse(xmlhttp.response)
+                name=response.display_name         
+                marker.bindPopup(name)             
+            }
+        }
+    }
+    // On ouvre la requête
+    xmlhttp.open('get', `https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\${pos.lat}&lon=\${pos.lng}`)
+    // On envoie la requête
+    xmlhttp.send();
+    })
+    // Listen Event dragabble on Marker
+
+    marker.addTo(myMap)
+
+}
+</script>
 {% endblock %}", "main_refmed/index.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\main_refmed\\index.html.twig");
     }
 }

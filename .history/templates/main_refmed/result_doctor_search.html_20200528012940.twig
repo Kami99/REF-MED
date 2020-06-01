@@ -1,0 +1,184 @@
+{% extends 'appMain.html.twig' %}
+{%block addStyleSheets%}
+	<link href="{{asset('bower_components/js/leaflet/leaflet.css')}}" rel="stylesheet">
+{%endblock %}
+{% block body %}
+{% include "includeApp/_navigation.html.twig" %}
+{% for label,messages in app.flashes %}
+<div class="container">
+    <div class="alert alert-{{label}}">
+        {% for message in messages %}
+        <p>{{message}}</p>                    
+        {% endfor %}
+{% endfor %}
+ <!-- ***** Hero Area Start ***** -->
+ <section class="single-hero-slide bg-img bg-overlay-white" id="map" data-latUser="{{latUser}}" data-lonUser="{{lonUser}}" style="height: 400px;" data-userDistance="{{userDistance}}" >
+
+</section>
+    <!-- ***** Hero Area End ***** -->
+    {% if doctors != null %}
+    <div class="medilife-services-area p-4">
+        <div class="container">
+            <div class="row">
+                {% for doctor in doctors %}
+                {% set i = 0 %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card-container">
+                        <span class="pro" data-lat="{{doctor.location.latitude}}"  data-location="Dr  {{doctor.FullName}} à <br>{{doctor.location.nameLocation |u.truncate(25, '...')}}" data-lon="{{doctor.location.longitude}}">{{distance[i]}}</span>
+                        {% if doctor.pictureProfil %}
+                        <img class="round" src="{{vich_uploader_asset(doctor, 'imageFile')}}"alt="user" />
+                        {% else %}
+                        <img  class="round" src="{{asset('bower_components/images/NotImageProfile.png')}}" 
+                        alt="Empty Image">
+                       {% endif %}
+                        <h5> {{doctor.FullName}}, <h6>{{doctor.profession }}</h6></h5>
+                        <h6>{{doctor.location.nameLocation |u.truncate(50, '...')}}</h6>
+                        <p>  Tarif consultation Min : {{doctor.tarifMin}}
+                        <br/>  Tarif consultation Max : {{doctor.tarifMax}}
+                        </p>
+                        <div class="buttons">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" class="primary">
+                                Prendre RDV
+                            </button>
+                        <a href="{{path('doctor.show', {slug: doctor.slug})}}">
+                            <button class="primary ghost">
+                                Voir plus
+                            </button>
+                        </a>    
+                        </div>
+                        <div class="skills">
+                                
+                            <h6>Expertise</h6>
+                            <ul>
+                                {% for expertise in doctor.expertise %}                      
+                                <li>{{expertise}}</li>
+                            {% endfor %}
+
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+
+                <div class="row">
+                    <div class="col-full">
+                        {{ knp_pagination_render(doctors)}}
+                    </div>
+                </div>
+    </div>
+        </div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="form" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="form">
+    <div class="modal-content">
+{% include "includeApp/_form_appoint.html.twig" %}
+
+    </div>
+  </div>
+</div>
+    
+                {% else %}
+                <h1 class="h2 mb-70">Désolé, nous n'avons trouvé aucun professionnel pour votre recherche… </h1>
+            
+
+
+
+    <div class="medilife-book-an-appoinment-area">
+
+                <div class="appointment-form-content p-4">
+                    <h2 class="lead">Essayez avec d'autres critères de recherche.</h2> 
+
+                {% include "includeApp/_form_search_doctor.html.twig" %}       
+                </div>      
+            </div>      
+                <div class="container mt-50 mb-30">
+                    <div class="row row-card p-4">
+                        <div class="col-8 col-md-12">
+                            <h3>Vous êtes praticien et vous n'apparaissez pas dans cette recherche ?
+                            </h3>
+                            <h5>Contactez-nous pour obtenir un référencement de votre cabinet.
+                            </h5>
+                        </div>
+                        <div class="col-lg-4 col-md-12 mt-25">
+        <button type="button" class="btn btn-primary btn-lg">AJOUTER VOTRE CABINET</button> 
+    
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                    
+                {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+{% include "includeApp/_footer.html.twig" %}
+
+{% endblock body %}
+
+{% block javascripts %}
+
+{# <script src="{{asset('bower_components/mainRefMed/js/alert.js')}}"></script> #}
+{{ parent() }}
+<script src="{{asset('bower_components/js/leaflet.js')}}"></script>
+<script>
+
+    let elementsLatitude=document.querySelectorAll('[data-lat]')
+    let elementLongitude =document.querySelectorAll('[data-lon]')
+    let latUser =document.querySelector('[data-latUser]')
+    let lonUser =document.querySelector('[data-lonUser]')
+    let userDistance=document.querySelector('[data-userDistance]')
+
+    window.onload=()=>{
+    if (typeof elementsLatitude === undefined && typeof elementLongitude === undefined) {
+    
+        
+    } else{
+        viewLat=latUser.dataset.latuser
+        viewLon=lonUser.dataset.lonuser
+        userDistance=Number(userDistance.dataset.userdistance)
+        
+        myMap = L.map('map').setView([viewLat, viewLon], 14);
+    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+    attribution: 'Données &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>/ODbl -rendu  <a href="https://www.openstreetmap.org/">OpenStreetMap</a>',
+    minZoom: 10,
+    maxZoom: 20,
+
+}).addTo(myMap);    
+let doctorIcon = L.icon({
+    iconUrl: "{{asset('bower_components/mainRefMed/doctor.png')}}",
+    iconSize:     [35, 50], // size of the icon
+    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -90] // point from which the popup should open relative to the iconAnchor
+});
+let latitudes=Array.from(elementsLatitude).map(item => item.dataset.lat)
+let longitudes=Array.from(elementLongitude).map(item => item.dataset.lon)
+let locations=Array.from(elementLongitude).map(item => item.dataset.location)
+let userPosition=[viewLat, viewLon]
+myMap.panTo(userPosition)
+let circle = L.circle(userPosition, {
+                color: '#57b99b',
+                fillColor: '#57b99b',
+                fillOpacity: 0.3,
+                radius: userDistance*1000 ,
+            }).addTo(myMap);
+    let marker = L.marker([viewLat, viewLon]).addTo(myMap)
+    marker.bindPopup("Votre position")
+for (let i = 0; i < latitudes.length; i++) {
+    let marker = L.marker([latitudes[i], longitudes[i]], {icon: doctorIcon}).addTo(myMap)
+    marker.bindPopup(locations[i])
+
+}
+
+
+}
+}
+</script>
+{% endblock %}

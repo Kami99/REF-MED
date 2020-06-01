@@ -1,0 +1,29 @@
+{% extends 'appMain.html.twig' %}
+
+{% block title %}Gestion des RDV{% endblock %}
+
+{% block body %}
+{% block addStyleSheets%}
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% endblock %}
+{% include "includeApp/_navigation.html.twig" %}
+<div class="container">
+{% block wrapper %}
+<div class="wrapper">
+ {% block appointment_content %}
+ 
+ {% endblock %} 
+  {% block sidebar %}    
+{% include "appointment/_sidebar.html.twig" %}      
+{% endblock sidebar %}
+    
+  </div>
+{% endblock %}
+
+</div>
+{% endblock %}
+
+
+
+
+

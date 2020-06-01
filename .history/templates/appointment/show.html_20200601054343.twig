@@ -1,0 +1,80 @@
+{% extends 'appointment/main_appointment.html.twig' %}
+
+{% block title %}Rendez vous {% endblock %}
+
+{% block appointment_content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="position_center mt-50">
+
+                <div class="appointment-card green">
+                  <div class="additional">
+                    <div class="user-appointment-card">
+                        {% if appointment.isConfirmed == true %}
+                        <div class="level position_center">
+                            Confirmé
+                            <div style="
+    background: #0bff12e3;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    "></div>
+    
+                          </div> 
+
+                        {% else %}
+                        <div class="level position_center">
+                            Non Confirmé
+                            <div style="
+    background: red;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+"></div>
+    
+                          </div>
+                      {% endif %}
+
+
+                      <div class="points position_center">
+                        <a name="" id="" class="btn btn-primary" href="{{path('appointment.edit', {id: appointment.id})}}" role="button">Editer</a>
+                      </div>
+                      <div class="row">
+                          <img src="" alt="" width="110" height="110" role="img" aria-labelledby="title desc" class="position_center">
+                          <title id="title"></title>
+                          <desc id="desc"></desc>
+                      </div>
+                    </div>
+                    <div class="more-appointmentInfo">
+                      <h1>Nom du patient: <span class="appointmentInfo">{{appointment.name}}</span></h1>
+                      <div class="coords">
+                        <span>Debut : <span class="appointmentInfo">{{appointment.beginAt|format_datetime('medium', 'medium', locale='Africa/Dakar')}}</span></span>
+                        <span>Fin : <span class="appointmentInfo">{{appointment.endAt|format_datetime('none', 'short', locale='Africa/Dakar')}}</span></span>
+                      </div>
+                      <div class="coords">
+                        <span>Type de RDV:<span class="appointmentInfo">{{appointment.appointmentType}}</span> </span>
+                        <span>Tel: <span class="appointmentInfo">{{appointment.tel}}</span></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="general">
+                    <h1>{{appointment.name}}</h1>
+                    <p>{{appointment.title}}</p>
+                 
+                  </div>
+                </div>
+              
+              </div>
+        </div>
+
+          
+
+    </div>
+    
+</div>
+
+{% endblock appointment_content %}
+
+

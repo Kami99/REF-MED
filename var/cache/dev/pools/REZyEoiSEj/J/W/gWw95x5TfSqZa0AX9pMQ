@@ -1,0 +1,52 @@
+<?php //%255BApp%255CEntity%255CUsers%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Doctrine\\ORM\\Mapping\\Entity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Entity')),
+        clone ($p['Doctrine\\ORM\\Mapping\\InheritanceType'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\InheritanceType')),
+        clone ($p['Doctrine\\ORM\\Mapping\\DiscriminatorMap'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\DiscriminatorMap')),
+        clone ($p['Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Bridge\\Doctrine\\Validator\\Constraints\\UniqueEntity')),
+    ],
+    null,
+    [
+        'stdClass' => [
+            'repositoryClass' => [
+                'App\\Repository\\UsersRepository',
+            ],
+            'value' => [
+                1 => 'JOINED',
+                [
+                    'users' => 'Users',
+                    'usersBlog' => 'UsersBlog',
+                    'pharmacie' => 'Pharmacy',
+                    'doctor' => 'Doctor',
+                    'laboratoire' => 'Laboratory',
+                    'admin' => 'Admin',
+                ],
+            ],
+            'message' => [
+                3 => 'Un compte existe avec cet E-mail réessayez avec un autre',
+            ],
+            'entityClass' => [
+                3 => 'App\\Entity\\Users',
+            ],
+            'fields' => [
+                3 => [
+                    'email',
+                ],
+            ],
+            'groups' => [
+                3 => [
+                    'Default',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+); }];

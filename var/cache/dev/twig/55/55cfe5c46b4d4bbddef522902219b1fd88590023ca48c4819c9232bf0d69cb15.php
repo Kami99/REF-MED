@@ -67,7 +67,11 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "addStyleSheets"));
 
         // line 3
-        echo "\t<link href=\"";
+        echo "\t<link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/tail/css/bootstrap4/select-default.css"), "html", null, true);
+        echo "\">
+\t<link href=\"";
+        // line 4
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/leaflet/leaflet.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 ";
@@ -79,7 +83,7 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
 
     }
 
-    // line 5
+    // line 6
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -89,24 +93,24 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        $this->loadTemplate("includeApp/_navigation.html.twig", "main_refmed/result_doctor_search.html.twig", 6)->display($context);
         // line 7
+        $this->loadTemplate("includeApp/_navigation.html.twig", "main_refmed/result_doctor_search.html.twig", 7)->display($context);
+        // line 8
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [], "any", false, false, false, 7));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", [], "any", false, false, false, 8));
         foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 8
+            // line 9
             echo "<div class=\"container\">
     <div class=\"alert alert-";
-            // line 9
+            // line 10
             echo twig_escape_filter($this->env, $context["label"], "html", null, true);
             echo "\">
         ";
-            // line 10
+            // line 11
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 11
+                // line 12
                 echo "        <p>";
                 echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                 echo "</p>                    
@@ -119,91 +123,91 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 15
         echo " <!-- ***** Hero Area Start ***** -->
  <section class=\"single-hero-slide bg-img bg-overlay-white\" id=\"map\" data-latUser=\"";
-        // line 15
-        echo twig_escape_filter($this->env, (isset($context["latUser"]) || array_key_exists("latUser", $context) ? $context["latUser"] : (function () { throw new RuntimeError('Variable "latUser" does not exist.', 15, $this->source); })()), "html", null, true);
+        // line 16
+        echo twig_escape_filter($this->env, (isset($context["latUser"]) || array_key_exists("latUser", $context) ? $context["latUser"] : (function () { throw new RuntimeError('Variable "latUser" does not exist.', 16, $this->source); })()), "html", null, true);
         echo "\" data-lonUser=\"";
-        echo twig_escape_filter($this->env, (isset($context["lonUser"]) || array_key_exists("lonUser", $context) ? $context["lonUser"] : (function () { throw new RuntimeError('Variable "lonUser" does not exist.', 15, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["lonUser"]) || array_key_exists("lonUser", $context) ? $context["lonUser"] : (function () { throw new RuntimeError('Variable "lonUser" does not exist.', 16, $this->source); })()), "html", null, true);
         echo "\" style=\"height: 400px;\" data-userDistance=\"";
-        echo twig_escape_filter($this->env, (isset($context["userDistance"]) || array_key_exists("userDistance", $context) ? $context["userDistance"] : (function () { throw new RuntimeError('Variable "userDistance" does not exist.', 15, $this->source); })()), "html", null, true);
+        echo twig_escape_filter($this->env, (isset($context["userDistance"]) || array_key_exists("userDistance", $context) ? $context["userDistance"] : (function () { throw new RuntimeError('Variable "userDistance" does not exist.', 16, $this->source); })()), "html", null, true);
         echo "\" >
 
 </section>
     <!-- ***** Hero Area End ***** -->
     ";
-        // line 19
-        if (((isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 19, $this->source); })()) != null)) {
-            // line 20
+        // line 20
+        if (((isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 20, $this->source); })()) != null)) {
+            // line 21
             echo "    <div class=\"medilife-services-area p-4\">
         <div class=\"container\">
             <div class=\"row\">
                 ";
-            // line 23
+            // line 24
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 23, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 24, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
-                // line 24
+                // line 25
                 echo "                ";
                 $context["i"] = 0;
-                // line 25
+                // line 26
                 echo "                <div class=\"col-12 col-md-6 col-lg-4\">
                     <div class=\"card-container\">
                         <span class=\"pro\" data-lat=\"";
-                // line 27
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 27), "latitude", [], "any", false, false, false, 27), "html", null, true);
+                // line 28
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 28), "latitude", [], "any", false, false, false, 28), "html", null, true);
                 echo "\"  data-location=\"Dr  ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "FullName", [], "any", false, false, false, 27), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "FullName", [], "any", false, false, false, 28), "html", null, true);
                 echo " à <br>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $this->extensions['Twig\Extra\String\StringExtension']->createUnicodeString(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 27), "nameLocation", [], "any", false, false, false, 27)), "truncate", [0 => 25, 1 => "..."], "method", false, false, false, 27), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $this->extensions['Twig\Extra\String\StringExtension']->createUnicodeString(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 28), "nameLocation", [], "any", false, false, false, 28)), "truncate", [0 => 25, 1 => "..."], "method", false, false, false, 28), "html", null, true);
                 echo "\" data-lon=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 27), "longitude", [], "any", false, false, false, 27), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 28), "longitude", [], "any", false, false, false, 28), "html", null, true);
                 echo "\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["distance"]) || array_key_exists("distance", $context) ? $context["distance"] : (function () { throw new RuntimeError('Variable "distance" does not exist.', 27, $this->source); })()), (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 27, $this->source); })()), [], "array", false, false, false, 27), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["distance"]) || array_key_exists("distance", $context) ? $context["distance"] : (function () { throw new RuntimeError('Variable "distance" does not exist.', 28, $this->source); })()), (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 28, $this->source); })()), [], "array", false, false, false, 28), "html", null, true);
                 echo "</span>
                         ";
-                // line 28
-                if (twig_get_attribute($this->env, $this->source, $context["doctor"], "pictureProfil", [], "any", false, false, false, 28)) {
-                    // line 29
+                // line 29
+                if (twig_get_attribute($this->env, $this->source, $context["doctor"], "pictureProfil", [], "any", false, false, false, 29)) {
+                    // line 30
                     echo "                        <img class=\"round\" src=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset($context["doctor"], "imageFile"), "html", null, true);
                     echo "\"alt=\"user\" />
                         ";
                 } else {
-                    // line 31
+                    // line 32
                     echo "                        <img  class=\"round\" src=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/images/NotImageProfile.png"), "html", null, true);
                     echo "\" 
                         alt=\"Empty Image\">
                        ";
                 }
-                // line 34
+                // line 35
                 echo "                        <h5> ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "FullName", [], "any", false, false, false, 34), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "FullName", [], "any", false, false, false, 35), "html", null, true);
                 echo ", <h6>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "profession", [], "any", false, false, false, 34), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "profession", [], "any", false, false, false, 35), "html", null, true);
                 echo "</h6></h5>
                         <h6>";
-                // line 35
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $this->extensions['Twig\Extra\String\StringExtension']->createUnicodeString(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 35), "nameLocation", [], "any", false, false, false, 35)), "truncate", [0 => 50, 1 => "..."], "method", false, false, false, 35), "html", null, true);
+                // line 36
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $this->extensions['Twig\Extra\String\StringExtension']->createUnicodeString(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 36), "nameLocation", [], "any", false, false, false, 36)), "truncate", [0 => 50, 1 => "..."], "method", false, false, false, 36), "html", null, true);
                 echo "</h6>
                         <p>  Tarif consultation Min : ";
-                // line 36
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "tarifMin", [], "any", false, false, false, 36), "html", null, true);
+                // line 37
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "tarifMin", [], "any", false, false, false, 37), "html", null, true);
                 echo "
                         <br/>  Tarif consultation Max : ";
-                // line 37
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "tarifMax", [], "any", false, false, false, 37), "html", null, true);
+                // line 38
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "tarifMax", [], "any", false, false, false, 38), "html", null, true);
                 echo "
                         </p>
                         <div class=\"buttons\">
-                            <button class=\"primary\">
+                            <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\".modal\" class=\"primary\">
                                 Prendre RDV
                             </button>
                         <a href=\"";
-                // line 43
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("doctor.show", ["slug" => twig_get_attribute($this->env, $this->source, $context["doctor"], "slug", [], "any", false, false, false, 43)]), "html", null, true);
+                // line 44
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("doctor.show", ["slug" => twig_get_attribute($this->env, $this->source, $context["doctor"], "slug", [], "any", false, false, false, 44)]), "html", null, true);
                 echo "\">
                             <button class=\"primary ghost\">
                                 Voir plus
@@ -215,13 +219,13 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
                             <h6>Expertise</h6>
                             <ul>
                                 ";
-                // line 53
+                // line 54
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["doctor"], "expertise", [], "any", false, false, false, 53));
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["doctor"], "expertise", [], "any", false, false, false, 54));
                 foreach ($context['_seq'] as $context["_key"] => $context["expertise"]) {
                     echo "                      
                                 <li>";
-                    // line 54
+                    // line 55
                     echo twig_escape_filter($this->env, $context["expertise"], "html", null, true);
                     echo "</li>
                             ";
@@ -229,7 +233,7 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['expertise'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 56
+                // line 57
                 echo "
                             </ul>
                         </div>
@@ -240,22 +244,57 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 62
+            // line 63
             echo "
                 <div class=\"row\">
                     <div class=\"col-full\">
                         ";
-            // line 65
-            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 65, $this->source); })()));
+            // line 66
+            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 66, $this->source); })()));
             echo "
                     </div>
                 </div>
     </div>
         </div>
+<!-- <div class=\"modal fade bd-example-modal-lg\" tabindex=\"-1\" role=\"form\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\">
+  <div class=\"modal-dialog modal-lg\" role=\"form\">
+    <div class=\"modal-content\">
+";
+            // line 74
+            $this->loadTemplate("includeApp/_form_appoint.html.twig", "main_refmed/result_doctor_search.html.twig", 74)->display($context);
+            // line 75
+            echo "
+    </div>
+
+  </div>
+</div> -->
+<div id=\"my-modal\" class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"my-modal-title\" aria-hidden=\"true\">
+    <div class=\"modal-dialog\" role=\"document\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h5 class=\"modal-title\" id=\"my-modal-title\">Title</h5>
+                <button class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                    <span aria-hidden=\"true\">&times;</span>
+                </button>
+            </div>
+            <div class=\"modal-body\">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur tempora ex at assumenda provident animi odio modi sint quis adipisci hic numquam quae, distinctio officia beatae! Deserunt dicta modi atque.
+                Accusantium, tempora officia minima provident voluptates quisquam ullam non vel voluptatum necessitatibus veniam praesentium obcaecati dicta modi quis! Repellendus architecto eligendi placeat consequatur natus dignissimos eaque cumque voluptatem ducimus eveniet!
+                Asperiores tempora temporibus quam explicabo corrupti, dolorem odio officiis impedit aut blanditiis expedita. Magni reiciendis minus esse, fugiat quibusdam optio harum, nam officia tempore ratione, corrupti sapiente suscipit doloribus dolor.
+                Voluptate nemo officia odio vel reiciendis repellendus recusandae qui inventore quibusdam distinctio vero cum, laboriosam nesciunt nulla ratione nam, modi et nostrum! Consequatur deleniti sint quibusdam adipisci neque, obcaecati iure?
+                Molestiae perferendis consequuntur eum maxime! Illo quaerat cumque, facere culpa reiciendis dolorem magni harum ullam numquam. Iure, provident maxime labore reiciendis cumque natus tenetur aspernatur quaerat velit soluta nostrum dolorum.
+                Esse vero expedita facere tempora iure porro laborum qui reprehenderit, necessitatibus omnis fugit illum maxime, repudiandae harum sequi modi aperiam accusantium eaque odit praesentium. Enim doloremque minima est maiores odio.</p>
+            </div>
+            <div class=\"modal-footer\">
+                Footer
+            </div>
+        </div>
+    </div>
+</div>
     
                 ";
         } else {
-            // line 72
+            // line 105
             echo "                <h1 class=\"h2 mb-70\">Désolé, nous n'avons trouvé aucun professionnel pour votre recherche… </h1>
             
 
@@ -267,8 +306,8 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
                     <h2 class=\"lead\">Essayez avec d'autres critères de recherche.</h2> 
 
                 ";
-            // line 82
-            $this->loadTemplate("includeApp/_form_search_doctor.html.twig", "main_refmed/result_doctor_search.html.twig", 82)->display($context);
+            // line 115
+            $this->loadTemplate("includeApp/_form_search_doctor.html.twig", "main_refmed/result_doctor_search.html.twig", 115)->display($context);
             echo "       
                 </div>      
             </div>      
@@ -295,7 +334,7 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
                     
                 ";
         }
-        // line 107
+        // line 140
         echo "
                 </div>
 
@@ -304,9 +343,9 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
     </div>
     
 ";
-        // line 114
-        $this->loadTemplate("includeApp/_footer.html.twig", "main_refmed/result_doctor_search.html.twig", 114)->display($context);
-        // line 115
+        // line 147
+        $this->loadTemplate("includeApp/_footer.html.twig", "main_refmed/result_doctor_search.html.twig", 147)->display($context);
+        // line 148
         echo "
 ";
         
@@ -317,7 +356,7 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
 
     }
 
-    // line 118
+    // line 151
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -327,14 +366,18 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 119
+        // line 152
         echo "
 ";
-        // line 121
+        // line 154
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
+\t\t<script src=\"";
+        // line 155
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/tail/js/select-full.min.js"), "html", null, true);
+        echo "\"></script>
 <script src=\"";
-        // line 122
+        // line 156
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/leaflet.js"), "html", null, true);
         echo "\"></script>
 <script>
@@ -363,7 +406,7 @@ class __TwigTemplate_fe00b2804e75ef334459ba31f6d6b5dd9f7776f5831df1f6892bc98ffa4
 }).addTo(myMap);    
 let doctorIcon = L.icon({
     iconUrl: \"";
-        // line 148
+        // line 182
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/doctor.png"), "html", null, true);
         echo "\",
     iconSize:     [35, 50], // size of the icon
@@ -414,13 +457,14 @@ for (let i = 0; i < latitudes.length; i++) {
 
     public function getDebugInfo()
     {
-        return array (  367 => 148,  338 => 122,  334 => 121,  331 => 119,  321 => 118,  310 => 115,  308 => 114,  299 => 107,  271 => 82,  259 => 72,  249 => 65,  244 => 62,  233 => 56,  225 => 54,  219 => 53,  206 => 43,  197 => 37,  193 => 36,  189 => 35,  182 => 34,  175 => 31,  169 => 29,  167 => 28,  155 => 27,  151 => 25,  148 => 24,  144 => 23,  139 => 20,  137 => 19,  126 => 15,  123 => 14,  110 => 11,  106 => 10,  102 => 9,  99 => 8,  95 => 7,  93 => 6,  83 => 5,  70 => 3,  60 => 2,  37 => 1,);
+        return array (  410 => 182,  381 => 156,  377 => 155,  373 => 154,  370 => 152,  360 => 151,  349 => 148,  347 => 147,  338 => 140,  310 => 115,  298 => 105,  266 => 75,  264 => 74,  253 => 66,  248 => 63,  237 => 57,  229 => 55,  223 => 54,  210 => 44,  201 => 38,  197 => 37,  193 => 36,  186 => 35,  179 => 32,  173 => 30,  171 => 29,  159 => 28,  155 => 26,  152 => 25,  148 => 24,  143 => 21,  141 => 20,  130 => 16,  127 => 15,  114 => 12,  110 => 11,  106 => 10,  103 => 9,  99 => 8,  97 => 7,  87 => 6,  75 => 4,  70 => 3,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'appMain.html.twig' %}
 {%block addStyleSheets%}
+\t<link rel=\"stylesheet\" href=\"{{asset('bower_components/tail/css/bootstrap4/select-default.css')}}\">
 \t<link href=\"{{asset('bower_components/js/leaflet/leaflet.css')}}\" rel=\"stylesheet\">
 {%endblock %}
 {% block body %}
@@ -458,7 +502,7 @@ for (let i = 0; i < latitudes.length; i++) {
                         <br/>  Tarif consultation Max : {{doctor.tarifMax}}
                         </p>
                         <div class=\"buttons\">
-                            <button class=\"primary\">
+                            <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\".modal\" class=\"primary\">
                                 Prendre RDV
                             </button>
                         <a href=\"{{path('doctor.show', {slug: doctor.slug})}}\">
@@ -488,6 +532,38 @@ for (let i = 0; i < latitudes.length; i++) {
                 </div>
     </div>
         </div>
+<!-- <div class=\"modal fade bd-example-modal-lg\" tabindex=\"-1\" role=\"form\" aria-labelledby=\"myLargeModalLabel\" aria-hidden=\"true\">
+  <div class=\"modal-dialog modal-lg\" role=\"form\">
+    <div class=\"modal-content\">
+{% include \"includeApp/_form_appoint.html.twig\" %}
+
+    </div>
+
+  </div>
+</div> -->
+<div id=\"my-modal\" class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"my-modal-title\" aria-hidden=\"true\">
+    <div class=\"modal-dialog\" role=\"document\">
+        <div class=\"modal-content\">
+            <div class=\"modal-header\">
+                <h5 class=\"modal-title\" id=\"my-modal-title\">Title</h5>
+                <button class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+                    <span aria-hidden=\"true\">&times;</span>
+                </button>
+            </div>
+            <div class=\"modal-body\">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur tempora ex at assumenda provident animi odio modi sint quis adipisci hic numquam quae, distinctio officia beatae! Deserunt dicta modi atque.
+                Accusantium, tempora officia minima provident voluptates quisquam ullam non vel voluptatum necessitatibus veniam praesentium obcaecati dicta modi quis! Repellendus architecto eligendi placeat consequatur natus dignissimos eaque cumque voluptatem ducimus eveniet!
+                Asperiores tempora temporibus quam explicabo corrupti, dolorem odio officiis impedit aut blanditiis expedita. Magni reiciendis minus esse, fugiat quibusdam optio harum, nam officia tempore ratione, corrupti sapiente suscipit doloribus dolor.
+                Voluptate nemo officia odio vel reiciendis repellendus recusandae qui inventore quibusdam distinctio vero cum, laboriosam nesciunt nulla ratione nam, modi et nostrum! Consequatur deleniti sint quibusdam adipisci neque, obcaecati iure?
+                Molestiae perferendis consequuntur eum maxime! Illo quaerat cumque, facere culpa reiciendis dolorem magni harum ullam numquam. Iure, provident maxime labore reiciendis cumque natus tenetur aspernatur quaerat velit soluta nostrum dolorum.
+                Esse vero expedita facere tempora iure porro laborum qui reprehenderit, necessitatibus omnis fugit illum maxime, repudiandae harum sequi modi aperiam accusantium eaque odit praesentium. Enim doloremque minima est maiores odio.</p>
+            </div>
+            <div class=\"modal-footer\">
+                Footer
+            </div>
+        </div>
+    </div>
+</div>
     
                 {% else %}
                 <h1 class=\"h2 mb-70\">Désolé, nous n'avons trouvé aucun professionnel pour votre recherche… </h1>
@@ -540,6 +616,7 @@ for (let i = 0; i < latitudes.length; i++) {
 
 {# <script src=\"{{asset('bower_components/mainRefMed/js/alert.js')}}\"></script> #}
 {{ parent() }}
+\t\t<script src=\"{{asset('bower_components/tail/js/select-full.min.js')}}\"></script>
 <script src=\"{{asset('bower_components/js/leaflet.js')}}\"></script>
 <script>
 

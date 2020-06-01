@@ -1,0 +1,104 @@
+<div id="appoint" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="appoint-form">
+                    <div class="form-header">
+                        <h1>Prendre rendez vous avec ce praticien</h1>
+                    </div>
+                    {{form_start(formAppoint)}}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                {{form_row(formAppoint.appointmentType, { 'attr': {'class': 'form'}})}}
+                            </div>
+                        </div>
+                    </div>
+                    <h3>Date du début</h3>
+                    <div class="row">
+								<div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.beginAt.date.day)}}
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.beginAt.date.month)}}
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.beginAt.date.year)}}
+
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.beginAt.time.hour)}}
+
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.beginAt.time.minute)}}
+									</div>
+								</div>
+
+                            </div>
+                            <br>
+                    <h3>Date du début</h3>
+
+                            <div class="row">
+								<div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.endAt.date.day)}}
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.endAt.date.month)}}
+
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.endAt.date.year)}}
+
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.endAt.time.hour)}}
+
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_widget(formAppoint.endAt.time.minute)}}
+									</div>
+								</div>
+
+                            </div>
+                            <div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+                                        {{form_row(formAppoint.name)}}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+                                        {{form_row(formAppoint.tel)}}
+									</div>
+								</div>
+                            </div>
+
+                    		<div class="form-btn">
+								<button class="submit-btn">Prendre RDV</button>
+							</div>
+                    {{form_end(formAppoint)}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

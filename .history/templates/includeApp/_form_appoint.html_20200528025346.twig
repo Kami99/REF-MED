@@ -1,0 +1,40 @@
+<div id="appoint" class="section">
+    <div class="section-center">
+        <div class="container">
+            <div class="row">
+                <div class="appoint-form">
+                    <div class="form-header">
+                        <h1>Make your reservation</h1>
+                    </div>
+                    {{form_start(formAppoint)}}
+                    <div class="row">
+								<div class="col-md-2">
+									<div class="form-group">
+                                  {{form_row(formAppoint.date.day)}}
+
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_row(formAppoint.date.month)}}
+
+									</div>
+                                </div>
+                                <div class="col-md-2">
+									<div class="form-group">
+                                  {{form_row(formAppoint.date.year)}}
+
+									</div>
+								</div>
+
+							</div>
+                    		<div class="form-btn">
+								<button class="submit-btn">Book Now</button>
+							</div>
+                    {{form_end(formAppoint)}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

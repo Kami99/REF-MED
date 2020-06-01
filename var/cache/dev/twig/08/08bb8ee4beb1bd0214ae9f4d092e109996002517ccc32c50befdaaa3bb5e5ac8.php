@@ -55,8 +55,10 @@ class __TwigTemplate_a42249ecb9999873d14489c0fba098186bced9d66a28746395033a1cc55
                         <div class=\"main-menu h-100\">
                             <nav class=\"navbar h-100 navbar-expand-lg\">
                                 <!-- Logo Area  -->
-                                <a class=\"navbar-brand\" href=\"index.html\"><img src=\"";
+                                <a class=\"navbar-brand\" href=\"";
         // line 16
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+        echo "\"><img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/img/core-img/logoRFMD.png"), "html", null, true);
         echo "\"
                                         alt=\"Logo\" width=\"185px\"></a>
@@ -244,7 +246,7 @@ class __TwigTemplate_a42249ecb9999873d14489c0fba098186bced9d66a28746395033a1cc55
 
     public function getDebugInfo()
     {
-        return array (  210 => 80,  203 => 79,  197 => 78,  194 => 77,  187 => 76,  181 => 75,  177 => 73,  169 => 68,  165 => 67,  161 => 66,  150 => 58,  146 => 57,  142 => 56,  138 => 55,  131 => 50,  124 => 46,  115 => 39,  113 => 38,  107 => 34,  100 => 33,  94 => 32,  90 => 30,  83 => 29,  76 => 28,  74 => 27,  73 => 26,  60 => 16,  43 => 1,);
+        return array (  212 => 80,  205 => 79,  199 => 78,  196 => 77,  189 => 76,  183 => 75,  179 => 73,  171 => 68,  167 => 67,  163 => 66,  152 => 58,  148 => 57,  144 => 56,  140 => 55,  133 => 50,  126 => 46,  117 => 39,  115 => 38,  109 => 34,  102 => 33,  96 => 32,  92 => 30,  85 => 29,  78 => 28,  76 => 27,  75 => 26,  60 => 16,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -264,7 +266,7 @@ class __TwigTemplate_a42249ecb9999873d14489c0fba098186bced9d66a28746395033a1cc55
                         <div class=\"main-menu h-100\">
                             <nav class=\"navbar h-100 navbar-expand-lg\">
                                 <!-- Logo Area  -->
-                                <a class=\"navbar-brand\" href=\"index.html\"><img src=\"{{asset('bower_components/mainRefMed/img/core-img/logoRFMD.png')}}\"
+                                <a class=\"navbar-brand\" href=\"{{path('home')}}\"><img src=\"{{asset('bower_components/mainRefMed/img/core-img/logoRFMD.png')}}\"
                                         alt=\"Logo\" width=\"185px\"></a>
 
                                 <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\"

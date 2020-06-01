@@ -1,0 +1,137 @@
+{% extends 'appMain.html.twig' %}
+
+{% block title %}Gestion des RDV{% endblock %}
+
+{% block body %}
+
+{% block addStyleSheets%}
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% endblock %}
+{% include "includeApp/_navigation.html.twig" %}
+<div class="container">
+{% block wrapper %}
+<div class="wrapper">
+    <main>
+        <div class="container">
+
+            <h2>Demande de rendez-vous</h2>           
+                <div class="alert alert-warning">
+                    <p>Les nouveaux rendez-vous demandés par des patients</p>
+                </div>
+            
+                <hr />
+            
+                <div class="agenda">
+                    <div class="table-responsive">
+                        <table class="table table-condensed table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Type de rendez-vous</th>
+                                    <th>Evenement Prévu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Single event in a single day -->
+                                <tr>
+                                    <td class="agenda-date" class="active" rowspan="1">
+                                        <div class="dayofmonth">26</div>
+                                        <div class="dayofweek">Saturday</div>
+                                        <div class="shortdate text-muted">July, 2014</div>
+                                    </td>
+                                    <td class="agenda-time">
+                                        5:30 AM
+                                    </td>
+                                    <td class="agenda-events">
+                                        <div class="agenda-event">
+                                            <i class="glyphicon glyphicon-repeat text-muted" title="Repeating event"></i> 
+                                            Fishing
+                                        </div>
+                                    </td>
+                                </tr>
+                                
+                                <!-- Multiple events in a single day (note the rowspan) -->
+                                <tr>
+                                    <td class="agenda-date" class="active" rowspan="3">
+                                        <div class="dayofmonth">24</div>
+                                        <div class="dayofweek">Thursday</div>
+                                        <div class="shortdate text-muted">July, 2014</div>
+                                    </td>
+                                    <td class="agenda-time">
+                                        8:00 - 9:00 AM 
+                                    </td>
+                                    <td class="agenda-events">
+                                        <div class="agenda-event">
+                                            Doctor's Appointment
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="agenda-time">
+                                        10:15 AM - 12:00 PM 
+                                    </td>
+                                    <td class="agenda-events">
+                                        <div class="agenda-event">
+                                            Meeting with executives
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="agenda-time">
+                                        7:00 - 9:00 PM
+                                    </td>
+                                    <td class="agenda-events">
+                                        <li class="events__item">
+                                            <div class="events__item--left">
+                                              <span class="events__name">Visit Grandma</span>
+                                            </div>
+                                            <span class="events__tag events__tag--highlighted">Pas confirmé</span>
+                        
+                                          </li>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+    </main>
+    <sidebar>
+      <div class="logo">logo</div>
+      <div class="avatar">
+        <div class="avatar__img">
+          <img src="https://picsum.photos/70" alt="avatar">
+        </div>
+        <div class="avatar__name">John Smith</div>
+      </div>
+      <nav class="menu">
+        <a class="menu__item menu__item--active" href="#">
+            <i class="menu__icon fa fa-calendar"></i>
+            <span class="menu__text">Calendrier</span>
+          </a>
+        <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-calendar-plus-o"></i>
+            <span class="menu__text">Ajouter RDV</span>
+          </a>
+          <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-calendar-times-o"></i>
+            <span class="menu__text">RDV non confirmés</span>
+          </a>
+          <a class="menu__item" href="#">
+            <i class="menu__icon fa fa-calendar-check-o"></i>
+            <span class="menu__text">RDV EDITION</span>
+          </a>
+      </nav>
+      <div class="copyright">Logo REF-MED</div>
+    </sidebar>
+  </div>
+{% endblock %}
+
+</div>
+{% endblock %}
+
+
+
+
+
