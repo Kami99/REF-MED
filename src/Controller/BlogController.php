@@ -79,6 +79,11 @@ class BlogController extends AbstractController
         ]);
     }
 
+    public function like(Articles $article)
+    {
+        # code...
+    }
+
     
     /**
      * @Route("/contact", name="contactBlog")

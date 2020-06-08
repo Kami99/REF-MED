@@ -134,16 +134,39 @@ class __TwigTemplate_62bf1263cffcade98fed602904e5b76b51fb7208fb9e873b171e25722a5
             // line 46
             echo "                        
                         </div>
+                        <a href=\"#\" class=\"btn btn-link js-like\">
+                            <span class=\"js-likes\">";
+            // line 49
+            echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, $context["article"], "articleLikes", [], "any", false, false, false, 49)), "html", null, true);
+            echo "</span>
+                            ";
+            // line 50
+            if ((twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "user", [], "any", false, false, false, 50) && twig_get_attribute($this->env, $this->source, $context["article"], "isLikedArticle", [0 => twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 50, $this->source); })()), "user", [], "any", false, false, false, 50)], "method", false, false, false, 50))) {
+                // line 51
+                echo "                            <span class=\"js-label\">j'aime</span>
+                            
+                            <i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i>  
 
+                            ";
+            } else {
+                // line 56
+                echo "                            <i class=\"fa fa-thumbs-o-up\" aria-hidden=\"true\"></i>  
+                                
+                            ";
+            }
+            // line 59
+            echo "
+                        </a>
                     </div>
-    
-                </article> <!-- end article -->
+   
+            
+            </article> <!-- end article -->
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['article'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 53
+        // line 66
         echo "
                
             </div> <!-- end masonry -->
@@ -152,8 +175,8 @@ class __TwigTemplate_62bf1263cffcade98fed602904e5b76b51fb7208fb9e873b171e25722a5
         <div class=\"row\">
             <div class=\"col-full\">
                 ";
-        // line 60
-        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 60, $this->source); })()));
+        // line 73
+        echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 73, $this->source); })()));
         echo "
             </div>
         </div>
@@ -181,7 +204,7 @@ class __TwigTemplate_62bf1263cffcade98fed602904e5b76b51fb7208fb9e873b171e25722a5
 
     public function getDebugInfo()
     {
-        return array (  156 => 60,  147 => 53,  135 => 46,  126 => 43,  122 => 41,  118 => 40,  112 => 37,  102 => 32,  93 => 30,  83 => 22,  76 => 19,  68 => 15,  66 => 14,  62 => 13,  57 => 10,  53 => 9,  43 => 1,);
+        return array (  179 => 73,  170 => 66,  158 => 59,  153 => 56,  146 => 51,  144 => 50,  140 => 49,  135 => 46,  126 => 43,  122 => 41,  118 => 40,  112 => 37,  102 => 32,  93 => 30,  83 => 22,  76 => 19,  68 => 15,  66 => 14,  62 => 13,  57 => 10,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -233,10 +256,23 @@ class __TwigTemplate_62bf1263cffcade98fed602904e5b76b51fb7208fb9e873b171e25722a5
                             {% endfor %}
                         
                         </div>
+                        <a href=\"#\" class=\"btn btn-link js-like\">
+                            <span class=\"js-likes\">{{article.articleLikes | length}}</span>
+                            {% if app.user and article.isLikedArticle(app.user) %}
+                            <span class=\"js-label\">j'aime</span>
+                            
+                            <i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i>  
 
+                            {% else %}
+                            <i class=\"fa fa-thumbs-o-up\" aria-hidden=\"true\"></i>  
+                                
+                            {% endif %}
+
+                        </a>
                     </div>
-    
-                </article> <!-- end article -->
+   
+            
+            </article> <!-- end article -->
                 {% endfor %}
 
                

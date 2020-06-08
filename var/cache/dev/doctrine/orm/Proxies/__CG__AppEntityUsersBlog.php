@@ -66,10 +66,10 @@ class UsersBlog extends \App\Entity\UsersBlog implements \Doctrine\ORM\Proxy\Pro
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug', 'roles', 'password'];
+            return ['__isInitialized__', 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articleLikes', 'roles', 'password'];
         }
 
-        return ['__isInitialized__', 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug', 'roles', 'password'];
+        return ['__isInitialized__', 'id', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'fileName', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'imageFile', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'pseudo', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'active', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'avatar', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'createdAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'updatedAt', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articles', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'commentaires', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'slug', '' . "\0" . 'App\\Entity\\UsersBlog' . "\0" . 'articleLikes', 'roles', 'password'];
     }
 
     /**
@@ -427,6 +427,39 @@ class UsersBlog extends \App\Entity\UsersBlog implements \Doctrine\ORM\Proxy\Pro
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setSlug', [$slug]);
 
         return parent::setSlug($slug);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getArticleLikes(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getArticleLikes', []);
+
+        return parent::getArticleLikes();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addArticleLike(\App\Entity\ArticleLike $articleLike): \App\Entity\UsersBlog
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addArticleLike', [$articleLike]);
+
+        return parent::addArticleLike($articleLike);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeArticleLike(\App\Entity\ArticleLike $articleLike): \App\Entity\UsersBlog
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeArticleLike', [$articleLike]);
+
+        return parent::removeArticleLike($articleLike);
     }
 
     /**

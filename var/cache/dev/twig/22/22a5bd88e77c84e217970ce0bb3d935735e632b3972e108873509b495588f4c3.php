@@ -25,16 +25,14 @@ class __TwigTemplate_103e103a5a62fd74389280a425610e9175294991395665f85d327d36c7a
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'addStyleSheets' => [$this, 'block_addStyleSheets'],
-            'body' => [$this, 'block_body'],
-            'javascripts' => [$this, 'block_javascripts'],
+            'result_content' => [$this, 'block_result_content'],
         ];
     }
 
     protected function doGetParent(array $context)
     {
         // line 1
-        return "appMain.html.twig";
+        return "main_refmed/main_result.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = [])
@@ -46,7 +44,7 @@ class __TwigTemplate_103e103a5a62fd74389280a425610e9175294991395665f85d327d36c7a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "main_refmed/result_doctor_search.html.twig"));
 
-        $this->parent = $this->loadTemplate("appMain.html.twig", "main_refmed/result_doctor_search.html.twig", 1);
+        $this->parent = $this->loadTemplate("main_refmed/main_result.html.twig", "main_refmed/result_doctor_search.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -57,150 +55,97 @@ class __TwigTemplate_103e103a5a62fd74389280a425610e9175294991395665f85d327d36c7a
     }
 
     // line 2
-    public function block_addStyleSheets($context, array $blocks = [])
+    public function block_result_content($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "addStyleSheets"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "result_content"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "addStyleSheets"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "result_content"));
 
         // line 3
-        echo "\t<link href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/leaflet/leaflet.css"), "html", null, true);
-        echo "\" rel=\"stylesheet\">
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+        echo "     <!-- ***** Hero Area Start ***** -->
 
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 5
-    public function block_body($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
-
-        // line 6
-        $this->loadTemplate("includeApp/_navigation.html.twig", "main_refmed/result_doctor_search.html.twig", 6)->display($context);
-        // line 7
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [], "any", false, false, false, 7));
-        foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 8
-            echo "<div class=\"container\">
-    <div class=\"alert alert-";
-            // line 9
-            echo twig_escape_filter($this->env, $context["label"], "html", null, true);
-            echo "\">
-        ";
-            // line 10
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable($context["messages"]);
-            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 11
-                echo "        <p>";
-                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
-                echo "</p>                    
-        ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
-        echo " <!-- ***** Hero Area Start ***** -->
- <section class=\"single-hero-slide bg-img bg-overlay-white\" id=\"map\" data-latUser=\"";
-        // line 15
-        echo twig_escape_filter($this->env, (isset($context["latUser"]) || array_key_exists("latUser", $context) ? $context["latUser"] : (function () { throw new RuntimeError('Variable "latUser" does not exist.', 15, $this->source); })()), "html", null, true);
-        echo "\" data-lonUser=\"";
-        echo twig_escape_filter($this->env, (isset($context["lonUser"]) || array_key_exists("lonUser", $context) ? $context["lonUser"] : (function () { throw new RuntimeError('Variable "lonUser" does not exist.', 15, $this->source); })()), "html", null, true);
-        echo "\" style=\"height: 400px;\" data-userDistance=\"";
-        echo twig_escape_filter($this->env, (isset($context["userDistance"]) || array_key_exists("userDistance", $context) ? $context["userDistance"] : (function () { throw new RuntimeError('Variable "userDistance" does not exist.', 15, $this->source); })()), "html", null, true);
-        echo "\" >
-
-</section>
     <!-- ***** Hero Area End ***** -->
     ";
-        // line 19
-        if (((isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 19, $this->source); })()) != null)) {
-            // line 20
+        // line 6
+        if (((isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 6, $this->source); })()) != null)) {
+            // line 7
             echo "    <div class=\"medilife-services-area p-4\">
         <div class=\"container\">
             <div class=\"row\">
                 ";
-            // line 23
+            // line 10
+            $context["i"] = 0;
+            // line 11
+            echo "
+                ";
+            // line 12
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 23, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 12, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["doctor"]) {
-                // line 24
-                echo "                ";
-                $context["i"] = 0;
-                // line 25
+                // line 13
                 echo "                <div class=\"col-12 col-md-6 col-lg-4\">
                     <div class=\"card-container\">
                         <span class=\"pro\" data-lat=\"";
-                // line 27
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 27), "latitude", [], "any", false, false, false, 27), "html", null, true);
+                // line 15
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 15), "latitude", [], "any", false, false, false, 15), "html", null, true);
                 echo "\"  data-location=\"Dr  ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "FullName", [], "any", false, false, false, 27), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "FullName", [], "any", false, false, false, 15), "html", null, true);
                 echo " à <br>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $this->extensions['Twig\Extra\String\StringExtension']->createUnicodeString(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 27), "nameLocation", [], "any", false, false, false, 27)), "truncate", [0 => 25, 1 => "..."], "method", false, false, false, 27), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $this->extensions['Twig\Extra\String\StringExtension']->createUnicodeString(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 15), "nameLocation", [], "any", false, false, false, 15)), "truncate", [0 => 25, 1 => "..."], "method", false, false, false, 15), "html", null, true);
                 echo "\" data-lon=\"";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 27), "longitude", [], "any", false, false, false, 27), "html", null, true);
-                echo "\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["distance"]) || array_key_exists("distance", $context) ? $context["distance"] : (function () { throw new RuntimeError('Variable "distance" does not exist.', 27, $this->source); })()), (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 27, $this->source); })()), [], "array", false, false, false, 27), "html", null, true);
-                echo "</span>
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 15), "longitude", [], "any", false, false, false, 15), "html", null, true);
+                echo "\">
                         ";
-                // line 28
-                if (twig_get_attribute($this->env, $this->source, $context["doctor"], "pictureProfil", [], "any", false, false, false, 28)) {
-                    // line 29
+                // line 16
+                $context["distance_m"] = (twig_get_attribute($this->env, $this->source, (isset($context["distance"]) || array_key_exists("distance", $context) ? $context["distance"] : (function () { throw new RuntimeError('Variable "distance" does not exist.', 16, $this->source); })()), (isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 16, $this->source); })()), [], "array", false, false, false, 16) * 1000);
+                // line 17
+                echo "                            ";
+                echo twig_escape_filter($this->env, twig_number_format_filter($this->env,                 // line 18
+(isset($context["distance_m"]) || array_key_exists("distance_m", $context) ? $context["distance_m"] : (function () { throw new RuntimeError('Variable "distance_m" does not exist.', 18, $this->source); })()), 0, " ", " "), "html", null, true);
+                echo " m
+                        </span>
+                        ";
+                // line 20
+                if (twig_get_attribute($this->env, $this->source, $context["doctor"], "pictureProfil", [], "any", false, false, false, 20)) {
+                    // line 21
                     echo "                        <img class=\"round\" src=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Vich\UploaderBundle\Twig\Extension\UploaderExtension']->asset($context["doctor"], "imageFile"), "html", null, true);
                     echo "\"alt=\"user\" />
                         ";
                 } else {
-                    // line 31
+                    // line 23
                     echo "                        <img  class=\"round\" src=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/images/NotImageProfile.png"), "html", null, true);
                     echo "\" 
                         alt=\"Empty Image\">
                        ";
                 }
-                // line 34
+                // line 26
                 echo "                        <h5> ";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "FullName", [], "any", false, false, false, 34), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "FullName", [], "any", false, false, false, 26), "html", null, true);
                 echo ", <h6>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "profession", [], "any", false, false, false, 34), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "profession", [], "any", false, false, false, 26), "html", null, true);
                 echo "</h6></h5>
                         <h6>";
-                // line 35
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $this->extensions['Twig\Extra\String\StringExtension']->createUnicodeString(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 35), "nameLocation", [], "any", false, false, false, 35)), "truncate", [0 => 50, 1 => "..."], "method", false, false, false, 35), "html", null, true);
+                // line 27
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $this->extensions['Twig\Extra\String\StringExtension']->createUnicodeString(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["doctor"], "location", [], "any", false, false, false, 27), "nameLocation", [], "any", false, false, false, 27)), "truncate", [0 => 50, 1 => "..."], "method", false, false, false, 27), "html", null, true);
                 echo "</h6>
                         <p>  Tarif consultation Min : ";
-                // line 36
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "tarifMin", [], "any", false, false, false, 36), "html", null, true);
+                // line 28
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "tarifMin", [], "any", false, false, false, 28), "html", null, true);
                 echo "
                         <br/>  Tarif consultation Max : ";
-                // line 37
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "tarifMax", [], "any", false, false, false, 37), "html", null, true);
+                // line 29
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["doctor"], "tarifMax", [], "any", false, false, false, 29), "html", null, true);
                 echo "
                         </p>
                         <div class=\"buttons\">
                         <a href=\"";
-                // line 40
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("doctor.show", ["slug" => twig_get_attribute($this->env, $this->source, $context["doctor"], "slug", [], "any", false, false, false, 40)]), "html", null, true);
+                // line 32
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("doctor.show", ["slug" => twig_get_attribute($this->env, $this->source, $context["doctor"], "slug", [], "any", false, false, false, 32)]), "html", null, true);
                 echo "\">
                             <button class=\"primary ghost\">
                                 Voir plus
@@ -212,13 +157,13 @@ class __TwigTemplate_103e103a5a62fd74389280a425610e9175294991395665f85d327d36c7a
                             <h6>Expertise</h6>
                             <ul>
                                 ";
-                // line 50
+                // line 42
                 $context['_parent'] = $context;
-                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["doctor"], "expertise", [], "any", false, false, false, 50));
+                $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["doctor"], "expertise", [], "any", false, false, false, 42));
                 foreach ($context['_seq'] as $context["_key"] => $context["expertise"]) {
                     echo "                      
                                 <li>";
-                    // line 51
+                    // line 43
                     echo twig_escape_filter($this->env, $context["expertise"], "html", null, true);
                     echo "</li>
                             ";
@@ -226,24 +171,29 @@ class __TwigTemplate_103e103a5a62fd74389280a425610e9175294991395665f85d327d36c7a
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['expertise'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
-                // line 53
+                // line 45
                 echo "
                             </ul>
                         </div>
                     </div>
                     </div>
                 ";
+                // line 50
+                $context["i"] = ((isset($context["i"]) || array_key_exists("i", $context) ? $context["i"] : (function () { throw new RuntimeError('Variable "i" does not exist.', 50, $this->source); })()) + 1);
+                // line 51
+                echo "
+                ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['doctor'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 59
+            // line 53
             echo "
                 <div class=\"row\">
                     <div class=\"col-full\">
                         ";
-            // line 62
-            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 62, $this->source); })()));
+            // line 56
+            echo $this->extensions['Knp\Bundle\PaginatorBundle\Twig\Extension\PaginationExtension']->render($this->env, (isset($context["doctors"]) || array_key_exists("doctors", $context) ? $context["doctors"] : (function () { throw new RuntimeError('Variable "doctors" does not exist.', 56, $this->source); })()));
             echo "
                     </div>
                 </div>
@@ -252,7 +202,7 @@ class __TwigTemplate_103e103a5a62fd74389280a425610e9175294991395665f85d327d36c7a
     
                 ";
         } else {
-            // line 69
+            // line 63
             echo "                <h1 class=\"h2 mb-70\">Désolé, nous n'avons trouvé aucun professionnel pour votre recherche… </h1>
             
 
@@ -264,8 +214,8 @@ class __TwigTemplate_103e103a5a62fd74389280a425610e9175294991395665f85d327d36c7a
                     <h2 class=\"lead\">Essayez avec d'autres critères de recherche.</h2> 
 
                 ";
-            // line 79
-            $this->loadTemplate("includeApp/_form_search_doctor.html.twig", "main_refmed/result_doctor_search.html.twig", 79)->display($context);
+            // line 73
+            $this->loadTemplate("includeApp/_form_search_doctor.html.twig", "main_refmed/result_doctor_search.html.twig", 73)->display($context);
             echo "       
                 </div>      
             </div>      
@@ -292,101 +242,13 @@ class __TwigTemplate_103e103a5a62fd74389280a425610e9175294991395665f85d327d36c7a
                     
                 ";
         }
-        // line 104
+        // line 98
         echo "
                 </div>
 
             </div>
         </div>
     </div>
-    
-";
-        // line 111
-        $this->loadTemplate("includeApp/_footer.html.twig", "main_refmed/result_doctor_search.html.twig", 111)->display($context);
-        // line 112
-        echo "
-";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 115
-    public function block_javascripts($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
-
-        // line 116
-        $this->displayParentBlock("javascripts", $context, $blocks);
-        echo "
-<script src=\"";
-        // line 117
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/leaflet.js"), "html", null, true);
-        echo "\"></script>
-<script>
-
-    let elementsLatitude=document.querySelectorAll('[data-lat]')
-    let elementLongitude =document.querySelectorAll('[data-lon]')
-    let latUser =document.querySelector('[data-latUser]')
-    let lonUser =document.querySelector('[data-lonUser]')
-    let userDistance=document.querySelector('[data-userDistance]')
-
-    window.onload=()=>{
-    if (typeof elementsLatitude === undefined && typeof elementLongitude === undefined) {
-    
-        
-    } else{
-        viewLat=latUser.dataset.latuser
-        viewLon=lonUser.dataset.lonuser
-        userDistance=Number(userDistance.dataset.userdistance)
-        
-        myMap = L.map('map').setView([viewLat, viewLon], 14);
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-    attribution: 'Données &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>/ODbl -rendu  <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>',
-    minZoom: 10,
-    maxZoom: 20,
-
-}).addTo(myMap);    
-let doctorIcon = L.icon({
-    iconUrl: \"";
-        // line 143
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/doctor.png"), "html", null, true);
-        echo "\",
-    iconSize:     [35, 50], // size of the icon
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -90] // point from which the popup should open relative to the iconAnchor
-});
-let latitudes=Array.from(elementsLatitude).map(item => item.dataset.lat)
-let longitudes=Array.from(elementLongitude).map(item => item.dataset.lon)
-let locations=Array.from(elementLongitude).map(item => item.dataset.location)
-let userPosition=[viewLat, viewLon]
-myMap.panTo(userPosition)
-let circle = L.circle(userPosition, {
-                color: '#57b99b',
-                fillColor: '#57b99b',
-                fillOpacity: 0.3,
-                radius: userDistance*1000 ,
-            }).addTo(myMap);
-    let marker = L.marker([viewLat, viewLon]).addTo(myMap)
-    marker.bindPopup(\"Votre position\")
-for (let i = 0; i < latitudes.length; i++) {
-    let marker = L.marker([latitudes[i], longitudes[i]], {icon: doctorIcon}).addTo(myMap)
-    marker.bindPopup(locations[i])
-
-}
-
-
-}
-}
-</script>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -408,38 +270,30 @@ for (let i = 0; i < latitudes.length; i++) {
 
     public function getDebugInfo()
     {
-        return array (  361 => 143,  332 => 117,  328 => 116,  318 => 115,  307 => 112,  305 => 111,  296 => 104,  268 => 79,  256 => 69,  246 => 62,  241 => 59,  230 => 53,  222 => 51,  216 => 50,  203 => 40,  197 => 37,  193 => 36,  189 => 35,  182 => 34,  175 => 31,  169 => 29,  167 => 28,  155 => 27,  151 => 25,  148 => 24,  144 => 23,  139 => 20,  137 => 19,  126 => 15,  123 => 14,  110 => 11,  106 => 10,  102 => 9,  99 => 8,  95 => 7,  93 => 6,  83 => 5,  70 => 3,  60 => 2,  37 => 1,);
+        return array (  246 => 98,  218 => 73,  206 => 63,  196 => 56,  191 => 53,  184 => 51,  182 => 50,  175 => 45,  167 => 43,  161 => 42,  148 => 32,  142 => 29,  138 => 28,  134 => 27,  127 => 26,  120 => 23,  114 => 21,  112 => 20,  107 => 18,  105 => 17,  103 => 16,  93 => 15,  89 => 13,  85 => 12,  82 => 11,  80 => 10,  75 => 7,  73 => 6,  68 => 3,  58 => 2,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends 'appMain.html.twig' %}
-{%block addStyleSheets%}
-\t<link href=\"{{asset('bower_components/js/leaflet/leaflet.css')}}\" rel=\"stylesheet\">
-{%endblock %}
-{% block body %}
-{% include \"includeApp/_navigation.html.twig\" %}
-{% for label,messages in app.flashes %}
-<div class=\"container\">
-    <div class=\"alert alert-{{label}}\">
-        {% for message in messages %}
-        <p>{{message}}</p>                    
-        {% endfor %}
-{% endfor %}
- <!-- ***** Hero Area Start ***** -->
- <section class=\"single-hero-slide bg-img bg-overlay-white\" id=\"map\" data-latUser=\"{{latUser}}\" data-lonUser=\"{{lonUser}}\" style=\"height: 400px;\" data-userDistance=\"{{userDistance}}\" >
+        return new Source("{% extends 'main_refmed/main_result.html.twig' %}
+{% block result_content %}
+     <!-- ***** Hero Area Start ***** -->
 
-</section>
     <!-- ***** Hero Area End ***** -->
     {% if doctors != null %}
     <div class=\"medilife-services-area p-4\">
         <div class=\"container\">
             <div class=\"row\">
-                {% for doctor in doctors %}
                 {% set i = 0 %}
+
+                {% for doctor in doctors %}
                 <div class=\"col-12 col-md-6 col-lg-4\">
                     <div class=\"card-container\">
-                        <span class=\"pro\" data-lat=\"{{doctor.location.latitude}}\"  data-location=\"Dr  {{doctor.FullName}} à <br>{{doctor.location.nameLocation |u.truncate(25, '...')}}\" data-lon=\"{{doctor.location.longitude}}\">{{distance[i]}}</span>
+                        <span class=\"pro\" data-lat=\"{{doctor.location.latitude}}\"  data-location=\"Dr  {{doctor.FullName}} à <br>{{doctor.location.nameLocation |u.truncate(25, '...')}}\" data-lon=\"{{doctor.location.longitude}}\">
+                        {% set distance_m = distance[i] *1000 %}
+                            {{
+                              distance_m|number_format(0,' ',' ')}} m
+                        </span>
                         {% if doctor.pictureProfil %}
                         <img class=\"round\" src=\"{{vich_uploader_asset(doctor, 'imageFile')}}\"alt=\"user\" />
                         {% else %}
@@ -470,6 +324,8 @@ for (let i = 0; i < latitudes.length; i++) {
                         </div>
                     </div>
                     </div>
+                {% set i = i+1 %}
+
                 {% endfor %}
 
                 <div class=\"row\">
@@ -522,67 +378,6 @@ for (let i = 0; i < latitudes.length; i++) {
             </div>
         </div>
     </div>
-    
-{% include \"includeApp/_footer.html.twig\" %}
-
-{% endblock body %}
-
-{% block javascripts %}
-{{ parent() }}
-<script src=\"{{asset('bower_components/js/leaflet.js')}}\"></script>
-<script>
-
-    let elementsLatitude=document.querySelectorAll('[data-lat]')
-    let elementLongitude =document.querySelectorAll('[data-lon]')
-    let latUser =document.querySelector('[data-latUser]')
-    let lonUser =document.querySelector('[data-lonUser]')
-    let userDistance=document.querySelector('[data-userDistance]')
-
-    window.onload=()=>{
-    if (typeof elementsLatitude === undefined && typeof elementLongitude === undefined) {
-    
-        
-    } else{
-        viewLat=latUser.dataset.latuser
-        viewLon=lonUser.dataset.lonuser
-        userDistance=Number(userDistance.dataset.userdistance)
-        
-        myMap = L.map('map').setView([viewLat, viewLon], 14);
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-    attribution: 'Données &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>/ODbl -rendu  <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>',
-    minZoom: 10,
-    maxZoom: 20,
-
-}).addTo(myMap);    
-let doctorIcon = L.icon({
-    iconUrl: \"{{asset('bower_components/mainRefMed/doctor.png')}}\",
-    iconSize:     [35, 50], // size of the icon
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -90] // point from which the popup should open relative to the iconAnchor
-});
-let latitudes=Array.from(elementsLatitude).map(item => item.dataset.lat)
-let longitudes=Array.from(elementLongitude).map(item => item.dataset.lon)
-let locations=Array.from(elementLongitude).map(item => item.dataset.location)
-let userPosition=[viewLat, viewLon]
-myMap.panTo(userPosition)
-let circle = L.circle(userPosition, {
-                color: '#57b99b',
-                fillColor: '#57b99b',
-                fillOpacity: 0.3,
-                radius: userDistance*1000 ,
-            }).addTo(myMap);
-    let marker = L.marker([viewLat, viewLon]).addTo(myMap)
-    marker.bindPopup(\"Votre position\")
-for (let i = 0; i < latitudes.length; i++) {
-    let marker = L.marker([latitudes[i], longitudes[i]], {icon: doctorIcon}).addTo(myMap)
-    marker.bindPopup(locations[i])
-
-}
-
-
-}
-}
-</script>
-{% endblock %}", "main_refmed/result_doctor_search.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\main_refmed\\result_doctor_search.html.twig");
+{% endblock result_content %}", "main_refmed/result_doctor_search.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\main_refmed\\result_doctor_search.html.twig");
     }
 }

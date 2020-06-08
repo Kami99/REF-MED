@@ -1,0 +1,31 @@
+{{ form_start(form) }}
+            <div class="row">
+                <div class="col-md-12 col-lg-12  m-auto">
+                   <p>Disponible</p>
+                    <div class="form-group">
+                {{form_widget(form.isAvailable, { 'attr': {'class': 'form-edit'}})}}
+                    </div>
+                </div>
+        </div> 
+        <div class="row">
+            <div class="col-md-6 col-lg-12 m-auto">
+                <p>Prix</p>
+
+                <div class="form-group">
+            {{form_widget(form.price, { 'attr': {'class': 'form-edit'}})}}
+                </div>
+            </div>
+        </div> 
+        <div class="row">
+
+            <div class="col-md-6 col-lg-12 m-auto">
+            <p>Medicament</p>
+                <div class="form-group">
+            {{form_widget(form.drugs)}}
+                </div>
+            </div>
+        </div> 
+        <div class="form-btn">
+            <button class="submit-btn">Valider</button>
+        </div>
+{{ form_end(form) }}

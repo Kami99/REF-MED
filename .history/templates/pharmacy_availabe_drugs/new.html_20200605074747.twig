@@ -1,0 +1,17 @@
+{% extends 'pharmacy_availabe_drugs/_main.html.twig' %}
+
+
+{% block title %}Répertorié un nouveau médiacament{% endblock %}
+{% block pharmacy_content %}
+<div class="container-fluid">
+    <div class="row">
+    </div>
+    <h1>Répertorié un nouveau médicament</h1>
+    
+    {{ include('pharmacy_availabe_drugs/_form.html.twig') }}
+    
+    <a href="{{ path('pharmacy_availabe_drugs_index') }}">Revenir à la liste</a>
+    </div>
+
+{% endblock pharmacy_content %}
+

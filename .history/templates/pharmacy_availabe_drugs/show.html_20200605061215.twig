@@ -1,0 +1,28 @@
+{% extends 'pharmacy_availabe_drugs/_main.html.twig' %}
+
+{% block title %}Medicament {{drug.nameDrugs}}{% endblock %}
+
+{% block pharmacy_content %}
+<div class="container-fluid ">
+    <div class="jumbotron jumbotron-fluid">
+        <h1 class="display-4">{{drug.nameDrugs}}</h1>
+        <p class="lead">{% for category in drug.categoryDrugs %}
+            {{category}}
+        {% endfor %}</p>
+        <hr class="my-4">
+        <p><h3>Consigne :</h3>
+        {{drug.consigne}}
+        <h3>Description :</h3>
+        {{drug.description}}
+        </p>
+        
+    </div>  
+</div>
+
+
+
+
+
+
+{% endblock pharmacy_content %}
+

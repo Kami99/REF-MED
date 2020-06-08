@@ -1,0 +1,44 @@
+{% extends 'main_refmed/main_result.html.twig' %}
+{% block result_content %}
+<div class="container">
+    <pre>
+        {{ dump(drugs.pharmacyAvailabeDrugs[0]) }}
+    </pre>
+    {% for pharmacy in pharmacies %}
+    <div class="card">
+        <input type="checkbox" id="card1" class="more" aria-hidden="true">
+        <div class="content">
+            <div class="front" style="background-image: url('https://images.unsplash.com/photo-1529408686214-b48b8532f72c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=986e2dee5c1b488d877ad7ba1afaf2ec&auto=format&fit=crop&w=1350&q=80')">
+                <div class="inner">
+                    <h2>{{pharmacy.pharmacyName}}</h2>
+                    <label for="card1" class="button" aria-hidden="true">
+                        Obtenez plus de détails
+                    </label>
+                </div>
+            </div>
+            <div class="back">
+                <div class="inner">
+                    <div class="description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, accusamus.</p>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates earum nostrum ipsam
+                            ullam, reiciendis nam consectetur? Doloribus voluptate architecto possimus perferendis
+                            tenetur nemo amet temporibus, enim soluta nam, debitis.</p>
+                    </div>
+                    <div class="location">{{pharmacy.location.nameLocation}}</div>
+                    <div class="price">Prix du medicament</div>
+                        <label for="card1" class="button return" aria-hidden="true">
+                            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                         </label>
+                         <button type="button" class="btn btn-success mt-3 mb-3">Disponible</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+
+</div>
+
+  
+{% endblock result_content %}

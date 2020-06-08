@@ -1,0 +1,66 @@
+<!-- s-content
+    ================================================== -->
+    <section class="s-content">
+        
+        <div class="row masonry-wrap">
+            <div class="masonry">
+
+                <div class="grid-sizer"></div>
+                {% for article in articles %}
+                <article class="masonry__brick entry format-standard" data-aos="fade-up">
+                        
+                    <div class="entry__thumb">
+                        <a href="{{path('article.show', {id: article.id, slug: article.slug})}}" class="entry__thumb-link">
+                            {% if article.featuredImage %}
+                            <img src="{{vich_uploader_asset(article, 'imageFile') |imagine_filter('thumbArticle')}}" 
+                            alt="Image Article">
+                                
+                            {% else %}
+                            <img src="{{asset('bower_components/images/imageNotAvailable.png') |imagine_filter('thumbArticle')}}" 
+                             alt="Article not Image available">
+                            {% endif %}
+
+                        </a>
+                    </div>
+    
+                    <div class="entry__text">
+                        <div class="entry__header">
+                            
+                            <div class="entry__date">
+                                <a href="{{path('article.show', {id: article.id, slug: article.slug})}}">Publié le {{article.updatedAt|date("d-m-Y à H:i:s")}} par <strong>{{article.usersBlog}}</strong></a>
+                            </div>
+                            <h1 class="entry__title"><a href="{{path('article.show', {id: article.id, slug: article.slug})}}">{{article.title}}</a></h1>
+                            
+                        </div>
+                        <div class="entry__excerpt">
+                            <p>
+                                {{article.contenu|u.truncate(200, '...')}}</p>
+                        </div>
+                        <div class="entry__meta">
+                        {% for categorie in article.categories %}
+
+                                <span class="entry__meta-links">
+                               {{categorie.name}}
+                            </span>
+                            {% endfor %}
+                        
+                        </div>
+
+                    </div>
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>     
+            
+            </article> <!-- end article -->
+                {% endfor %}
+
+               
+            </div> <!-- end masonry -->
+        </div> <!-- end masonry-wrap -->
+
+        <div class="row">
+            <div class="col-full">
+                {{ knp_pagination_render(articles)}}
+            </div>
+        </div>
+
+    </section> <!-- s-content -->
+

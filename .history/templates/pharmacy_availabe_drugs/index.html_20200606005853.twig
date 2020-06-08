@@ -1,0 +1,53 @@
+{% extends 'pharmacy_availabe_drugs/_main.html.twig' %}
+
+{% block title %}Liste des médicaments{% endblock %}
+
+{% block pharmacy_content %}
+<div class="container-fluid p-5">
+    <h1>Liste des médicaments</h1>
+    <blockquote style="font-style:italic; font-size:12px;">Certains médicaments peuvent ne pas être répertoriés dans votre pharmacie, et apparraissent non répertoriés veuillez les répertoriés et les rendre disponibles s'il le sont.Si le boutton répertoriés s'affiche cela signifie qu'il n'est pas répertoriés dans votre pharmacie</blockquote>
+    <table class="table table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Nom du médicament</th>
+                <th>Disponible</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for drug in drugs %}
+            <tr>
+                <td>{{ drug.nameDrugs}}</td>
+                <td>
+                    {% for available in availables %}
+                    {%  if  available.drugs == drug and available.pharmacy == pharmacy %}
+                    1
+
+                    {% endif %}
+                    {% endfor %}
+
+                </td>
+                <td>
+                    <a href="{{ path('pharmacy_availabe_drugs_show', {'id': drug.id}) }}">
+                        <button type="button" class="btn btn-primary">Montrer</button> 
+                    </a>
+
+                    {% if drug.pharmacyAvailabeDrugs.isAvalaible is defined %}
+                    <a href="{{ path('pharmacy_availabe_drugs_edit', {'id': drug.id}) }}"> <button type="button" class="btn btn-success">Editer</button> </a>
+                    {% else %}
+                    <a href="{{ path('pharmacy_availabe_drugs_new') }}"><button type="button" class="btn btn-warning">Repertorié</button></a>
+                    {% endif %}
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas de médicaments</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+
+{% endblock %}

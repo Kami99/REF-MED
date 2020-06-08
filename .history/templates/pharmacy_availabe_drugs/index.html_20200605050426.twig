@@ -1,0 +1,59 @@
+{% extends 'pharmacy_availabe_drugs/_main.html.twig' %}
+
+{% block title %}Liste des médicaments{% endblock %}
+
+{% block pharmacy_content %}
+<div class="container-fluid">
+    <h1>Liste des médicaments</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom du médicament</th>
+                <th>Disponible</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for drug in drugs %}
+            <tr>
+                <td>{{ drug.nameDrugs}}</td>
+                <td>
+                    {% if drug.pharmacyAvailabeDrugs.isAvalaibleDrugs is defined %}                    
+                    {% if drug.pharmacyAvailabeDrugs.pharmacy is same as (pharmacy) %}
+                    {% if drug.pharmacyAvailabeDrugs.pharmacy == false %}
+                    <span class="badge badge-danger">Indisponible</span>
+                    {% else %}
+                    <span class="badge badge-success">Disponible</span>                   
+                    {% endif %}
+                    {{drug.pharmacyAvailabeDrugs.isAvailable}}
+                    <span class="badge badge-success"></span>
+                    {% endif %}
+                    {% else %}
+                    <span class="badge badge-danger">Pas répertorié</span>                   
+                    {% endif %}
+                </td>
+                <td>
+                    <a href="{{ path('pharmacy_availabe_drugs_show', {'id': drug.id}) }}">
+                        <button type="button" class="btn btn-primary">Montrer</button> 
+                    </a>
+                    {% if drug.pharmacyAvailabeDrugs.isAvalaibleDrugs is defined %}
+                    <a href="{{ path('pharmacy_availabe_drugs_edit', {'id': drug.id}) }}"> <button type="button" class="btn btn-success">Editer</button> </a>
+                    {% else %}
+                    <a href="{{ path('pharmacy_availabe_drugs_new') }}"><button type="button" class="btn btn-warning">Repertorié</button></a>
+                    {% endif %}
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas de médicaments</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+
+{% endblock %}

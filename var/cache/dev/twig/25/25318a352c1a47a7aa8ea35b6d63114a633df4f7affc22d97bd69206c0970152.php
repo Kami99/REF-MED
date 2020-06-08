@@ -439,7 +439,7 @@ $context["expertise"], "html", null, true);
         // line 235
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 235, $this->source); })()), "expertise", [], "any", false, false, false, 235), 'widget', ["attr" => ["class" => "form-selected"]]);
         echo "
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container0 mt-2\"></div>
 
                                     </div>
                                 </div>
@@ -450,7 +450,7 @@ $context["expertise"], "html", null, true);
         // line 243
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 243, $this->source); })()), "language", [], "any", false, false, false, 243), 'widget', ["attr" => ["class" => "form-selected"]]);
         echo "
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container1 mt-2\"></div>
                                     </div>
 
                                     <div class=\"col-lg-6 col-md-12 form-group\">
@@ -459,7 +459,7 @@ $context["expertise"], "html", null, true);
         // line 249
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 249, $this->source); })()), "praticalInfos", [], "any", false, false, false, 249), 'widget', ["attr" => ["class" => "form-selected"]]);
         echo "
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container2 mt-2\"></div>
 
                                     </div>
                                 </div>
@@ -472,7 +472,7 @@ $context["expertise"], "html", null, true);
         // line 259
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 259, $this->source); })()), "meansPayment", [], "any", false, false, false, 259), 'widget', ["attr" => ["class" => "form-selected"]]);
         echo "
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container3 mt-2\"></div>
 
                                     </div>
 
@@ -482,7 +482,7 @@ $context["expertise"], "html", null, true);
         // line 266
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 266, $this->source); })()), "refund", [], "any", false, false, false, 266), 'widget', ["attr" => ["class" => "form-selected"]]);
         echo "
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container4 mt-2\"></div>
 
                                     </div>
                                 </div>
@@ -698,10 +698,31 @@ $context["socialLinks"], "socialNetworks", [], "any", false, false, false, 88), 
         // line 333
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/map.js"), "html", null, true);
         echo "\"></script>
-\t<script src=\"";
-        // line 334
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/select.js"), "html", null, true);
-        echo "\"></script>
+\t<script>
+        let attribute = document.querySelector(\".js-form-selected\");
+let attributeForm = document.querySelectorAll(\".form-selected\");
+
+for (let i = 0; i < attributeForm.length; i++) {
+    tail.select(\"#\"+attributeForm[i].getAttribute('id'), {
+    search: true,
+    hideSelected: true,
+    hideDisabled: true,
+    multiShowCount: false,
+    multiContainer: \".move-container\"+i,
+  });
+    
+}
+
+    
+
+if (attribute != null) {
+  tail.select(\".js-form-selected\", {
+    search: true,
+    deselect: true,
+  });
+}
+
+    </script>
 
 ";
         
@@ -724,7 +745,7 @@ $context["socialLinks"], "socialNetworks", [], "any", false, false, false, 88), 
 
     public function getDebugInfo()
     {
-        return array (  703 => 334,  699 => 333,  695 => 332,  691 => 331,  687 => 330,  683 => 329,  678 => 328,  668 => 327,  653 => 93,  645 => 90,  643 => 88,  641 => 87,  633 => 84,  631 => 82,  629 => 81,  621 => 78,  619 => 76,  617 => 75,  609 => 72,  606 => 69,  603 => 68,  600 => 67,  590 => 66,  570 => 317,  563 => 313,  559 => 312,  553 => 309,  546 => 305,  542 => 304,  534 => 299,  523 => 291,  519 => 290,  510 => 284,  503 => 280,  494 => 274,  483 => 266,  473 => 259,  460 => 249,  451 => 243,  440 => 235,  432 => 230,  422 => 223,  415 => 219,  406 => 213,  399 => 209,  390 => 203,  383 => 199,  376 => 195,  366 => 188,  309 => 133,  300 => 130,  295 => 127,  290 => 126,  281 => 124,  275 => 120,  272 => 119,  270 => 118,  260 => 110,  257 => 109,  250 => 108,  242 => 106,  238 => 105,  234 => 103,  231 => 102,  228 => 101,  219 => 100,  214 => 99,  210 => 98,  208 => 97,  205 => 96,  201 => 94,  198 => 93,  196 => 66,  193 => 65,  190 => 64,  183 => 62,  181 => 61,  179 => 60,  175 => 59,  156 => 43,  119 => 8,  107 => 7,  95 => 5,  90 => 4,  80 => 3,  39 => 1,);
+        return array (  699 => 333,  695 => 332,  691 => 331,  687 => 330,  683 => 329,  678 => 328,  668 => 327,  653 => 93,  645 => 90,  643 => 88,  641 => 87,  633 => 84,  631 => 82,  629 => 81,  621 => 78,  619 => 76,  617 => 75,  609 => 72,  606 => 69,  603 => 68,  600 => 67,  590 => 66,  570 => 317,  563 => 313,  559 => 312,  553 => 309,  546 => 305,  542 => 304,  534 => 299,  523 => 291,  519 => 290,  510 => 284,  503 => 280,  494 => 274,  483 => 266,  473 => 259,  460 => 249,  451 => 243,  440 => 235,  432 => 230,  422 => 223,  415 => 219,  406 => 213,  399 => 209,  390 => 203,  383 => 199,  376 => 195,  366 => 188,  309 => 133,  300 => 130,  295 => 127,  290 => 126,  281 => 124,  275 => 120,  272 => 119,  270 => 118,  260 => 110,  257 => 109,  250 => 108,  242 => 106,  238 => 105,  234 => 103,  231 => 102,  228 => 101,  219 => 100,  214 => 99,  210 => 98,  208 => 97,  205 => 96,  201 => 94,  198 => 93,  196 => 66,  193 => 65,  190 => 64,  183 => 62,  181 => 61,  179 => 60,  175 => 59,  156 => 43,  119 => 8,  107 => 7,  95 => 5,  90 => 4,  80 => 3,  39 => 1,);
     }
 
     public function getSourceContext()
@@ -964,7 +985,7 @@ $context["socialLinks"], "socialNetworks", [], "any", false, false, false, 88), 
                                     <span class=\"form-label \">Votre expertise </span>
 
                                         {{ form_widget(form.expertise,{ 'attr': {'class': 'form-selected'}}) }}
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container0 mt-2\"></div>
 
                                     </div>
                                 </div>
@@ -972,13 +993,13 @@ $context["socialLinks"], "socialNetworks", [], "any", false, false, false, 88), 
                                     <div class=\"col-lg-6 col-md-12 form-group\">
                                     <span class=\"form-label \">Les langues parlées</span>
                                         {{ form_widget(form.language,{ 'attr': {'class': 'form-selected'}}) }}
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container1 mt-2\"></div>
                                     </div>
 
                                     <div class=\"col-lg-6 col-md-12 form-group\">
                                     <span class=\"form-label\">Les Infos pratiques</span>
                                         {{ form_widget(form.praticalInfos,{ 'attr': {'class': 'form-selected'}}) }}
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container2 mt-2\"></div>
 
                                     </div>
                                 </div>
@@ -988,14 +1009,14 @@ $context["socialLinks"], "socialNetworks", [], "any", false, false, false, 88), 
                                         <span class=\"form-label\">Les moyens de paiment acceptés</span>
 
                                         {{ form_widget(form.meansPayment,{ 'attr': {'class': 'form-selected'}}) }}
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container3 mt-2\"></div>
 
                                     </div>
 
                                     <div class=\"col-lg-6 col-md--12 form-group  \">
                                         <span class=\"form-label\">Les Remboursements acceptés</span>
                                         {{ form_widget(form.refund,{ 'attr': {'class': 'form-selected'}}) }}
-\t\t\t\t\t\t\t\t\t<div class=\"move-container mt-2\"></div>
+\t\t\t\t\t\t\t\t\t<div class=\"move-container4 mt-2\"></div>
 
                                     </div>
                                 </div>
@@ -1062,7 +1083,31 @@ $context["socialLinks"], "socialNetworks", [], "any", false, false, false, 88), 
 \t<script src=\"{{asset('bower_components/js/bootstrap.min.js')}}\"></script>
 \t<script src=\"{{asset('bower_components/tail/js/select-full.min.js')}}\"></script>
 \t<script src=\"{{asset('bower_components/js/map.js')}}\"></script>
-\t<script src=\"{{asset('bower_components/js/select.js')}}\"></script>
+\t<script>
+        let attribute = document.querySelector(\".js-form-selected\");
+let attributeForm = document.querySelectorAll(\".form-selected\");
+
+for (let i = 0; i < attributeForm.length; i++) {
+    tail.select(\"#\"+attributeForm[i].getAttribute('id'), {
+    search: true,
+    hideSelected: true,
+    hideDisabled: true,
+    multiShowCount: false,
+    multiContainer: \".move-container\"+i,
+  });
+    
+}
+
+    
+
+if (attribute != null) {
+  tail.select(\".js-form-selected\", {
+    search: true,
+    deselect: true,
+  });
+}
+
+    </script>
 
 {% endblock %}
 

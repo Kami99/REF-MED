@@ -76,11 +76,17 @@ class UsersBlog extends Users
      * @ORM\Column(type="string", length=255)
      */
     private $slug;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ArticleLike::class, mappedBy="user", orphanRemoval=true)
+     */
+    private $articleLikes;
     public function __construct()
     {
         $this->articles = new ArrayCollection();
         $this->createdAt= new \DateTime();
         $this->commentaires = new ArrayCollection();
+        $this->articleLikes = new ArrayCollection();
     }
     public function getIdUsers(){
         return $this->getId();
@@ -265,6 +271,37 @@ class UsersBlog extends Users
     public function setSlug(string $slug): self
     {
         $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ArticleLike[]
+     */
+    public function getArticleLikes(): Collection
+    {
+        return $this->articleLikes;
+    }
+
+    public function addArticleLike(ArticleLike $articleLike): self
+    {
+        if (!$this->articleLikes->contains($articleLike)) {
+            $this->articleLikes[] = $articleLike;
+            $articleLike->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeArticleLike(ArticleLike $articleLike): self
+    {
+        if ($this->articleLikes->contains($articleLike)) {
+            $this->articleLikes->removeElement($articleLike);
+            // set the owning side to null (unless already changed)
+            if ($articleLike->getUser() === $this) {
+                $articleLike->setUser(null);
+            }
+        }
 
         return $this;
     }

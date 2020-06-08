@@ -1,0 +1,97 @@
+{% extends 'main_refmed/main_result.html.twig' %}
+{% block result_content %}
+     <!-- ***** Hero Area Start ***** -->
+
+    <!-- ***** Hero Area End ***** -->
+    {% if doctors != null %}
+    <div class="medilife-services-area p-4">
+        <div class="container">
+            <div class="row">
+                {% for doctor in doctors %}
+                {% set i = 0 %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card-container">
+                        <span class="pro" data-lat="{{doctor.location.latitude}}"  data-location="Dr  {{doctor.FullName}} à <br>{{doctor.location.nameLocation |u.truncate(25, '...')}}" data-lon="{{doctor.location.longitude}}"></span>
+                        {% if doctor.pictureProfil %}
+                        <img class="round" src="{{vich_uploader_asset(doctor, 'imageFile')}}"alt="user" />
+                        {% else %}
+                        <img  class="round" src="{{asset('bower_components/images/NotImageProfile.png')}}" 
+                        alt="Empty Image">
+                       {% endif %}
+                        <h5> {{doctor.FullName}}, <h6>{{doctor.profession }}</h6></h5>
+                        <h6>{{doctor.location.nameLocation |u.truncate(50, '...')}}</h6>
+                        <p>  Tarif consultation Min : {{doctor.tarifMin}}
+                        <br/>  Tarif consultation Max : {{doctor.tarifMax}}
+                        </p>
+                        <div class="buttons">
+                        <a href="{{path('doctor.show', {slug: doctor.slug})}}">
+                            <button class="primary ghost">
+                                Voir plus
+                            </button>
+                        </a>    
+                        </div>
+                        <div class="skills">
+                                
+                            <h6>Expertise</h6>
+                            <ul>
+                                {% for expertise in doctor.expertise %}                      
+                                <li>{{expertise}}</li>
+                            {% endfor %}
+
+                            </ul>
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+
+                <div class="row">
+                    <div class="col-full">
+                        {{ knp_pagination_render(doctors)}}
+                    </div>
+                </div>
+    </div>
+        </div>
+    
+                {% else %}
+                <h1 class="h2 mb-70">Désolé, nous n'avons trouvé aucun professionnel pour votre recherche… </h1>
+            
+
+
+
+    <div class="medilife-book-an-appoinment-area">
+
+                <div class="appointment-form-content p-4">
+                    <h2 class="lead">Essayez avec d'autres critères de recherche.</h2> 
+
+                {% include "includeApp/_form_search_doctor.html.twig" %}       
+                </div>      
+            </div>      
+                <div class="container mt-50 mb-30">
+                    <div class="row row-card p-4">
+                        <div class="col-8 col-md-12">
+                            <h3>Vous êtes praticien et vous n'apparaissez pas dans cette recherche ?
+                            </h3>
+                            <h5>Contactez-nous pour obtenir un référencement de votre cabinet.
+                            </h5>
+                        </div>
+                        <div class="col-lg-4 col-md-12 mt-25">
+        <button type="button" class="btn btn-primary btn-lg">AJOUTER VOTRE CABINET</button> 
+    
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+
+
+                    
+                {% endif %}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock result_content %}

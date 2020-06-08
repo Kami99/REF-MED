@@ -1,0 +1,27 @@
+{% extends 'pharmacy_availabe_drugs/_main.html.twig' %}
+
+{% block title %}Medicament {{drug.nameDrugs}}{% endblock %}
+
+{% block pharmacy_content %}
+<div class="container-fluid p5">
+    <div class="card">
+        <div class="card-header">
+            Header
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Title</h5>
+            <p class="card-text">Content</p>
+        </div>
+        <div class="card-footer">
+            Footer
+        </div>
+    </div>
+<a href="{{ path('pharmacy_availabe_drugs_index') }}">back to list</a>
+<a href="{{ path('pharmacy_availabe_drugs_edit', {'id': pharmacy_availabe_drug.id}) }}">edit</a>
+    
+</div>
+
+
+
+{% endblock name %}
+

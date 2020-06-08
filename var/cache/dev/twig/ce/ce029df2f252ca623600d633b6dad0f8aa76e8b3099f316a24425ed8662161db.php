@@ -114,41 +114,146 @@ class __TwigTemplate_a427a2eae1b1ae5ac8e13f561d4bd63406fb6dfa7a8defcfc259500e49e
         // line 38
         if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38)) {
             // line 39
-            echo "                                    <li class=\"nav-item dropdown\">
+            echo "
+                                    <li class=\"nav-item dropdown\">
                                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
                                             role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
                                             aria-expanded=\"false\">Gestion de votre compte</a>
+                                    ";
+            // line 44
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44), "roles", [], "any", false, false, false, 44), 0, [], "array", false, false, false, 44) == "ROLE_USER_BLOG")) {
+                // line 45
+                echo "                                        
                                         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                                             <a class=\"dropdown-item\" href=\"#\">Accédez à votre espace</a>
                                             <a class=\"dropdown-item\" href=\"#\">Gérer votre compte</a>
                                             <a class=\"dropdown-item\" href=\"";
-            // line 46
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\">Déconnecter vous</a>
+                // line 49
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
+                echo "\">Blog</a>
+                                            <a class=\"dropdown-item\" href=\"";
+                // line 50
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+                echo "\">Déconnecter vous</a>
                                         </div>
                                     </li>
-                                  ";
+                                    ";
+            }
+            // line 54
+            echo "                                    ";
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 54, $this->source); })()), "user", [], "any", false, false, false, 54), "roles", [], "any", false, false, false, 54), 0, [], "array", false, false, false, 54) == "ROLE_USER_DOCTOR")) {
+                // line 55
+                echo "                                        
+                                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                        <a class=\"dropdown-item\" href=\"";
+                // line 57
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("appointment_calendar");
+                echo "\">Accédez à votre espace</a>
+                                        <a class=\"dropdown-item\" href=\"";
+                // line 58
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_account");
+                echo "\">Gérer votre compte</a>
+                                        <a class=\"dropdown-item\" href=\"";
+                // line 59
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+                echo "\">Déconnecter vous</a>
+                                    </div>
+                                </li>
+                                ";
+            }
+            // line 63
+            echo "                                ";
+            if (((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "roles", [], "any", false, false, false, 63), 0, [], "array", false, false, false, 63) == "ROLE_SUPER_ADMIN") || (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 63, $this->source); })()), "user", [], "any", false, false, false, 63), "roles", [], "any", false, false, false, 63), 0, [], "array", false, false, false, 63) == "ROLE_ADMIN"))) {
+                // line 64
+                echo "                                        
+                                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                    <a class=\"dropdown-item\" href=\"/admin\">Accédez à votre espace</a>
+                                    <a class=\"dropdown-item\" href=\"";
+                // line 67
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+                echo "\">Déconnecter vous</a>
+                                </div>
+                            </li>
+                            ";
+            }
+            // line 71
+            echo "                            ";
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 71, $this->source); })()), "user", [], "any", false, false, false, 71), "roles", [], "any", false, false, false, 71), 0, [], "array", false, false, false, 71) == "ROLE_USER_PHARMACY")) {
+                // line 72
+                echo "                                        
+                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                <a class=\"dropdown-item\" href=\"";
+                // line 74
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("pharmacy_availabe_drugs_index");
+                echo "\">Accédez à votre espace</a>
+                                <a class=\"dropdown-item\" href=\"";
+                // line 75
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_account");
+                echo "\">Gérer votre compte</a>
+                                <a class=\"dropdown-item\" href=\"";
+                // line 76
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+                echo "\">Déconnecter vous</a>
+                            </div>
+                        </li>
+                        ";
+            }
+            // line 80
+            echo "                        ";
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 80, $this->source); })()), "user", [], "any", false, false, false, 80), "roles", [], "any", false, false, false, 80), 0, [], "array", false, false, false, 80) == "ROLE_USER_LABORATORY")) {
+                // line 81
+                echo "                                        
+                        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                            <a class=\"dropdown-item\" href=\"";
+                // line 83
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_account");
+                echo "\">Gérer votre compte</a>
+                            <a class=\"dropdown-item\" href=\"";
+                // line 84
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+                echo "\">Déconnecter vous</a>
+                        </div>
+                    </li>
+                    ";
+            }
+            // line 88
+            echo "                    ";
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 88, $this->source); })()), "user", [], "any", false, false, false, 88), "roles", [], "any", false, false, false, 88), 0, [], "array", false, false, false, 88) == "ROLE_MODO")) {
+                // line 89
+                echo "                                        
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"#\">Accédez à votre espace</a>
+                        <a class=\"dropdown-item\" href=\"";
+                // line 92
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
+                echo "\">Déconnecter vous</a>
+                    </div>
+                </li>
+                ";
+            }
+            // line 96
+            echo "                                  ";
         } else {
-            // line 50
+            // line 97
             echo "                                    <li class=\"nav-item dropdown\">
                                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
                                             role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
                                             aria-expanded=\"false\">Compte Professionnel</a>
                                         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                                             <a class=\"dropdown-item\" href=\"";
-            // line 55
+            // line 102
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_pharmacy");
             echo "\">Inscription pharmacie</a>
                                             <a class=\"dropdown-item\" href=\"";
-            // line 56
+            // line 103
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_doctor");
             echo "\">Inscription praticien</a>
                                             <a class=\"dropdown-item\" href=\"";
-            // line 57
+            // line 104
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_laboratory");
             echo "\">Inscription Laboratoire</a>
                                             <a class=\"dropdown-item\" href=\"";
-            // line 58
+            // line 105
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Se Connecter</a>
                                         </div>
@@ -159,15 +264,15 @@ class __TwigTemplate_a427a2eae1b1ae5ac8e13f561d4bd63406fb6dfa7a8defcfc259500e49e
                                             aria-expanded=\"false\">Notre Forum </a>
                                         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                                             <a class=\"dropdown-item\" href=\"";
-            // line 66
+            // line 113
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("home");
             echo "\">accueil</a>
                                             <a class=\"dropdown-item\" href=\"";
-            // line 67
+            // line 114
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register_blog");
             echo "\">S'inscire</a>
                                             <a class=\"dropdown-item\" href=\"";
-            // line 68
+            // line 115
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\">Se Connecter</a>
                                         </div>
@@ -175,40 +280,40 @@ class __TwigTemplate_a427a2eae1b1ae5ac8e13f561d4bd63406fb6dfa7a8defcfc259500e49e
        
                                     ";
         }
-        // line 73
+        // line 120
         echo "
 
                                     <li class=\"nav-item ";
-        // line 75
-        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 75, $this->source); })()) == "/contact")) {
+        // line 122
+        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 122, $this->source); })()) == "/contact")) {
             echo "active";
         }
         echo "\">
                                         <a class=\"nav-link\" href=\"";
-        // line 76
+        // line 123
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
         echo "\">Contact ";
-        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 76, $this->source); })()) == "/contact")) {
+        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 123, $this->source); })()) == "/contact")) {
             echo "<span
                                             class=\"sr-only\">(current)</span>";
         }
-        // line 77
+        // line 124
         echo "</a>
                                     <li class=\"nav-item ";
-        // line 78
-        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 78, $this->source); })()) == "/about")) {
+        // line 125
+        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 125, $this->source); })()) == "/about")) {
             echo "active";
         }
         echo "\">
                                         <a class=\"nav-link\" href=\"";
-        // line 79
+        // line 126
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("about");
         echo "\">A propos ";
-        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 79, $this->source); })()) == "/about")) {
+        if (((isset($context["currentPath"]) || array_key_exists("currentPath", $context) ? $context["currentPath"] : (function () { throw new RuntimeError('Variable "currentPath" does not exist.', 126, $this->source); })()) == "/about")) {
             echo "<span
                                             class=\"sr-only\">(current)</span>";
         }
-        // line 80
+        // line 127
         echo " </a>
                                     </li>
                                     </ul>
@@ -246,7 +351,7 @@ class __TwigTemplate_a427a2eae1b1ae5ac8e13f561d4bd63406fb6dfa7a8defcfc259500e49e
 
     public function getDebugInfo()
     {
-        return array (  212 => 80,  205 => 79,  199 => 78,  196 => 77,  189 => 76,  183 => 75,  179 => 73,  171 => 68,  167 => 67,  163 => 66,  152 => 58,  148 => 57,  144 => 56,  140 => 55,  133 => 50,  126 => 46,  117 => 39,  115 => 38,  109 => 34,  102 => 33,  96 => 32,  92 => 30,  85 => 29,  78 => 28,  76 => 27,  75 => 26,  60 => 16,  43 => 1,);
+        return array (  317 => 127,  310 => 126,  304 => 125,  301 => 124,  294 => 123,  288 => 122,  284 => 120,  276 => 115,  272 => 114,  268 => 113,  257 => 105,  253 => 104,  249 => 103,  245 => 102,  238 => 97,  235 => 96,  228 => 92,  223 => 89,  220 => 88,  213 => 84,  209 => 83,  205 => 81,  202 => 80,  195 => 76,  191 => 75,  187 => 74,  183 => 72,  180 => 71,  173 => 67,  168 => 64,  165 => 63,  158 => 59,  154 => 58,  150 => 57,  146 => 55,  143 => 54,  136 => 50,  132 => 49,  126 => 45,  124 => 44,  117 => 39,  115 => 38,  109 => 34,  102 => 33,  96 => 32,  92 => 30,  85 => 29,  78 => 28,  76 => 27,  75 => 26,  60 => 16,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -289,16 +394,63 @@ class __TwigTemplate_a427a2eae1b1ae5ac8e13f561d4bd63406fb6dfa7a8defcfc259500e49e
 
                                     </li>
                                     {% if app.user %}
+
                                     <li class=\"nav-item dropdown\">
                                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"
                                             role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\"
                                             aria-expanded=\"false\">Gestion de votre compte</a>
+                                    {% if app.user.roles[0] == \"ROLE_USER_BLOG\" %}
+                                        
                                         <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
                                             <a class=\"dropdown-item\" href=\"#\">Accédez à votre espace</a>
                                             <a class=\"dropdown-item\" href=\"#\">Gérer votre compte</a>
+                                            <a class=\"dropdown-item\" href=\"{{path('home')}}\">Blog</a>
                                             <a class=\"dropdown-item\" href=\"{{path('app_logout')}}\">Déconnecter vous</a>
                                         </div>
                                     </li>
+                                    {% endif %}
+                                    {% if app.user.roles[0] == \"ROLE_USER_DOCTOR\" %}
+                                        
+                                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                        <a class=\"dropdown-item\" href=\"{{path('appointment_calendar')}}\">Accédez à votre espace</a>
+                                        <a class=\"dropdown-item\" href=\"{{path('edit_account')}}\">Gérer votre compte</a>
+                                        <a class=\"dropdown-item\" href=\"{{path('app_logout')}}\">Déconnecter vous</a>
+                                    </div>
+                                </li>
+                                {% endif %}
+                                {% if app.user.roles[0] == \"ROLE_SUPER_ADMIN\" or app.user.roles[0] == \"ROLE_ADMIN\" %}
+                                        
+                                <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                    <a class=\"dropdown-item\" href=\"/admin\">Accédez à votre espace</a>
+                                    <a class=\"dropdown-item\" href=\"{{path('app_logout')}}\">Déconnecter vous</a>
+                                </div>
+                            </li>
+                            {% endif %}
+                            {% if app.user.roles[0] == \"ROLE_USER_PHARMACY\" %}
+                                        
+                            <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                                <a class=\"dropdown-item\" href=\"{{path('pharmacy_availabe_drugs_index')}}\">Accédez à votre espace</a>
+                                <a class=\"dropdown-item\" href=\"{{path('edit_account')}}\">Gérer votre compte</a>
+                                <a class=\"dropdown-item\" href=\"{{path('app_logout')}}\">Déconnecter vous</a>
+                            </div>
+                        </li>
+                        {% endif %}
+                        {% if app.user.roles[0] == \"ROLE_USER_LABORATORY\" %}
+                                        
+                        <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                            <a class=\"dropdown-item\" href=\"{{path('edit_account')}}\">Gérer votre compte</a>
+                            <a class=\"dropdown-item\" href=\"{{path('app_logout')}}\">Déconnecter vous</a>
+                        </div>
+                    </li>
+                    {% endif %}
+                    {% if app.user.roles[0] == \"ROLE_MODO\" %}
+                                        
+                    <div class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">
+                        <a class=\"dropdown-item\" href=\"#\">Accédez à votre espace</a>
+                        <a class=\"dropdown-item\" href=\"{{path('app_logout')}}\">Déconnecter vous</a>
+                    </div>
+                </li>
+                {% endif %}
                                   {% else %}
                                     <li class=\"nav-item dropdown\">
                                         <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\"

@@ -1,0 +1,15 @@
+{% extends 'pharmacy_availabe_drugs/_main.html.twig' %}
+
+
+{% block title %}Editer{% endblock %}
+{% block pharmacy_content %}
+<div class="container p-4">
+    <h4>Editer {{pharmacy_availabe_drug.drugs}}</h4>
+    
+    {{ include('pharmacy_availabe_drugs/_form_edit.html.twig') }}
+    <br>
+<a class="btn btn-primary" role="button" href="{{ path('pharmacy_availabe_drugs_index') }}">Revenir à la liste</a>
+
+</div>
+
+{% endblock pharmacy_content %}

@@ -1,0 +1,23 @@
+<sidebar>
+    <div class="logo">logo</div>
+    <div class="avatar">
+      <div class="avatar__img">
+        {% if doctor.pictureProfil %}
+        <img class="" src="{{vich_uploader_asset(doctor, 'imageFile')}}"alt="user" />
+        {% else %}
+        <img  class="" src="{{asset('bower_components/images/NotImageProfile.png')}}" 
+        alt="Empty Image" style="width:70px">
+       {% endif %}
+      </div>
+      <div class="avatar__name">{{pharmacy.pharmacyName}}</div>
+    </div>
+    <nav class="menu">
+      {% set currentPath = path(app.request.attributes.get('_route'),
+      app.request.attributes.get('_route_params')) %}
+      <a class="menu__item menu__item{% if currentPath == '/votre-espace/agenda' %}--active{% endif %}" href="{{path('appointment_calendar')}}">
+          <i class="menu__icon fa fa-calendar"></i>
+          <span class="menu__text">Voir la liste des médicaments dans la base de donnée</span>
+        </a>
+    </nav>
+    <div class="copyright" > REF-MED</div>
+  </sidebar>

@@ -42,20 +42,25 @@ class __TwigTemplate_d3a9bb0c76350d820ff72a931398c72d8c69c0bfe4a6410b9c21c33e3ad
         // line 1
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formDrugs"]) || array_key_exists("formDrugs", $context) ? $context["formDrugs"] : (function () { throw new RuntimeError('Variable "formDrugs" does not exist.', 1, $this->source); })()), 'form_start');
         echo "
-<div class=\"row align-items-end\">
+    <div class=\"form-group row\">
+        <div class=\"col-12\">
+            <div id=\"map_drugs\" class=\"search-map\"></div>
+        </div>
+    </div>
+    <div class=\"row align-items-end\">
     <div class=\"col-12 col-md-6\">
         <div class=\"form-group\">
             ";
-        // line 5
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formDrugs"]) || array_key_exists("formDrugs", $context) ? $context["formDrugs"] : (function () { throw new RuntimeError('Variable "formDrugs" does not exist.', 5, $this->source); })()), "name", [], "any", false, false, false, 5), 'row');
+        // line 10
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formDrugs"]) || array_key_exists("formDrugs", $context) ? $context["formDrugs"] : (function () { throw new RuntimeError('Variable "formDrugs" does not exist.', 10, $this->source); })()), "name", [], "any", false, false, false, 10), 'row');
         echo "
         </div>
     </div>
     <div class=\"col-12 col-md-4\">
         <div class=\"form-group\">
             ";
-        // line 10
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formDrugs"]) || array_key_exists("formDrugs", $context) ? $context["formDrugs"] : (function () { throw new RuntimeError('Variable "formDrugs" does not exist.', 10, $this->source); })()), "distance", [], "any", false, false, false, 10), 'row');
+        // line 15
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formDrugs"]) || array_key_exists("formDrugs", $context) ? $context["formDrugs"] : (function () { throw new RuntimeError('Variable "formDrugs" does not exist.', 15, $this->source); })()), "distance", [], "any", false, false, false, 15), 'row');
         echo "
         </div>
     </div>
@@ -66,8 +71,8 @@ class __TwigTemplate_d3a9bb0c76350d820ff72a931398c72d8c69c0bfe4a6410b9c21c33e3ad
     </div>
 </div>
 ";
-        // line 19
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formDrugs"]) || array_key_exists("formDrugs", $context) ? $context["formDrugs"] : (function () { throw new RuntimeError('Variable "formDrugs" does not exist.', 19, $this->source); })()), 'form_end');
+        // line 24
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formDrugs"]) || array_key_exists("formDrugs", $context) ? $context["formDrugs"] : (function () { throw new RuntimeError('Variable "formDrugs" does not exist.', 24, $this->source); })()), 'form_end');
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -88,13 +93,18 @@ class __TwigTemplate_d3a9bb0c76350d820ff72a931398c72d8c69c0bfe4a6410b9c21c33e3ad
 
     public function getDebugInfo()
     {
-        return array (  70 => 19,  58 => 10,  50 => 5,  43 => 1,);
+        return array (  75 => 24,  63 => 15,  55 => 10,  43 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{{form_start(formDrugs)}}
-<div class=\"row align-items-end\">
+    <div class=\"form-group row\">
+        <div class=\"col-12\">
+            <div id=\"map_drugs\" class=\"search-map\"></div>
+        </div>
+    </div>
+    <div class=\"row align-items-end\">
     <div class=\"col-12 col-md-6\">
         <div class=\"form-group\">
             {{ form_row(formDrugs.name) }}

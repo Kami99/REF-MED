@@ -1090,6 +1090,14 @@
             <parameter key="roles" type="collection"/>
           </parameter>
           <parameter type="collection">
+            <parameter key="admin">admin.drugs</parameter>
+            <parameter key="label"></parameter>
+            <parameter key="route"></parameter>
+            <parameter key="route_params" type="collection"/>
+            <parameter key="route_absolute">false</parameter>
+            <parameter key="roles" type="collection"/>
+          </parameter>
+          <parameter type="collection">
             <parameter key="admin">admin.drugs_consomers</parameter>
             <parameter key="label"></parameter>
             <parameter key="route"></parameter>
@@ -1507,6 +1515,7 @@
       <parameter>App\Form\AppointmentType</parameter>
       <parameter>App\Form\CommentType</parameter>
       <parameter>App\Form\DoctorType</parameter>
+      <parameter>App\Form\EditAvailableDrugsType</parameter>
       <parameter>App\Form\EditDoctorType</parameter>
       <parameter>App\Form\EditLaboratoryType</parameter>
       <parameter>App\Form\EditPharmacyType</parameter>
@@ -1514,6 +1523,7 @@
       <parameter>App\Form\LocationType</parameter>
       <parameter>App\Form\ManageAppointmentType</parameter>
       <parameter>App\Form\PasswordUpdateType</parameter>
+      <parameter>App\Form\PharmacyAvailabeDrugsType</parameter>
       <parameter>App\Form\PharmacyRegisterType</parameter>
       <parameter>App\Form\RegistrationFormType</parameter>
       <parameter>App\Form\SearchDoctorType</parameter>
@@ -1610,6 +1620,7 @@
     <service id="App\Admin\AppointmentTypeAdmin" class="App\Admin\AppointmentTypeAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\CategoryDrugsAdmin" class="App\Admin\CategoryDrugsAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\CategoryLaboratoryAdmin" class="App\Admin\CategoryLaboratoryAdmin" autowire="true" autoconfigure="true"/>
+    <service id="App\Admin\DrugsAdmin" class="App\Admin\DrugsAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\DrugsConsomersAdmin" class="App\Admin\DrugsConsomersAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\ExpertiseAdmin" class="App\Admin\ExpertiseAdmin" autowire="true" autoconfigure="true"/>
     <service id="App\Admin\FormDrugsAdmin" class="App\Admin\FormDrugsAdmin" autowire="true" autoconfigure="true"/>
@@ -1671,9 +1682,17 @@
       <argument type="service" id="App\Repository\DoctorRepository"/>
       <argument type="service" id="App\Repository\PharmacyRepository"/>
       <argument type="service" id="App\Repository\LaboratoryRepository"/>
+      <argument type="service" id="App\Repository\DrugsRepository"/>
       <argument type="service" id="knp_paginator"/>
       <call method="setContainer">
         <argument type="service" id=".service_locator.vdmMuyE.App\Controller\MainREFMEDController"/>
+      </call>
+    </service>
+    <service id="App\Controller\PharmacyAvailabeDrugsController" class="App\Controller\PharmacyAvailabeDrugsController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.App\Controller\PharmacyAvailabeDrugsController"/>
       </call>
     </service>
     <service id="App\Controller\RegistrationController" class="App\Controller\RegistrationController" public="true" autowire="true" autoconfigure="true">
@@ -1726,6 +1745,9 @@
     <service id="App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\EditAvailableDrugsType" class="App\Form\EditAvailableDrugsType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\EditDoctorType" class="App\Form\EditDoctorType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1745,6 +1767,9 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\PharmacyAvailabeDrugsType" class="App\Form\PharmacyAvailabeDrugsType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
     <service id="App\Form\PharmacyRegisterType" class="App\Form\PharmacyRegisterType" autowire="true" autoconfigure="true">
@@ -1785,6 +1810,10 @@
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\AppointmentTypeRepository" class="App\Repository\AppointmentTypeRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\ArticleLikeRepository" class="App\Repository\ArticleLikeRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -3404,6 +3433,84 @@
         </argument>
       </call>
     </service>
+    <service id="admin.drugs" class="App\Admin\DrugsAdmin" shared="false" public="true" autowire="true" autoconfigure="true">
+      <tag name="sonata.admin" manager_type="orm" group="admin" label="Médicaments"/>
+      <argument>admin.drugs</argument>
+      <argument>App\Entity\Drugs</argument>
+      <argument>Sonata\AdminBundle\Controller\CRUDController</argument>
+      <call method="setManagerType">
+        <argument>orm</argument>
+      </call>
+      <call method="setModelManager">
+        <argument type="service" id="sonata.admin.manager.orm"/>
+      </call>
+      <call method="setFormContractor">
+        <argument type="service" id="sonata.admin.builder.orm_form"/>
+      </call>
+      <call method="setShowBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_show"/>
+      </call>
+      <call method="setListBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_list"/>
+      </call>
+      <call method="setDatagridBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_datagrid"/>
+      </call>
+      <call method="setTranslator">
+        <argument type="service" id="translator.data_collector"/>
+        <argument>false</argument>
+      </call>
+      <call method="setConfigurationPool">
+        <argument type="service" id="sonata.admin.pool"/>
+      </call>
+      <call method="setRouteGenerator">
+        <argument type="service" id="sonata.admin.route.default_generator"/>
+      </call>
+      <call method="setValidator">
+        <argument type="service" id="debug.validator"/>
+      </call>
+      <call method="setSecurityHandler">
+        <argument type="service" id="sonata.admin.security.handler.noop"/>
+      </call>
+      <call method="setMenuFactory">
+        <argument type="service" id="knp_menu.factory"/>
+      </call>
+      <call method="setRouteBuilder">
+        <argument type="service" id="sonata.admin.route.path_info"/>
+      </call>
+      <call method="setLabelTranslatorStrategy">
+        <argument type="service" id="sonata.admin.label.strategy.native"/>
+      </call>
+      <call method="setPagerType">
+        <argument>default</argument>
+      </call>
+      <call method="setLabel">
+        <argument>Médicaments</argument>
+      </call>
+      <call method="showMosaicButton">
+        <argument>true</argument>
+      </call>
+      <call method="setTemplateRegistry">
+        <argument type="service" id="admin.drugs.template_registry"/>
+      </call>
+      <call method="setSecurityInformation">
+        <argument type="collection"/>
+      </call>
+      <call method="initialize"/>
+      <call method="addExtension">
+        <argument type="service" id="sonata.admin.event.extension"/>
+      </call>
+      <call method="setFormTheme">
+        <argument type="collection">
+          <argument>@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setFilterTheme">
+        <argument type="collection">
+          <argument>@SonataDoctrineORMAdmin/Form/filter_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+    </service>
     <service id=".legacy_controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -3893,6 +4000,7 @@
         <argument>App\Form\AppointmentType</argument>
         <argument>App\Form\CommentType</argument>
         <argument>App\Form\DoctorType</argument>
+        <argument>App\Form\EditAvailableDrugsType</argument>
         <argument>App\Form\EditDoctorType</argument>
         <argument>App\Form\EditLaboratoryType</argument>
         <argument>App\Form\EditPharmacyType</argument>
@@ -3900,6 +4008,7 @@
         <argument>App\Form\LocationType</argument>
         <argument>App\Form\ManageAppointmentType</argument>
         <argument>App\Form\PasswordUpdateType</argument>
+        <argument>App\Form\PharmacyAvailabeDrugsType</argument>
         <argument>App\Form\PharmacyRegisterType</argument>
         <argument>App\Form\RegistrationFormType</argument>
         <argument>App\Form\SearchDoctorType</argument>
@@ -4309,7 +4418,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.JPoXvzR"/>
+      <argument type="service" id=".service_locator.Ltjx1S9"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -8372,7 +8481,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.0NYserw"/>
+      <argument type="service" id=".service_locator.GaIfwtx"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -10910,6 +11019,7 @@
           <argument>admin.members</argument>
           <argument>admin.adminstrators</argument>
           <argument>admin.appointment_type</argument>
+          <argument>admin.drugs</argument>
         </argument>
       </call>
       <call method="setAdminGroups">
@@ -10926,6 +11036,14 @@
               </argument>
               <argument type="collection">
                 <argument key="admin">admin.form_drugs</argument>
+                <argument key="label"></argument>
+                <argument key="route"></argument>
+                <argument key="route_params" type="collection"/>
+                <argument key="route_absolute">false</argument>
+                <argument key="roles" type="collection"/>
+              </argument>
+              <argument type="collection">
+                <argument key="admin">admin.drugs</argument>
                 <argument key="label"></argument>
                 <argument key="route"></argument>
                 <argument key="route_params" type="collection"/>
@@ -11193,6 +11311,9 @@
           <argument key="App\Entity\AppointmentType" type="collection">
             <argument>admin.appointment_type</argument>
           </argument>
+          <argument key="App\Entity\Drugs" type="collection">
+            <argument>admin.drugs</argument>
+          </argument>
         </argument>
       </call>
     </service>
@@ -11219,6 +11340,7 @@
         <argument>admin.members</argument>
         <argument>admin.adminstrators</argument>
         <argument>admin.appointment_type</argument>
+        <argument>admin.drugs</argument>
       </argument>
       <argument type="service" id="service_container"/>
     </service>
@@ -11771,6 +11893,9 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MainREFMEDController" class="App\Controller\MainREFMEDController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MainREFMEDController" class="App\Controller\MainREFMEDController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\MainREFMEDController" class="App\Controller\MainREFMEDController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\PharmacyAvailabeDrugsController" class="App\Controller\PharmacyAvailabeDrugsController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\PharmacyAvailabeDrugsController" class="App\Controller\PharmacyAvailabeDrugsController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\PharmacyAvailabeDrugsController" class="App\Controller\PharmacyAvailabeDrugsController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\RegistrationController" class="App\Controller\RegistrationController" autowire="true" autoconfigure="true" abstract="true"/>
@@ -11797,6 +11922,8 @@
     <service id=".abstract.instanceof.App\Form\CommentType" class="App\Form\CommentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\DoctorType" class="App\Form\DoctorType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EditAvailableDrugsType" class="App\Form\EditAvailableDrugsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\EditAvailableDrugsType" class="App\Form\EditAvailableDrugsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EditDoctorType" class="App\Form\EditDoctorType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\EditDoctorType" class="App\Form\EditDoctorType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\EditLaboratoryType" class="App\Form\EditLaboratoryType" autowire="true" abstract="true"/>
@@ -11811,6 +11938,8 @@
     <service id=".abstract.instanceof.App\Form\ManageAppointmentType" class="App\Form\ManageAppointmentType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PasswordUpdateType" class="App\Form\PasswordUpdateType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PharmacyAvailabeDrugsType" class="App\Form\PharmacyAvailabeDrugsType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\PharmacyAvailabeDrugsType" class="App\Form\PharmacyAvailabeDrugsType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\PharmacyRegisterType" class="App\Form\PharmacyRegisterType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\PharmacyRegisterType" class="App\Form\PharmacyRegisterType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RegistrationFormType" class="App\Form\RegistrationFormType" autowire="true" abstract="true"/>
@@ -11833,6 +11962,8 @@
     <service id=".abstract.instanceof.App\Repository\AppointmentRepository" class="App\Repository\AppointmentRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AppointmentTypeRepository" class="App\Repository\AppointmentTypeRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AppointmentTypeRepository" class="App\Repository\AppointmentTypeRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticleLikeRepository" class="App\Repository\ArticleLikeRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\ArticleLikeRepository" class="App\Repository\ArticleLikeRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ArticlesRepository" class="App\Repository\ArticlesRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CategoriesRepository" class="App\Repository\CategoriesRepository" autowire="true" abstract="true"/>
@@ -12190,6 +12321,24 @@
         <argument key="passwordEncoder" type="service" id="security.user_password_encoder.generic"/>
       </argument>
     </service>
+    <service id=".service_locator.N9_pdQd" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="drugsRepository" type="service" id="App\Repository\DrugsRepository"/>
+      </argument>
+    </service>
+    <service id=".service_locator.QAMZufd" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="drugs" type="service" id=".errored..service_locator.QAMZufd.App\Entity\Drugs"/>
+      </argument>
+    </service>
+    <service id=".service_locator.IruD07F" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="pharmacyAvailabeDrug" type="service" id=".errored..service_locator.IruD07F.App\Entity\PharmacyAvailabeDrugs"/>
+      </argument>
+    </service>
     <service id=".service_locator.XGQv6wh" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -12204,7 +12353,7 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.fSPklAv" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.r2NsH_p" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AccountProController::showAccountDoctor" type="service" id=".service_locator.ZLiBugb"/>
@@ -12215,8 +12364,12 @@
         <argument key="App\Controller\AppointmentController::showAppointment" type="service" id=".service_locator.q1t7Pqb"/>
         <argument key="App\Controller\AppointmentController::unconfirmedAppoint" type="service" id=".service_locator.hwJb32Y"/>
         <argument key="App\Controller\BlogController::index" type="service" id=".service_locator..UeDvn1"/>
+        <argument key="App\Controller\BlogController::like" type="service" id=".service_locator.LcskAYA"/>
         <argument key="App\Controller\BlogController::showArticle" type="service" id=".service_locator.LcskAYA"/>
         <argument key="App\Controller\EditAccountController::index" type="service" id=".service_locator.ccM2MGC"/>
+        <argument key="App\Controller\PharmacyAvailabeDrugsController::edit" type="service" id=".service_locator.IruD07F"/>
+        <argument key="App\Controller\PharmacyAvailabeDrugsController::index" type="service" id=".service_locator.N9_pdQd"/>
+        <argument key="App\Controller\PharmacyAvailabeDrugsController::show" type="service" id=".service_locator.QAMZufd"/>
         <argument key="App\Controller\RegistrationController::registerBlog" type="service" id=".service_locator.XGQv6wh"/>
         <argument key="App\Controller\RegistrationController::registerDoctor" type="service" id=".service_locator.XGQv6wh"/>
         <argument key="App\Controller\RegistrationController::registerLaboratory" type="service" id=".service_locator.XGQv6wh"/>
@@ -12230,8 +12383,12 @@
         <argument key="App\Controller\AppointmentController:showAppointment" type="service" id=".service_locator.q1t7Pqb"/>
         <argument key="App\Controller\AppointmentController:unconfirmedAppoint" type="service" id=".service_locator.hwJb32Y"/>
         <argument key="App\Controller\BlogController:index" type="service" id=".service_locator..UeDvn1"/>
+        <argument key="App\Controller\BlogController:like" type="service" id=".service_locator.LcskAYA"/>
         <argument key="App\Controller\BlogController:showArticle" type="service" id=".service_locator.LcskAYA"/>
         <argument key="App\Controller\EditAccountController:index" type="service" id=".service_locator.ccM2MGC"/>
+        <argument key="App\Controller\PharmacyAvailabeDrugsController:edit" type="service" id=".service_locator.IruD07F"/>
+        <argument key="App\Controller\PharmacyAvailabeDrugsController:index" type="service" id=".service_locator.N9_pdQd"/>
+        <argument key="App\Controller\PharmacyAvailabeDrugsController:show" type="service" id=".service_locator.QAMZufd"/>
         <argument key="App\Controller\RegistrationController:registerBlog" type="service" id=".service_locator.XGQv6wh"/>
         <argument key="App\Controller\RegistrationController:registerDoctor" type="service" id=".service_locator.XGQv6wh"/>
         <argument key="App\Controller\RegistrationController:registerLaboratory" type="service" id=".service_locator.XGQv6wh"/>
@@ -12302,13 +12459,14 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.JPoXvzR" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Ltjx1S9" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AddArticleType" type="service" id="App\Form\AddArticleType"/>
         <argument key="App\Form\AppointmentType" type="service" id="App\Form\AppointmentType"/>
         <argument key="App\Form\CommentType" type="service" id="App\Form\CommentType"/>
         <argument key="App\Form\DoctorType" type="service" id="App\Form\DoctorType"/>
+        <argument key="App\Form\EditAvailableDrugsType" type="service" id="App\Form\EditAvailableDrugsType"/>
         <argument key="App\Form\EditDoctorType" type="service" id="App\Form\EditDoctorType"/>
         <argument key="App\Form\EditLaboratoryType" type="service" id="App\Form\EditLaboratoryType"/>
         <argument key="App\Form\EditPharmacyType" type="service" id="App\Form\EditPharmacyType"/>
@@ -12316,6 +12474,7 @@
         <argument key="App\Form\LocationType" type="service" id="App\Form\LocationType"/>
         <argument key="App\Form\ManageAppointmentType" type="service" id="App\Form\ManageAppointmentType"/>
         <argument key="App\Form\PasswordUpdateType" type="service" id="App\Form\PasswordUpdateType"/>
+        <argument key="App\Form\PharmacyAvailabeDrugsType" type="service" id="App\Form\PharmacyAvailabeDrugsType"/>
         <argument key="App\Form\PharmacyRegisterType" type="service" id="App\Form\PharmacyRegisterType"/>
         <argument key="App\Form\RegistrationFormType" type="service" id="App\Form\RegistrationFormType"/>
         <argument key="App\Form\SearchDoctorType" type="service" id="App\Form\SearchDoctorType"/>
@@ -12442,12 +12601,13 @@
         <argument key="doctrine.orm.default_listeners.attach_entity_listeners" type="service" id="doctrine.orm.default_listeners.attach_entity_listeners"/>
       </argument>
     </service>
-    <service id=".service_locator.0NYserw" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.GaIfwtx" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AdminRepository" type="service" id="App\Repository\AdminRepository"/>
         <argument key="App\Repository\AppointmentRepository" type="service" id="App\Repository\AppointmentRepository"/>
         <argument key="App\Repository\AppointmentTypeRepository" type="service" id="App\Repository\AppointmentTypeRepository"/>
+        <argument key="App\Repository\ArticleLikeRepository" type="service" id="App\Repository\ArticleLikeRepository"/>
         <argument key="App\Repository\ArticlesRepository" type="service" id="App\Repository\ArticlesRepository"/>
         <argument key="App\Repository\CategoriesRepository" type="service" id="App\Repository\CategoriesRepository"/>
         <argument key="App\Repository\CategoryDrugsRepository" type="service" id="App\Repository\CategoryDrugsRepository"/>
@@ -12740,6 +12900,10 @@
       <tag name="sonata.admin.template_registry"/>
       <argument>%sonata.admin.configuration.templates%</argument>
     </service>
+    <service id="admin.drugs.template_registry" class="Sonata\AdminBundle\Templating\TemplateRegistry" public="true">
+      <tag name="sonata.admin.template_registry"/>
+      <argument>%sonata.admin.configuration.templates%</argument>
+    </service>
     <service id=".service_locator.V.o0zE7" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -12809,6 +12973,12 @@
     <service id=".service_locator.vdmMuyE.App\Controller\MainREFMEDController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="App\Controller\MainREFMEDController"/>
       <argument>App\Controller\MainREFMEDController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
+    <service id=".service_locator.vdmMuyE.App\Controller\PharmacyAvailabeDrugsController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="App\Controller\PharmacyAvailabeDrugsController"/>
+      <argument>App\Controller\PharmacyAvailabeDrugsController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.vdmMuyE" method="withContext"/>
     </service>
@@ -13007,12 +13177,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.fSPklAv"/>
+      <argument type="service" id=".service_locator.r2NsH_p"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.fSPklAv"/>
+      <argument type="service" id=".service_locator.r2NsH_p"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus" public="false">
       <argument type="iterator">
@@ -13039,6 +13209,8 @@
     <service id=".errored..service_locator.q1t7Pqb.App\Entity\Appointment" class="App\Entity\Appointment"/>
     <service id=".errored..service_locator.xLJ0dQ..App\Entity\Appointment" class="App\Entity\Appointment"/>
     <service id=".errored..service_locator.LcskAYA.App\Entity\Articles" class="App\Entity\Articles"/>
+    <service id=".errored..service_locator.QAMZufd.App\Entity\Drugs" class="App\Entity\Drugs"/>
+    <service id=".errored..service_locator.IruD07F.App\Entity\PharmacyAvailabeDrugs" class="App\Entity\PharmacyAvailabeDrugs"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.nYbdW03"/>
       <argument type="collection">
@@ -13537,7 +13709,7 @@
     <service id="Sonata\AdminBundle\Templating\MutableTemplateRegistryInterface" alias="sonata.admin.global_template_registry"/>
     <service id="sonata.admin.security.handler" alias="sonata.admin.security.handler.noop"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.CmORmuK" public="true"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.fSPklAv"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.r2NsH_p"/>
     <service id="Symfony\Component\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="Symfony\Bundle\FrameworkBundle\Templating\EngineInterface" alias="templating.engine.twig" public="false"/>
     <service id="twig.loader" alias="twig.loader.filesystem"/>

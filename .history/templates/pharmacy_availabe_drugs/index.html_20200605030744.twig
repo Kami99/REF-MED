@@ -1,0 +1,43 @@
+{% extends 'pharmacy_availabe_drugs/_main.html.twig' %}
+
+{% block title %}Liste des médicaments{% endblock %}
+
+{% block pharmacy_content %}
+<div class="container-fluid">
+    <h1>PharmacyAvailabeDrugs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom du médicament</th>
+                <th>Disponible</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for drug in drugs %}
+            <tr>
+                <td>{{ drug.id }}</td>
+                <td>
+                    <pre>
+                        {{ dump({{ drug.pharmacyAvailabeDrugs}}) }}
+                    </pre>
+                    </td>
+                <td>
+                    <a href="{{ path('pharmacy_availabe_drugs_show', {'id': pharmacy_availabe_drug.id}) }}">show</a>
+                    <a href="{{ path('pharmacy_availabe_drugs_edit', {'id': pharmacy_availabe_drug.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas de médicaments</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+<a href="{{ path('pharmacy_availabe_drugs_new') }}">Create new</a>
+</div>
+
+{% endblock %}

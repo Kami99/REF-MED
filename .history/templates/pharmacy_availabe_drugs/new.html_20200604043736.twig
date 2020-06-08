@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PharmacyAvailabeDrugs{% endblock %}
+
+{% block body %}
+    <h1>Create new PharmacyAvailabeDrugs</h1>
+
+    {{ include('pharmacy_availabe_drugs/_form.html.twig') }}
+
+    <a href="{{ path('pharmacy_availabe_drugs_index') }}">back to list</a>
+{% endblock %}

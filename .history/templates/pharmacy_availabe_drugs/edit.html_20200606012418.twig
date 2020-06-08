@@ -1,0 +1,15 @@
+{% extends 'pharmacy_availabe_drugs/_main.html.twig' %}
+
+
+{% block title %}Changer la disponibilité de ce médicament{% endblock %}
+{% block pharmacy_content %}
+<div class="container p-4">
+    <h1>Changer la disponibilité {{pharmacy_availabe_drug.drugs}}</h1>
+    
+    {{ include('pharmacy_availabe_drugs/_form.html.twig') }}
+    <br>
+<a class="btn btn-primary" role="button" href="{{ path('pharmacy_availabe_drugs_index') }}">Revenir à la liste</a>
+
+</div>
+
+{% endblock pharmacy_content %}

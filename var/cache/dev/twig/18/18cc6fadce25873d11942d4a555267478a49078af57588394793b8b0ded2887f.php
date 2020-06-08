@@ -47,7 +47,7 @@ class __TwigTemplate_ba64fe64fc815ce00e278a3f4bf58338ab0352189786c470deb4cbb0e20
         echo "
                                     <div class=\"form-group row\">
                                         <div class=\"col-12\">
-                                            <div id=\"map\" class=\"search-map\"></div>
+                                            <div id=\"map_doctor\" class=\"search-map\"></div>
                                         </div>
                                     </div>
                                     <div class=\"row align-items-end\">
@@ -106,7 +106,7 @@ class __TwigTemplate_ba64fe64fc815ce00e278a3f4bf58338ab0352189786c470deb4cbb0e20
                                     {{form_start(formDoctor)}}
                                     <div class=\"form-group row\">
                                         <div class=\"col-12\">
-                                            <div id=\"map\" class=\"search-map\"></div>
+                                            <div id=\"map_doctor\" class=\"search-map\"></div>
                                         </div>
                                     </div>
                                     <div class=\"row align-items-end\">

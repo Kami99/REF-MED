@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Medicaments{% endblock %}
+
+{% block body %}
+    <h1>PharmacyAvailabeDrugs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pharmacy_availabe_drug.id }}</td>
+            </tr>
+            <tr>
+                <th>IsAvailable</th>
+                <td>{{ pharmacy_availabe_drug.isAvailable ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('pharmacy_availabe_drugs_index') }}">back to list</a>
+
+    <a href="{{ path('pharmacy_availabe_drugs_edit', {'id': pharmacy_availabe_drug.id}) }}">edit</a>
+
+    {{ include('pharmacy_availabe_drugs/_delete_form.html.twig') }}
+{% endblock %}

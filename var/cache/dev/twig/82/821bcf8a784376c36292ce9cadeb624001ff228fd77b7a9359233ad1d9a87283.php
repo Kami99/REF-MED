@@ -139,7 +139,12 @@ class __TwigTemplate_19505741c723e494207fd866f27acbe06f4f51a739d21ecd814b7822d30
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["appointment"], "title", [], "any", false, false, false, 39), "html", null, true);
             echo "</span>
                                     </div>
+                                    <a href=\"";
+            // line 41
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("appointment.edit", ["id" => twig_get_attribute($this->env, $this->source, $context["appointment"], "id", [], "any", false, false, false, 41)]), "html", null, true);
+            echo "\">
                                     <span class=\"events__tag events__tag--highlighted\">Pas confirmé</span>
+                                    </a>
                                     </li>
                             </td>
                         </tr>
@@ -149,9 +154,26 @@ class __TwigTemplate_19505741c723e494207fd866f27acbe06f4f51a739d21ecd814b7822d30
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['appointment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 49
         echo "                        </tbody>
                     </table>
+                    <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\".modal\" class=\"primary\">
+                        Prendre RDV
+                    </button>
+                    <div id=\"my-modal\" class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"my-modal-title\" aria-hidden=\"true\" style=\"height: 100%;\">
+                      <div class=\"modal-dialog modal-dialog-scrollable modal-lg\" role=\"document\">
+                        <div class=\"modal-content appoint-background\">
+                          <div class=\"modal-body\">
+                            <div class=\"container-fluid p-5\">
+                            ";
+        // line 59
+        $this->loadTemplate("includeApp/_form_appoint.html.twig", "appointment/unconfirmed_appointment.html.twig", 59)->display($context);
+        // line 60
+        echo "                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
                 </div>
             </div>
             
@@ -178,7 +200,7 @@ class __TwigTemplate_19505741c723e494207fd866f27acbe06f4f51a739d21ecd814b7822d30
 
     public function getDebugInfo()
     {
-        return array (  153 => 47,  139 => 39,  131 => 34,  124 => 30,  120 => 29,  115 => 26,  111 => 25,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
+        return array (  172 => 60,  170 => 59,  158 => 49,  144 => 41,  139 => 39,  131 => 34,  124 => 30,  120 => 29,  115 => 26,  111 => 25,  88 => 4,  78 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -223,7 +245,9 @@ class __TwigTemplate_19505741c723e494207fd866f27acbe06f4f51a739d21ecd814b7822d30
                                     <div class=\"events__item--left\">
                                         <span class=\"events__name\">{{appointment.title}}</span>
                                     </div>
+                                    <a href=\"{{path('appointment.edit', {id: appointment.id})}}\">
                                     <span class=\"events__tag events__tag--highlighted\">Pas confirmé</span>
+                                    </a>
                                     </li>
                             </td>
                         </tr>
@@ -231,6 +255,20 @@ class __TwigTemplate_19505741c723e494207fd866f27acbe06f4f51a739d21ecd814b7822d30
                             {% endfor %}
                         </tbody>
                     </table>
+                    <button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\".modal\" class=\"primary\">
+                        Prendre RDV
+                    </button>
+                    <div id=\"my-modal\" class=\"modal fade\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"my-modal-title\" aria-hidden=\"true\" style=\"height: 100%;\">
+                      <div class=\"modal-dialog modal-dialog-scrollable modal-lg\" role=\"document\">
+                        <div class=\"modal-content appoint-background\">
+                          <div class=\"modal-body\">
+                            <div class=\"container-fluid p-5\">
+                            {% include \"includeApp/_form_appoint.html.twig\" %}
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
                 </div>
             </div>
             

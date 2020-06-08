@@ -460,85 +460,22 @@ class __TwigTemplate_6fe832bafc0590e420166b072f57c7b3bf79716b200b7f2ca2266cd6159
         // line 273
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/leaflet.js"), "html", null, true);
         echo "\"></script>
-
 <script>
-let idLon = document.querySelector('.locationLon').getAttribute('id');
-let idLat = document.querySelector('.locationLat').getAttribute('id');
-let marker, myMap
-window.onload=()=>{
-    myMap = L.map('map').setView([14.6937000, -17.4440600], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-    attribution: 'Données &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>/ODbl -rendu  <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>',
-    minZoom: 10,
-    maxZoom: 20,
-
-}).addTo(myMap);    
-myMap.on(\"click\", mapClickListen)
-
-}
-
-function mapClickListen(e) {
-    let pos= e.latlng
-    addMarker(pos)
-    console.log(e)
-
-    document.querySelector(\"#\"+idLat).value = pos.lat
-    document.querySelector(\"#\"+idLon).value = pos.lng
-     const xmlhttp = new XMLHttpRequest
-    xmlhttp.onreadystatechange = () => {
-        // Si la requête est terminée
-        if(xmlhttp.readyState == 4){
-            // Si nous avons une réponse
-            if(xmlhttp.status == 200){
-                //On récupère la réponse
-                let response = JSON.parse(xmlhttp.response)
-               name=response.display_name         
-               marker.bindPopup(name)   
-            }
-        }
-    }
-    // On ouvre la requête
-    xmlhttp.open('get', `https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\${pos.lat}&lon=\${pos.lng}`)
-    // On envoie la requête
-    xmlhttp.send();
-
-}
-
-function addMarker(pos) {
-    if(marker != undefined){
-        myMap.removeLayer(marker)
-    }
-    marker=L.marker(pos, {
-        draggable: true
-    })
-    marker.on(\"dragend\", function(e){
-        pos = e.target.getLatLng()
-    document.querySelector(\"#\"+idLat).value = pos.lat
-    document.querySelector(\"#\"+idLon).value = pos.lng
-    const xmlhttp = new XMLHttpRequest
-    xmlhttp.onreadystatechange = () => {
-        // Si la requête est terminée
-        if(xmlhttp.readyState == 4){
-            // Si nous avons une réponse
-            if(xmlhttp.status == 200){
-                //On récupère la réponse
-                let response = JSON.parse(xmlhttp.response)
-                name=response.display_name         
-                marker.bindPopup(name)             
-            }
-        }
-    }
-    // On ouvre la requête
-    xmlhttp.open('get', `https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\${pos.lat}&lon=\${pos.lng}`)
-    // On envoie la requête
-    xmlhttp.send();
-    })
-    // Listen Event dragabble on Marker
-
-    marker.addTo(myMap)
-
-}
+    
 </script>
+<script src=\"";
+        // line 277
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/search_map.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 278
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/map_search_doctor.js"), "html", null, true);
+        echo "\"></script>
+<script src=\"";
+        // line 279
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/map_search_pharmacy.js"), "html", null, true);
+        echo "\"></script>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -560,7 +497,7 @@ function addMarker(pos) {
 
     public function getDebugInfo()
     {
-        return array (  461 => 273,  457 => 272,  453 => 271,  450 => 270,  440 => 269,  429 => 267,  427 => 266,  421 => 264,  418 => 263,  412 => 261,  409 => 260,  406 => 259,  400 => 257,  397 => 256,  395 => 255,  264 => 126,  243 => 107,  241 => 106,  235 => 103,  227 => 98,  221 => 94,  219 => 93,  182 => 58,  174 => 53,  168 => 49,  160 => 44,  154 => 40,  152 => 39,  127 => 16,  119 => 13,  110 => 11,  106 => 10,  102 => 9,  99 => 8,  95 => 7,  93 => 6,  83 => 5,  70 => 3,  60 => 2,  37 => 1,);
+        return array (  476 => 279,  472 => 278,  468 => 277,  461 => 273,  457 => 272,  453 => 271,  450 => 270,  440 => 269,  429 => 267,  427 => 266,  421 => 264,  418 => 263,  412 => 261,  409 => 260,  406 => 259,  400 => 257,  397 => 256,  395 => 255,  264 => 126,  243 => 107,  241 => 106,  235 => 103,  227 => 98,  221 => 94,  219 => 93,  182 => 58,  174 => 53,  168 => 49,  160 => 44,  154 => 40,  152 => 39,  127 => 16,  119 => 13,  110 => 11,  106 => 10,  102 => 9,  99 => 8,  95 => 7,  93 => 6,  83 => 5,  70 => 3,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -838,85 +775,13 @@ function addMarker(pos) {
 <script src=\"{{asset('bower_components/mainRefMed/js/alert.js')}}\"></script>
 {{ parent() }}
 <script src=\"{{asset('bower_components/js/leaflet.js')}}\"></script>
-
 <script>
-let idLon = document.querySelector('.locationLon').getAttribute('id');
-let idLat = document.querySelector('.locationLat').getAttribute('id');
-let marker, myMap
-window.onload=()=>{
-    myMap = L.map('map').setView([14.6937000, -17.4440600], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-    attribution: 'Données &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>/ODbl -rendu  <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a>',
-    minZoom: 10,
-    maxZoom: 20,
-
-}).addTo(myMap);    
-myMap.on(\"click\", mapClickListen)
-
-}
-
-function mapClickListen(e) {
-    let pos= e.latlng
-    addMarker(pos)
-    console.log(e)
-
-    document.querySelector(\"#\"+idLat).value = pos.lat
-    document.querySelector(\"#\"+idLon).value = pos.lng
-     const xmlhttp = new XMLHttpRequest
-    xmlhttp.onreadystatechange = () => {
-        // Si la requête est terminée
-        if(xmlhttp.readyState == 4){
-            // Si nous avons une réponse
-            if(xmlhttp.status == 200){
-                //On récupère la réponse
-                let response = JSON.parse(xmlhttp.response)
-               name=response.display_name         
-               marker.bindPopup(name)   
-            }
-        }
-    }
-    // On ouvre la requête
-    xmlhttp.open('get', `https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\${pos.lat}&lon=\${pos.lng}`)
-    // On envoie la requête
-    xmlhttp.send();
-
-}
-
-function addMarker(pos) {
-    if(marker != undefined){
-        myMap.removeLayer(marker)
-    }
-    marker=L.marker(pos, {
-        draggable: true
-    })
-    marker.on(\"dragend\", function(e){
-        pos = e.target.getLatLng()
-    document.querySelector(\"#\"+idLat).value = pos.lat
-    document.querySelector(\"#\"+idLon).value = pos.lng
-    const xmlhttp = new XMLHttpRequest
-    xmlhttp.onreadystatechange = () => {
-        // Si la requête est terminée
-        if(xmlhttp.readyState == 4){
-            // Si nous avons une réponse
-            if(xmlhttp.status == 200){
-                //On récupère la réponse
-                let response = JSON.parse(xmlhttp.response)
-                name=response.display_name         
-                marker.bindPopup(name)             
-            }
-        }
-    }
-    // On ouvre la requête
-    xmlhttp.open('get', `https://nominatim.openstreetmap.org/reverse.php?format=json&lat=\${pos.lat}&lon=\${pos.lng}`)
-    // On envoie la requête
-    xmlhttp.send();
-    })
-    // Listen Event dragabble on Marker
-
-    marker.addTo(myMap)
-
-}
+    
 </script>
+<script src=\"{{asset('bower_components/js/search_map.js')}}\"></script>
+<script src=\"{{asset('bower_components/js/map_search_doctor.js')}}\"></script>
+<script src=\"{{asset('bower_components/js/map_search_pharmacy.js')}}\"></script>
+
 {% endblock %}", "main_refmed/index.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\main_refmed\\index.html.twig");
     }
 }

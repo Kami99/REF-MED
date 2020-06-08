@@ -1,0 +1,68 @@
+{% extends 'appointment/main_appointment.html.twig' %}
+{% block title %}Rendez vous non confirmés{% endblock %}
+{% block appointment_content %}
+<main>
+    <div class="container">
+
+        <h2>Demande de rendez-vous</h2>           
+            <div class="alert alert-warning">
+                <p>Les nouveaux rendez-vous demandés par des patients</p>
+            </div>
+        
+            <hr />
+        
+            <div class="agenda">
+                <div class="table-responsive">
+                    <table class="table table-condensed table-striped table-hover table-success">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type de rendez-vous</th>
+                                <th>Evenement Prévu</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for appointment in appointments %}
+                        <!-- Single event in a single day -->
+                        <tr >
+                            <td class="agenda-date" class="active" rowspan="1">
+                                <div class="dayofmonth">Débute le:{{appointment.beginAt|format_datetime('full', 'full', locale='Africa/Dakar') }} et prend fin
+                                    {{appointment.endAt|format_datetime('none', 'short', locale='Africa/Dakar')}}  </div>
+                                
+                            </td>
+                            <td class="agenda-time">
+                                {{appointment.appointmentType}}
+                            </td>
+                            <td class="agenda-events">
+                                <li class="events__item">
+                                    <div class="events__item--left">
+                                        <span class="events__name">{{appointment.title}}</span>
+                                    </div>
+                                    <span class="events__tag events__tag--highlighted">Pas confirmé</span>
+                                    </li>
+                            </td>
+                        </tr>
+                                
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".modal" class="primary">
+                        Prendre RDV
+                    </button>
+                    <div id="my-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="my-modal-title" aria-hidden="true" style="height: 100%;">
+                      <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+                        <div class="modal-content appoint-background">
+                          <div class="modal-body">
+                            <div class="container-fluid p-5">
+                            {% include "includeApp/_form_appoint.html.twig" %}
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+</main>
+{% endblock appointment_content %}

@@ -110,6 +110,38 @@ class __TwigTemplate_80bcae8feb658c9e55f939d27bb57847c29a3184b3b29b84a201c8f0a61
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "appointment_content"));
 
         // line 11
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "flashes", [], "any", false, false, false, 11));
+        foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
+            // line 12
+            echo "<div class=\"col-12\">
+    <div class=\"alert alert-";
+            // line 13
+            echo twig_escape_filter($this->env, $context["label"], "html", null, true);
+            echo " alert-dismissible fade show\">
+        ";
+            // line 14
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable($context["messages"]);
+            foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
+                // line 15
+                echo "        <p>";
+                echo twig_escape_filter($this->env, $context["message"], "html", null, true);
+                echo "</p>                    
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 17
+            echo "    </div>
+</div>
+";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['label'], $context['messages'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 20
         echo "<div class=\"container\">
     <div class=\"row\">
         <div id=\"calendar-holder\" class=\"p-5 col-12 m-auto\" >
@@ -127,7 +159,7 @@ class __TwigTemplate_80bcae8feb658c9e55f939d27bb57847c29a3184b3b29b84a201c8f0a61
 
     }
 
-    // line 23
+    // line 32
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -137,7 +169,7 @@ class __TwigTemplate_80bcae8feb658c9e55f939d27bb57847c29a3184b3b29b84a201c8f0a61
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 24
+        // line 33
         echo "    <script src=\"https://cdn.jsdelivr.net/npm/@fullcalendar/core@4.1.0/main.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@4.1.0/main.min.js\"></script>
     <script src=\"https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@4.1.0/main.min.js\"></script>
@@ -153,7 +185,7 @@ class __TwigTemplate_80bcae8feb658c9e55f939d27bb57847c29a3184b3b29b84a201c8f0a61
                 eventSources: [
                     {
                         url: \"";
-        // line 38
+        // line 47
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("fc_load_events");
         echo "\",
                         method: \"POST\",
@@ -197,7 +229,7 @@ class __TwigTemplate_80bcae8feb658c9e55f939d27bb57847c29a3184b3b29b84a201c8f0a61
 
     public function getDebugInfo()
     {
-        return array (  157 => 38,  141 => 24,  131 => 23,  113 => 11,  103 => 10,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
+        return array (  189 => 47,  173 => 33,  163 => 32,  145 => 20,  137 => 17,  128 => 15,  124 => 14,  120 => 13,  117 => 12,  113 => 11,  103 => 10,  90 => 6,  80 => 5,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -212,6 +244,15 @@ class __TwigTemplate_80bcae8feb658c9e55f939d27bb57847c29a3184b3b29b84a201c8f0a61
     <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@4.1.0/main.min.css\">
 {% endblock %}
 {% block appointment_content %}
+{% for label,messages in app.flashes %}
+<div class=\"col-12\">
+    <div class=\"alert alert-{{label}} alert-dismissible fade show\">
+        {% for message in messages %}
+        <p>{{message}}</p>                    
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
 <div class=\"container\">
     <div class=\"row\">
         <div id=\"calendar-holder\" class=\"p-5 col-12 m-auto\" >

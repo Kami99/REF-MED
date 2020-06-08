@@ -353,6 +353,7 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
                     </div>
                   </div>
                 </div>
+                </div>
                   ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -362,7 +363,7 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
 
     }
 
-    // line 69
+    // line 70
     public function block_content($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -372,22 +373,22 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 70
+        // line 71
         echo "                  <section>
                       ";
-        // line 71
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 71, $this->source); })()), "presentation", [], "any", false, false, false, 71), "html", null, true);
+        // line 72
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 72, $this->source); })()), "presentation", [], "any", false, false, false, 72), "html", null, true);
         echo "
                     </section>
                         <section>
                            <p> <span class=\"info-titre\">Tarifs</span> : ";
-        // line 74
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 74, $this->source); })()), "fullTarif", [], "any", false, false, false, 74), "html", null, true);
+        // line 75
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 75, $this->source); })()), "fullTarif", [], "any", false, false, false, 75), "html", null, true);
         echo "</p>
                           <p>  <span class=\"info-titre\">Langue Parlées</span>: ";
-        // line 75
+        // line 76
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 75, $this->source); })()), "language", [], "any", false, false, false, 75));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 76, $this->source); })()), "language", [], "any", false, false, false, 76));
         foreach ($context['_seq'] as $context["_key"] => $context["langue"]) {
             echo " ";
             echo twig_escape_filter($this->env, $context["langue"], "html", null, true);
@@ -398,9 +399,9 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
         $context = array_intersect_key($context, $_parent) + $_parent;
         echo "</p>
                           <p> <span class=\"info-titre\">Paiement accèptés </span>: ";
-        // line 76
+        // line 77
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 76, $this->source); })()), "meansPayment", [], "any", false, false, false, 76));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 77, $this->source); })()), "meansPayment", [], "any", false, false, false, 77));
         foreach ($context['_seq'] as $context["_key"] => $context["means"]) {
             echo " ";
             echo twig_escape_filter($this->env, $context["means"], "html", null, true);
@@ -411,9 +412,9 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
         $context = array_intersect_key($context, $_parent) + $_parent;
         echo "</p>
                           <p> <span class=\"info-titre\">Moyens d'accès</span> :  ";
-        // line 77
+        // line 78
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 77, $this->source); })()), "praticalInfos", [], "any", false, false, false, 77));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 78, $this->source); })()), "praticalInfos", [], "any", false, false, false, 78));
         foreach ($context['_seq'] as $context["_key"] => $context["info"]) {
             echo " ";
             echo twig_escape_filter($this->env, $context["info"], "html", null, true);
@@ -424,9 +425,9 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
         $context = array_intersect_key($context, $_parent) + $_parent;
         echo "</p>
                           <p> <span class=\"info-titre\">Remboursement(s) accèpté(s)</span> : ";
-        // line 78
+        // line 79
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 78, $this->source); })()), "refund", [], "any", false, false, false, 78));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 79, $this->source); })()), "refund", [], "any", false, false, false, 79));
         foreach ($context['_seq'] as $context["_key"] => $context["refund"]) {
             echo " ";
             echo twig_escape_filter($this->env, $context["refund"], "html", null, true);
@@ -439,14 +440,14 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
                           </section>
                         <section class=\"container\">
                           <div id=\"map\" class=\"show-map\" data-lat=\"";
-        // line 81
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 81, $this->source); })()), "location", [], "any", false, false, false, 81), "latitude", [], "any", false, false, false, 81), "html", null, true);
+        // line 82
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 82, $this->source); })()), "location", [], "any", false, false, false, 82), "latitude", [], "any", false, false, false, 82), "html", null, true);
         echo "\" data-nameLocation=\" ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 81, $this->source); })()), "fullName", [], "any", false, false, false, 81), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 82, $this->source); })()), "fullName", [], "any", false, false, false, 82), "html", null, true);
         echo "  A  ";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 81, $this->source); })()), "location", [], "any", false, false, false, 81), "nameLocation", [], "any", false, false, false, 81), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 82, $this->source); })()), "location", [], "any", false, false, false, 82), "nameLocation", [], "any", false, false, false, 82), "html", null, true);
         echo " \" data-lon=\"";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 81, $this->source); })()), "location", [], "any", false, false, false, 81), "longitude", [], "any", false, false, false, 81), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["doctor"]) || array_key_exists("doctor", $context) ? $context["doctor"] : (function () { throw new RuntimeError('Variable "doctor" does not exist.', 82, $this->source); })()), "location", [], "any", false, false, false, 82), "longitude", [], "any", false, false, false, 82), "html", null, true);
         echo "\" class=\"col-12\"></div>
                           <div class=\"col-12 mt-15\" id=\"calendar-holder\"></div>
                           </section>
@@ -459,7 +460,7 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
 
     }
 
-    // line 85
+    // line 86
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -469,18 +470,18 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 86
+        // line 87
         echo "
 ";
-        // line 87
+        // line 88
         $this->displayParentBlock("javascripts", $context, $blocks);
         echo "
 \t\t<script src=\"";
-        // line 88
+        // line 89
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/tail/js/select-full.min.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 89
+        // line 90
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/js/leaflet.js"), "html", null, true);
         echo "\"></script>
 <script>
@@ -502,7 +503,7 @@ class __TwigTemplate_e91c28dfb37ec7765ab72dee255be656786edfc7756f58f6ad21014fc66
 }).addTo(myMap);    
 let doctorIcon = L.icon({
     iconUrl: \"";
-        // line 108
+        // line 109
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("bower_components/mainRefMed/doctor.png"), "html", null, true);
         echo "\",
     iconSize:     [35, 50], // size of the icon
@@ -537,7 +538,7 @@ myMap.panTo([lat, lon])
 
     public function getDebugInfo()
     {
-        return array (  506 => 108,  484 => 89,  480 => 88,  476 => 87,  473 => 86,  463 => 85,  443 => 81,  428 => 78,  415 => 77,  402 => 76,  389 => 75,  385 => 74,  379 => 71,  376 => 70,  366 => 69,  352 => 64,  350 => 63,  337 => 52,  327 => 51,  314 => 47,  304 => 46,  294 => 42,  287 => 40,  281 => 38,  278 => 37,  272 => 35,  269 => 34,  263 => 32,  260 => 31,  254 => 29,  251 => 28,  247 => 27,  244 => 26,  234 => 25,  213 => 22,  201 => 21,  188 => 19,  178 => 18,  166 => 16,  161 => 15,  151 => 14,  141 => 13,  134 => 10,  128 => 8,  118 => 7,  99 => 6,  87 => 4,  82 => 3,  72 => 2,  61 => 1,  58 => 24,  45 => 1,);
+        return array (  507 => 109,  485 => 90,  481 => 89,  477 => 88,  474 => 87,  464 => 86,  444 => 82,  429 => 79,  416 => 78,  403 => 77,  390 => 76,  386 => 75,  380 => 72,  377 => 71,  367 => 70,  352 => 64,  350 => 63,  337 => 52,  327 => 51,  314 => 47,  304 => 46,  294 => 42,  287 => 40,  281 => 38,  278 => 37,  272 => 35,  269 => 34,  263 => 32,  260 => 31,  254 => 29,  251 => 28,  247 => 27,  244 => 26,  234 => 25,  213 => 22,  201 => 21,  188 => 19,  178 => 18,  166 => 16,  161 => 15,  151 => 14,  141 => 13,  134 => 10,  128 => 8,  118 => 7,  99 => 6,  87 => 4,  82 => 3,  72 => 2,  61 => 1,  58 => 24,  45 => 1,);
     }
 
     public function getSourceContext()
@@ -608,6 +609,7 @@ myMap.panTo([lat, lon])
                         </div>
                     </div>
                   </div>
+                </div>
                 </div>
                   {% endblock %}
                   {% block content %}

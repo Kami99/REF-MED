@@ -1,0 +1,50 @@
+{% extends 'appMain.html.twig' %}
+
+{% block title %}Gestion des RDV{% endblock %}
+
+{% block body %}
+{% block addStyleSheets%}
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+{% endblock %}
+{% include "includeApp/_navigation.html.twig" %}
+{% for label,messages in app.flashes %}
+<div class="col-12">
+    <div class="alert alert-{{label}} alert-dismissible fade show">
+        {% for message in messages %}
+        <p>{{message}}</p>                    
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}
+{% block wrapper %}
+<div class="wrapper p-0">
+ {% block pharmacy_content %}
+ 
+ {% endblock %} 
+  {% block sidebar %}    
+{% include "pharmacy_availabe_drugs/_sidebar.html.twig" %}      
+{% endblock sidebar %}
+    
+{% endblock %}
+
+</div>
+{% endblock %}
+{% block javascripts %}
+	<script src="{{asset('bower_components/js/jquery-3.2.1.min.js')}}"></script>
+	<script src="{{asset('bower_components/js/popper.js')}}"></script>
+	<script src="{{asset('bower_components/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('bower_components/tail/js/select-full.min.js')}}"></script>
+	<script>
+        let attribute = document.querySelector(".js-form-selected");
+
+    
+        if (attribute != null) {
+        tail.select(".js-form-selected", {
+            search: true,
+            deselect: true,
+        });
+        }
+
+    </script>
+
+{% endblock %}
