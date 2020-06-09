@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig */
+/* @SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig */
 class __TwigTemplate_51cde15892de9347b33751023ae39a4c3ea485e9d3fe7b9dbb5317237c6277db extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_51cde15892de9347b33751023ae39a4c3ea485e9d3fe7b9dbb5317237c6
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig"));
 
         // line 11
         echo "
@@ -83,7 +83,7 @@ class __TwigTemplate_51cde15892de9347b33751023ae39a4c3ea485e9d3fe7b9dbb5317237c6
                     if ((twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "children", [], "any", false, false, false, 24)) > 0)) {
                         // line 25
                         echo "                        ";
-                        $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many_inline_table.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig", 25)->display($context);
+                        $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many_inline_table.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig", 25)->display($context);
                         // line 26
                         echo "                    ";
                     }
@@ -95,7 +95,7 @@ class __TwigTemplate_51cde15892de9347b33751023ae39a4c3ea485e9d3fe7b9dbb5317237c6
                     $context["associationAdmin"] = twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["sonata_admin"]) || array_key_exists("sonata_admin", $context) ? $context["sonata_admin"] : (function () { throw new RuntimeError('Variable "sonata_admin" does not exist.', 28, $this->source); })()), "field_description", [], "any", false, false, false, 28), "associationadmin", [], "any", false, false, false, 28);
                     // line 29
                     echo "                    ";
-                    $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many_inline_tabs.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig", 29)->display($context);
+                    $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many_inline_tabs.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig", 29)->display($context);
                     // line 30
                     echo "
                 ";
@@ -171,13 +171,13 @@ class __TwigTemplate_51cde15892de9347b33751023ae39a4c3ea485e9d3fe7b9dbb5317237c6
                     if ((twig_get_attribute($this->env, $this->source, (isset($context["sonata_admin"]) || array_key_exists("sonata_admin", $context) ? $context["sonata_admin"] : (function () { throw new RuntimeError('Variable "sonata_admin" does not exist.', 67, $this->source); })()), "inline", [], "any", false, false, false, 67) == "table")) {
                         // line 68
                         echo "                    ";
-                        $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many_sortable_script_table.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig", 68)->display($context);
+                        $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many_sortable_script_table.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig", 68)->display($context);
                         // line 69
                         echo "                ";
                     } else {
                         // line 70
                         echo "                    ";
-                        $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many_sortable_script_tabs.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig", 70)->display($context);
+                        $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many_sortable_script_tabs.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig", 70)->display($context);
                         // line 71
                         echo "                ";
                     }
@@ -189,7 +189,7 @@ class __TwigTemplate_51cde15892de9347b33751023ae39a4c3ea485e9d3fe7b9dbb5317237c6
             ";
                 // line 75
                 echo "            ";
-                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_association_script.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig", 75)->display($context);
+                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_association_script.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig", 75)->display($context);
                 // line 76
                 echo "
         ";
@@ -232,12 +232,12 @@ class __TwigTemplate_51cde15892de9347b33751023ae39a4c3ea485e9d3fe7b9dbb5317237c6
 
             ";
                 // line 95
-                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_modal.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig", 95)->display($context);
+                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_modal.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig", 95)->display($context);
                 // line 96
                 echo "
             ";
                 // line 97
-                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig", 97)->display($context);
+                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig", 97)->display($context);
                 // line 98
                 echo "        ";
             }
@@ -255,7 +255,7 @@ class __TwigTemplate_51cde15892de9347b33751023ae39a4c3ea485e9d3fe7b9dbb5317237c6
 
     public function getTemplateName()
     {
-        return "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig";
+        return "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig";
     }
 
     public function isTraitable()
@@ -370,6 +370,6 @@ file that was distributed with this source code.
         {% endif %}
     </div>
 {% endif %}
-", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_one_to_many.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\CRUD\\edit_orm_one_to_many.html.twig");
+", "@SonataDoctrineORMAdmin/CRUD/edit_orm_one_to_many.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\CRUD\\edit_orm_one_to_many.html.twig");
     }
 }

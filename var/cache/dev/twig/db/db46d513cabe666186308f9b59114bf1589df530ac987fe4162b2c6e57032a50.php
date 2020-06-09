@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:list__action.html.twig */
+/* @SonataAdmin/CRUD/list__action.html.twig */
 class __TwigTemplate_5725697beee03e279d7ad101034959b374802e088d1769bc8dd44502e4d7315c extends \Twig\Template
 {
     private $source;
@@ -32,17 +32,17 @@ class __TwigTemplate_5725697beee03e279d7ad101034959b374802e088d1769bc8dd44502e4d
     protected function doGetParent(array $context)
     {
         // line 12
-        return $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getAdminTemplate("base_list_field", twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 12, $this->source); })()), "code", [], "any", false, false, false, 12)), "SonataAdminBundle:CRUD:list__action.html.twig", 12);
+        return $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getAdminTemplate("base_list_field", twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 12, $this->source); })()), "code", [], "any", false, false, false, 12)), "@SonataAdmin/CRUD/list__action.html.twig", 12);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list__action.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list__action.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list__action.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list__action.html.twig"));
 
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -85,7 +85,7 @@ class __TwigTemplate_5725697beee03e279d7ad101034959b374802e088d1769bc8dd44502e4d
         foreach ($context['_seq'] as $context["_key"] => $context["actions"]) {
             // line 17
             echo "            ";
-            $this->loadTemplate(twig_get_attribute($this->env, $this->source, $context["actions"], "template", [], "any", false, false, false, 17), "SonataAdminBundle:CRUD:list__action.html.twig", 17)->display($context);
+            $this->loadTemplate(twig_get_attribute($this->env, $this->source, $context["actions"], "template", [], "any", false, false, false, 17), "@SonataAdmin/CRUD/list__action.html.twig", 17)->display($context);
             // line 18
             echo "        ";
             ++$context['loop']['index0'];
@@ -113,7 +113,7 @@ class __TwigTemplate_5725697beee03e279d7ad101034959b374802e088d1769bc8dd44502e4d
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:list__action.html.twig";
+        return "@SonataAdmin/CRUD/list__action.html.twig";
     }
 
     public function isTraitable()
@@ -148,6 +148,6 @@ file that was distributed with this source code.
         {% endfor %}
     </div>
 {% endblock %}
-", "SonataAdminBundle:CRUD:list__action.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list__action.html.twig");
+", "@SonataAdmin/CRUD/list__action.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list__action.html.twig");
     }
 }

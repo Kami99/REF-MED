@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:display_date.html.twig */
+/* @SonataAdmin/CRUD/display_date.html.twig */
 class __TwigTemplate_240c86f9a737b98882578021cfb2ff40518966c9c0d2974eb5bfc4755ed86286 extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_240c86f9a737b98882578021cfb2ff40518966c9c0d2974eb5bfc4755ed
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:display_date.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/display_date.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:display_date.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/display_date.html.twig"));
 
         // line 12
         ob_start();
@@ -73,7 +73,7 @@ class __TwigTemplate_240c86f9a737b98882578021cfb2ff40518966c9c0d2974eb5bfc4755ed
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:display_date.html.twig";
+        return "@SonataAdmin/CRUD/display_date.html.twig";
     }
 
     public function isTraitable()
@@ -109,6 +109,6 @@ file that was distributed with this source code.
         </time>
     {%- endif -%}
 {% endapply -%}
-", "SonataAdminBundle:CRUD:display_date.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\display_date.html.twig");
+", "@SonataAdmin/CRUD/display_date.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\display_date.html.twig");
     }
 }

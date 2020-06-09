@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:list_outer_rows_list.html.twig */
+/* @SonataAdmin/CRUD/list_outer_rows_list.html.twig */
 class __TwigTemplate_0114c0bf75eb2e529bdc9a0fa788c6a9b332433ce211a6ea76fc11b6a9724ade extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_0114c0bf75eb2e529bdc9a0fa788c6a9b332433ce211a6ea76fc11b6a97
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_outer_rows_list.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list_outer_rows_list.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_outer_rows_list.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list_outer_rows_list.html.twig"));
 
         // line 11
         echo "
@@ -63,7 +63,7 @@ class __TwigTemplate_0114c0bf75eb2e529bdc9a0fa788c6a9b332433ce211a6ea76fc11b6a97
             echo "    <tr>
         ";
             // line 14
-            $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getAdminTemplate("inner_list_row", twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 14, $this->source); })()), "code", [], "any", false, false, false, 14)), "SonataAdminBundle:CRUD:list_outer_rows_list.html.twig", 14)->display($context);
+            $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getAdminTemplate("inner_list_row", twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 14, $this->source); })()), "code", [], "any", false, false, false, 14)), "@SonataAdmin/CRUD/list_outer_rows_list.html.twig", 14)->display($context);
             // line 15
             echo "    </tr>
 ";
@@ -89,7 +89,7 @@ class __TwigTemplate_0114c0bf75eb2e529bdc9a0fa788c6a9b332433ce211a6ea76fc11b6a97
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:list_outer_rows_list.html.twig";
+        return "@SonataAdmin/CRUD/list_outer_rows_list.html.twig";
     }
 
     public function isTraitable()
@@ -120,6 +120,6 @@ file that was distributed with this source code.
         {% include get_admin_template('inner_list_row', admin.code) %}
     </tr>
 {% endfor %}
-", "SonataAdminBundle:CRUD:list_outer_rows_list.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list_outer_rows_list.html.twig");
+", "@SonataAdmin/CRUD/list_outer_rows_list.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list_outer_rows_list.html.twig");
     }
 }

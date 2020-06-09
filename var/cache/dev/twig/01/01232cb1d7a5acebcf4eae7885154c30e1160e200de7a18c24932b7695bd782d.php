@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* EasyAdminBundle:default:field_percent.html.twig */
+/* @EasyAdmin/default/field_percent.html.twig */
 class __TwigTemplate_f403ca5bdf881517b3c25a5920bb84525008f78a8defaec17ea2024615d2e6f3 extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_f403ca5bdf881517b3c25a5920bb84525008f78a8defaec17ea2024615d
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default:field_percent.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/field_percent.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default:field_percent.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/field_percent.html.twig"));
 
         // line 1
         $context["type"] = ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["field_options"] ?? null), "type_options", [], "any", false, true, false, 1), "type", [], "any", true, true, false, 1)) ? (_twig_default_filter(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["field_options"] ?? null), "type_options", [], "any", false, true, false, 1), "type", [], "any", false, false, false, 1), "fractional")) : ("fractional"));
@@ -57,7 +57,7 @@ class __TwigTemplate_f403ca5bdf881517b3c25a5920bb84525008f78a8defaec17ea2024615d
 
     public function getTemplateName()
     {
-        return "EasyAdminBundle:default:field_percent.html.twig";
+        return "@EasyAdmin/default/field_percent.html.twig";
     }
 
     public function isTraitable()
@@ -75,6 +75,6 @@ class __TwigTemplate_f403ca5bdf881517b3c25a5920bb84525008f78a8defaec17ea2024615d
         return new Source("{% set type = field_options.type_options.type|default('fractional') %}
 {% set scale = field_options.type_options.scale|default(0) %}
 {{ (type == 'fractional' ? value * 100 : value)|number_format(scale) }}%
-", "EasyAdminBundle:default:field_percent.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\field_percent.html.twig");
+", "@EasyAdmin/default/field_percent.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\field_percent.html.twig");
     }
 }

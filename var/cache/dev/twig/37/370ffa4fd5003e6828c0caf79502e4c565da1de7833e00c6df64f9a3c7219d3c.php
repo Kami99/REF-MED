@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD/Association:edit_many_to_many.html.twig */
+/* @SonataAdmin/CRUD/Association/edit_many_to_many.html.twig */
 class __TwigTemplate_f05ae6a52ee11d7ed0c50e8d59d1ca1d38ce5e2443589d717e0cc701ccef8bdd extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_f05ae6a52ee11d7ed0c50e8d59d1ca1d38ce5e2443589d717e0cc701cce
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD/Association:edit_many_to_many.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD/Association:edit_many_to_many.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig"));
 
         // line 11
         if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["sonata_admin"]) || array_key_exists("sonata_admin", $context) ? $context["sonata_admin"] : (function () { throw new RuntimeError('Variable "sonata_admin" does not exist.', 11, $this->source); })()), "field_description", [], "any", false, false, false, 11), "hasassociationadmin", [], "any", false, false, false, 11)) {
@@ -301,7 +301,7 @@ class __TwigTemplate_f05ae6a52ee11d7ed0c50e8d59d1ca1d38ce5e2443589d717e0cc701cce
             ";
                 // line 108
                 echo "            ";
-                $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_one_script.html.twig", "SonataAdminBundle:CRUD/Association:edit_many_to_many.html.twig", 108)->display($context);
+                $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_one_script.html.twig", "@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig", 108)->display($context);
                 // line 109
                 echo "
         ";
@@ -353,10 +353,10 @@ class __TwigTemplate_f05ae6a52ee11d7ed0c50e8d59d1ca1d38ce5e2443589d717e0cc701cce
                         </a>
                         ";
                     // line 129
-                    $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_modal.html.twig", "SonataAdminBundle:CRUD/Association:edit_many_to_many.html.twig", 129)->display($context);
+                    $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_modal.html.twig", "@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig", 129)->display($context);
                     // line 130
                     echo "                        ";
-                    $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_script.html.twig", "SonataAdminBundle:CRUD/Association:edit_many_to_many.html.twig", 130)->display($context);
+                    $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_script.html.twig", "@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig", 130)->display($context);
                     // line 131
                     echo "                    ";
                 }
@@ -379,7 +379,7 @@ class __TwigTemplate_f05ae6a52ee11d7ed0c50e8d59d1ca1d38ce5e2443589d717e0cc701cce
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD/Association:edit_many_to_many.html.twig";
+        return "@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig";
     }
 
     public function isTraitable()
@@ -530,6 +530,6 @@ file that was distributed with this source code.
         {% endif %}
     </div>
 {% endif %}
-", "SonataAdminBundle:CRUD/Association:edit_many_to_many.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\Association\\edit_many_to_many.html.twig");
+", "@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\Association\\edit_many_to_many.html.twig");
     }
 }

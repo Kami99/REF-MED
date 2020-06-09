@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* EasyAdminBundle:default:field_float.html.twig */
+/* @EasyAdmin/default/field_float.html.twig */
 class __TwigTemplate_7fdf586340d22a44f913c274a47bdd803a7c9c6381d18472e4272ee097f770ee extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_7fdf586340d22a44f913c274a47bdd803a7c9c6381d18472e4272ee097f
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default:field_float.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/field_float.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default:field_float.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/field_float.html.twig"));
 
         // line 1
         if (twig_get_attribute($this->env, $this->source, (isset($context["field_options"]) || array_key_exists("field_options", $context) ? $context["field_options"] : (function () { throw new RuntimeError('Variable "field_options" does not exist.', 1, $this->source); })()), "format", [], "any", false, false, false, 1)) {
@@ -63,7 +63,7 @@ class __TwigTemplate_7fdf586340d22a44f913c274a47bdd803a7c9c6381d18472e4272ee097f
 
     public function getTemplateName()
     {
-        return "EasyAdminBundle:default:field_float.html.twig";
+        return "@EasyAdmin/default/field_float.html.twig";
     }
 
     public function isTraitable()
@@ -83,6 +83,6 @@ class __TwigTemplate_7fdf586340d22a44f913c274a47bdd803a7c9c6381d18472e4272ee097f
 {% else %}
     {{ value|number_format(2) }}
 {% endif %}
-", "EasyAdminBundle:default:field_float.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\field_float.html.twig");
+", "@EasyAdmin/default/field_float.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\field_float.html.twig");
     }
 }

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataCoreBundle:Form:colorpicker.html.twig */
+/* @SonataCore/Form/colorpicker.html.twig */
 class __TwigTemplate_de8b147ad694106244e9d7d0315db81c6913d0b542ca2b96b6a134b95b8de7e3 extends \Twig\Template
 {
     private $source;
@@ -35,10 +35,10 @@ class __TwigTemplate_de8b147ad694106244e9d7d0315db81c6913d0b542ca2b96b6a134b95b8
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataCoreBundle:Form:colorpicker.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataCore/Form/colorpicker.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataCoreBundle:Form:colorpicker.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataCore/Form/colorpicker.html.twig"));
 
         // line 11
         $this->displayBlock('sonata_type_color_selector_widget', $context, $blocks);
@@ -100,7 +100,7 @@ class __TwigTemplate_de8b147ad694106244e9d7d0315db81c6913d0b542ca2b96b6a134b95b8
 
     public function getTemplateName()
     {
-        return "SonataCoreBundle:Form:colorpicker.html.twig";
+        return "@SonataCore/Form/colorpicker.html.twig";
     }
 
     public function getDebugInfo()
@@ -143,6 +143,6 @@ file that was distributed with this source code.
         </script>
     {% endspaceless %}
 {% endblock sonata_type_color_selector_widget %}
-", "SonataCoreBundle:Form:colorpicker.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\core-bundle\\src\\CoreBundle\\Resources\\views\\Form\\colorpicker.html.twig");
+", "@SonataCore/Form/colorpicker.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\core-bundle\\src\\CoreBundle\\Resources\\views\\Form\\colorpicker.html.twig");
     }
 }

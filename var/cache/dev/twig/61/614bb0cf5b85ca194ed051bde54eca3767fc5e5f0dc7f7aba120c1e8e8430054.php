@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:base_list_flat_inner_row.html.twig */
+/* @SonataAdmin/CRUD/base_list_flat_inner_row.html.twig */
 class __TwigTemplate_f341963cc635e475ffabecfdc4e71acddeca03e35ef7c7f7b7649553c0b68278 extends \Twig\Template
 {
     private $source;
@@ -35,10 +35,10 @@ class __TwigTemplate_f341963cc635e475ffabecfdc4e71acddeca03e35ef7c7f7b7649553c0b
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:base_list_flat_inner_row.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/base_list_flat_inner_row.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:base_list_flat_inner_row.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/base_list_flat_inner_row.html.twig"));
 
         // line 11
         echo "
@@ -110,7 +110,7 @@ class __TwigTemplate_f341963cc635e475ffabecfdc4e71acddeca03e35ef7c7f7b7649553c0b
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:base_list_flat_inner_row.html.twig";
+        return "@SonataAdmin/CRUD/base_list_flat_inner_row.html.twig";
     }
 
     public function isTraitable()
@@ -151,6 +151,6 @@ file that was distributed with this source code.
         {{ object|render_list_element(admin.list['_action']) }}
     </td>
 {% endif %}
-", "SonataAdminBundle:CRUD:base_list_flat_inner_row.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\base_list_flat_inner_row.html.twig");
+", "@SonataAdmin/CRUD/base_list_flat_inner_row.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\base_list_flat_inner_row.html.twig");
     }
 }

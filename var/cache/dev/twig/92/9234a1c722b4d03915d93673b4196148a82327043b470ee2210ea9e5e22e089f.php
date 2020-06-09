@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:show_array.html.twig */
+/* @SonataAdmin/CRUD/show_array.html.twig */
 class __TwigTemplate_f7956e7ca229108c255915f93209573015886d479be5c3b5894794dd739002b4 extends \Twig\Template
 {
     private $source;
@@ -39,15 +39,15 @@ class __TwigTemplate_f7956e7ca229108c255915f93209573015886d479be5c3b5894794dd739
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:show_array.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/show_array.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:show_array.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/show_array.html.twig"));
 
         // line 11
-        $macros["show"] = $this->macros["show"] = $this->loadTemplate("@SonataAdmin/CRUD/base_array_macro.html.twig", "SonataAdminBundle:CRUD:show_array.html.twig", 11)->unwrap();
+        $macros["show"] = $this->macros["show"] = $this->loadTemplate("@SonataAdmin/CRUD/base_array_macro.html.twig", "@SonataAdmin/CRUD/show_array.html.twig", 11)->unwrap();
         // line 13
-        $this->parent = $this->loadTemplate("@SonataAdmin/CRUD/base_show_field.html.twig", "SonataAdminBundle:CRUD:show_array.html.twig", 13);
+        $this->parent = $this->loadTemplate("@SonataAdmin/CRUD/base_show_field.html.twig", "@SonataAdmin/CRUD/show_array.html.twig", 13);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -86,7 +86,7 @@ class __TwigTemplate_f7956e7ca229108c255915f93209573015886d479be5c3b5894794dd739
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:show_array.html.twig";
+        return "@SonataAdmin/CRUD/show_array.html.twig";
     }
 
     public function isTraitable()
@@ -122,6 +122,6 @@ file that was distributed with this source code.
         { default_translation_domain : admin.translationDomain }|merge(field_description.options)
     ) }}
 {% endblock %}
-", "SonataAdminBundle:CRUD:show_array.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\show_array.html.twig");
+", "@SonataAdmin/CRUD/show_array.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\show_array.html.twig");
     }
 }

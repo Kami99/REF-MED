@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig */
+/* @SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig */
 class __TwigTemplate_56222d22a40639e6beeb7667cceb05a879687f334de52245ff7bbb791127d5c9 extends \Twig\Template
 {
     private $source;
@@ -46,12 +46,12 @@ class __TwigTemplate_56222d22a40639e6beeb7667cceb05a879687f334de52245ff7bbb79112
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig"));
 
-        $this->parent = $this->loadTemplate("@SonataAdmin/Form/form_admin_fields.html.twig", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig", 12);
+        $this->parent = $this->loadTemplate("@SonataAdmin/Form/form_admin_fields.html.twig", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig", 12);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -73,7 +73,7 @@ class __TwigTemplate_56222d22a40639e6beeb7667cceb05a879687f334de52245ff7bbb79112
 
         // line 17
         echo "    ";
-        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_one_to_one.html.twig", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig", 17)->display($context);
+        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_one_to_one.html.twig", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig", 17)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -94,7 +94,7 @@ class __TwigTemplate_56222d22a40639e6beeb7667cceb05a879687f334de52245ff7bbb79112
 
         // line 21
         echo "    ";
-        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig", 21)->display($context);
+        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_to_many.html.twig", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig", 21)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -115,7 +115,7 @@ class __TwigTemplate_56222d22a40639e6beeb7667cceb05a879687f334de52245ff7bbb79112
 
         // line 25
         echo "    ";
-        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_to_one.html.twig", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig", 25)->display($context);
+        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_to_one.html.twig", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig", 25)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -136,7 +136,7 @@ class __TwigTemplate_56222d22a40639e6beeb7667cceb05a879687f334de52245ff7bbb79112
 
         // line 29
         echo "    ";
-        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_one_to_many.html.twig", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig", 29)->display($context);
+        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_one_to_many.html.twig", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig", 29)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -417,7 +417,7 @@ class __TwigTemplate_56222d22a40639e6beeb7667cceb05a879687f334de52245ff7bbb79112
 
     ";
         // line 150
-        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_script.html.twig", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig", 150)->display($context);
+        $this->loadTemplate("@SonataAdmin/CRUD/Association/edit_many_script.html.twig", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig", 150)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -526,7 +526,7 @@ class __TwigTemplate_56222d22a40639e6beeb7667cceb05a879687f334de52245ff7bbb79112
 
     public function getTemplateName()
     {
-        return "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig";
+        return "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig";
     }
 
     public function isTraitable()
@@ -717,6 +717,6 @@ file that was distributed with this source code.
         INVALID MODE : {{ id }} - type : CollectionType - mapping : {{ sonata_admin.field_description.mappingtype }}
     {% endif %}
 {% endblock %}
-", "SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\Form\\form_admin_fields.html.twig");
+", "@SonataDoctrineORMAdmin/Form/form_admin_fields.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\Form\\form_admin_fields.html.twig");
     }
 }

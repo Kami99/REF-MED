@@ -1,0 +1,82 @@
+{% extends 'main_refmed/main_result.html.twig' %}
+{% block result_content %}
+{% if pharmacies != null %}
+<div class="container">
+    <br>
+    <p>Les médicaments trouvées sont : <strong>{% for drug in drugs %}{{drug}}{% endfor %}</strong> </p>
+    <br>
+    <div class="row">
+    {% for pharmacy in pharmacies %}
+        <div class="card" data-lat="{{pharmacy.location.latitude}}"  data-location="{{pharmacy.pharmacyName}} à <br>{{pharmacy.location.nameLocation |u.truncate(25, '...')}}" data-lon="{{pharmacy.location.longitude}}">
+            <input type="checkbox" id="card1" class="more" aria-hidden="true">
+            <div class="content">
+                <div class="front" style="background-image: url('https://images.unsplash.com/photo-1529408686214-b48b8532f72c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=986e2dee5c1b488d877ad7ba1afaf2ec&auto=format&fit=crop&w=1350&q=80')">
+                    <div class="inner">
+                        <h2>{{pharmacy.pharmacyName}}</h2>
+                        <label for="card1" class="button" aria-hidden="true">
+                            Obtenez plus de détails
+                        </label>
+                    </div>
+                </div>
+                <div class="back">
+                    <div class="inner">
+                        <div class="description">
+                            <p>{{drugs[0].description}}</p>
+                        </div>
+                        <div class="location">{{pharmacy.location.nameLocation|u.truncate(55, '...')}}</div>
+                        <div class="price">
+                            {% if drugs[0].pharmacyAvailabeDrugs is empty %}
+                            {% else %}
+                            {% for available in drugs[0].pharmacyAvailabeDrugs %}
+                            {% if available.pharmacy  is same as(pharmacy) %}
+                            {{available.price|number_format(0,' ',' ')}} FCFA
+                            {% endif %}   
+                            {% endfor %}
+                            {% endif %}
+    
+                        </div>
+                            <label for="card1" class="button return" aria-hidden="true">
+                                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                             </label>
+                             <button type="button" class="btn btn-success mt-3 mb-3">Disponible</button>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+    
+
+</div>
+{% else %}
+<h1 class="h2 mb-70">Désolé, nous n'avons pas trouvé le médicament recherché… </h1>
+  <div class="medilife-book-an-appoinment-area">
+
+                <div class="appointment-form-content p-4">
+                    <h2 class="lead">Essayez avec d'autres critères de recherche.</h2> 
+
+                {% include "includeApp/_form_search_drugs.html.twig" %}       
+                </div>      
+            </div>      
+                <div class="container mt-50 mb-30">
+                    <div class="row row-card p-4">
+                        <div class="col-lg-4 col-md-12 mt-25">
+                        <button type="button" class="btn btn-primary btn-lg">RECHERCHEZ </button>    
+                        </div>
+
+                    </div>
+
+
+
+</div>
+
+
+    
+{% endif %}
+
+
+  
+{% endblock result_content %}

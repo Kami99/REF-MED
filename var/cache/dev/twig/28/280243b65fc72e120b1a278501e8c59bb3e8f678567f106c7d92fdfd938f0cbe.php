@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:Form:silex_form_div_layout.html.twig */
+/* @SonataAdmin/Form/silex_form_div_layout.html.twig */
 class __TwigTemplate_a24bd39c5a7c4f70336cf908b5530a5c9e1792d23fdf0ac73e45f7ffb5c45f3e extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_a24bd39c5a7c4f70336cf908b5530a5c9e1792d23fdf0ac73e45f7ffb5c
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:Form:silex_form_div_layout.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/Form/silex_form_div_layout.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:Form:silex_form_div_layout.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/Form/silex_form_div_layout.html.twig"));
 
         // line 2
         echo "
@@ -55,7 +55,7 @@ class __TwigTemplate_a24bd39c5a7c4f70336cf908b5530a5c9e1792d23fdf0ac73e45f7ffb5c
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:Form:silex_form_div_layout.html.twig";
+        return "@SonataAdmin/Form/silex_form_div_layout.html.twig";
     }
 
     public function getDebugInfo()
@@ -171,6 +171,6 @@ class __TwigTemplate_a24bd39c5a7c4f70336cf908b5530a5c9e1792d23fdf0ac73e45f7ffb5c
 {% endapply %}
 {% endblock form_errors %}
 #}
-", "SonataAdminBundle:Form:silex_form_div_layout.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\Form\\silex_form_div_layout.html.twig");
+", "@SonataAdmin/Form/silex_form_div_layout.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\Form\\silex_form_div_layout.html.twig");
     }
 }

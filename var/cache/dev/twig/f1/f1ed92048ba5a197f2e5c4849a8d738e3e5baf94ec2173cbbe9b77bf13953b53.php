@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataDoctrineORMAdminBundle:CRUD:list_orm_one_to_one.html.twig */
+/* @SonataDoctrineORMAdmin/CRUD/list_orm_one_to_one.html.twig */
 class __TwigTemplate_576271b72b2479b0cc20c9b056735706e1acb797da5ba7b0dd071024fc5a464e extends \Twig\Template
 {
     private $source;
@@ -32,17 +32,17 @@ class __TwigTemplate_576271b72b2479b0cc20c9b056735706e1acb797da5ba7b0dd071024fc5
     protected function doGetParent(array $context)
     {
         // line 12
-        return $this->loadTemplate(twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 12, $this->source); })()), "getTemplate", [0 => "base_list_field"], "method", false, false, false, 12), "SonataDoctrineORMAdminBundle:CRUD:list_orm_one_to_one.html.twig", 12);
+        return $this->loadTemplate(twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 12, $this->source); })()), "getTemplate", [0 => "base_list_field"], "method", false, false, false, 12), "@SonataDoctrineORMAdmin/CRUD/list_orm_one_to_one.html.twig", 12);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:CRUD:list_orm_one_to_one.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/CRUD/list_orm_one_to_one.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:CRUD:list_orm_one_to_one.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/CRUD/list_orm_one_to_one.html.twig"));
 
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -96,7 +96,7 @@ class __TwigTemplate_576271b72b2479b0cc20c9b056735706e1acb797da5ba7b0dd071024fc5
 
     public function getTemplateName()
     {
-        return "SonataDoctrineORMAdminBundle:CRUD:list_orm_one_to_one.html.twig";
+        return "@SonataDoctrineORMAdmin/CRUD/list_orm_one_to_one.html.twig";
     }
 
     public function isTraitable()
@@ -137,6 +137,6 @@ file that was distributed with this source code.
         {{ value|render_relation_element(field_description) }}
     {% endif %}
 {% endblock %}
-", "SonataDoctrineORMAdminBundle:CRUD:list_orm_one_to_one.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\CRUD\\list_orm_one_to_one.html.twig");
+", "@SonataDoctrineORMAdmin/CRUD/list_orm_one_to_one.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\CRUD\\list_orm_one_to_one.html.twig");
     }
 }

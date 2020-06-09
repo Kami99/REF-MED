@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:base_acl.html.twig */
+/* @SonataAdmin/CRUD/base_acl.html.twig */
 class __TwigTemplate_7aff676ffe4bec5218e91947015fd012becd4274b4c0f11c0c9e72dd8b6fedcf extends \Twig\Template
 {
     private $source;
@@ -35,20 +35,20 @@ class __TwigTemplate_7aff676ffe4bec5218e91947015fd012becd4274b4c0f11c0c9e72dd8b6
     protected function doGetParent(array $context)
     {
         // line 12
-        return $this->loadTemplate((isset($context["base_template"]) || array_key_exists("base_template", $context) ? $context["base_template"] : (function () { throw new RuntimeError('Variable "base_template" does not exist.', 12, $this->source); })()), "SonataAdminBundle:CRUD:base_acl.html.twig", 12);
+        return $this->loadTemplate((isset($context["base_template"]) || array_key_exists("base_template", $context) ? $context["base_template"] : (function () { throw new RuntimeError('Variable "base_template" does not exist.', 12, $this->source); })()), "@SonataAdmin/CRUD/base_acl.html.twig", 12);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:base_acl.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/base_acl.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:base_acl.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/base_acl.html.twig"));
 
         // line 18
-        $macros["acl"] = $this->macros["acl"] = $this->loadTemplate("@SonataAdmin/CRUD/base_acl_macro.html.twig", "SonataAdminBundle:CRUD:base_acl.html.twig", 18)->unwrap();
+        $macros["acl"] = $this->macros["acl"] = $this->loadTemplate("@SonataAdmin/CRUD/base_acl_macro.html.twig", "@SonataAdmin/CRUD/base_acl.html.twig", 18)->unwrap();
         // line 12
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -70,7 +70,7 @@ class __TwigTemplate_7aff676ffe4bec5218e91947015fd012becd4274b4c0f11c0c9e72dd8b6
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "actions"));
 
         // line 15
-        $this->loadTemplate("@SonataAdmin/CRUD/action_buttons.html.twig", "SonataAdminBundle:CRUD:base_acl.html.twig", 15)->display($context);
+        $this->loadTemplate("@SonataAdmin/CRUD/action_buttons.html.twig", "@SonataAdmin/CRUD/base_acl.html.twig", 15)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -151,7 +151,7 @@ class __TwigTemplate_7aff676ffe4bec5218e91947015fd012becd4274b4c0f11c0c9e72dd8b6
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:base_acl.html.twig";
+        return "@SonataAdmin/CRUD/base_acl.html.twig";
     }
 
     public function isTraitable()
@@ -193,6 +193,6 @@ file that was distributed with this source code.
         {{ acl.render_form(aclUsersForm, permissions, 'td_username', admin, sonata_admin.adminPool, object) }}
     {% endblock %}
 {% endblock %}
-", "SonataAdminBundle:CRUD:base_acl.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\base_acl.html.twig");
+", "@SonataAdmin/CRUD/base_acl.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\base_acl.html.twig");
     }
 }

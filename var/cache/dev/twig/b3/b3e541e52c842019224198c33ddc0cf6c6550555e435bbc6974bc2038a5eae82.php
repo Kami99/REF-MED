@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataCoreBundle:Form:color.html.twig */
+/* @SonataCore/Form/color.html.twig */
 class __TwigTemplate_a3a4174cd4fc656175bcb2aff5999b39d7924a8d221e0ca2269a2c4bf0a664db extends \Twig\Template
 {
     private $source;
@@ -35,10 +35,10 @@ class __TwigTemplate_a3a4174cd4fc656175bcb2aff5999b39d7924a8d221e0ca2269a2c4bf0a
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataCoreBundle:Form:color.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataCore/Form/color.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataCoreBundle:Form:color.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataCore/Form/color.html.twig"));
 
         // line 11
         $this->displayBlock('sonata_type_color_widget', $context, $blocks);
@@ -84,7 +84,7 @@ class __TwigTemplate_a3a4174cd4fc656175bcb2aff5999b39d7924a8d221e0ca2269a2c4bf0a
 
     public function getTemplateName()
     {
-        return "SonataCoreBundle:Form:color.html.twig";
+        return "@SonataCore/Form/color.html.twig";
     }
 
     public function getDebugInfo()
@@ -109,6 +109,6 @@ file that was distributed with this source code.
         <input type=\"color\" {{ block('widget_attributes') }} {% if value is not empty %}value=\"{{ value }}\" {% endif %}/>
     {% endspaceless %}
 {% endblock sonata_type_color_widget %}
-", "SonataCoreBundle:Form:color.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\core-bundle\\src\\CoreBundle\\Resources\\views\\Form\\color.html.twig");
+", "@SonataCore/Form/color.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\core-bundle\\src\\CoreBundle\\Resources\\views\\Form\\color.html.twig");
     }
 }

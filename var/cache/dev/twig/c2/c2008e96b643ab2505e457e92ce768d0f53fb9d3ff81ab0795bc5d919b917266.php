@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataDatagridBundle:Search:results.html.twig */
+/* @SonataDatagrid/Search/results.html.twig */
 class __TwigTemplate_16efa078638c6db3ea1ade9bf2effb66591a131495c28f255a92c78fa2b7f3ae extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_16efa078638c6db3ea1ade9bf2effb66591a131495c28f255a92c78fa2b
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDatagridBundle:Search:results.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDatagrid/Search/results.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDatagridBundle:Search:results.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDatagrid/Search/results.html.twig"));
 
         // line 2
         echo "
@@ -83,7 +83,7 @@ class __TwigTemplate_16efa078638c6db3ea1ade9bf2effb66591a131495c28f255a92c78fa2b
 <div class=\"row text-center\">
     ";
         // line 34
-        $this->loadTemplate("@SonataDatagrid/Search/pager.html.twig", "SonataDatagridBundle:Search:results.html.twig", 34)->display($context);
+        $this->loadTemplate("@SonataDatagrid/Search/pager.html.twig", "@SonataDatagrid/Search/results.html.twig", 34)->display($context);
         // line 35
         echo "</div>
 
@@ -110,7 +110,7 @@ class __TwigTemplate_16efa078638c6db3ea1ade9bf2effb66591a131495c28f255a92c78fa2b
             echo "        <div class=\"col-sm-4\" itemscope itemtype=\"http://schema.org/Product\">
             ";
             // line 40
-            $this->loadTemplate("@SonataProduct/Catalog/_product_grid.html.twig", "SonataDatagridBundle:Search:results.html.twig", 40)->display($context);
+            $this->loadTemplate("@SonataProduct/Catalog/_product_grid.html.twig", "@SonataDatagrid/Search/results.html.twig", 40)->display($context);
             // line 41
             echo "        </div>
     ";
@@ -139,7 +139,7 @@ class __TwigTemplate_16efa078638c6db3ea1ade9bf2effb66591a131495c28f255a92c78fa2b
 
     public function getTemplateName()
     {
-        return "SonataDatagridBundle:Search:results.html.twig";
+        return "@SonataDatagrid/Search/results.html.twig";
     }
 
     public function isTraitable()
@@ -197,6 +197,6 @@ class __TwigTemplate_16efa078638c6db3ea1ade9bf2effb66591a131495c28f255a92c78fa2b
         </div>
     {% endfor %}
 </div>
-", "SonataDatagridBundle:Search:results.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\datagrid-bundle\\src\\Resources\\views\\Search\\results.html.twig");
+", "@SonataDatagrid/Search/results.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\datagrid-bundle\\src\\Resources\\views\\Search\\results.html.twig");
     }
 }

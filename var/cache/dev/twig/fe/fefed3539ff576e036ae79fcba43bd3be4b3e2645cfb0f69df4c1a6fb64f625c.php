@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:show_email.html.twig */
+/* @SonataAdmin/CRUD/show_email.html.twig */
 class __TwigTemplate_3e2b69ed32354c977466644a8215453ba72d5bb8bd34d716e7d0f005a99b3bf1 extends \Twig\Template
 {
     private $source;
@@ -39,12 +39,12 @@ class __TwigTemplate_3e2b69ed32354c977466644a8215453ba72d5bb8bd34d716e7d0f005a99
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:show_email.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/show_email.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:show_email.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/show_email.html.twig"));
 
-        $this->parent = $this->loadTemplate("@SonataAdmin/CRUD/base_show_field.html.twig", "SonataAdminBundle:CRUD:show_email.html.twig", 1);
+        $this->parent = $this->loadTemplate("@SonataAdmin/CRUD/base_show_field.html.twig", "@SonataAdmin/CRUD/show_email.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -66,7 +66,7 @@ class __TwigTemplate_3e2b69ed32354c977466644a8215453ba72d5bb8bd34d716e7d0f005a99
 
         // line 4
         echo "    ";
-        $this->loadTemplate("@SonataAdmin/CRUD/_email_link.html.twig", "SonataAdminBundle:CRUD:show_email.html.twig", 4)->display($context);
+        $this->loadTemplate("@SonataAdmin/CRUD/_email_link.html.twig", "@SonataAdmin/CRUD/show_email.html.twig", 4)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -77,7 +77,7 @@ class __TwigTemplate_3e2b69ed32354c977466644a8215453ba72d5bb8bd34d716e7d0f005a99
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:show_email.html.twig";
+        return "@SonataAdmin/CRUD/show_email.html.twig";
     }
 
     public function isTraitable()
@@ -97,6 +97,6 @@ class __TwigTemplate_3e2b69ed32354c977466644a8215453ba72d5bb8bd34d716e7d0f005a99
 {% block field %}
     {% include '@SonataAdmin/CRUD/_email_link.html.twig' %}
 {% endblock %}
-", "SonataAdminBundle:CRUD:show_email.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\show_email.html.twig");
+", "@SonataAdmin/CRUD/show_email.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\show_email.html.twig");
     }
 }

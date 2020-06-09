@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/createPost.html.twig */
+/* Blog/createPost.html.twig */
 class __TwigTemplate_14467dd0b9b9ea0a10b0a3776508b4abe58845c1753a536cd1cb90eed45029c7 extends \Twig\Template
 {
     private $source;
@@ -42,12 +42,12 @@ class __TwigTemplate_14467dd0b9b9ea0a10b0a3776508b4abe58845c1753a536cd1cb90eed45
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/createPost.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Blog/createPost.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/createPost.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Blog/createPost.html.twig"));
 
-        $this->parent = $this->loadTemplate("Blog/baseBlog.html.twig", "blog/createPost.html.twig", 1);
+        $this->parent = $this->loadTemplate("Blog/baseBlog.html.twig", "Blog/createPost.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -119,7 +119,7 @@ class __TwigTemplate_14467dd0b9b9ea0a10b0a3776508b4abe58845c1753a536cd1cb90eed45
 
         ";
         // line 15
-        $this->loadTemplate("Blog/_navigation.html.twig", "blog/createPost.html.twig", 15)->display($context);
+        $this->loadTemplate("Blog/_navigation.html.twig", "Blog/createPost.html.twig", 15)->display($context);
         // line 16
         echo "
     </section> <!-- end s-pageheader -->
@@ -148,7 +148,7 @@ class __TwigTemplate_14467dd0b9b9ea0a10b0a3776508b4abe58845c1753a536cd1cb90eed45
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 38, $this->source); })()), 'form_start', ["attr" => ["class" => "form_create"]]);
         echo "
 
-                            <div class=\"col-md-6 col-lg-12 m-auto\">
+                            <div class=\"col-six col-lg-12 m-auto\">
                                 <div class=\"form-group\">
                               ";
         // line 42
@@ -156,7 +156,7 @@ class __TwigTemplate_14467dd0b9b9ea0a10b0a3776508b4abe58845c1753a536cd1cb90eed45
         echo "
                                 </div>
                             </div>
-                            <div class=\"col-md-6 col-lg-12 m-auto\">
+                            <div class=\"col-six col-lg-12 m-auto\">
                                 <div class=\"form-group\">
                               ";
         // line 47
@@ -362,7 +362,7 @@ if (attribute != null) {
 
     public function getTemplateName()
     {
-        return "blog/createPost.html.twig";
+        return "Blog/createPost.html.twig";
     }
 
     public function isTraitable()
@@ -416,12 +416,12 @@ if (attribute != null) {
                         <div class=\"row\">
                              {{form_start(form, { 'attr': {'class': 'form_create'}})}}
 
-                            <div class=\"col-md-6 col-lg-12 m-auto\">
+                            <div class=\"col-six col-lg-12 m-auto\">
                                 <div class=\"form-group\">
                               {{form_row(form.title, { 'attr': {'class': 'form-create'}})}}
                                 </div>
                             </div>
-                            <div class=\"col-md-6 col-lg-12 m-auto\">
+                            <div class=\"col-six col-lg-12 m-auto\">
                                 <div class=\"form-group\">
                               {{form_row(form.imageFile, { 'attr': {'class': 'form_control'}})}}
                                 </div>
@@ -561,6 +561,6 @@ if (attribute != null) {
 
 
 {% endblock javascripts %}
-", "blog/createPost.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\Blog\\createPost.html.twig");
+", "Blog/createPost.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\Blog\\createPost.html.twig");
     }
 }

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle::standard_layout.html.twig */
+/* @SonataAdmin/standard_layout.html.twig */
 class __TwigTemplate_4fb41ad73fbf1df8efc9acbfd0abea4c3da912b4ea4394b0b7b8c5618df60d3c extends \Twig\Template
 {
     private $source;
@@ -66,10 +66,10 @@ class __TwigTemplate_4fb41ad73fbf1df8efc9acbfd0abea4c3da912b4ea4394b0b7b8c5618df
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle::standard_layout.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/standard_layout.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle::standard_layout.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/standard_layout.html.twig"));
 
         // line 12
         $context["_preview"] = ((        $this->hasBlock("preview", $context, $blocks)) ? (twig_trim_filter(        $this->renderBlock("preview", $context, $blocks))) : (null));
@@ -845,7 +845,7 @@ class __TwigTemplate_4fb41ad73fbf1df8efc9acbfd0abea4c3da912b4ea4394b0b7b8c5618df
                                                 </a>
                                                 ";
         // line 202
-        $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getGlobalTemplate("add_block"), "SonataAdminBundle::standard_layout.html.twig", 202)->display($context);
+        $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getGlobalTemplate("add_block"), "@SonataAdmin/standard_layout.html.twig", 202)->display($context);
         // line 203
         echo "                                            </li>
                                         ";
@@ -875,7 +875,7 @@ class __TwigTemplate_4fb41ad73fbf1df8efc9acbfd0abea4c3da912b4ea4394b0b7b8c5618df
                                                 <ul class=\"dropdown-menu dropdown-user\">
                                                     ";
         // line 211
-        $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getGlobalTemplate("user_block"), "SonataAdminBundle::standard_layout.html.twig", 211)->display($context);
+        $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getGlobalTemplate("user_block"), "@SonataAdmin/standard_layout.html.twig", 211)->display($context);
         // line 212
         echo "                                                </ul>
                                             </li>
@@ -1462,7 +1462,7 @@ class __TwigTemplate_4fb41ad73fbf1df8efc9acbfd0abea4c3da912b4ea4394b0b7b8c5618df
 
         // line 327
         echo "                                ";
-        $this->loadTemplate("@SonataCore/FlashMessage/render.html.twig", "SonataAdminBundle::standard_layout.html.twig", 327)->display($context);
+        $this->loadTemplate("@SonataCore/FlashMessage/render.html.twig", "@SonataAdmin/standard_layout.html.twig", 327)->display($context);
         // line 328
         echo "                            ";
         
@@ -1500,7 +1500,7 @@ class __TwigTemplate_4fb41ad73fbf1df8efc9acbfd0abea4c3da912b4ea4394b0b7b8c5618df
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle::standard_layout.html.twig";
+        return "@SonataAdmin/standard_layout.html.twig";
     }
 
     public function isTraitable()
@@ -1889,6 +1889,6 @@ file that was distributed with this source code.
 
     </body>
 </html>
-", "SonataAdminBundle::standard_layout.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\standard_layout.html.twig");
+", "@SonataAdmin/standard_layout.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\standard_layout.html.twig");
     }
 }

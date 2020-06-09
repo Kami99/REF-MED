@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig */
+/* @SonataDoctrineORMAdmin/CRUD/edit_orm_many_to_many.html.twig */
 class __TwigTemplate_d2f54c362dd5653d6c5c09fd92da4c778e0c8bc17b7384a982f95bb630bc6bb3 extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_d2f54c362dd5653d6c5c09fd92da4c778e0c8bc17b7384a982f95bb630b
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_to_many.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_to_many.html.twig"));
 
         // line 11
         echo "
@@ -293,7 +293,7 @@ class __TwigTemplate_d2f54c362dd5653d6c5c09fd92da4c778e0c8bc17b7384a982f95bb630b
             ";
                 // line 102
                 echo "            ";
-                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_association_script.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig", 102)->display($context);
+                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_one_association_script.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_to_many.html.twig", 102)->display($context);
                 // line 103
                 echo "
         ";
@@ -348,13 +348,13 @@ class __TwigTemplate_d2f54c362dd5653d6c5c09fd92da4c778e0c8bc17b7384a982f95bb630b
 
                 ";
                 // line 124
-                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_modal.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig", 124)->display($context);
+                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_modal.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_to_many.html.twig", 124)->display($context);
                 // line 125
                 echo "            </div>
 
             ";
                 // line 127
-                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig", 127)->display($context);
+                $this->loadTemplate("@SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_to_many.html.twig", 127)->display($context);
                 // line 128
                 echo "        ";
             }
@@ -372,7 +372,7 @@ class __TwigTemplate_d2f54c362dd5653d6c5c09fd92da4c778e0c8bc17b7384a982f95bb630b
 
     public function getTemplateName()
     {
-        return "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig";
+        return "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_to_many.html.twig";
     }
 
     public function isTraitable()
@@ -517,6 +517,6 @@ file that was distributed with this source code.
         {% endif %}
     </div>
 {% endif %}
-", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_to_many.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\CRUD\\edit_orm_many_to_many.html.twig");
+", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_to_many.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\CRUD\\edit_orm_many_to_many.html.twig");
     }
 }

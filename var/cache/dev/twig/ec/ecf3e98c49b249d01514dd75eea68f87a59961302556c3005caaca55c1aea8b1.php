@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataBlockBundle:Block:block_core_rss.html.twig */
+/* @SonataBlock/Block/block_core_rss.html.twig */
 class __TwigTemplate_83d0ff7bcbae91fb29d664c0f5e0307a34ab6335cd2ce6efd96f91c21702de74 extends \Twig\Template
 {
     private $source;
@@ -32,17 +32,17 @@ class __TwigTemplate_83d0ff7bcbae91fb29d664c0f5e0307a34ab6335cd2ce6efd96f91c2170
     protected function doGetParent(array $context)
     {
         // line 11
-        return $this->loadTemplate(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["sonata_block"]) || array_key_exists("sonata_block", $context) ? $context["sonata_block"] : (function () { throw new RuntimeError('Variable "sonata_block" does not exist.', 11, $this->source); })()), "templates", [], "any", false, false, false, 11), "block_base", [], "any", false, false, false, 11), "SonataBlockBundle:Block:block_core_rss.html.twig", 11);
+        return $this->loadTemplate(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["sonata_block"]) || array_key_exists("sonata_block", $context) ? $context["sonata_block"] : (function () { throw new RuntimeError('Variable "sonata_block" does not exist.', 11, $this->source); })()), "templates", [], "any", false, false, false, 11), "block_base", [], "any", false, false, false, 11), "@SonataBlock/Block/block_core_rss.html.twig", 11);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataBlockBundle:Block:block_core_rss.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataBlock/Block/block_core_rss.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataBlockBundle:Block:block_core_rss.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataBlock/Block/block_core_rss.html.twig"));
 
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -155,7 +155,7 @@ class __TwigTemplate_83d0ff7bcbae91fb29d664c0f5e0307a34ab6335cd2ce6efd96f91c2170
 
     public function getTemplateName()
     {
-        return "SonataBlockBundle:Block:block_core_rss.html.twig";
+        return "@SonataBlock/Block/block_core_rss.html.twig";
     }
 
     public function isTraitable()
@@ -215,6 +215,6 @@ file that was distributed with this source code.
         </div>
     </div>
 {% endblock %}
-", "SonataBlockBundle:Block:block_core_rss.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\block-bundle\\src\\Resources\\views\\Block\\block_core_rss.html.twig");
+", "@SonataBlock/Block/block_core_rss.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\block-bundle\\src\\Resources\\views\\Block\\block_core_rss.html.twig");
     }
 }

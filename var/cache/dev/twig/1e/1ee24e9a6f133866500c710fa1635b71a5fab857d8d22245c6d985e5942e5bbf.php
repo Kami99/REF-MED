@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:list_outer_rows_mosaic.html.twig */
+/* @SonataAdmin/CRUD/list_outer_rows_mosaic.html.twig */
 class __TwigTemplate_6ec1376cf9395a16dd06152539e752d03a47f42784102b498fa93210db1506a2 extends \Twig\Template
 {
     private $source;
@@ -38,10 +38,10 @@ class __TwigTemplate_6ec1376cf9395a16dd06152539e752d03a47f42784102b498fa93210db1
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_outer_rows_mosaic.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list_outer_rows_mosaic.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_outer_rows_mosaic.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list_outer_rows_mosaic.html.twig"));
 
         // line 11
         echo "
@@ -326,7 +326,7 @@ This template can be customized to match your needs. You should only extends the
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:list_outer_rows_mosaic.html.twig";
+        return "@SonataAdmin/CRUD/list_outer_rows_mosaic.html.twig";
     }
 
     public function isTraitable()
@@ -437,6 +437,6 @@ This template can be customized to match your needs. You should only extends the
         </div>
     </td>
 </tr>
-", "SonataAdminBundle:CRUD:list_outer_rows_mosaic.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list_outer_rows_mosaic.html.twig");
+", "@SonataAdmin/CRUD/list_outer_rows_mosaic.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list_outer_rows_mosaic.html.twig");
     }
 }

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataDoctrineORMAdminBundle:Block:block_audit.html.twig */
+/* @SonataDoctrineORMAdmin/Block/block_audit.html.twig */
 class __TwigTemplate_6b935bcaed32808325621827022462a8b9fa6d25d73e5c1e0e61a548c017abe2 extends \Twig\Template
 {
     private $source;
@@ -39,12 +39,12 @@ class __TwigTemplate_6b935bcaed32808325621827022462a8b9fa6d25d73e5c1e0e61a548c01
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:Block:block_audit.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/Block/block_audit.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:Block:block_audit.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/Block/block_audit.html.twig"));
 
-        $this->parent = $this->loadTemplate("@SonataBlock/Block/block_base.html.twig", "SonataDoctrineORMAdminBundle:Block:block_audit.html.twig", 11);
+        $this->parent = $this->loadTemplate("@SonataBlock/Block/block_base.html.twig", "@SonataDoctrineORMAdmin/Block/block_audit.html.twig", 11);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -183,7 +183,7 @@ class __TwigTemplate_6b935bcaed32808325621827022462a8b9fa6d25d73e5c1e0e61a548c01
 
     public function getTemplateName()
     {
-        return "SonataDoctrineORMAdminBundle:Block:block_audit.html.twig";
+        return "@SonataDoctrineORMAdmin/Block/block_audit.html.twig";
     }
 
     public function isTraitable()
@@ -249,6 +249,6 @@ file that was distributed with this source code.
     </div>
 
 {% endblock %}
-", "SonataDoctrineORMAdminBundle:Block:block_audit.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\Block\\block_audit.html.twig");
+", "@SonataDoctrineORMAdmin/Block/block_audit.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\Block\\block_audit.html.twig");
     }
 }

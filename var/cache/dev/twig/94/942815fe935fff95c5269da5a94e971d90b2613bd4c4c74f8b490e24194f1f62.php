@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/showArticle.html.twig */
+/* Blog/showArticle.html.twig */
 class __TwigTemplate_a6da6faa07befb76b36424ae7cc70677968707af37c10f372afc413c3b033658 extends \Twig\Template
 {
     private $source;
@@ -40,12 +40,12 @@ class __TwigTemplate_a6da6faa07befb76b36424ae7cc70677968707af37c10f372afc413c3b0
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/showArticle.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Blog/showArticle.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/showArticle.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Blog/showArticle.html.twig"));
 
-        $this->parent = $this->loadTemplate("Blog/baseBlog.html.twig", "blog/showArticle.html.twig", 1);
+        $this->parent = $this->loadTemplate("Blog/baseBlog.html.twig", "Blog/showArticle.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -90,7 +90,7 @@ class __TwigTemplate_a6da6faa07befb76b36424ae7cc70677968707af37c10f372afc413c3b0
     <div class=\"s-pageheader\">
         ";
         // line 7
-        $this->loadTemplate("Blog/_navigation.html.twig", "blog/showArticle.html.twig", 7)->display($context);
+        $this->loadTemplate("Blog/_navigation.html.twig", "Blog/showArticle.html.twig", 7)->display($context);
         // line 8
         echo "    </div>
 
@@ -382,12 +382,12 @@ class __TwigTemplate_a6da6faa07befb76b36424ae7cc70677968707af37c10f372afc413c3b0
    
     ";
         // line 178
-        $this->loadTemplate("Blog/_footerPopularPosts.html.twig", "blog/showArticle.html.twig", 178)->display($context);
+        $this->loadTemplate("Blog/_footerPopularPosts.html.twig", "Blog/showArticle.html.twig", 178)->display($context);
         // line 179
         echo "
     ";
         // line 180
-        $this->loadTemplate("Blog/_footerKeyword.html.twig", "blog/showArticle.html.twig", 180)->display($context);
+        $this->loadTemplate("Blog/_footerKeyword.html.twig", "Blog/showArticle.html.twig", 180)->display($context);
         // line 181
         echo "       
 
@@ -405,7 +405,7 @@ class __TwigTemplate_a6da6faa07befb76b36424ae7cc70677968707af37c10f372afc413c3b0
 
     public function getTemplateName()
     {
-        return "blog/showArticle.html.twig";
+        return "Blog/showArticle.html.twig";
     }
 
     public function isTraitable()
@@ -605,6 +605,6 @@ class __TwigTemplate_a6da6faa07befb76b36424ae7cc70677968707af37c10f372afc413c3b0
 
 
        
-{% endblock body %}", "blog/showArticle.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\Blog\\showArticle.html.twig");
+{% endblock body %}", "Blog/showArticle.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\Blog\\showArticle.html.twig");
     }
 }

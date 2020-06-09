@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:select_subclass.html.twig */
+/* @SonataAdmin/CRUD/select_subclass.html.twig */
 class __TwigTemplate_647dd52bd52da4d70822000773c1bbaf0c01b35272ace8a5ac2c987ffb4640fe extends \Twig\Template
 {
     private $source;
@@ -33,17 +33,17 @@ class __TwigTemplate_647dd52bd52da4d70822000773c1bbaf0c01b35272ace8a5ac2c987ffb4
     protected function doGetParent(array $context)
     {
         // line 11
-        return $this->loadTemplate((isset($context["base_template"]) || array_key_exists("base_template", $context) ? $context["base_template"] : (function () { throw new RuntimeError('Variable "base_template" does not exist.', 11, $this->source); })()), "SonataAdminBundle:CRUD:select_subclass.html.twig", 11);
+        return $this->loadTemplate((isset($context["base_template"]) || array_key_exists("base_template", $context) ? $context["base_template"] : (function () { throw new RuntimeError('Variable "base_template" does not exist.', 11, $this->source); })()), "@SonataAdmin/CRUD/select_subclass.html.twig", 11);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:select_subclass.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/select_subclass.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:select_subclass.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/select_subclass.html.twig"));
 
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -143,7 +143,7 @@ class __TwigTemplate_647dd52bd52da4d70822000773c1bbaf0c01b35272ace8a5ac2c987ffb4
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:select_subclass.html.twig";
+        return "@SonataAdmin/CRUD/select_subclass.html.twig";
     }
 
     public function isTraitable()
@@ -196,6 +196,6 @@ file that was distributed with this source code.
         </div>
     </div>
 {% endblock %}
-", "SonataAdminBundle:CRUD:select_subclass.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\select_subclass.html.twig");
+", "@SonataAdmin/CRUD/select_subclass.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\select_subclass.html.twig");
     }
 }

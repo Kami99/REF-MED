@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD/Association:edit_one_to_many_sortable_script_table.html.twig */
+/* @SonataAdmin/CRUD/Association/edit_one_to_many_sortable_script_table.html.twig */
 class __TwigTemplate_22ae369398d69443f4fdd1ee3eae791cd4988c6525430f3ce7691637b7656b1d extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_22ae369398d69443f4fdd1ee3eae791cd4988c6525430f3ce7691637b76
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD/Association:edit_one_to_many_sortable_script_table.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/Association/edit_one_to_many_sortable_script_table.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD/Association:edit_one_to_many_sortable_script_table.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/Association/edit_one_to_many_sortable_script_table.html.twig"));
 
         // line 11
         echo "<script type=\"text/javascript\">
@@ -116,7 +116,7 @@ class __TwigTemplate_22ae369398d69443f4fdd1ee3eae791cd4988c6525430f3ce7691637b76
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD/Association:edit_one_to_many_sortable_script_table.html.twig";
+        return "@SonataAdmin/CRUD/Association/edit_one_to_many_sortable_script_table.html.twig";
     }
 
     public function isTraitable()
@@ -171,6 +171,6 @@ file that was distributed with this source code.
 
     apply_position_value_{{ id }}();
 </script>
-", "SonataAdminBundle:CRUD/Association:edit_one_to_many_sortable_script_table.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\Association\\edit_one_to_many_sortable_script_table.html.twig");
+", "@SonataAdmin/CRUD/Association/edit_one_to_many_sortable_script_table.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\Association\\edit_one_to_many_sortable_script_table.html.twig");
     }
 }

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD:list_html.html.twig */
+/* @SonataAdmin/CRUD/list_html.html.twig */
 class __TwigTemplate_0f72f770a86e0e86a54b834acb8ed830325bfbbc5da49e906ec03e4e5ea82064 extends \Twig\Template
 {
     private $source;
@@ -32,17 +32,17 @@ class __TwigTemplate_0f72f770a86e0e86a54b834acb8ed830325bfbbc5da49e906ec03e4e5ea
     protected function doGetParent(array $context)
     {
         // line 1
-        return $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getAdminTemplate("base_list_field", twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 1, $this->source); })()), "code", [], "any", false, false, false, 1)), "SonataAdminBundle:CRUD:list_html.html.twig", 1);
+        return $this->loadTemplate($this->extensions['Sonata\AdminBundle\Twig\Extension\TemplateRegistryExtension']->getAdminTemplate("base_list_field", twig_get_attribute($this->env, $this->source, (isset($context["admin"]) || array_key_exists("admin", $context) ? $context["admin"] : (function () { throw new RuntimeError('Variable "admin" does not exist.', 1, $this->source); })()), "code", [], "any", false, false, false, 1)), "@SonataAdmin/CRUD/list_html.html.twig", 1);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_html.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list_html.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD:list_html.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/list_html.html.twig"));
 
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -81,7 +81,7 @@ class __TwigTemplate_0f72f770a86e0e86a54b834acb8ed830325bfbbc5da49e906ec03e4e5ea
                 if (twig_get_attribute($this->env, $this->source, ($context["truncate"] ?? null), "preserve", [], "any", true, true, false, 10)) {
                     // line 11
                     echo "                ";
-                    @trigger_error("The \"truncate.preserve\" option is deprecated since sonata-project/admin-bundle 3.65, to be removed in 4.0. Use \"truncate.cut\" instead."." (\"SonataAdminBundle:CRUD:list_html.html.twig\" at line 11).", E_USER_DEPRECATED);
+                    @trigger_error("The \"truncate.preserve\" option is deprecated since sonata-project/admin-bundle 3.65, to be removed in 4.0. Use \"truncate.cut\" instead."." (\"@SonataAdmin/CRUD/list_html.html.twig\" at line 11).", E_USER_DEPRECATED);
                     // line 12
                     echo "            ";
                 }
@@ -93,7 +93,7 @@ class __TwigTemplate_0f72f770a86e0e86a54b834acb8ed830325bfbbc5da49e906ec03e4e5ea
                 if (twig_get_attribute($this->env, $this->source, ($context["truncate"] ?? null), "separator", [], "any", true, true, false, 14)) {
                     // line 15
                     echo "                ";
-                    @trigger_error("The \"truncate.separator\" option is deprecated since sonata-project/admin-bundle 3.65, to be removed in 4.0. Use \"truncate.ellipsis\" instead."." (\"SonataAdminBundle:CRUD:list_html.html.twig\" at line 15).", E_USER_DEPRECATED);
+                    @trigger_error("The \"truncate.separator\" option is deprecated since sonata-project/admin-bundle 3.65, to be removed in 4.0. Use \"truncate.ellipsis\" instead."." (\"@SonataAdmin/CRUD/list_html.html.twig\" at line 15).", E_USER_DEPRECATED);
                     // line 16
                     echo "            ";
                 }
@@ -127,7 +127,7 @@ class __TwigTemplate_0f72f770a86e0e86a54b834acb8ed830325bfbbc5da49e906ec03e4e5ea
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD:list_html.html.twig";
+        return "@SonataAdmin/CRUD/list_html.html.twig";
     }
 
     public function isTraitable()
@@ -168,6 +168,6 @@ class __TwigTemplate_0f72f770a86e0e86a54b834acb8ed830325bfbbc5da49e906ec03e4e5ea
         {% endif %}
     {% endif %}
 {% endblock %}
-", "SonataAdminBundle:CRUD:list_html.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list_html.html.twig");
+", "@SonataAdmin/CRUD/list_html.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\list_html.html.twig");
     }
 }

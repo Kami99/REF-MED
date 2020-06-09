@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_association_script.html.twig */
+/* @SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig */
 class __TwigTemplate_818a494ac3b541d2df534798a8c3cbe47560178d28a709e4ed0db6186f45bd74 extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_818a494ac3b541d2df534798a8c3cbe47560178d28a709e4ed0db6186f4
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_association_script.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_association_script.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig"));
 
         // line 11
         echo "
@@ -903,7 +903,7 @@ class __TwigTemplate_818a494ac3b541d2df534798a8c3cbe47560178d28a709e4ed0db6186f4
 
     public function getTemplateName()
     {
-        return "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_association_script.html.twig";
+        return "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig";
     }
 
     public function isTraitable()
@@ -1412,6 +1412,6 @@ This code manage the many-to-[one|many] association field popup
 <!-- / edit many association -->
 
 {% endautoescape %}
-", "SonataDoctrineORMAdminBundle:CRUD:edit_orm_many_association_script.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\CRUD\\edit_orm_many_association_script.html.twig");
+", "@SonataDoctrineORMAdmin/CRUD/edit_orm_many_association_script.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\doctrine-orm-admin-bundle\\src\\Resources\\views\\CRUD\\edit_orm_many_association_script.html.twig");
     }
 }

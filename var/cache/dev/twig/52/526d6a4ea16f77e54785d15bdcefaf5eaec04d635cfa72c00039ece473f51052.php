@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* blog/homeBlog.html.twig */
+/* Blog/homeBlog.html.twig */
 class __TwigTemplate_69b86b3c2f932ac14f41b3f63eb86f470ceecfa639e2da07d331c027bfd1e211 extends \Twig\Template
 {
     private $source;
@@ -40,12 +40,12 @@ class __TwigTemplate_69b86b3c2f932ac14f41b3f63eb86f470ceecfa639e2da07d331c027bfd
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/homeBlog.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Blog/homeBlog.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "blog/homeBlog.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "Blog/homeBlog.html.twig"));
 
-        $this->parent = $this->loadTemplate("Blog/baseBlog.html.twig", "blog/homeBlog.html.twig", 1);
+        $this->parent = $this->loadTemplate("Blog/baseBlog.html.twig", "Blog/homeBlog.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -89,7 +89,7 @@ class __TwigTemplate_69b86b3c2f932ac14f41b3f63eb86f470ceecfa639e2da07d331c027bfd
 
 ";
         // line 6
-        $this->loadTemplate("Blog/_navigation.html.twig", "blog/homeBlog.html.twig", 6)->display($context);
+        $this->loadTemplate("Blog/_navigation.html.twig", "Blog/homeBlog.html.twig", 6)->display($context);
         // line 7
         echo "<div class=\"pageheader-content row\">
     <div class=\"col-full\">
@@ -225,7 +225,7 @@ class __TwigTemplate_69b86b3c2f932ac14f41b3f63eb86f470ceecfa639e2da07d331c027bfd
         // line 71
         if ((isset($context["articles"]) || array_key_exists("articles", $context) ? $context["articles"] : (function () { throw new RuntimeError('Variable "articles" does not exist.', 71, $this->source); })())) {
             // line 72
-            $this->loadTemplate("Blog/_allShowArticle.html.twig", "blog/homeBlog.html.twig", 72)->display($context);
+            $this->loadTemplate("Blog/_allShowArticle.html.twig", "Blog/homeBlog.html.twig", 72)->display($context);
         } else {
             // line 74
             echo "<section class=\"s-content\">
@@ -251,9 +251,9 @@ class __TwigTemplate_69b86b3c2f932ac14f41b3f63eb86f470ceecfa639e2da07d331c027bfd
 ";
         }
         // line 86
-        $this->loadTemplate("Blog/_footerPopularPosts.html.twig", "blog/homeBlog.html.twig", 86)->display($context);
+        $this->loadTemplate("Blog/_footerPopularPosts.html.twig", "Blog/homeBlog.html.twig", 86)->display($context);
         // line 87
-        $this->loadTemplate("Blog/_footerKeyword.html.twig", "blog/homeBlog.html.twig", 87)->display($context);
+        $this->loadTemplate("Blog/_footerKeyword.html.twig", "Blog/homeBlog.html.twig", 87)->display($context);
         // line 88
         echo "
 
@@ -269,7 +269,7 @@ class __TwigTemplate_69b86b3c2f932ac14f41b3f63eb86f470ceecfa639e2da07d331c027bfd
 
     public function getTemplateName()
     {
-        return "blog/homeBlog.html.twig";
+        return "Blog/homeBlog.html.twig";
     }
 
     public function isTraitable()
@@ -374,6 +374,6 @@ class __TwigTemplate_69b86b3c2f932ac14f41b3f63eb86f470ceecfa639e2da07d331c027bfd
 
 
 
-{% endblock body %} ", "blog/homeBlog.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\Blog\\homeBlog.html.twig");
+{% endblock body %} ", "Blog/homeBlog.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\templates\\Blog\\homeBlog.html.twig");
     }
 }

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* EasyAdminBundle:default:new.html.twig */
+/* @EasyAdmin/default/new.html.twig */
 class __TwigTemplate_d4b5323474737d72e7f225622c2b109fd743f11cdbc347519297a5c43c94d50e extends \Twig\Template
 {
     private $source;
@@ -38,29 +38,29 @@ class __TwigTemplate_d4b5323474737d72e7f225622c2b109fd743f11cdbc347519297a5c43c9
     protected function doGetParent(array $context)
     {
         // line 7
-        return $this->loadTemplate(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["_entity_config"]) || array_key_exists("_entity_config", $context) ? $context["_entity_config"] : (function () { throw new RuntimeError('Variable "_entity_config" does not exist.', 7, $this->source); })()), "templates", [], "any", false, false, false, 7), "layout", [], "any", false, false, false, 7), "EasyAdminBundle:default:new.html.twig", 7);
+        return $this->loadTemplate(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["_entity_config"]) || array_key_exists("_entity_config", $context) ? $context["_entity_config"] : (function () { throw new RuntimeError('Variable "_entity_config" does not exist.', 7, $this->source); })()), "templates", [], "any", false, false, false, 7), "layout", [], "any", false, false, false, 7), "@EasyAdmin/default/new.html.twig", 7);
     }
 
     protected function doDisplay(array $context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default:new.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/new.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "EasyAdminBundle:default:new.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@EasyAdmin/default/new.html.twig"));
 
         // line 1
         $this->env->getRuntime("Symfony\\Component\\Form\\FormRenderer")->setTheme((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 1, $this->source); })()), $this->extensions['EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension']->getBackendConfiguration("design.form_theme"), false);
         // line 3
         $context["_entity_config"] = $this->extensions['EasyCorp\Bundle\EasyAdminBundle\Twig\EasyAdminTwigExtension']->getEntityConfiguration(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 3, $this->source); })()), "request", [], "any", false, false, false, 3), "query", [], "any", false, false, false, 3), "get", [0 => "entity"], "method", false, false, false, 3));
         // line 4
-        $context["__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657"] = twig_get_attribute($this->env, $this->source, (isset($context["_entity_config"]) || array_key_exists("_entity_config", $context) ? $context["_entity_config"] : (function () { throw new RuntimeError('Variable "_entity_config" does not exist.', 4, $this->source); })()), "translation_domain", [], "any", false, false, false, 4);
+        $context["__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73"] = twig_get_attribute($this->env, $this->source, (isset($context["_entity_config"]) || array_key_exists("_entity_config", $context) ? $context["_entity_config"] : (function () { throw new RuntimeError('Variable "_entity_config" does not exist.', 4, $this->source); })()), "translation_domain", [], "any", false, false, false, 4);
         // line 5
         $context["_trans_parameters"] = ["%entity_name%" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["_entity_config"]) || array_key_exists("_entity_config", $context) ? $context["_entity_config"] : (function () { throw new RuntimeError('Variable "_entity_config" does not exist.', 5, $this->source); })()), "name", [], "any", false, false, false, 5), [],         // line 4
-(isset($context["__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657"]) || array_key_exists("__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657", $context) ? $context["__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657"] : (function () { throw new RuntimeError('Variable "__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657" does not exist.', 4, $this->source); })())), "%entity_label%" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source,         // line 5
+(isset($context["__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73"]) || array_key_exists("__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73", $context) ? $context["__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73"] : (function () { throw new RuntimeError('Variable "__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73" does not exist.', 4, $this->source); })())), "%entity_label%" => $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source,         // line 5
 (isset($context["_entity_config"]) || array_key_exists("_entity_config", $context) ? $context["_entity_config"] : (function () { throw new RuntimeError('Variable "_entity_config" does not exist.', 5, $this->source); })()), "label", [], "any", false, false, false, 5), [],         // line 4
-(isset($context["__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657"]) || array_key_exists("__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657", $context) ? $context["__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657"] : (function () { throw new RuntimeError('Variable "__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657" does not exist.', 4, $this->source); })()))];
+(isset($context["__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73"]) || array_key_exists("__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73", $context) ? $context["__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73"] : (function () { throw new RuntimeError('Variable "__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73" does not exist.', 4, $this->source); })()))];
         // line 7
         $this->getParent($context)->display($context, array_merge($this->blocks, $blocks));
         
@@ -128,7 +128,7 @@ class __TwigTemplate_d4b5323474737d72e7f225622c2b109fd743f11cdbc347519297a5c43c9
         // line 15
         echo "        ";
         echo twig_escape_filter($this->env, ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["_entity_config"] ?? null), "new", [], "any", false, true, false, 15), "title", [], "any", true, true, false, 15)) ? ($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["_entity_config"]) || array_key_exists("_entity_config", $context) ? $context["_entity_config"] : (function () { throw new RuntimeError('Variable "_entity_config" does not exist.', 15, $this->source); })()), "new", [], "any", false, false, false, 15), "title", [], "any", false, false, false, 15), (isset($context["_trans_parameters"]) || array_key_exists("_trans_parameters", $context) ? $context["_trans_parameters"] : (function () { throw new RuntimeError('Variable "_trans_parameters" does not exist.', 15, $this->source); })()),         // line 4
-(isset($context["__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657"]) || array_key_exists("__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657", $context) ? $context["__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657"] : (function () { throw new RuntimeError('Variable "__internal_8586be999463aad83442bfd9131c9fa3df7c93fb4f57cc019df8872309531657" does not exist.', 4, $this->source); })()))) : (        // line 15
+(isset($context["__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73"]) || array_key_exists("__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73", $context) ? $context["__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73"] : (function () { throw new RuntimeError('Variable "__internal_284695c8a175f73b511bd61e2969d48c19b017b51c29fca685df39a08db69c73" does not exist.', 4, $this->source); })()))) : (        // line 15
 (isset($context["_default_title"]) || array_key_exists("_default_title", $context) ? $context["_default_title"] : (function () { throw new RuntimeError('Variable "_default_title" does not exist.', 15, $this->source); })()))), "html", null, true);
         echo "
     ";
@@ -324,7 +324,7 @@ class __TwigTemplate_d4b5323474737d72e7f225622c2b109fd743f11cdbc347519297a5c43c9
 
     public function getTemplateName()
     {
-        return "EasyAdminBundle:default:new.html.twig";
+        return "@EasyAdmin/default/new.html.twig";
     }
 
     public function isTraitable()
@@ -456,6 +456,6 @@ class __TwigTemplate_d4b5323474737d72e7f225622c2b109fd743f11cdbc347519297a5c43c9
 
     {{ include('@EasyAdmin/default/includes/_select2_widget.html.twig') }}
 {% endblock %}
-", "EasyAdminBundle:default:new.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\new.html.twig");
+", "@EasyAdmin/default/new.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\easycorp\\easyadmin-bundle\\src\\Resources\\views\\default\\new.html.twig");
     }
 }

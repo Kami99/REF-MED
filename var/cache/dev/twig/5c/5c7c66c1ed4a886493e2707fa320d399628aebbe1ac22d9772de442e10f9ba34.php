@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* SonataAdminBundle:CRUD/Association:edit_one_to_many_inline_tabs.html.twig */
+/* @SonataAdmin/CRUD/Association/edit_one_to_many_inline_tabs.html.twig */
 class __TwigTemplate_e3e166b12950ee618aa327c8de66bee646d4f9b0e7d51ab40aad68631d176468 extends \Twig\Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_e3e166b12950ee618aa327c8de66bee646d4f9b0e7d51ab40aad68631d1
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD/Association:edit_one_to_many_inline_tabs.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/Association/edit_one_to_many_inline_tabs.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "SonataAdminBundle:CRUD/Association:edit_one_to_many_inline_tabs.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "@SonataAdmin/CRUD/Association/edit_one_to_many_inline_tabs.html.twig"));
 
         // line 11
         echo "<div class=\"sonata-ba-tabs\">
@@ -258,7 +258,7 @@ class __TwigTemplate_e3e166b12950ee618aa327c8de66bee646d4f9b0e7d51ab40aad68631d1
 
     public function getTemplateName()
     {
-        return "SonataAdminBundle:CRUD/Association:edit_one_to_many_inline_tabs.html.twig";
+        return "@SonataAdmin/CRUD/Association/edit_one_to_many_inline_tabs.html.twig";
     }
 
     public function isTraitable()
@@ -336,6 +336,6 @@ file that was distributed with this source code.
         </div>
     {% endfor %}
 </div>
-", "SonataAdminBundle:CRUD/Association:edit_one_to_many_inline_tabs.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\Association\\edit_one_to_many_inline_tabs.html.twig");
+", "@SonataAdmin/CRUD/Association/edit_one_to_many_inline_tabs.html.twig", "C:\\Users\\BETOE CHARLENE\\Desktop\\Projet\\REF-MED\\vendor\\sonata-project\\admin-bundle\\src\\Resources\\views\\CRUD\\Association\\edit_one_to_many_inline_tabs.html.twig");
     }
 }
